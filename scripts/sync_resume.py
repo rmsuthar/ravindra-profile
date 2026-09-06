@@ -90,7 +90,7 @@ def generate_workday_docx():
     # Contact line 2
     paragraphs.append(make_p([
         make_run("LinkedIn: ", bold=True, size=18, color="4A5568"),
-        make_run("linkedin.com/in/ravindrasuthar  |  ", size=18, color="2B6CB0"),
+        make_run("https://www.linkedin.com/in/ravindrasuthar/  |  ", size=18, color="2B6CB0"),
         make_run("Profile & Portfolio: ", bold=True, size=18, color="4A5568"),
         make_run("https://ravindra.lets.gen.in/", size=18, color="2B6CB0")
     ], space_before=0, space_after=140, align="center"))
@@ -115,9 +115,9 @@ def generate_workday_docx():
     paragraphs.append(make_heading("Technical Skills & Competencies"))
     
     skills = [
-        ("Frontend Architecture", "Micro-frontends, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
-        ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, React Testing Library."),
-        ("Engineering Leadership", "Agile & Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Capacity Planning, Talent Acquisition, Coaching & Mentorship."),
+        ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
+        ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
+        ("Engineering Leadership", "Cross-Functional Leadership, Agile & Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching & Mentorship."),
         ("Accessibility & Security", "WCAG 2.1 / 2.2 AA, Section 508, ADA Compliance, axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
         ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
         ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, Adobe Experience Manager (AEM / CQ5), Workday HRIS.")
@@ -386,7 +386,11 @@ def audit_workday_compatibility():
         ("Employer 2", "Sapient"),
         ("Employer 3", "Cognizant"),
         ("Key Initiative", "Non-AEM to AEM"),
-        ("Role Fit", "Assistant Vice President")
+        ("Role Fit", "Assistant Vice President"),
+        ("LinkedIn URL", "linkedin.com/in/ravindrasuthar"),
+        ("Micro-frontend Skill", "Module Federation"),
+        ("Modern State Skill", "Redux Toolkit"),
+        ("Leadership Competency", "Cross-Functional Leadership")
     ]
 
     docx_score = 0
