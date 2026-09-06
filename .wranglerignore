@@ -1,0 +1,9 @@
+.git/
+.gitignore
+.wrangler/
+scripts/
+node_modules/
+AGENTS.md
+agent.md
+README.md
+*.log
