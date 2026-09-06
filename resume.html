@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ravindrakumar M. Suthar - Resume (ATS & Workday Compatible)</title>
+  <meta name="description" content="ATS & Workday optimized resume of Ravindrakumar M. Suthar - Senior Frontend Architect & Engineering Leader with 17+ years experience in enterprise BFSI platforms.">
+  
+  <style>
+    /* ==========================================================================
+       WORKDAY / ATS OPTIMIZED PRINT & SCREEN STYLESHEET
+       Single-column, linear text stream, zero multi-column parser confusion
+       ========================================================================== */
+    @page {
+      size: letter portrait;
+      margin: 18mm 18mm 18mm 18mm;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, Helvetica, sans-serif;
+      color: #111827;
+      background-color: #f8fafc;
+      font-size: 10.5pt;
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+
+    .ats-container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 40px 48px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Top Action Bar (Hidden when printing or uploading) */
+    .action-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #e2e8f0;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .badge-workday {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #ecfdf5;
+      color: #065f46;
+      border: 1px solid #a7f3d0;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.15s;
+    }
+
+    .btn-primary {
+      background: #2563eb;
+      color: #ffffff;
+      border: 1px solid #2563eb;
+    }
+
+    .btn-primary:hover {
+      background: #1d4ed8;
+    }
+
+    .btn-outline {
+      background: #ffffff;
+      color: #374151;
+      border: 1px solid #d1d5db;
+    }
+
+    .btn-outline:hover {
+      background: #f3f4f6;
+    }
+
+    /* Header / Contact Information (Workday Parser Standard) */
+    header {
+      margin-bottom: 18pt;
+      border-bottom: 1.5pt solid #2563eb;
+      padding-bottom: 12pt;
+    }
+
+    h1 {
+      font-size: 22pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 4pt;
+    }
+
+    .subtitle {
+      font-size: 11pt;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 8pt;
+    }
+
+    .contact-info {
+      font-size: 9.5pt;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    /* Standard ATS Headings */
+    h2 {
+      font-size: 12pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: #0f172a;
+      border-bottom: 1pt solid #cbd5e1;
+      padding-bottom: 3pt;
+      margin-top: 16pt;
+      margin-bottom: 8pt;
+    }
+
+    /* Section Styling */
+    .section-content {
+      margin-bottom: 12pt;
+    }
+
+    p {
+      margin-bottom: 6pt;
+      text-align: justify;
+    }
+
+    /* Work Experience Blocks (Workday Hierarchy: Company, Title, Dates, Location) */
+    .job-block {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-left: 3.5px solid #2563eb;
+      border-radius: 6px;
+      padding: 16px 20px;
+      margin-bottom: 16px;
+      page-break-inside: avoid;
+      break-inside: avoid;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3pt;
+    }
+
+    .job-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .job-dates {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #4b5563;
+      white-space: nowrap;
+    }
+
+    .job-company-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #2563eb;
+      margin-bottom: 6pt;
+    }
+
+    .job-location {
+      font-weight: normal;
+      color: #64748b;
+    }
+
+    /* Bullet Lists */
+    ul {
+      list-style-type: disc;
+      margin-left: 18pt;
+      margin-bottom: 6pt;
+    }
+
+    li {
+      margin-bottom: 3.5pt;
+      line-height: 1.45;
+    }
+
+    li strong {
+      color: #0f172a;
+    }
+
+    /* Skills List (Comma-separated for maximum ATS indexability) */
+    .skills-category {
+      margin-bottom: 6pt;
+      font-size: 9.5pt;
+    }
+
+    .skills-category strong {
+      color: #0f172a;
+    }
+
+    /* ── Mobile Responsive Styles ────────────────────────────────────────── */
+    /* ── Mobile Responsive Styles (iPhone Frosted Glass) ──────────────────── */
+    @media (max-width: 640px) {
+      body {
+        padding: 12px 8px;
+        background-color: #f8fafc;
+        background-image: 
+          radial-gradient(at 0% 0%, rgba(219, 234, 254, 0.7) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(237, 233, 254, 0.7) 0px, transparent 50%),
+          radial-gradient(at 100% 100%, rgba(224, 242, 254, 0.5) 0px, transparent 50%),
+          radial-gradient(at 0% 100%, rgba(243, 232, 255, 0.5) 0px, transparent 50%);
+        background-attachment: fixed;
+      }
+      .ats-container {
+        padding: 20px 14px;
+        background: rgba(255, 255, 255, 0.82);
+        -webkit-backdrop-filter: blur(28px) saturate(190%);
+        backdrop-filter: blur(28px) saturate(190%);
+        border: 1px solid rgba(255, 255, 255, 0.9);
+        border-radius: 20px;
+        box-shadow: 0 16px 40px -8px rgba(15, 23, 42, 0.08), inset 0 1px 2px rgba(255, 255, 255, 0.95);
+      }
+      .action-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+      }
+      .badge-workday {
+        font-size: 0.78rem;
+        align-self: flex-start;
+        background: rgba(209, 250, 229, 0.75);
+        border: 1px solid rgba(167, 243, 208, 0.85);
+        -webkit-backdrop-filter: blur(10px);
+        backdrop-filter: blur(10px);
+      }
+      .btn-group {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .btn-group .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 8px 8px;
+        font-size: 0.78rem;
+        background: rgba(255, 255, 255, 0.75);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.03), inset 0 1px 1px rgba(255, 255, 255, 0.9);
+      }
+      .btn-group .btn-primary {
+        background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(29, 78, 216, 0.95));
+        border: 1px solid rgba(255, 255, 255, 0.4);
+        box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35), inset 0 1px 1.5px rgba(255, 255, 255, 0.5);
+      }
+      .btn-group .btn:last-child {
+        grid-column: 1 / -1;
+      }
+      header {
+        margin-bottom: 14pt;
+        padding-bottom: 10pt;
+      }
+      h1 {
+        font-size: 18pt;
+      }
+      .subtitle {
+        font-size: 9.5pt;
+      }
+      .contact-info {
+        font-size: 8.5pt;
+        line-height: 1.5;
+      }
+      .job-header,
+      .job-company-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 2px;
+      }
+      .job-dates,
+      .job-location {
+        font-size: 8pt;
+        color: #64748b;
+      }
+      .job-block {
+        background: rgba(255, 255, 255, 0.76);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        backdrop-filter: blur(20px) saturate(180%);
+        border: 1px solid rgba(255, 255, 255, 0.85);
+        border-left: 3.5px solid #2563eb;
+        border-radius: 14px;
+        box-shadow: 0 6px 20px -3px rgba(15, 23, 42, 0.04), inset 0 1px 1px rgba(255, 255, 255, 0.95);
+        padding: 12px 14px;
+        margin-bottom: 12px;
+      }
+      ul li {
+        font-size: 9pt;
+        line-height: 1.45;
+      }
+      .skills-category {
+        font-size: 9pt;
+        margin-bottom: 6pt;
+      }
+    }
+
+    /* Print Overrides */
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+
+      .ats-container {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .action-bar,
+      .ai-copilot-trigger,
+      .ai-copilot-drawer,
+      .ai-modal-backdrop {
+        display: none !important;
+      }
+
+      a {
+        color: #111827 !important;
+        text-decoration: none !important;
+      }
+    }
+
+    /* AI Copilot in Resume View */
+    .btn-ai {
+      background: linear-gradient(135deg, #eff6ff 0%, #f5f3ff 100%);
+      border-color: #7c3aed !important;
+      color: #7c3aed !important;
+      font-weight: 600;
+    }
+    .btn-ai:hover {
+      background: #7c3aed !important;
+      color: #ffffff !important;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css?v=20260906-ai2">
+</head>
+<body>
+
+  <div class="ats-container">
+
+    <!-- Screen Navigation Bar -->
+    <div class="action-bar">
+      <div class="badge-workday">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span>Workday ATS Verified Format</span>
+      </div>
+      <div class="btn-group">
+        <a href="Ravindrakumar_Suthar_Resume.docx" download="Ravindrakumar_Suthar_Resume.docx" class="btn btn-outline" title="Download Word file for Workday Upload">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="12" y1="18" x2="12" y2="12"></line>
+            <line x1="9" y1="15" x2="15" y2="15"></line>
+          </svg>
+          <span>Download Word (.docx)</span>
+        </a>
+
+        <a href="Ravindrakumar_Suthar_Resume.pdf" download="Ravindrakumar_Suthar_Resume.pdf" class="btn btn-outline" title="Download Pre-rendered PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download PDF</span>
+        </a>
+
+        <button onclick="window.print()" class="btn btn-primary" title="Print or save as clean PDF">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / Export PDF</span>
+        </button>
+
+        <button id="ai-copilot-trigger" class="btn btn-outline btn-ai" type="button" title="Open Cloudflare Workers AI Copilot (Llama 3.1)">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Ask AI Copilot</span>
+        </button>
+
+        <a href="/" class="btn btn-outline">&larr; Back to Profile</a>
+      </div>
+    </div>
+
+    <!-- ── Contact Information ── -->
+    <header>
+      <h1>Ravindrakumar M. Suthar</h1>
+      <div class="subtitle">Assistant Vice President &bull; Senior Frontend Architect &bull; Engineering Leader</div>
+      <div class="contact-info">
+        <strong>Location:</strong> Pune, Maharashtra, India &nbsp;|&nbsp;
+        <strong>Phone:</strong> +91 83800 99988 &nbsp;|&nbsp;
+        <strong>Email:</strong> <a href="mailto:ravindra.suthar@me.com">ravindra.suthar@me.com</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/ravindrasuthar/">linkedin.com/in/ravindrasuthar</a> &nbsp;|&nbsp;
+        <strong>Profile &amp; Portfolio:</strong> <a href="https://ravindra.lets.gen.in/">https://ravindra.lets.gen.in/</a>
+      </div>
+    </header>
+
+    <!-- ── Professional Summary ── -->
+    <section>
+      <h2>Professional Summary</h2>
+      <div class="section-content">
+        <p>
+          Product Engineering Leader and Senior Frontend Architect with <strong>17+ years of experience</strong> designing resilient, enterprise-scale web platforms for global BFSI clients. Proven record of leading multi-team engineering organizations, driving <strong>Workday platform uploads and HRIS integrations</strong>, modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1/2.2 AA, ADA, Section 508) and client-side security practices.
+        </p>
+        <p>
+          Deep expertise across <strong>React, Next.js, TypeScript, JavaScript ES6+, micro-frontend architectures, web performance (Core Web Vitals), and generative AI developer workflows (Devin AI, GitHub Copilot)</strong>. Experienced in translating complex technical roadmaps into executive narratives, managing risk, forecasting budgets, and cultivating high-retention engineering cultures (<8% attrition).
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Core Competencies & Technical Skills ── -->
+    <section>
+      <h2>Technical Skills &amp; Competencies</h2>
+      <div class="section-content">
+        <div class="skills-category">
+          <strong>Frontend Architecture:</strong> Micro-frontends, Reference Architecture, UI SDK Development, npm &amp; Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization.
+        </div>
+        <div class="skills-category">
+          <strong>Core Technologies:</strong> React, Next.js, TypeScript, JavaScript (ES6+), Redux, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, React Testing Library.
+        </div>
+        <div class="skills-category">
+          <strong>Engineering Leadership:</strong> Agile &amp; Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Capacity Planning, Talent Acquisition, Coaching &amp; Mentorship.
+        </div>
+        <div class="skills-category">
+          <strong>Accessibility &amp; Security:</strong> WCAG 2.1 / 2.2 AA, Section 508, ADA Compliance, axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js).
+        </div>
+        <div class="skills-category">
+          <strong>AI &amp; Developer Productivity:</strong> RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding.
+        </div>
+        <div class="skills-category">
+          <strong>Cloud &amp; DevOps:</strong> Cloudflare Pages &amp; Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, Adobe Experience Manager (AEM / CQ5), Workday HRIS.
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Professional Experience ── -->
+    <section>
+      <h2>Professional Experience</h2>
+
+      <!-- Citicorp -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Assistant Vice President &mdash; Frontend Architecture &amp; Engineering Leadership</span>
+          <span class="job-dates">May 2013 &ndash; Present</span>
+        </div>
+        <div class="job-company-row">
+          <span>Citicorp Services India Pvt. Ltd.</span>
+          <span class="job-location">Pune, India</span>
+        </div>
+        <ul>
+          <li><strong>Led legacy BFSI platform migration</strong> to Micro-frontend architectures across multi-team squads, ensuring 100% business continuity throughout the multi-phase rollout.</li>
+          <li><strong>Architected Autonomous Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension:</strong> Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension &mdash; combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60%.</li>
+          <li><strong>Facilitated Workday platform uploads</strong> and HRIS configuration workflows, validating data integrity at enterprise scale with zero business disruption.</li>
+          <li><strong>Architected enterprise UI, API, and iframe integrations</strong> across multiple distributed platforms, cutting integration complexity by 40% and accelerating feature time-to-market.</li>
+          <li><strong>Delivered up to 50% application load-time improvements</strong> via React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.</li>
+          <li><strong>Pioneered Devin AI and GitHub Copilot adoption</strong> across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%.</li>
+          <li><strong>Established enterprise-wide Section 508 and ADA compliance programme</strong>, integrating axe-core and Lighthouse CI into GitHub Actions alongside NVDA audits, reducing post-deployment remediation spend by 60%.</li>
+          <li><strong>Engineered GitHub-first DevOps pipelines</strong> using GitHub Actions, Advanced Security scanning, Dependabot auto-patching, and GitHub Projects for Agile delivery.</li>
+          <li><strong>Managed End-of-Vendor-Support (EOVS/EOL) transitions</strong> with zero business disruption through strategic migration roadmaps and coordinated cross-functional stakeholder alignments.</li>
+          <li><strong>Maintained team attrition below 8%</strong> across engineering squads through structured 1-on-1s, technical skill ladders, and internal Communities of Practice.</li>
+        </ul>
+      </div>
+
+      <!-- Sapient -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Senior Interactive Developer</span>
+          <span class="job-dates">March 2013 &ndash; May 2013</span>
+        </div>
+        <div class="job-company-row">
+          <span>Sapient</span>
+          <span class="job-location">Bangalore, India</span>
+        </div>
+        <ul>
+          <li>Engineered high-performance responsive UI components for retail clients utilizing HTML5, CSS3, and Adobe Experience Manager (AEM / CQ5).</li>
+        </ul>
+      </div>
+
+      <!-- Cognizant -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Senior Consultant &mdash; CRM UI Architecture</span>
+          <span class="job-dates">December 2010 &ndash; February 2013</span>
+        </div>
+        <div class="job-company-row">
+          <span>Cognizant Technology Solutions</span>
+          <span class="job-location">Hyderabad, India</span>
+        </div>
+        <ul>
+          <li>Architected mobile CRM frontends with Siebel CRM targeting Google Chrome and enterprise tablets, boosting field-force productivity.</li>
+          <li>Developed Oracle CRM API SOAP integrations and led usability testing and heuristic evaluations.</li>
+        </ul>
+      </div>
+
+      <!-- Impetus -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Module Lead &mdash; UI Development</span>
+          <span class="job-dates">June 2007 &ndash; December 2010</span>
+        </div>
+        <div class="job-company-row">
+          <span>Impetus Infotech India Pvt. Ltd.</span>
+          <span class="job-location">India</span>
+        </div>
+        <ul>
+          <li>Led UI engineering pods for enterprise web applications, collaborating closely with senior leadership to govern UI standards and usability lifecycles.</li>
+        </ul>
+      </div>
+
+      <!-- Gatesix -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Lead Web Specialist</span>
+          <span class="job-dates">August 2004 &ndash; June 2007</span>
+        </div>
+        <div class="job-company-row">
+          <span>Gatesix Technologies India Pvt. Ltd.</span>
+          <span class="job-location">India</span>
+        </div>
+        <ul>
+          <li>Defined design systems, development standards, SEO architecture, and W3C web compliance.</li>
+        </ul>
+      </div>
+
+      <!-- Pinnacle -->
+      <div class="job-block">
+        <div class="job-header">
+          <span class="job-title">Senior Web Designer</span>
+          <span class="job-dates">May 2003 &ndash; July 2004</span>
+        </div>
+        <div class="job-company-row">
+          <span>Pinnacle Technosys</span>
+          <span class="job-location">India</span>
+        </div>
+        <ul>
+          <li>Designed and launched compliant web interfaces while conducting R&amp;D on emerging client-side web technologies.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ── Featured Technical Innovations (Personal & Open Source) ── -->
+    <section>
+      <h2>Featured Technical Innovations &amp; Open Systems</h2>
+      <div class="section-content">
+        <p><strong>StateGuard.js:</strong> Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical BFSI transactional workflows (<a href="https://rmsuthar.github.io/StateGuard/">rmsuthar.github.io/StateGuard</a>).</p>
+        <p><strong>Global Edge Sandbox &amp; Multi-Region Load Balancer Inspector:</strong> Edge proxy platform built on Cloudflare Workers simulating web access across 12 global PoPs with framebuster neutralization, biometric WebAuthn security, and WCAG AAA theme system (<a href="https://gateway.lets.gen.in/">gateway.lets.gen.in</a>).</p>
+      </div>
+    </section>
+
+    <!-- ── Education ── -->
+    <section>
+      <h2>Education</h2>
+      <div class="section-content">
+        <div class="job-block">
+          <div class="job-header">
+            <span class="job-title">Post Graduate Diploma in Information Technology</span>
+            <span class="job-dates">1999 &ndash; 2001</span>
+          </div>
+          <div class="job-company-row">
+            <span>Sikkim Manipal University</span>
+            <span class="job-location">India</span>
+          </div>
+        </div>
+
+        <div class="job-block">
+          <div class="job-header">
+            <span class="job-title">Higher Diploma in Software Engineering (HDSE)</span>
+            <span class="job-dates">1999 &ndash; 2001</span>
+          </div>
+          <div class="job-company-row">
+            <span>Aptech Computer Education</span>
+            <span class="job-location">India</span>
+          </div>
+        </div>
+
+        <div class="job-block">
+          <div class="job-header">
+            <span class="job-title">Bachelor of Science (B.Sc.) in Chemistry &amp; Mathematics</span>
+            <span class="job-dates">1996 &ndash; 1999</span>
+          </div>
+          <div class="job-company-row">
+            <span>Gujarat University</span>
+            <span class="job-location">India</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Certifications ── -->
+    <section>
+      <h2>Certifications &amp; Credentials</h2>
+      <div class="section-content">
+        <ul>
+          <li><strong>Certified ScrumMaster (CSM)</strong> &mdash; Scrum Alliance</li>
+          <li><strong>AWS Cloud Practitioner</strong> &mdash; Amazon Web Services</li>
+          <li><strong>IBM Design Thinking Practitioner</strong> &mdash; IBM</li>
+          <li><strong>Google Analytics Certified</strong> &mdash; Google</li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- ── Cloudflare Workers AI Copilot Modal & Drawer ── -->
+  <div id="ai-copilot-backdrop" class="ai-modal-backdrop" aria-hidden="true"></div>
+
+  <section id="ai-copilot-drawer" class="ai-copilot-drawer" role="dialog" aria-labelledby="ai-drawer-heading" aria-modal="true" aria-hidden="true">
+    <div class="ai-drawer-header">
+      <div class="ai-header-info">
+        <div id="ai-drawer-heading" class="ai-header-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+          </svg>
+          <span>Ravindra AI Copilot</span>
+        </div>
+        <div class="ai-edge-status">
+          <span>Cloudflare Workers AI @ Edge &bull; Llama 3.1</span>
+        </div>
+      </div>
+      <button id="ai-drawer-close" class="ai-drawer-close" type="button" aria-label="Close AI Copilot Dialog">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <div class="ai-tab-nav" role="tablist">
+      <button class="ai-tab-btn active" role="tab" aria-selected="true" data-tab="chat">Interactive Q&amp;A</button>
+      <button class="ai-tab-btn" role="tab" aria-selected="false" data-tab="matcher">Role Fit Matcher</button>
+    </div>
+
+    <!-- Chat Tab Pane -->
+    <div id="ai-tab-chat-pane" style="display: flex; flex-direction: column; flex: 1; overflow: hidden;">
+      <div id="ai-messages-list" class="ai-messages-container" aria-live="polite">
+        <div class="ai-message assistant">
+          <div class="ai-message-bubble">
+            <p><strong>Hello! I am Ravindra's Executive AI Copilot.</strong></p>
+            <p>I can answer questions regarding Ravindra's 17+ years of frontend architecture leadership at Citicorp, his unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, StateGuard.js DOM security, or evaluate alignment with your open requisition.</p>
+          </div>
+          <div class="ai-message-meta">
+            <span>Verified Knowledge Base &bull; Cloudflare Workers AI</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="ai-drawer-suggestions">
+        <button type="button" class="ai-drawer-chip" data-prompt="Why hire Ravindra as VP / Principal Frontend Architect?">🌟 Why Hire?</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="Explain his unified Non-AEM to AEM migration AI agent working with a custom VS Code extension.">🤖 AEM Agent &amp; VS Code</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="What is StateGuard.js and how does it protect DOM security?">🛡️ StateGuard</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="How did he deliver 50% application load-time improvements?">⚡ Performance</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="What is his experience with Workday integrations?">📋 Workday</button>
+      </div>
+
+      <form id="ai-chat-form" class="ai-input-form">
+        <input id="ai-chat-input" class="ai-input-field" type="text" placeholder="Ask about architecture, leadership, or projects..." autocomplete="off" required>
+        <button class="ai-send-btn" type="submit" aria-label="Send message">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Matcher Tab Pane -->
+    <div id="ai-tab-matcher-pane" class="ai-matcher-container" style="display: none;">
+      <p class="ai-matcher-desc">
+        Paste a Job Description or select a role template below to analyze alignment against Ravindra's verified credentials.
+      </p>
+
+      <div class="ai-jd-presets">
+        <button type="button" class="ai-preset-chip" data-title="VP of Engineering / Frontend Architect">VP / Principal Architect</button>
+        <button type="button" class="ai-preset-chip" data-title="Head of Web Platform & AEM Modernization">Head of Web Platform</button>
+        <button type="button" class="ai-preset-chip" data-title="Director of Frontend Architecture (BFSI)">Director of Frontend</button>
+      </div>
+
+      <textarea id="ai-jd-input" class="ai-jd-textarea" placeholder="Paste target Job Description here (e.g. Seeking Principal Architect with React, Micro-frontends, AI toolchains, and enterprise governance)..."></textarea>
+
+      <button id="ai-jd-submit" class="btn btn-primary" type="button" style="width: 100%; justify-content: center; background: #2563eb; color: #fff; padding: 8px 16px; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+        </svg>
+        <span>Evaluate Role Alignment</span>
+      </button>
+
+      <div id="ai-jd-results" style="display: none;"></div>
+    </div>
+  </section>
+
+  <!-- App Script -->
+  <script src="app.js" defer></script>
+</body>
+</html>

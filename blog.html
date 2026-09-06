@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Engineering Journal & Architecture Guide | Ravindrakumar M. Suthar</title>
+  <meta name="description" content="A deep dive into 17+ years of UI architecture, product engineering, and technical leadership by Ravindrakumar M. Suthar. Exploring Micro-frontends, System Design, Resiliency, and AI.">
+  
+  <link rel="canonical" href="https://ravindra.lets.gen.in/blog">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css?v=20260906-ai2">
+
+  <style>
+    .article-container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 5rem;
+    }
+    .article-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--border-subtle);
+      padding-bottom: 1.5rem;
+    }
+    .article-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .article-meta {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+    .journal-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: var(--shadow-xs);
+    }
+    .journal-section h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--brand-primary);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .journal-section h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin: 1.25rem 0 0.5rem;
+    }
+    .journal-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    .code-block {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      color: var(--text-primary);
+      overflow-x: auto;
+      margin: 1rem 0;
+      line-height: 1.5;
+    }
+    .tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <!-- Sticky Nav -->
+  <header class="top-nav" role="banner">
+    <div class="container top-nav-inner">
+      <a href="/" class="brand-badge">
+        <img src="favicon.svg" alt="RS Logo" class="brand-logo" width="36" height="36">
+        <div class="brand-info">
+          <span class="brand-name">Ravindra Suthar</span>
+          <span class="brand-title">Engineering Journal &amp; Architecture</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="btn btn-sm">&larr; Profile &amp; CV</a>
+        <a href="/resume" class="btn btn-sm">Workday ATS Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="article-container">
+    <div class="article-header">
+      <div class="status-pill">
+        <span class="status-dot"></span>
+        <span>17+ Years Frontend Architecture &amp; System Design</span>
+      </div>
+      <h1 class="article-title">Engineering Journal &amp; Architecture Guide</h1>
+      <div class="article-meta">
+        <span>By <strong>Ravindrakumar M. Suthar</strong></span>
+        <span>&bull;</span>
+        <span>Assistant Vice President, Frontend Architecture</span>
+        <span>&bull;</span>
+        <span>Enterprise BFSI Scale</span>
+      </div>
+    </div>
+
+    <!-- Chapter 1: Micro-Frontends -->
+    <article class="journal-section">
+      <h2>01. Micro-frontends (MFE) in Enterprise BFSI</h2>
+      <p>
+        Moving legacy monoliths into distributed micro-frontends requires maintaining 100% business continuity with zero runtime downtime. In financial services, containment, deterministic routing, and postMessage security protocols are essential.
+      </p>
+      <h3>Core Principles</h3>
+      <p>
+        <strong>Sub-App Containment:</strong> Ensuring host and child applications communicate strictly through typed contracts rather than sharing global scope window objects.
+      </p>
+      <p>
+        <strong>Zero-Downtime Multi-Phase Rollout:</strong> Decoupled deployments allow autonomous squad velocity without monolithic coordination releases.
+      </p>
+      <div class="tag-strip">
+        <span class="badge">Module Federation</span>
+        <span class="badge">Micro-frontends</span>
+        <span class="badge">Decoupled CI/CD</span>
+        <span class="badge">postMessage Protocols</span>
+      </div>
+    </article>
+
+    <!-- Chapter 2: SDK Development & Monorepos -->
+    <article class="journal-section">
+      <h2>02. Enterprise SDK Development &amp; Workspaces</h2>
+      <p>
+        Scaling frontend engineering across dozens of squads requires centralized UI platforms and robust SDK governance.
+      </p>
+      <h3>npm &amp; Yarn Workspaces</h3>
+      <p>
+        Monorepo architectures streamline dependency alignment, standardizing design tokens, telemetry hooks, and authentication clients across internal and client-facing digital products.
+      </p>
+      <div class="code-block">
+// Reference Architecture: Typed Event Bus
+interface UIPlatformEvent&lt;T = unknown&gt; {
+  type: string;
+  source: 'host' | 'sub-app';
+  payload: T;
+  timestamp: number;
+}
+      </div>
+      <div class="tag-strip">
+        <span class="badge">Enterprise SDKs</span>
+        <span class="badge">Yarn Workspaces</span>
+        <span class="badge">Design Tokens</span>
+        <span class="badge">Event Bus</span>
+      </div>
+    </article>
+
+    <!-- Chapter 3: Resiliency & Circuit Breakers -->
+    <article class="journal-section">
+      <h2>03. Advanced Resiliency: The Frontend Circuit Breaker</h2>
+      <p>
+        External downstream APIs fail. High-availability BFSI user experiences must gracefully degrade rather than crashing the client session.
+      </p>
+      <p>
+        Implementing client-side circuit breakers prevents cascading network stalls, automatically serving cached fallbacks or localized offline state while alerting observability systems.
+      </p>
+      <div class="tag-strip">
+        <span class="badge">Circuit Breakers</span>
+        <span class="badge">Self-Healing UI</span>
+        <span class="badge">Graceful Degradation</span>
+        <span class="badge">Observability</span>
+      </div>
+    </article>
+
+    <!-- Chapter 4: Generative AI & Autonomous Agents -->
+    <article class="journal-section">
+      <h2>04. Agentic AI &amp; Developer Productivity</h2>
+      <p>
+        Pioneering <strong>Devin AI</strong> autonomous agents and standardizing <strong>GitHub Copilot</strong> across development squads saves ~35% developer effort on boilerplate, test scaffolding, and migrations while accelerating PR review velocity by 40%.
+      </p>
+      <p>
+        AI-augmented engineering shifts developer focus from syntax typing to architectural governance, security boundaries, and domain logic.
+      </p>
+      <div class="tag-strip">
+        <span class="badge badge-ai">Devin AI</span>
+        <span class="badge badge-ai">GitHub Copilot</span>
+        <span class="badge badge-ai">Antigravity SDK</span>
+        <span class="badge badge-ai">Autonomous Agents</span>
+      </div>
+    </article>
+
+    <!-- Chapter 5: Client-Side Security & Accessibility -->
+    <article class="journal-section">
+      <h2>05. Security Governance &amp; Accessibility (WCAG 2.1/2.2 AA)</h2>
+      <p>
+        Embedding security and accessibility checks on Day 1 of the development lifecycle cuts post-deployment remediation expenses by 60%.
+      </p>
+      <p>
+        <strong>StateGuard.js</strong> locks DOM attributes at runtime to thwart DevTools tampering in transactional banking workflows, while automated axe-core and Lighthouse CI regression gates ensure complete compliance across all customer touchpoints.
+      </p>
+      <div class="tag-strip">
+        <span class="badge badge-security">WCAG 2.1/2.2 AA</span>
+        <span class="badge badge-security">Section 508 &amp; ADA</span>
+        <span class="badge badge-security">StateGuard.js</span>
+        <span class="badge badge-security">CSPShield</span>
+      </div>
+    </article>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="edge-badge">
+        <span>Hosted on Cloudflare Global Edge &bull; ravindra.lets.gen.in</span>
+      </div>
+      <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Assistant Vice President &bull; Citicorp Services India</p>
+    </div>
+  </footer>
+
+  <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+# Ravindrakumar M. Suthar — Executive Profile & Resume
+
+> Senior Frontend Architect & Engineering Leader with 17+ years of experience in enterprise BFSI platforms, React, Next.js, Micro-frontends, Web Performance, WCAG Accessibility, and AI-Augmented Engineering.
+
+## Summary
+- **Current Role**: Assistant Vice President, Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (May 2013 – Present)
+- **Location**: Pune, Maharashtra, India
+- **Contact**: ravindra.suthar@me.com | +91 83800 99988
+- **Official Site**: https://ravindra.lets.gen.in/
+- **LinkedIn**: https://www.linkedin.com/in/ravindrasuthar/
+- **Tools & Innovations**: https://rmsuthar.github.io/tools
+
+## Key Highlights
+- **17+ Years** of enterprise product engineering experience.
+- **50% Frontend Performance Improvement** via Core Web Vitals, lazy loading, and bundle splitting.
+- **100% WCAG 2.1/2.2 AA & ADA Compliance** operationalized with axe-core and Lighthouse CI.
+- **~35% Engineering Effort Saved** by pioneering Devin AI autonomous coding agents.
+- **60%+ Faster Replatforming at Citicorp**: Architected an autonomous Non-AEM to AEM Migration AI Agent working in tandem with a custom VS Code extension — leveraging RAG, automated prompt templates, and AST scripts directly in developer IDEs to convert non-AEM components into Adobe Experience Manager (AEM).
+- **Micro-Frontend Migration** of legacy BFSI systems with 100% uptime.
+
+## Core Technical Competencies
+- **Architecture**: Micro-frontends, Reference Architecture, Enterprise SDKs, UI Platforms, postMessage protocols.
+- **Frontend**: React, Next.js, TypeScript, JavaScript ES6+, Redux, Zustand, Tailwind CSS, Vite, Cypress.
+- **Leadership**: Agile/Scrum (CSM), SDLC Optimization, Team Mentorship (<8% attrition), Cost Forecasting.
+- **Security & A11y**: WCAG 2.1/2.2 AA, Section 508, ADA, CSP, OWASP, Client-side Integrity (StateGuard.js).
+- **AI & DevOps**: RAG (Retrieval-Augmented Generation), Autonomous Migration Agents, VS Code Extension Development, Prompt Engineering, Devin AI, GitHub Copilot, Claude/OpenAI APIs, GitHub Actions, Dependabot, Cloudflare Workers & Pages.
+
+## Featured Personal & Open-Source Projects
+- **StateGuard.js**: JavaScript utility locking DOM attributes against DevTools tampering for BFSI state integrity (https://rmsuthar.github.io/StateGuard/).
+- **Global Edge Sandbox & LB Inspector**: Cloudflare Workers edge computing platform simulating 12 PoP locations globally with WebAuthn auth (https://gateway.lets.gen.in/).
