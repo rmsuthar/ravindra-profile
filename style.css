@@ -1700,7 +1700,7 @@ body.ai-drawer-open .ai-copilot-trigger,
 }
 
 /* ── Responsive Media Queries ──────────────────────────────────────────── */
-@media (max-width: 1024px) {
+@media screen and (max-width: 1024px) {
   .container {
     padding: 0 1.25rem;
   }
@@ -1716,7 +1716,7 @@ body.ai-drawer-open .ai-copilot-trigger,
   }
 }
 
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
   .container {
     padding: 0 1rem;
   }
@@ -2154,7 +2154,7 @@ body.ai-drawer-open .ai-copilot-trigger,
   }
 }
 
-@media (max-width: 480px) {
+@media screen and (max-width: 480px) {
   .hero-card {
     padding: 1.25rem 0.9rem;
   }
@@ -2193,8 +2193,29 @@ body.ai-drawer-open .ai-copilot-trigger,
     size: A4 portrait;
   }
 
+  *,
+  *::before,
+  *::after {
+    filter: none !important;
+    -webkit-filter: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    background-image: none !important;
+  }
+
+  body::before,
+  body::after {
+    display: none !important;
+    content: none !important;
+    filter: none !important;
+    background: none !important;
+  }
+
   body {
     background: #ffffff !important;
+    background-image: none !important;
     color: #111827 !important;
     font-size: 10.5pt;
     line-height: 1.45;
@@ -2202,6 +2223,8 @@ body.ai-drawer-open .ai-copilot-trigger,
 
   /* Hide interactive / non-printable elements */
   .top-nav,
+  .section-nav,
+  .skip-link,
   .hero-actions,
   .skills-filter-nav,
   .toggle-history-btn,
@@ -2231,6 +2254,9 @@ body.ai-drawer-open .ai-copilot-trigger,
     border: none !important;
     background: transparent !important;
     box-shadow: none !important;
+    border-radius: 0 !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 
   .hero-card::before {
@@ -2247,6 +2273,7 @@ body.ai-drawer-open .ai-copilot-trigger,
     color: #1d4ed8 !important;
     -webkit-text-fill-color: initial !important;
     background: none !important;
+    background-image: none !important;
   }
 
   .hero-headline {
@@ -2273,9 +2300,12 @@ body.ai-drawer-open .ai-copilot-trigger,
 
   .kpi-card {
     border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
     padding: 6pt !important;
     background: #f8fafc !important;
     box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 
   .kpi-number {
@@ -2307,10 +2337,14 @@ body.ai-drawer-open .ai-copilot-trigger,
   .summary-card {
     border: 1px solid #e2e8f0 !important;
     border-left: 3pt solid #1e3a8a !important;
+    border-radius: 4px !important;
     padding: 8pt 10pt !important;
     font-size: 9.5pt !important;
     line-height: 1.5 !important;
     background: #ffffff !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 
   .timeline {
@@ -2322,7 +2356,10 @@ body.ai-drawer-open .ai-copilot-trigger,
     border-bottom: 1px solid #e2e8f0 !important;
     border-radius: 0 !important;
     padding: 6pt 0 !important;
+    background: transparent !important;
     box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
     page-break-inside: avoid;
     break-inside: avoid;
   }
@@ -2344,17 +2381,43 @@ body.ai-drawer-open .ai-copilot-trigger,
     margin-bottom: 3pt !important;
   }
 
+  .skills-matrix {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 8pt !important;
+  }
+
+  .skill-category-card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    padding: 6pt 8pt !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
   .badge {
     border: 1px solid #cbd5e1 !important;
+    border-radius: 3px !important;
     background: #f8fafc !important;
     color: #1e293b !important;
     font-size: 7.5pt !important;
     padding: 1pt 4pt !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
   }
 
   .project-card {
     border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
     box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
     page-break-inside: avoid;
     break-inside: avoid;
     padding: 8pt !important;
@@ -2363,6 +2426,18 @@ body.ai-drawer-open .ai-copilot-trigger,
   .project-desc {
     font-size: 8.5pt !important;
     line-height: 1.4 !important;
+  }
+
+  .credential-card {
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 4px !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+    padding: 6pt 8pt !important;
   }
 
   a {

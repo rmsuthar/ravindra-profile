@@ -411,7 +411,14 @@ def audit_workday_compatibility():
     pdf_pct = int((pdf_score / total) * 100)
     log(f"Workday ATS Compatibility Score: DOCX = {docx_pct}%, PDF = {pdf_pct}%")
 
-    return docx_pct == 100 and pdf_pct == 100
+    # 3. Vector Purity & Anti-Blur Audit (Zero rasterized Image XObjects)
+    with open(pdf_path, 'rb') as f:
+        pdf_bytes = f.read()
+    image_xobjects = pdf_bytes.count(b'/Subtype /Image')
+    vector_pure = (image_xobjects == 0)
+    log(f"  [Vector Purity Audit] Raster Image XObjects: {image_xobjects} -> {'PASS (100% Vector Crisp)' if vector_pure else 'FAIL (Contains Blurry Images)'}")
+
+    return docx_pct == 100 and pdf_pct == 100 and vector_pure
 
 if __name__ == "__main__":
     log("Starting End-to-End Workday ATS Resume Synchronization...")
