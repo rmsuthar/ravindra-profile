@@ -91,8 +91,10 @@ def generate_workday_docx():
     paragraphs.append(make_p([
         make_run("LinkedIn: ", bold=True, size=18, color="4A5568"),
         make_run("https://www.linkedin.com/in/ravindrasuthar/  |  ", size=18, color="2B6CB0"),
-        make_run("Profile & Portfolio: ", bold=True, size=18, color="4A5568"),
-        make_run("https://ravindra.lets.gen.in/", size=18, color="2B6CB0")
+        make_run("Portfolio: ", bold=True, size=18, color="4A5568"),
+        make_run("https://ravindra.lets.gen.in/  |  ", size=18, color="2B6CB0"),
+        make_run("Tools: ", bold=True, size=18, color="4A5568"),
+        make_run("https://ravindra.lets.gen.in/tools", size=18, color="2B6CB0")
     ], space_before=0, space_after=140, align="center"))
 
     # 2. Professional Summary
@@ -231,6 +233,11 @@ def generate_workday_docx():
     paragraphs.append(make_p([
         make_run("StateGuard.js: ", bold=True, size=19, color="1A202C"),
         make_run("Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical BFSI transactional workflows (rmsuthar.github.io/StateGuard).", size=19, color="2D3748")
+    ], space_before=25, space_after=25))
+
+    paragraphs.append(make_p([
+        make_run("Enterprise Developer Tools & Utilities: ", bold=True, size=19, color="1A202C"),
+        make_run("Production-grade client-side developer toolbox and security utilities (https://ravindra.lets.gen.in/tools).", size=19, color="2D3748")
     ], space_before=25, space_after=25))
 
     paragraphs.append(make_p([
