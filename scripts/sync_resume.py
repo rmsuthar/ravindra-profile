@@ -104,7 +104,7 @@ def generate_workday_docx():
         make_run("17+ years of experience", bold=True),
         make_run(" designing resilient, enterprise-scale web platforms for global BFSI clients. Proven track record of leading multi-team engineering organizations, driving "),
         make_run("Workday platform uploads and HRIS integrations", bold=True),
-        make_run(", modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1/2.2 AA, ADA, Section 508) and client-side security practices.")
+        make_run(", modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1 & 2.2 Level AA/AAA, ADA, Section 508) and client-side security practices.")
     ], space_before=30, space_after=60))
 
     paragraphs.append(make_p([
@@ -120,7 +120,7 @@ def generate_workday_docx():
         ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
         ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
         ("Engineering Leadership", "Cross-Functional Leadership, Agile & Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching & Mentorship."),
-        ("Accessibility & Security", "WCAG 2.1 / 2.2 AA, Section 508, ADA Compliance, axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
+        ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
         ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
         ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, Adobe Experience Manager (AEM / CQ5), Workday HRIS.")
     ]
@@ -397,7 +397,8 @@ def audit_workday_compatibility():
         ("LinkedIn URL", "linkedin.com/in/ravindrasuthar"),
         ("Micro-frontend Skill", "Module Federation"),
         ("Modern State Skill", "Redux Toolkit"),
-        ("Leadership Competency", "Cross-Functional Leadership")
+        ("Leadership Competency", "Cross-Functional Leadership"),
+        ("Accessibility Standard", "WCAG")
     ]
 
     docx_score = 0

@@ -338,9 +338,11 @@ function initCloudflareAICopilot() {
   if (!drawer) return;
 
   const chatHistory = [];
+  let lastActiveElement = null;
 
   // Toggle Drawer
   function openDrawer(tab = 'chat') {
+    lastActiveElement = document.activeElement;
     drawer.classList.add('open');
     if (backdrop) backdrop.classList.add('open');
     document.body.classList.add('ai-drawer-open');
@@ -358,7 +360,19 @@ function initCloudflareAICopilot() {
     if (triggerBtn) triggerBtn.classList.remove('hidden');
     drawer.setAttribute('aria-hidden', 'true');
     if (backdrop) backdrop.setAttribute('aria-hidden', 'true');
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      lastActiveElement.focus();
+    } else if (triggerBtn) {
+      triggerBtn.focus();
+    }
   }
+
+  // WCAG SC 2.1.2: Close drawer on Escape key and restore focus
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('open')) {
+      closeDrawer();
+    }
+  });
 
   if (triggerBtn) {
     triggerBtn.addEventListener('click', () => {

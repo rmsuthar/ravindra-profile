@@ -68,7 +68,7 @@
       "Next.js",
       "TypeScript",
       "Web Performance & Core Web Vitals",
-      "Accessibility (WCAG 2.1/2.2 AA, Section 508, ADA)",
+      "Accessibility (WCAG 2.1 & 2.2 Level AA/AAA, Section 508, ADA)",
       "Web Security (CSP, OWASP)",
       "Generative AI & Autonomous Coding Agents (Devin AI, Copilot)",
       "Retrieval-Augmented Generation (RAG)",
@@ -80,11 +80,16 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260907-print">
+  <link rel="stylesheet" href="style.css?v=20260908-wcag22">
 </head>
 <body>
-  <!-- Skip link for keyboard accessibility -->
-  <a href="#main-content" class="skip-link">Skip to main content</a>
+  <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
+  <nav class="skip-links-container" aria-label="Skip navigation links">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#experience" class="skip-link">Skip to professional experience</a>
+    <a href="#skills" class="skip-link">Skip to technical skills</a>
+    <a href="#contact" class="skip-link">Skip to contact information</a>
+  </nav>
 
   <!-- ── Top Sticky Navigation Bar ── -->
   <header class="top-nav" role="banner">
@@ -297,7 +302,7 @@
         </div>
         <div class="kpi-card">
           <div class="kpi-number">100%</div>
-          <div class="kpi-label">WCAG 2.1/2.2 AA Compliance</div>
+          <div class="kpi-label">WCAG 2.1/2.2 AA/AAA</div>
         </div>
         <div class="kpi-card">
           <div class="kpi-number">~35%</div>
@@ -363,7 +368,7 @@
           Product Engineering Leader and Frontend Architect with <strong>17+ years of track record</strong> designing resilient, enterprise-scale web platforms for global BFSI clients. Proven expertise leading multi-team engineering organizations, modernizing legacy systems into zero-downtime micro-frontends, establishing company-wide accessibility and client-side security practices, and driving early adoption of generative AI engineering workflows.
         </p>
         <p style="margin-top: 0.85rem;">
-          Specialized in <strong>React, Next.js, TypeScript, JavaScript ES6+, micro-frontend reference architectures, web performance (Core Web Vitals), WCAG 2.1/2.2 AA, Section 508, ADA, and autonomous developer agents (Devin AI, GitHub Copilot)</strong>. Seasoned in partnering with executive stakeholders, translating technical strategy into high-ROI business outcomes, managing budgets and risk, and fostering high-performing, low-attrition engineering cultures.
+          Specialized in <strong>React, Next.js, TypeScript, JavaScript ES6+, micro-frontend reference architectures, web performance (Core Web Vitals), WCAG 2.1 &amp; 2.2 (Level AA/AAA), Section 508, ADA, and autonomous developer agents (Devin AI, GitHub Copilot)</strong>. Seasoned in partnering with executive stakeholders, translating technical strategy into high-ROI business outcomes, managing budgets and risk, and fostering high-performing, low-attrition engineering cultures.
         </p>
       </div>
     </section>
@@ -471,7 +476,7 @@
             Accessibility &amp; Client Security
           </div>
           <div class="skill-tags">
-            <span class="badge badge-security">WCAG 2.1 / 2.2 AA</span>
+            <span class="badge badge-security">WCAG 2.1 &amp; 2.2 (AA/AAA)</span>
             <span class="badge badge-security">Section 508 &amp; ADA Compliance</span>
             <span class="badge badge-security">axe-core &amp; Lighthouse CI</span>
             <span class="badge badge-security">NVDA Audits</span>
@@ -572,7 +577,7 @@
             <span class="badge">Micro-frontends</span>
             <span class="badge">Devin AI</span>
             <span class="badge">GitHub Copilot</span>
-            <span class="badge">WCAG 2.1/2.2 AA</span>
+            <span class="badge">WCAG 2.1 &amp; 2.2 (AA/AAA)</span>
             <span class="badge">GitHub Actions</span>
             <span class="badge">Workday</span>
             <span class="badge">BFSI Scale</span>
@@ -963,9 +968,9 @@
       </div>
 
       <form id="ai-chat-form" class="ai-input-form">
-        <input id="ai-chat-input" class="ai-input-field" type="text" placeholder="Ask about architecture, leadership, or projects..." autocomplete="off" required>
-        <button class="ai-send-btn" type="submit" aria-label="Send message">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <input id="ai-chat-input" class="ai-input-field" type="text" placeholder="Ask about architecture, leadership, or projects..." autocomplete="off" aria-label="Ask Ravindra's AI Copilot a question" required>
+        <button class="ai-send-btn" type="submit" aria-label="Send message to AI Copilot">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" focusable="false">
             <line x1="22" y1="2" x2="11" y2="13"></line>
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
           </svg>
@@ -985,7 +990,7 @@
         <button type="button" class="ai-preset-chip" data-title="Director of Frontend Architecture (BFSI)">Director of Frontend</button>
       </div>
 
-      <textarea id="ai-jd-input" class="ai-jd-textarea" placeholder="Paste target Job Description here (e.g. Seeking Principal Architect with React, Micro-frontends, AI toolchains, and enterprise governance)..."></textarea>
+      <textarea id="ai-jd-input" class="ai-jd-textarea" placeholder="Paste target Job Description here (e.g. Seeking Principal Architect with React, Micro-frontends, AI toolchains, and enterprise governance)..." aria-label="Target Job Description to analyze against Ravindra's credentials"></textarea>
 
       <button id="ai-jd-submit" class="btn btn-primary" type="button" style="width: 100%; justify-content: center;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

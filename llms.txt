@@ -13,7 +13,7 @@
 ## Key Highlights
 - **17+ Years** of enterprise product engineering experience.
 - **50% Frontend Performance Improvement** via Core Web Vitals, lazy loading, and bundle splitting.
-- **100% WCAG 2.1/2.2 AA & ADA Compliance** operationalized with axe-core and Lighthouse CI.
+- **100% WCAG 2.1 & 2.2 (Level AA/AAA) & ADA Compliance** operationalized with axe-core, Lighthouse CI, and NVDA.
 - **~35% Engineering Effort Saved** by pioneering Devin AI autonomous coding agents.
 - **60%+ Faster Replatforming at Citicorp**: Architected an autonomous Non-AEM to AEM Migration AI Agent working in tandem with a custom VS Code extension — leveraging RAG, automated prompt templates, and AST scripts directly in developer IDEs to convert non-AEM components into Adobe Experience Manager (AEM).
 - **Micro-Frontend Migration** of legacy BFSI systems with 100% uptime.
@@ -22,7 +22,7 @@
 - **Architecture**: Micro-frontends, Reference Architecture, Enterprise SDKs, UI Platforms, postMessage protocols.
 - **Frontend**: React, Next.js, TypeScript, JavaScript ES6+, Redux, Zustand, Tailwind CSS, Vite, Cypress.
 - **Leadership**: Agile/Scrum (CSM), SDLC Optimization, Team Mentorship (<8% attrition), Cost Forecasting.
-- **Security & A11y**: WCAG 2.1/2.2 AA, Section 508, ADA, CSP, OWASP, Client-side Integrity (StateGuard.js).
+- **Security & A11y**: WCAG 2.1 & 2.2 (Level AA / AAA), Focus Appearance, Focus Not Obscured, Target Size, Section 508, ADA, CSP, OWASP, Client-side Integrity (StateGuard.js).
 - **AI & DevOps**: RAG (Retrieval-Augmented Generation), Autonomous Migration Agents, VS Code Extension Development, Prompt Engineering, Devin AI, GitHub Copilot, Claude/OpenAI APIs, GitHub Actions, Dependabot, Cloudflare Workers & Pages.
 
 ## Featured Personal & Open-Source Projects

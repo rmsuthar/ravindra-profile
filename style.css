@@ -20,7 +20,7 @@
 
   --text-primary: #0f172a;
   --text-secondary: #334155;
-  --text-muted: #64748b;
+  --text-muted: #475569;
   --text-inverse: #ffffff;
 
   --brand-primary: #2563eb;
@@ -84,30 +84,123 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Accessibility Focus States */
-a:focus-visible,
-button:focus-visible,
-input:focus-visible {
-  outline: 2px solid var(--border-focus);
-  outline-offset: 3px;
+/* ── Accessibility & WCAG 2.2 Standards ───────────────────────────────── */
+
+/* WCAG 2.2 SC 2.4.13: Focus Appearance (Level AAA Enhanced 3:1 Contrast & Perimeter) */
+:focus-visible {
+  outline: 3px solid #1d4ed8 !important;
+  outline-offset: 3px !important;
+  box-shadow: 0 0 0 5px rgba(29, 78, 216, 0.25) !important;
 }
 
-/* Skip link for a11y */
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* WCAG 2.2 SC 2.4.11 & SC 2.4.12: Focus Not Obscured (Minimum & Enhanced)
+   Ensures focused items, anchors, and cards are never obscured by the sticky header (120px) or floating actions (90px) */
+:target,
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible,
+.section,
+.hero-section,
+.timeline-item,
+.skill-category-card,
+.project-card,
+.credential-card {
+  scroll-margin-top: 120px;
+  scroll-margin-bottom: 90px;
+}
+
+/* Accessible Multi-Anchor Skip Links */
+.skip-links-container {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  pointer-events: none;
+}
+
 .skip-link {
   position: absolute;
-  top: -40px;
-  left: 1rem;
-  background: var(--brand-primary);
-  color: #fff;
-  padding: 0.5rem 1rem;
-  z-index: 1000;
+  top: -150px;
+  left: 0;
+  background: #0f172a;
+  color: #ffffff;
+  padding: 0.65rem 1.15rem;
+  border: 2px solid #3b82f6;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 0.88rem;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  pointer-events: auto;
   transition: top var(--transition-fast);
+  white-space: nowrap;
 }
-.skip-link:focus {
-  top: 1rem;
+
+.skip-link:focus,
+.skip-link:focus-visible {
+  position: relative;
+  top: 0;
+  outline: 3px solid #60a5fa !important;
+  outline-offset: 2px !important;
+}
+
+/* WCAG 2.2 SC 2.5.8: Target Size (Minimum 24x24px, Recommended 36-44px Touch Targets) */
+button,
+input,
+textarea,
+select,
+.btn,
+.nav-chip,
+.prompt-chip,
+.ai-tab-btn,
+.view-btn {
+  min-height: 36px;
+}
+
+.btn-sm {
+  min-height: 32px;
+}
+
+/* WCAG SC 2.3.3: Respect User Motion Preferences (Reduced Motion) */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto !important;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Windows High Contrast / Forced Colors Mode Support */
+@media (forced-colors: active) {
+  :focus-visible {
+    outline: 3px solid Highlight !important;
+    outline-offset: 3px !important;
+  }
+  .badge,
+  .nav-chip,
+  .prompt-chip,
+  .btn,
+  .kpi-card,
+  .timeline-item {
+    forced-color-adjust: none;
+    border: 1px solid ButtonText !important;
+  }
 }
 
 /* Container */
@@ -1340,7 +1433,9 @@ body.ai-drawer-open .ai-copilot-trigger,
   border: none;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 0.35rem;
+  padding: 0.5rem;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -1465,11 +1560,17 @@ body.ai-drawer-open .ai-copilot-trigger,
 
 .ai-copy-btn {
   background: none;
-  border: none;
+  border: 1px solid transparent;
   color: var(--text-muted);
   cursor: pointer;
-  padding: 2px;
-  font-size: 0.68rem;
+  padding: 4px 8px;
+  min-width: 32px;
+  min-height: 32px;
+  font-size: 0.74rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .ai-copy-btn:hover {

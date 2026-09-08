@@ -77,12 +77,29 @@
       align-items: center;
       gap: 6px;
       padding: 6px 14px;
+      min-height: 36px;
       border-radius: 6px;
       font-size: 0.85rem;
       font-weight: 600;
       cursor: pointer;
       text-decoration: none;
       transition: all 0.15s;
+    }
+
+    /* WCAG 2.2 SC 2.4.13: Focus Appearance (Level AAA) */
+    :focus-visible {
+      outline: 3px solid #1d4ed8 !important;
+      outline-offset: 3px !important;
+      box-shadow: 0 0 0 5px rgba(29, 78, 216, 0.25) !important;
+    }
+    :focus:not(:focus-visible) {
+      outline: none;
+    }
+    :target,
+    a:focus-visible,
+    button:focus-visible,
+    section {
+      scroll-margin-top: 100px;
     }
 
     .btn-primary {
@@ -415,11 +432,17 @@
       color: #ffffff !important;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=20260906-ai2">
+  <link rel="stylesheet" href="style.css?v=20260908-wcag22">
 </head>
 <body>
+  <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
+  <nav class="skip-links-container" aria-label="Skip navigation links">
+    <a href="#resume-main" class="skip-link">Skip to resume content</a>
+    <a href="#experience-section" class="skip-link">Skip to professional experience</a>
+    <a href="#skills-section" class="skip-link">Skip to technical skills</a>
+  </nav>
 
-  <div class="ats-container">
+  <main id="resume-main" class="ats-container">
 
     <!-- Screen Navigation Bar -->
     <div class="action-bar">
@@ -449,7 +472,7 @@
           <span>Download PDF</span>
         </a>
 
-        <button onclick="window.print()" class="btn btn-primary" title="Print or save as clean PDF">
+        <button onclick="window.print()" class="btn btn-primary" type="button" title="Print or save as clean PDF" aria-label="Print or save as clean PDF resume">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polyline points="6 9 6 2 18 2 18 9"></polyline>
             <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
@@ -458,7 +481,7 @@
           <span>Print / Export PDF</span>
         </button>
 
-        <button id="ai-copilot-trigger" class="btn btn-outline btn-ai" type="button" title="Open Cloudflare Workers AI Copilot (Llama 3.1)">
+        <button id="ai-copilot-trigger" class="btn btn-outline btn-ai" type="button" title="Open Cloudflare Workers AI Copilot (Llama 3.1)" aria-label="Open Cloudflare Workers AI Copilot">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
           </svg>
@@ -488,17 +511,17 @@
       <h2>Professional Summary</h2>
       <div class="section-content">
         <p>
-          Product Engineering Leader and Senior Frontend Architect with <strong>17+ years of experience</strong> designing resilient, enterprise-scale web platforms for global BFSI clients. Proven record of leading multi-team engineering organizations, driving <strong>Workday platform uploads and HRIS integrations</strong>, modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1/2.2 AA, ADA, Section 508) and client-side security practices.
+          Product Engineering Leader and Senior Frontend Architect with <strong>17+ years of experience</strong> designing resilient, enterprise-scale web platforms for global BFSI clients. Proven record of leading multi-team engineering organizations, driving <strong>Workday platform uploads and HRIS integrations</strong>, modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1 &amp; 2.2 Level AA/AAA, ADA, Section 508) and client-side security practices.
         </p>
         <p>
-          Deep expertise across <strong>React, Next.js, TypeScript, JavaScript ES6+, micro-frontend architectures, web performance (Core Web Vitals), and generative AI developer workflows (Devin AI, GitHub Copilot)</strong>. Experienced in translating complex technical roadmaps into executive narratives, managing risk, forecasting budgets, and cultivating high-retention engineering cultures (<8% attrition).
+          Deep expertise across <strong>React, Next.js, TypeScript, JavaScript ES6+, micro-frontend architectures, web performance (Core Web Vitals), and generative AI developer workflows (Devin AI, GitHub Copilot)</strong>. Experienced in translating complex technical roadmaps into executive narratives, managing risk, forecasting budgets, and cultivating high-retention engineering cultures (&lt;8% attrition).
         </p>
       </div>
     </section>
 
     <!-- ── Core Competencies & Technical Skills ── -->
-    <section>
-      <h2>Technical Skills &amp; Competencies</h2>
+    <section id="skills-section" aria-labelledby="skills-heading">
+      <h2 id="skills-heading">Technical Skills &amp; Competencies</h2>
       <div class="section-content">
         <div class="skills-category">
           <strong>Frontend Architecture:</strong> Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm &amp; Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization.
@@ -510,7 +533,7 @@
           <strong>Engineering Leadership:</strong> Cross-Functional Leadership, Agile &amp; Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching &amp; Mentorship.
         </div>
         <div class="skills-category">
-          <strong>Accessibility &amp; Security:</strong> WCAG 2.1 / 2.2 AA, Section 508, ADA Compliance, axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js).
+          <strong>Accessibility &amp; Security:</strong> WCAG 2.1 &amp; 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js).
         </div>
         <div class="skills-category">
           <strong>AI &amp; Developer Productivity:</strong> RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding.
@@ -522,8 +545,8 @@
     </section>
 
     <!-- ── Professional Experience ── -->
-    <section>
-      <h2>Professional Experience</h2>
+    <section id="experience-section" aria-labelledby="experience-heading">
+      <h2 id="experience-heading">Professional Experience</h2>
 
       <!-- Citicorp -->
       <div class="job-block">
@@ -688,7 +711,7 @@
       </div>
     </section>
 
-  </div>
+  </main>
 
   <!-- ── Cloudflare Workers AI Copilot Modal & Drawer ── -->
   <div id="ai-copilot-backdrop" class="ai-modal-backdrop" aria-hidden="true"></div>
@@ -725,10 +748,7 @@
         <div class="ai-message assistant">
           <div class="ai-message-bubble">
             <p><strong>Hello! I am Ravindra's Executive AI Copilot.</strong></p>
-            <p>I can answer questions regarding Ravindra's 17+ years of frontend architecture leadership at Citicorp, his unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, StateGuard.js DOM security, or evaluate alignment with your open requisition.</p>
-          </div>
-          <div class="ai-message-meta">
-            <span>Verified Knowledge Base &bull; Cloudflare Workers AI</span>
+            <p>I can answer questions about Ravindra's 17+ years of experience leading frontend architecture, micro-frontends, Workday ATS optimization, or his Citicorp unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension.</p>
           </div>
         </div>
       </div>
@@ -742,8 +762,8 @@
       </div>
 
       <form id="ai-chat-form" class="ai-input-form">
-        <input id="ai-chat-input" class="ai-input-field" type="text" placeholder="Ask about architecture, leadership, or projects..." autocomplete="off" required>
-        <button class="ai-send-btn" type="submit" aria-label="Send message">
+        <input id="ai-chat-input" class="ai-input-field" type="text" placeholder="Ask about architecture, leadership, or projects..." autocomplete="off" aria-label="Ask Ravindra's AI Copilot a question" required>
+        <button class="ai-send-btn" type="submit" aria-label="Send message to AI Copilot">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <line x1="22" y1="2" x2="11" y2="13"></line>
             <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -764,7 +784,7 @@
         <button type="button" class="ai-preset-chip" data-title="Director of Frontend Architecture (BFSI)">Director of Frontend</button>
       </div>
 
-      <textarea id="ai-jd-input" class="ai-jd-textarea" placeholder="Paste target Job Description here (e.g. Seeking Principal Architect with React, Micro-frontends, AI toolchains, and enterprise governance)..."></textarea>
+      <textarea id="ai-jd-input" class="ai-jd-textarea" placeholder="Paste target Job Description here (e.g. Seeking Principal Architect with React, Micro-frontends, AI toolchains, and enterprise governance)..." aria-label="Target Job Description text to analyze against Ravindra's credentials"></textarea>
 
       <button id="ai-jd-submit" class="btn btn-primary" type="button" style="width: 100%; justify-content: center; background: #2563eb; color: #fff; padding: 8px 16px; border-radius: 6px; border: none; font-weight: 600; cursor: pointer;">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
