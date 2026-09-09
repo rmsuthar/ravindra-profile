@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initKeyboardShortcuts();
   initDeepLinking();
   initCloudflareAICopilot();
+  initAISoundbitePulse();
 });
 
 /* ── Theme Management (Strict Light Mode Only) ───────────────────────────── */
@@ -766,3 +767,133 @@ function initCloudflareAICopilot() {
     };
   }
 }
+
+/* ── Live AI Architecture Pulse & Dynamic Executive Soundbite ─────────── */
+function initAISoundbitePulse() {
+  const banner = document.getElementById('ai-soundbite-banner');
+  const quoteEl = document.getElementById('ai-soundbite-text');
+  const themeEl = document.getElementById('ai-soundbite-theme');
+  const shuffleBtn = document.getElementById('ai-soundbite-shuffle');
+
+  if (!banner || !quoteEl) return;
+
+  const SOUNDBITES_POOL = [
+    {
+      quote: "Autonomous AI migration agents achieve peak reliability when integrated directly inside the IDE — injecting AST snippets and prompt schemas to eliminate drift before code hits git.",
+      theme: "Agentic Engineering Directive"
+    },
+    {
+      quote: "Monolith-to-microfrontend migrations in BFSI succeed only when decoupled at the edge. Zero downtime requires route-level federation, isolated blast radiuses, and automated contract tests.",
+      theme: "Resilient BFSI Architecture"
+    },
+    {
+      quote: "Never trust the client runtime blindly. In transactional financial systems, client-side state must be protected against malicious DevTools tampering via runtime DOM descriptor sealing.",
+      theme: "StateGuard.js Security Principle"
+    },
+    {
+      quote: "Sub-second LCP and zero cumulative layout shift aren't post-launch patches — they are engineered by default through aggressive route-based code splitting and edge CDN hydration.",
+      theme: "Core Web Vitals Blueprint"
+    },
+    {
+      quote: "Enterprise WCAG 2.2 AA and Section 508 compliance cannot be treated as an audit afterthought; it must run as an automated pre-commit regression gate in CI/CD pipelines.",
+      theme: "Inclusive Engineering Standard"
+    },
+    {
+      quote: "Sustaining under 8% team attrition across 12 years of enterprise delivery comes from radical architectural transparency, technical skill ladders, and genuine psychological safety.",
+      theme: "Engineering Leadership Culture"
+    },
+    {
+      quote: "Replatforming legacy CMS components using RAG context retrieval and custom AST transformation scripts slashed Citicorp component migration cycle times by over 60%.",
+      theme: "Citicorp AI Migration Benchmark"
+    },
+    {
+      quote: "Standardizing AI coding agents like Devin and GitHub Copilot drives real ROI when measured by cycle time compression, freeing senior architects for security and governance.",
+      theme: "GenAI Team Productivity"
+    },
+    {
+      quote: "Pushing compute to Cloudflare global edge PoPs transforms regional latency from hundreds of milliseconds to single-digit response times worldwide.",
+      theme: "Edge-First Systems Design"
+    },
+    {
+      quote: "A design system without strict accessibility tokens and cross-framework components is just a style guide; true systems bind design tokens to production DOM semantics.",
+      theme: "Design System Architecture"
+    },
+    {
+      quote: "Enterprise Workday integrations require strict semantic schemas and clean XML structures so candidate data flows across HRIS systems with zero data loss.",
+      theme: "Workday ATS Integrity"
+    },
+    {
+      quote: "Clean reactive state models isolate mutations to deterministic pipelines, ensuring complex financial transaction dashboards never suffer cascading re-renders.",
+      theme: "Predictable Frontend State"
+    }
+  ];
+
+  // Pick a fresh soundbite on every page load/refresh (ensuring different from previous session view)
+  try {
+    const lastIdx = parseInt(sessionStorage.getItem('rs_soundbite_idx'), 10);
+    let newIdx = Math.floor(Math.random() * SOUNDBITES_POOL.length);
+    if (!isNaN(lastIdx) && SOUNDBITES_POOL.length > 1 && newIdx === lastIdx) {
+      newIdx = (newIdx + 1) % SOUNDBITES_POOL.length;
+    }
+    sessionStorage.setItem('rs_soundbite_idx', String(newIdx));
+    applySoundbite(SOUNDBITES_POOL[newIdx], false);
+  } catch (e) {
+    applySoundbite(SOUNDBITES_POOL[0], false);
+  }
+
+  function applySoundbite(item, animate = true) {
+    if (!item || !item.quote) return;
+    if (animate) {
+      quoteEl.classList.add('updating');
+      setTimeout(() => {
+        quoteEl.textContent = `"${item.quote.replace(/^"|"$/g, '')}"`;
+        if (themeEl && item.theme) themeEl.textContent = item.theme;
+        quoteEl.classList.remove('updating');
+      }, 200);
+    } else {
+      quoteEl.textContent = `"${item.quote.replace(/^"|"$/g, '')}"`;
+      if (themeEl && item.theme) themeEl.textContent = item.theme;
+    }
+  }
+
+  // Shuffle & Regenerate button handler
+  if (shuffleBtn) {
+    shuffleBtn.addEventListener('click', async () => {
+      shuffleBtn.classList.add('loading');
+      shuffleBtn.disabled = true;
+
+      try {
+        const controller = new AbortController();
+        const timer = setTimeout(() => controller.abort(), 4000);
+
+        const res = await fetch('/api/ai-soundbite?fresh=true', {
+          signal: controller.signal
+        });
+        clearTimeout(timer);
+
+        if (res.ok) {
+          const data = await res.json();
+          if (data && data.quote) {
+            applySoundbite(data, true);
+            showToast('✨ Fresh AI architectural insight generated!');
+            return;
+          }
+        }
+        throw new Error('API returned invalid data');
+      } catch (err) {
+        // Smooth offline/instant fallback rotation
+        const currentText = quoteEl.textContent;
+        const remaining = SOUNDBITES_POOL.filter(s => `"${s.quote}"` !== currentText);
+        const fallbackItem = remaining[Math.floor(Math.random() * remaining.length)] || SOUNDBITES_POOL[0];
+        applySoundbite(fallbackItem, true);
+        showToast('✨ Rotated to fresh architectural principle');
+      } finally {
+        setTimeout(() => {
+          shuffleBtn.classList.remove('loading');
+          shuffleBtn.disabled = false;
+        }, 500);
+      }
+    });
+  }
+}
+

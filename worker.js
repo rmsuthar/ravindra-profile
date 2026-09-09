@@ -197,6 +197,127 @@ export default {
       });
     }
 
+    // ── API: AI Architecture Pulse & Dynamic Soundbite (Refreshed on Load) ──
+    if (url.pathname === '/api/ai-soundbite' && (request.method === 'GET' || request.method === 'POST')) {
+      const isFresh = url.searchParams.get('fresh') === 'true';
+
+      const SOUNDBITES_POOL = [
+        {
+          quote: "Autonomous AI migration agents achieve peak reliability when integrated directly inside the IDE — injecting AST snippets and prompt schemas to eliminate drift before code hits git.",
+          theme: "Agentic Engineering Directive",
+          category: "AI & Modernization"
+        },
+        {
+          quote: "Monolith-to-microfrontend migrations in BFSI succeed only when decoupled at the edge. Zero downtime requires route-level federation, isolated blast radiuses, and automated contract tests.",
+          theme: "Resilient BFSI Architecture",
+          category: "Micro-Frontends"
+        },
+        {
+          quote: "Never trust the client runtime blindly. In transactional financial systems, client-side state must be protected against malicious DevTools tampering via runtime DOM descriptor sealing.",
+          theme: "StateGuard.js Security Principle",
+          category: "Web Security"
+        },
+        {
+          quote: "Sub-second LCP and zero cumulative layout shift aren't post-launch patches — they are engineered by default through aggressive route-based code splitting and edge CDN hydration.",
+          theme: "Core Web Vitals Blueprint",
+          category: "Performance"
+        },
+        {
+          quote: "Enterprise WCAG 2.2 AA and Section 508 compliance cannot be treated as an audit afterthought; it must run as an automated pre-commit regression gate in CI/CD pipelines.",
+          theme: "Inclusive Engineering Standard",
+          category: "Accessibility"
+        },
+        {
+          quote: "Sustaining under 8% team attrition across 12 years of enterprise delivery comes from radical architectural transparency, technical skill ladders, and genuine psychological safety.",
+          theme: "Engineering Leadership Culture",
+          category: "People Leadership"
+        },
+        {
+          quote: "Replatforming legacy CMS components using RAG context retrieval and custom AST transformation scripts slashed Citicorp component migration cycle times by over 60%.",
+          theme: "Citicorp AI Migration Benchmark",
+          category: "Enterprise Delivery"
+        },
+        {
+          quote: "Standardizing AI coding agents like Devin and GitHub Copilot drives real ROI when measured by cycle time compression, freeing senior architects for security and governance.",
+          theme: "GenAI Team Productivity",
+          category: "AI Automation"
+        },
+        {
+          quote: "Pushing compute to Cloudflare global edge PoPs transforms regional latency from hundreds of milliseconds to single-digit response times worldwide.",
+          theme: "Edge-First Systems Design",
+          category: "Edge Computing"
+        },
+        {
+          quote: "A design system without strict accessibility tokens and cross-framework components is just a style guide; true systems bind design tokens to production DOM semantics.",
+          theme: "Design System Architecture",
+          category: "Design Systems"
+        },
+        {
+          quote: "Enterprise Workday integrations require strict semantic schemas and clean XML structures so candidate data flows across HRIS systems with zero data loss.",
+          theme: "Workday ATS Integrity",
+          category: "HRIS & Platform"
+        },
+        {
+          quote: "Clean reactive state models isolate mutations to deterministic pipelines, ensuring complex financial transaction dashboards never suffer cascading re-renders.",
+          theme: "Predictable Frontend State",
+          category: "Architecture"
+        }
+      ];
+
+      // If dynamic fresh generation requested and AI binding is available, attempt real-time LLM generation
+      if (isFresh && env.AI && typeof env.AI.run === 'function') {
+        try {
+          const aiResult = await env.AI.run(AI_MODELS[1] || AI_MODELS[0], {
+            messages: [
+              {
+                role: 'system',
+                content: `You are the executive AI copilot for Ravindrakumar M. Suthar (AVP & Senior Frontend Architect at Citicorp, 17+ yrs experience).
+Generate exactly one crisp, inspiring, authoritative architectural quote or engineering metric (1 to 2 sentences max) reflecting his expertise in micro-frontends, AEM AI migration agents, StateGuard.js DOM security, 50% CWV gains, <8% attrition, or WCAG 2.2 AA.
+Output valid JSON with keys: "quote", "theme", "category". No extra markdown.`
+              },
+              { role: 'user', content: 'Generate a fresh high-impact architectural soundbite for a visiting engineering leader.' }
+            ],
+            max_tokens: 180,
+            temperature: 0.7
+          });
+
+          if (aiResult && (aiResult.response || aiResult.text)) {
+            const cleaned = (aiResult.response || aiResult.text).replace(/```json/gi, '').replace(/```/g, '').trim();
+            const parsed = JSON.parse(cleaned);
+            if (parsed.quote) {
+              return new Response(JSON.stringify({
+                ...parsed,
+                source: 'Cloudflare Workers AI (Real-Time Generation @ Edge)',
+                edgeColo: request.cf?.colo || 'EDGE',
+                timestamp: new Date().toISOString()
+              }), {
+                headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+              });
+            }
+          }
+        } catch (e) {
+          console.error('AI soundbite generation note:', e.message);
+        }
+      }
+
+      // Fast randomized selection from verified soundbites pool
+      const index = Math.floor(Math.random() * SOUNDBITES_POOL.length);
+      const selected = SOUNDBITES_POOL[index];
+
+      return new Response(JSON.stringify({
+        ...selected,
+        source: 'Verified Architecture Knowledge Base (Edge Cache)',
+        edgeColo: request.cf?.colo || 'EDGE',
+        timestamp: new Date().toISOString()
+      }), {
+        headers: {
+          ...corsHeaders,
+          'Content-Type': 'application/json',
+          'Cache-Control': 'no-cache, no-store, must-revalidate'
+        }
+      });
+    }
+
     // ── API: AI Chat Copilot (Powered by Cloudflare Workers AI) ─────────────
     if (url.pathname === '/api/ai-chat' && request.method === 'POST') {
       try {
