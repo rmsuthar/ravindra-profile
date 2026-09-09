@@ -9,7 +9,7 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 Verified Profile & Career Background:
 - Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
-- Personal / Open-Source Projects: Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Enterprise Developer Tools (https://ravindra.lets.gen.in/tools).
+- Personal / Open-Source Projects: Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -45,6 +45,20 @@ const KNOWLEDGE_FALLBACKS = [
 - **RAG & Agentic Execution**: The agent uses Retrieval-Augmented Generation (RAG) to cross-reference legacy non-AEM component markups and behaviors with modern Adobe Experience Manager (AEM) Core Component schemas.
 - **AST Transformation Scripts**: Custom Abstract Syntax Tree (AST) scripts parse and synthesize production-grade **AEM HTL templates, Sling Models, and Touch UI dialog XMLs** with automated validation.
 - **Business Impact**: Slashed enterprise CMS replatforming timelines by **over 60%** while ensuring 100% template fidelity and adherence to AEM best practices.`
+  },
+  {
+    triggers: ['clock', 'table clock', 'desk clock', 'calendar widget', 'widget', 'upcycling', 'battery', 'wake lock', 'oled'],
+    answer: `**Digital Table Clock & Calendar Widget / PWA (Personal / Open Source):**
+
+- **Overview**: An ultra-crisp, battery-friendly digital table clock & calendar PWA designed to upcycle older devices (iPads, iPhones, Android tablets) into dedicated desk docks and bedside companions ([Live at clock.lets.gen.in](https://clock.lets.gen.in/) | PWA installer at [widget.lets.gen.in](https://widget.lets.gen.in/)).
+- **Dual-Pane Adaptive UI**: Crisp digital clock paired with a live interactive calendar (toggle between full-month view and "Today" day tile).
+- **Instrument Metrics**: Live Day Progress percentage, remaining countdown, ISO week number, and dynamic lunar moon phase geometry.
+- **Hardware & Battery Optimization**:
+  - **Zero-Framework (Vanilla JS/CSS)**: Sub-millisecond boot, near-zero CPU footprint, running at 60 FPS even on vintage devices (iPhone 5s, early iPads).
+  - **True OLED Black (#000000)**: Completely powers down OLED pixels to minimize battery drain and avoid burn-in.
+  - **Screen Wake Lock API**: Gracefully keeps the screen awake without changing system-wide timeouts.
+  - **Offline PWA Service Worker**: Full caching eliminates background polling and radio power consumption.
+  - **Built-in Dimmer & Night Amber**: Touch-based brightness control for bedside night use.`
   },
   {
     triggers: ['stateguard', 'security', 'dom', 'freeze', 'tamper'],

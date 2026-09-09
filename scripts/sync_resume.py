@@ -236,13 +236,18 @@ def generate_workday_docx():
     ], space_before=25, space_after=25))
 
     paragraphs.append(make_p([
-        make_run("Enterprise Developer Tools & Utilities: ", bold=True, size=19, color="1A202C"),
-        make_run("Production-grade client-side developer toolbox and security utilities (https://ravindra.lets.gen.in/tools).", size=19, color="2D3748")
+        make_run("Gujarat Panchang & Automated Broadcast System: ", bold=True, size=19, color="1A202C"),
+        make_run("High-precision astronomical calculation engine (Python/PyEphem Lahiri ephemeris math), zero-framework edge web app (Cloudflare Pages), clientside real-time Choghadiya & SVG lunar engine, and unattended headless Playwright WhatsApp Channel distribution (tithi.lets.gen.in).", size=19, color="2D3748")
     ], space_before=25, space_after=25))
 
     paragraphs.append(make_p([
         make_run("Global Edge Sandbox & Multi-Region Load Balancer Inspector: ", bold=True, size=19, color="1A202C"),
         make_run("Edge proxy platform built on Cloudflare Workers simulating web access across 12 global PoPs with framebuster neutralization, biometric WebAuthn security, and WCAG AAA theme system (gateway.lets.gen.in).", size=19, color="2D3748")
+    ], space_before=25, space_after=25))
+
+    paragraphs.append(make_p([
+        make_run("Digital Table Clock & Calendar PWA: ", bold=True, size=19, color="1A202C"),
+        make_run("Lightweight, ultra-crisp desk clock and calendar PWA engineered for vintage hardware upcycling (iPads, Android tablets) with 60 FPS zero-framework performance, OLED true-black power saving, Screen Wake Lock API, and offline Service Worker caching (clock.lets.gen.in).", size=19, color="2D3748")
     ], space_before=25, space_after=60))
 
     # 6. Education

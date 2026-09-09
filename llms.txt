@@ -29,3 +29,4 @@
 - **StateGuard.js**: JavaScript utility locking DOM attributes against DevTools tampering for BFSI state integrity (https://rmsuthar.github.io/StateGuard/).
 - **Global Edge Sandbox & LB Inspector**: Cloudflare Workers edge computing platform simulating 12 PoP locations globally with WebAuthn auth (https://gateway.lets.gen.in/).
 - **Gujarat Panchang & Automated Broadcast System**: Automated precision astronomical calculation engine (Python/PyEphem Lahiri math), zero-framework edge web app (Cloudflare Pages), real-time IST/Choghadiya/lunar SVG engine, and unattended Playwright WhatsApp Channel distribution (https://tithi.lets.gen.in/).
+- **Digital Table Clock & Calendar PWA**: Ultra-crisp, battery-friendly desk clock and calendar PWA designed to upcycle vintage devices (iPads, Android tablets) with 60 FPS zero-framework performance, OLED true-black power saving, Screen Wake Lock API, and offline Service Worker caching (https://clock.lets.gen.in/).
