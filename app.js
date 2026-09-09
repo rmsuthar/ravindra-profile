@@ -695,31 +695,73 @@ function initCloudflareAICopilot() {
   }
 
   function getClientSideFallback(query) {
-    const q = (query || '').toLowerCase();
+    const q = (query || '').toLowerCase().trim();
 
-    if (q.includes('why') || q.includes('hire') || q.includes('fit') || q.includes('vp') || q.includes('architect')) {
+    if (q.includes('why') || q.includes('hire') || q.includes('fit') || q.includes('vp') || q.includes('architect') || q.includes('leadership')) {
       return {
         answer: `**Why Ravindra is an exceptional fit for an Executive Frontend Architect / VP role:**\n\n- **17+ Years Enterprise Scale**: 12+ years governing mission-critical BFSI architecture at **Citicorp Services India**, sustaining zero-downtime rollouts.\n- **Pioneering AI & Agentic Tooling**: Architected autonomous **Non-AEM to AEM Migration Agents** using **RAG & AST scripts** (60%+ faster replatforming) and custom **VS Code Prompt Generator Extensions**.\n- **Proven Metrics**: 50% web application load-time gains, 60% remediation reduction via Section 508/ADA CI pipelines, and <8% team attrition.\n- **Workday & Cloudflare**: Direct experience leading Workday platform uploads, micro-frontend migrations, and Cloudflare Workers edge computing.`,
         source: 'Verified Knowledge Base (Edge Fallback)'
       };
     }
 
-    if (q.includes('aem') || q.includes('migration') || q.includes('rag') || q.includes('agent')) {
+    if (q.includes('aem') || q.includes('migration') || q.includes('rag') || q.includes('agent') || q.includes('vscode')) {
       return {
-        answer: `**Agentic Non-AEM to AEM Migration Engine (RAG & Scripts):**\n\n- **Multi-Agent Architecture**: Autonomous pipeline ingesting legacy component markup, scripts, and CSS.\n- **RAG Context Retrieval**: Maps legacy patterns against Adobe Experience Manager (AEM) Core Component standards.\n- **AST Transformation Scripts**: Synthesizes production-ready AEM HTL templates, Sling Models, and Touch UI dialogs automatically.\n- **Impact**: Accelerated enterprise replatforming by over **60%** with validated structural fidelity.`,
+        answer: `**Citibank AI Innovation — Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension:**\n\n- **Multi-Agent Architecture**: Autonomous pipeline ingesting legacy component markup, scripts, and CSS.\n- **VS Code Extension**: Standardizes structured prompt templates and IDE context injection for developers.\n- **RAG Context Retrieval**: Maps legacy patterns against Adobe Experience Manager (AEM) Core Component standards.\n- **AST Transformation Scripts**: Synthesizes production-ready AEM HTL templates, Sling Models, and Touch UI dialogs automatically.\n- **Impact**: Accelerated enterprise replatforming by over **60%** with validated structural fidelity.`,
         source: 'Verified Knowledge Base (Edge Fallback)'
       };
     }
 
-    if (q.includes('stateguard') || q.includes('security') || q.includes('dom')) {
+    if (q.includes('stateguard') || q.includes('security') || q.includes('dom') || q.includes('tamper')) {
       return {
-        answer: `**StateGuard.js — DOM Tamper Protection:**\n\n- Specialized browser runtime utility that intercepts DOM mutations and seals form elements using \`Object.freeze\` and property descriptor locking.\n- Prevents client-side state manipulation via browser DevTools in financial transactions.\n- Open source live demo: [rmsuthar.github.io/StateGuard](https://rmsuthar.github.io/StateGuard/).`,
+        answer: `**StateGuard.js — DOM Tamper Protection for BFSI Workflows:**\n\n- Specialized browser runtime utility that intercepts DOM mutations and seals form elements using \`Object.freeze\` and property descriptor locking.\n- Prevents client-side state manipulation via browser DevTools in financial transactions.\n- Open source live demo: [rmsuthar.github.io/StateGuard](https://rmsuthar.github.io/StateGuard/).`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('workday') || q.includes('ats') || q.includes('resume') || q.includes('docx') || q.includes('cv')) {
+      return {
+        answer: `**Workday ATS Integration & Resume Assets:**\n\n- **Workday Platform Integrations**: Led Workday platform candidate uploads and HRIS data configuration workflows at Citicorp.\n- **ATS Assets Available**:\n  - [Download Workday DOCX](https://ravindra.lets.gen.in/Ravindrakumar_Suthar_Resume.docx)\n  - [Download Single-Column PDF](https://ravindra.lets.gen.in/Ravindrakumar_Suthar_Resume.pdf)\n  - [View ATS Web Resume](https://ravindra.lets.gen.in/resume)`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('education') || q.includes('degree') || q.includes('university') || q.includes('college') || q.includes('study')) {
+      return {
+        answer: `**Educational Background & Academic Credentials:**\n\n- **PGDIT (Post Graduate Diploma in IT)** — Sikkim Manipal University.\n- **HDSE (Higher Diploma in Software Engineering)** — Aptech Computer Education.\n- **B.Sc. in Chemistry & Mathematics** — Gujarat University. Solid analytical and quantitative problem-solving foundation.`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('cert') || q.includes('scrum') || q.includes('csm') || q.includes('aws') || q.includes('agile')) {
+      return {
+        answer: `**Professional Certifications & Accreditations:**\n\n- **Certified ScrumMaster (CSM®)** — Scrum Alliance (Lic. 000481231).\n- **AWS Certified Cloud Practitioner** — Amazon Web Services.\n- **Google Analytics Individual Qualification (GAIQ)** — Core Web Vitals telemetry & instrumentation.\n- **IBM Design Thinking Practitioner** — Human-centric enterprise UX architecture.`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('experience') || q.includes('citi') || q.includes('career') || q.includes('background') || q.includes('role')) {
+      return {
+        answer: `**Professional Experience & Career Milestones:**\n\n- **Assistant Vice President & Senior Frontend Architect** at **Citicorp Services India** (May 2013 – Present | 12+ years at Citi):\n  - Enterprise BFSI architecture governance, micro-frontend modernization, AEM RAG AI migration agent, WCAG 2.1/2.2 AA automation, and Workday HRIS integrations.\n- **17+ Years Total Experience**: Prior senior software engineering and technical leadership roles across high-traffic digital platforms.`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('skill') || q.includes('tech') || q.includes('stack') || q.includes('react') || q.includes('next') || q.includes('typescript')) {
+      return {
+        answer: `**Core Technical Competencies:**\n\n- **Frontend**: React, Next.js, TypeScript, Micro-Frontends (Module Federation), SSR, Core Web Vitals optimization (50% speedup).\n- **AI & Automation**: Autonomous AI Agents (RAG pipelines), AST scripts, VS Code Extensions, Devin AI, GitHub Copilot.\n- **Edge & Cloud**: Cloudflare Workers, Edge Computing, AWS.\n- **Standards**: WCAG 2.1/2.2 AA, Section 508, axe-core, NVDA audits.`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
+    if (q.includes('contact') || q.includes('email') || q.includes('phone') || q.includes('location') || q.includes('reach') || q.includes('linkedin')) {
+      return {
+        answer: `**Contact Information:**\n\n- **Email**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com)\n- **Phone**: [+91 83800 99988](tel:+918380099988)\n- **Location**: Pune, Maharashtra, India\n- **LinkedIn**: [linkedin.com/in/ravindrasuthar](https://www.linkedin.com/in/ravindrasuthar/)\n- **Tools Suite**: [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools)`,
         source: 'Verified Knowledge Base (Edge Fallback)'
       };
     }
 
     return {
-      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd.\n- **Experience**: 17+ years enterprise web engineering, 12+ years at Citicorp.\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.`,
+      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **AEM AI migration agents**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
       source: 'Verified Knowledge Base (Edge Fallback)'
     };
   }
