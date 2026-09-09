@@ -719,6 +719,13 @@ function initCloudflareAICopilot() {
       };
     }
 
+    if (q.includes('panchang') || q.includes('tithi') || q.includes('choghadiya') || q.includes('gujarat') || q.includes('astronomical')) {
+      return {
+        answer: `**Gujarat Panchang & Automated Broadcast System (Personal / Open Platform):**\n\n- **Overview**: Precision astronomical calculation engine, edge-published web app, and messaging system delivering accurate daily Gujarati Panchang, live Choghadiyas, Vedic muhurats, and inauspicious affliction tracking.\n- **Architecture**: Python & PyEphem computing high-precision planetary ephemerides with Lahiri Ayanamsha math for Gujarat coordinates (\`23.0225° N, 72.5714° E\`).\n- **Edge Delivery**: Pure semantic HTML5, Vanilla CSS, and modular ES6 deployed atomically to Cloudflare Pages edge network.\n- **Clientside Engine**: IST ticker locked to \`Asia/Kolkata\`, dynamic Choghadiya countdown scanner finding the next truly unblemished (*શુદ્ધ*) auspicious slot, and mathematical SVG lunar crescent.\n- **Automated Broadcast**: Automated morning broadcast to WhatsApp Channel subscribers via headless Playwright.\n- **Metrics**: 0px horizontal scroll (iOS/Android down to 320px) & WCAG AA high-contrast design (>13:1).\n- **Live Platform**: [https://tithi.lets.gen.in/](https://tithi.lets.gen.in/)`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
     if (q.includes('workday') || q.includes('ats') || q.includes('resume') || q.includes('docx') || q.includes('cv')) {
       return {
         answer: `**Workday ATS Integration & Resume Assets:**\n\n- **Workday Platform Integrations**: Led Workday platform candidate uploads and HRIS data configuration workflows at Citicorp.\n- **ATS Assets Available**:\n  - [Download Workday DOCX](https://ravindra.lets.gen.in/Ravindrakumar_Suthar_Resume.docx)\n  - [Download Single-Column PDF](https://ravindra.lets.gen.in/Ravindrakumar_Suthar_Resume.pdf)\n  - [View ATS Web Resume](https://ravindra.lets.gen.in/resume)`,
@@ -805,6 +812,10 @@ function initAISoundbitePulse() {
     {
       quote: "Replatforming legacy CMS components using RAG context retrieval and custom AST transformation scripts slashed Citicorp component migration cycle times by over 60%.",
       theme: "Citicorp AI Migration Benchmark"
+    },
+    {
+      quote: "Precision astronomical calculation and Vedic limb mathematics demand exactitude — coupling Python PyEphem ephemerides with zero-framework Cloudflare edge delivery delivers sub-second Gujarati Panchang.",
+      theme: "Astronomical Computing Architecture"
     },
     {
       quote: "Standardizing AI coding agents like Devin and GitHub Copilot drives real ROI when measured by cycle time compression, freeing senior architects for security and governance.",

@@ -9,7 +9,7 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 Verified Profile & Career Background:
 - Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
-- Personal / Open-Source Projects: StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Enterprise Developer Tools (https://ravindra.lets.gen.in/tools).
+- Personal / Open-Source Projects: Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Enterprise Developer Tools (https://ravindra.lets.gen.in/tools).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -53,6 +53,18 @@ const KNOWLEDGE_FALLBACKS = [
 - **Problem Solved**: In mission-critical financial applications, malicious actors or compromised browser extensions can alter read-only form attributes, disabled states, or hidden verification IDs via browser Developer Tools before form submission.
 - **Mechanism**: StateGuard.js is a lightweight client-side runtime utility that intercepts DOM mutation events, locks critical attributes using \`Object.freeze\` and property descriptor sealing, and instantly reverts or flags unauthorized client modifications.
 - **Live Demo**: Explore the implementation at [rmsuthar.github.io/StateGuard](https://rmsuthar.github.io/StateGuard/).`
+  },
+  {
+    triggers: ['panchang', 'gujarat', 'tithi', 'choghadiya', 'astronomical', 'ephem', 'lahiri', 'broadcast', 'vedic', 'muhurat'],
+    answer: `**Gujarat Panchang & Automated Broadcast System (Personal / Open Platform):**
+
+- **Overview**: Automated, precision astronomical calculation, edge-published web application, and messaging system delivering accurate daily Gujarati Panchang, live Choghadiyas, Vedic muhurats, and inauspicious affliction tracking (Vaar Vela, Kaal Vela, Kaal Ratri, Rahu Kaal).
+- **Astronomical Calculation Engine**: Python & PyEphem computing high-precision planetary ephemerides, sunrise/sunset, and Chitrapaksha (Lahiri) Ayanamsha for Gujarat coordinates (23.0225° N, 72.5714° E). Evaluates classical Vedic afflictions, flagging contaminated (*દોષિત*) slots with actionable warnings.
+- **Edge Delivery**: Zero-framework architecture in semantic HTML5, Vanilla CSS, and modular ES6 deployed atomically to Cloudflare Pages edge network with SHA-256 asset manifest hashing.
+- **Clientside Real-Time Engine**: IST clock ticker locked to \`Asia/Kolkata\`, dynamic Choghadiya countdown scanner finding the next truly unblemished (*શુદ્ધ*) auspicious slot, and mathematically rendered dynamic SVG lunar crescent geometry.
+- **Automated WhatsApp Distribution**: Automated daily morning broadcast to WhatsApp Channel subscribers using headless Playwright with isolated session persistence.
+- **Metrics**: 0px horizontal scroll across iOS Safari & Android (down to 320px) and WCAG AA high-contrast design (>13:1).
+- **Live Platform**: [tithi.lets.gen.in](https://tithi.lets.gen.in/).`
   },
   {
     triggers: ['workday', 'ats', 'resume', 'upload', 'docx', 'cv', 'download'],
@@ -143,9 +155,9 @@ const KNOWLEDGE_FALLBACKS = [
     answer: `**Featured Innovations & Open-Source Projects:**
 
 1. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
-2. **VS Code AI Prompt Generator Extension**: Standardizes IDE context and schema injection for enterprise developers.
+2. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
 3. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
-4. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions.
+4. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
 5. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
   }
 ];
@@ -236,6 +248,11 @@ export default {
           quote: "Replatforming legacy CMS components using RAG context retrieval and custom AST transformation scripts slashed Citicorp component migration cycle times by over 60%.",
           theme: "Citicorp AI Migration Benchmark",
           category: "Enterprise Delivery"
+        },
+        {
+          quote: "Precision astronomical calculation and Vedic limb mathematics demand exactitude — coupling Python PyEphem ephemerides with zero-framework Cloudflare edge delivery delivers sub-second Gujarati Panchang.",
+          theme: "Astronomical Computing Architecture",
+          category: "Edge & Astronomy"
         },
         {
           quote: "Standardizing AI coding agents like Devin and GitHub Copilot drives real ROI when measured by cycle time compression, freeing senior architects for security and governance.",

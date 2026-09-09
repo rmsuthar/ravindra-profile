@@ -620,6 +620,38 @@ select,
   color: var(--brand-primary);
 }
 
+.section-action-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  text-decoration: none;
+  padding: 0.35rem 0.85rem;
+  border-radius: var(--radius-full);
+  background: var(--brand-primary-light);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  transition: all var(--transition-fast);
+}
+
+.section-action-link:hover {
+  background: var(--brand-primary);
+  color: #ffffff;
+  border-color: var(--brand-primary);
+  transform: translateX(2px);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.2);
+}
+
+.section-action-link svg {
+  color: inherit;
+  transition: transform var(--transition-fast);
+}
+
+.section-action-link:hover svg {
+  transform: translateX(2px);
+}
+
 /* ── Executive Summary Card ────────────────────────────────────────────── */
 .summary-card {
   background: var(--bg-surface);
@@ -966,6 +998,43 @@ select,
 .project-links {
   display: flex;
   gap: 0.5rem;
+}
+
+.projects-more-cta {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.btn-view-more-tools {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--brand-primary);
+  color: var(--brand-primary);
+  background: var(--bg-surface);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-xs);
+}
+
+.btn-view-more-tools:hover {
+  background: var(--brand-primary);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.2);
+}
+
+.btn-view-more-tools svg {
+  transition: transform var(--transition-fast);
+}
+
+.btn-view-more-tools:hover svg {
+  transform: translateX(3px);
 }
 
 /* ── Education & Certifications ────────────────────────────────────────── */
@@ -2275,6 +2344,16 @@ body.ai-drawer-open .ai-copilot-trigger,
     border-radius: 20px !important;
     box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.05), inset 0 1px 2px rgba(255, 255, 255, 0.95) !important;
     padding: 1.35rem 1.15rem;
+  }
+
+  .section-header {
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .btn-view-more-tools {
+    width: 100%;
+    justify-content: center;
   }
 
   .timeline-item.featured-role {

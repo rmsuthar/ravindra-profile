@@ -28,3 +28,4 @@
 ## Featured Personal & Open-Source Projects
 - **StateGuard.js**: JavaScript utility locking DOM attributes against DevTools tampering for BFSI state integrity (https://rmsuthar.github.io/StateGuard/).
 - **Global Edge Sandbox & LB Inspector**: Cloudflare Workers edge computing platform simulating 12 PoP locations globally with WebAuthn auth (https://gateway.lets.gen.in/).
+- **Gujarat Panchang & Automated Broadcast System**: Automated precision astronomical calculation engine (Python/PyEphem Lahiri math), zero-framework edge web app (Cloudflare Pages), real-time IST/Choghadiya/lunar SVG engine, and unattended Playwright WhatsApp Channel distribution (https://tithi.lets.gen.in/).
