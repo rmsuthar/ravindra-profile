@@ -14,6 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initDeepLinking();
   initCloudflareAICopilot();
   initAISoundbitePulse();
+  init3DParallaxHero();
 });
 
 /* ── Theme Management (Strict Light Mode Only) ───────────────────────────── */
@@ -907,4 +908,164 @@ function initAISoundbitePulse() {
     });
   }
 }
+
+/* ── 3D Interactive Mousemove Parallax & Multi-Layer Depth Engine ────────── */
+function init3DParallaxHero() {
+  const heroCard = document.getElementById('hero-card') || document.querySelector('.hero-card');
+  if (!heroCard) return;
+
+  // Respect user preference for reduced motion or touch-only screens
+  const prefersReducedMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isTouchDevice = window.matchMedia && window.matchMedia('(hover: none)').matches;
+  if (prefersReducedMotion || isTouchDevice) return;
+
+  let targetRx = 0;
+  let targetRy = 0;
+  let currentRx = 0;
+  let currentRy = 0;
+
+  let targetGlareX = 50;
+  let targetGlareY = 50;
+  let currentGlareX = 50;
+  let currentGlareY = 50;
+
+  let targetGlareOpacity = 0;
+  let currentGlareOpacity = 0;
+
+  let rafId = null;
+  let isMouseOverSection = false;
+
+  function updateSpringLoop() {
+    // Lerp factor for buttery, physics-damped spring motion
+    const lerpFactor = 0.085;
+
+    currentRx += (targetRx - currentRx) * lerpFactor;
+    currentRy += (targetRy - currentRy) * lerpFactor;
+
+    currentGlareX += (targetGlareX - currentGlareX) * lerpFactor;
+    currentGlareY += (targetGlareY - currentGlareY) * lerpFactor;
+    currentGlareOpacity += (targetGlareOpacity - currentGlareOpacity) * lerpFactor;
+
+    // Differential parallax offsets across depth planes:
+    // Background layers translate in counter-motion to intensify perspective depth
+    const gridPx = -currentRy * 1.5;
+    const gridPy = currentRx * 1.2;
+    const glow1Px = -currentRy * 2.2;
+    const glow1Py = currentRx * 1.8;
+    const glow2Px = -currentRy * 2.5;
+    const glow2Py = currentRx * 2.0;
+
+    // Content typography and interactive CTAs translate forward with balanced offsets
+    const titlePx = currentRy * 0.5;
+    const titlePy = -currentRx * 0.4;
+    const textPx = currentRy * 0.35;
+    const textPy = -currentRx * 0.25;
+    const pillPx = currentRy * 0.45;
+    const pillPy = -currentRx * 0.35;
+    const cardPx = currentRy * 0.4;
+    const cardPy = -currentRx * 0.3;
+    const actionsPx = currentRy * 0.7;
+    const actionsPy = -currentRx * 0.5;
+
+    heroCard.style.setProperty('--hero-rx', `${currentRx.toFixed(3)}deg`);
+    heroCard.style.setProperty('--hero-ry', `${currentRy.toFixed(3)}deg`);
+
+    heroCard.style.setProperty('--grid-px', `${gridPx.toFixed(2)}px`);
+    heroCard.style.setProperty('--grid-py', `${gridPy.toFixed(2)}px`);
+    heroCard.style.setProperty('--glow1-px', `${glow1Px.toFixed(2)}px`);
+    heroCard.style.setProperty('--glow1-py', `${glow1Py.toFixed(2)}px`);
+    heroCard.style.setProperty('--glow2-px', `${glow2Px.toFixed(2)}px`);
+    heroCard.style.setProperty('--glow2-py', `${glow2Py.toFixed(2)}px`);
+
+    heroCard.style.setProperty('--title-px', `${titlePx.toFixed(2)}px`);
+    heroCard.style.setProperty('--title-py', `${titlePy.toFixed(2)}px`);
+    heroCard.style.setProperty('--text-px', `${textPx.toFixed(2)}px`);
+    heroCard.style.setProperty('--text-py', `${textPy.toFixed(2)}px`);
+    heroCard.style.setProperty('--pill-px', `${pillPx.toFixed(2)}px`);
+    heroCard.style.setProperty('--pill-py', `${pillPy.toFixed(2)}px`);
+    heroCard.style.setProperty('--card-px', `${cardPx.toFixed(2)}px`);
+    heroCard.style.setProperty('--card-py', `${cardPy.toFixed(2)}px`);
+    heroCard.style.setProperty('--actions-px', `${actionsPx.toFixed(2)}px`);
+    heroCard.style.setProperty('--actions-py', `${actionsPy.toFixed(2)}px`);
+
+    heroCard.style.setProperty('--glare-x', `${currentGlareX.toFixed(2)}%`);
+    heroCard.style.setProperty('--glare-y', `${currentGlareY.toFixed(2)}%`);
+    heroCard.style.setProperty('--glare-opacity', `${currentGlareOpacity.toFixed(3)}`);
+
+    // Continue loop until momentum settles
+    const delta = Math.abs(targetRx - currentRx) + Math.abs(targetRy - currentRy) + Math.abs(targetGlareOpacity - currentGlareOpacity);
+    if (delta > 0.005) {
+      rafId = requestAnimationFrame(updateSpringLoop);
+    } else {
+      rafId = null;
+    }
+  }
+
+  function onWindowMouseMove(e) {
+    const rect = heroCard.getBoundingClientRect();
+    const cardCenterX = rect.left + rect.width / 2;
+    const cardCenterY = rect.top + rect.height / 2;
+
+    // Viewport relative coordinates for page-wide left-to-right tracking
+    const halfWinW = window.innerWidth / 2;
+    const halfWinH = window.innerHeight / 2;
+    const normPageX = Math.max(-1, Math.min(1, (e.clientX - halfWinW) / halfWinW));
+    const normPageY = Math.max(-1, Math.min(1, (e.clientY - halfWinH) / halfWinH));
+
+    // Direct card bounds checking
+    const padding = 60;
+    const isDirectHover = (
+      e.clientX >= rect.left - padding &&
+      e.clientX <= rect.right + padding &&
+      e.clientY >= rect.top - padding &&
+      e.clientY <= rect.bottom + padding
+    );
+
+    if (isDirectHover) {
+      // High-precision local card coordinates
+      const normCardX = Math.max(-1, Math.min(1, (e.clientX - cardCenterX) / (rect.width / 2)));
+      const normCardY = Math.max(-1, Math.min(1, (e.clientY - cardCenterY) / (rect.height / 2)));
+
+      // Refined maximum tilt angle when interacting directly over the hero card
+      targetRy = normCardX * 6.5;
+      targetRx = -normCardY * 4.5;
+
+      // Specular glare glides across card
+      const localPctX = Math.max(0, Math.min(100, ((e.clientX - rect.left) / rect.width) * 100));
+      const localPctY = Math.max(0, Math.min(100, ((e.clientY - rect.top) / rect.height) * 100));
+      targetGlareX = localPctX;
+      targetGlareY = localPctY;
+      targetGlareOpacity = 0.55;
+      isMouseOverSection = true;
+    } else {
+      // Global subtle 3D tilt across the whole page (left to right)
+      targetRy = normPageX * 3.5;
+      targetRx = -normPageY * 2.5;
+
+      targetGlareX = 50 + normPageX * 35;
+      targetGlareY = 50 + normPageY * 35;
+      targetGlareOpacity = 0.12;
+      isMouseOverSection = false;
+    }
+
+    if (!rafId) {
+      rafId = requestAnimationFrame(updateSpringLoop);
+    }
+  }
+
+  function onWindowMouseLeave() {
+    targetRx = 0;
+    targetRy = 0;
+    targetGlareOpacity = 0;
+    isMouseOverSection = false;
+    if (!rafId) {
+      rafId = requestAnimationFrame(updateSpringLoop);
+    }
+  }
+
+  window.addEventListener('mousemove', onWindowMouseMove, { passive: true });
+  document.addEventListener('mouseleave', onWindowMouseLeave, { passive: true });
+  window.addEventListener('blur', onWindowMouseLeave, { passive: true });
+}
+
 

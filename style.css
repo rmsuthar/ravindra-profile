@@ -346,32 +346,115 @@ select,
   box-shadow: var(--shadow-xs);
 }
 
-/* ── Hero Section ──────────────────────────────────────────────────────── */
+/* ── Hero Section 3D Spatial Stacking ──────────────────────────────────── */
 .hero-section {
   padding: 3rem 0 2rem;
+  perspective: 1200px;
+  perspective-origin: 50% 50%;
 }
 
 .hero-card {
-  background: var(--bg-surface);
+  background:
+    linear-gradient(90deg, #2563eb, #0284c7, #7c3aed) top / 100% 4px no-repeat,
+    var(--bg-surface);
   border: 1px solid var(--border-subtle);
+  border-top-color: transparent;
   border-radius: var(--radius-lg);
   padding: 2.5rem;
   box-shadow: var(--shadow-sm);
   position: relative;
-  overflow: hidden;
+  transform-style: preserve-3d;
+  will-change: transform;
+  /* Baseline identity transforms */
+  translate: 0px;
+  rotate: 0deg;
+  scale: 1;
+  transform: perspective(1200px) rotateX(var(--hero-rx, 0deg)) rotateY(var(--hero-ry, 0deg));
+  transition: box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.hero-card:hover {
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 16px 36px -10px rgba(15, 23, 42, 0.08), 0 20px 48px -15px rgba(37, 99, 235, 0.1);
 }
 
 .hero-card::before {
-  content: "";
+  display: none;
+}
+
+/* 3D Background Parallax Container */
+.hero-3d-bg {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #2563eb, #0284c7, #7c3aed);
+  inset: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+  transform: translateZ(-15px);
+  transform-style: preserve-3d;
+}
+
+/* Subtle dot-grid pattern layer */
+.hero-3d-grid-layer {
+  position: absolute;
+  inset: -30px;
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1.2px, transparent 1.2px);
+  background-size: 24px 24px;
+  opacity: 0.55;
+  transform: translate3d(var(--grid-px, 0px), var(--grid-py, 0px), 0);
+  transition: transform 0.1s ease-out;
+}
+
+/* Ambient glow orbs moving in opposing parallax */
+.hero-3d-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(50px);
+  pointer-events: none;
+  opacity: 0.55;
+  transition: transform 0.15s ease-out;
+}
+
+.hero-3d-glow-1 {
+  width: 360px;
+  height: 360px;
+  top: -100px;
+  right: -80px;
+  background: radial-gradient(circle, rgba(2, 132, 199, 0.25) 0%, rgba(37, 99, 235, 0.08) 50%, transparent 75%);
+  transform: translate3d(calc(var(--glow1-px, 0px) * -1.2), calc(var(--glow1-py, 0px) * -1.2), 0);
+}
+
+.hero-3d-glow-2 {
+  width: 320px;
+  height: 320px;
+  bottom: -90px;
+  left: -70px;
+  background: radial-gradient(circle, rgba(124, 58, 237, 0.2) 0%, rgba(37, 99, 235, 0.06) 50%, transparent 75%);
+  transform: translate3d(calc(var(--glow2-px, 0px) * -1.4), calc(var(--glow2-py, 0px) * -1.4), 0);
+}
+
+/* Dynamic Specular Glare / Sheen */
+.hero-3d-glare {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: radial-gradient(
+    circle 600px at var(--glare-x, 50%) var(--glare-y, 50%),
+    rgba(255, 255, 255, 0.65) 0%,
+    rgba(255, 255, 255, 0.15) 35%,
+    transparent 70%
+  );
+  opacity: var(--glare-opacity, 0);
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1;
 }
 
 .hero-header {
+  position: relative;
+  z-index: 3;
+  transform-style: preserve-3d;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -383,6 +466,7 @@ select,
 .hero-intro {
   flex: 1;
   min-width: 280px;
+  transform-style: preserve-3d;
 }
 
 .status-pill {
@@ -397,6 +481,9 @@ select,
   border-radius: var(--radius-full);
   margin-bottom: 0.85rem;
   letter-spacing: 0.02em;
+  transform: translate3d(var(--pill-px, 0px), var(--pill-py, 0px), 30px);
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.15);
+  transition: transform 0.12s ease-out;
 }
 
 .status-dot {
@@ -421,6 +508,9 @@ select,
   letter-spacing: -0.025em;
   color: var(--text-primary);
   margin-bottom: 0.5rem;
+  transform: translate3d(var(--title-px, 0px), var(--title-py, 0px), 18px);
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
 }
 
 .hero-title span {
@@ -435,6 +525,8 @@ select,
   color: var(--brand-primary);
   line-height: 1.4;
   margin-bottom: 0.75rem;
+  transform: translate3d(var(--text-px, 0px), var(--text-py, 0px), 12px);
+  transition: transform 0.12s ease-out;
 }
 
 .hero-location {
@@ -443,9 +535,13 @@ select,
   gap: 0.5rem;
   color: var(--text-muted);
   font-size: 0.9rem;
+  transform: translate3d(var(--text-px, 0px), var(--text-py, 0px), 8px);
+  transition: transform 0.12s ease-out;
 }
 
 .hero-contact-grid {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem 1.5rem;
@@ -454,6 +550,9 @@ select,
   border-bottom: 1px solid var(--border-subtle);
   margin: 1.25rem 0;
   font-size: 0.88rem;
+  transform: translate3d(var(--card-px, 0px), var(--card-py, 0px), 14px);
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
 }
 
 .contact-item {
@@ -487,10 +586,25 @@ select,
 }
 
 .hero-actions {
+  position: relative;
+  z-index: 3;
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1rem;
+  transform: translate3d(var(--actions-px, 0px), var(--actions-py, 0px), 20px);
+  transform-style: preserve-3d;
+  transition: transform 0.12s ease-out;
+}
+
+.hero-actions .btn {
+  transform-style: preserve-3d;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.hero-actions .btn:hover {
+  transform: translateZ(8px) scale(1.02);
+  box-shadow: 0 8px 18px -4px rgba(37, 99, 235, 0.2);
 }
 
 /* ── KPI Metric Strip ──────────────────────────────────────────────────── */
@@ -2570,6 +2684,27 @@ body.ai-drawer-open .ai-copilot-trigger,
   }
 }
 
+/* Respect Reduced Motion and Touch Devices for 3D Hero */
+@media (prefers-reduced-motion: reduce), (hover: none) {
+  .hero-card {
+    transform: none !important;
+  }
+  .hero-3d-glare {
+    display: none !important;
+  }
+  .hero-title,
+  .hero-headline,
+  .hero-location,
+  .status-pill,
+  .hero-contact-grid,
+  .hero-actions,
+  .hero-3d-grid-layer,
+  .hero-3d-glow-1,
+  .hero-3d-glow-2 {
+    transform: none !important;
+  }
+}
+
 /* ── Dedicated Print / PDF Export Stylesheet ───────────────────────────── */
 @media print {
   @page {
@@ -2610,6 +2745,8 @@ body.ai-drawer-open .ai-copilot-trigger,
   .section-nav,
   .skip-link,
   .hero-actions,
+  .hero-3d-bg,
+  .btn-ai-shuffle,
   .skills-filter-nav,
   .toggle-history-btn,
   .site-footer,
@@ -2633,18 +2770,43 @@ body.ai-drawer-open .ai-copilot-trigger,
     margin: 0 !important;
   }
 
+  .hero-section {
+    padding: 0 !important;
+    margin: 0 0 8pt 0 !important;
+    perspective: none !important;
+    transform: none !important;
+  }
+
   .hero-card {
     padding: 0 0 10pt 0 !important;
     border: none !important;
     background: transparent !important;
+    background-image: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
+    transform: none !important;
+    transform-style: flat !important;
+    perspective: none !important;
+    will-change: auto !important;
   }
 
-  .hero-card::before {
+  .hero-card::before,
+  .hero-3d-bg {
     display: none !important;
+  }
+
+  .hero-header,
+  .hero-intro,
+  .hero-title,
+  .hero-headline,
+  .hero-location,
+  .status-pill,
+  .hero-contact-grid,
+  .hero-actions {
+    transform: none !important;
+    transform-style: flat !important;
   }
 
   .hero-title {

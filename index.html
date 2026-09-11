@@ -80,7 +80,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260909-tools">
+  <link rel="stylesheet" href="style.css?v=20260911-3d">
 </head>
 <body>
   <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
@@ -156,7 +156,14 @@
 
     <!-- ── Hero Executive Card ── -->
     <section class="hero-section" id="top" aria-labelledby="profile-heading">
-      <div class="hero-card">
+      <div class="hero-card" id="hero-card" data-3d-card="hero">
+        <!-- 3D Spatial Parallax Depth & Glare Layers -->
+        <div class="hero-3d-bg" aria-hidden="true">
+          <div class="hero-3d-grid-layer"></div>
+          <div class="hero-3d-glow hero-3d-glow-1"></div>
+          <div class="hero-3d-glow hero-3d-glow-2"></div>
+          <div class="hero-3d-glare"></div>
+        </div>
         <div class="hero-header">
           <div class="hero-intro">
             <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 0.5rem; margin-bottom: 0.85rem;">
@@ -1020,6 +1027,6 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20260909-soundbite" defer></script>
+  <script src="app.js?v=20260911-3d" defer></script>
 </body>
 </html>
