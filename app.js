@@ -578,6 +578,7 @@ function initCloudflareAICopilot() {
           ],
           relevantInnovations: [
             'Agentic Non-AEM to AEM Migration Engine (RAG & AST Scripts)',
+            'EdgeNonce (Zero-Latency Dynamic CSP Nonce Streaming Engine)',
             'VS Code AI Prompt Generator Extension',
             'StateGuard.js (BFSI DOM Tamper Protection)',
             'Global Edge Sandbox & Load Balancer Inspector (Cloudflare Workers)'
@@ -713,6 +714,13 @@ function initCloudflareAICopilot() {
       };
     }
 
+    if (q.includes('edgenonce') || q.includes('nonce') || q.includes('csp') || q.includes('htmlrewriter') || q.includes('pci')) {
+      return {
+        answer: `**EdgeNonce — Zero-Latency Dynamic CSP Nonce Streaming Engine:**\n\n- **Problem**: Modern Content Security Policy (CSP Level 3) requires dynamic per-request nonces, which breaks static CDN/Dispatcher caching or forces insecure \`'unsafe-inline'\` scripts.\n- **Solution**: EdgeNonce uses Cloudflare Workers and streaming \`HTMLRewriter\` to inject unique 128-bit dynamic nonces on the fly (<1.5ms) while the origin retains 100% cache hit rates.\n- **Tech Stack**: TypeScript, Cloudflare V8 Isolates, HTMLRewriter, Workers AI threat classifier, and \`csp-compat.js\` runtime bridge.\n- **Compliance**: Satisfies PCI-DSS v4.0 (6.4.3 & 11.6.1), HIPAA, and GDPR.\n- **Live Platform & Guides**: [edge-nonce.com](https://www.edge-nonce.com) | [AEM Architecture Guide](https://www.edge-nonce.com/aem-services.html) | [IHS Apache Configs](https://www.edge-nonce.com/apache-ihs-integration-guide.html)`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
     if (q.includes('stateguard') || q.includes('security') || q.includes('dom') || q.includes('tamper')) {
       return {
         answer: `**StateGuard.js — DOM Tamper Protection for BFSI Workflows:**\n\n- Specialized browser runtime utility that intercepts DOM mutations and seals form elements using \`Object.freeze\` and property descriptor locking.\n- Prevents client-side state manipulation via browser DevTools in financial transactions.\n- Open source live demo: [rmsuthar.github.io/StateGuard](https://rmsuthar.github.io/StateGuard/).`,
@@ -770,7 +778,7 @@ function initCloudflareAICopilot() {
     }
 
     return {
-      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **AEM AI migration agents**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
+      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
       source: 'Verified Knowledge Base (Edge Fallback)'
     };
   }
@@ -793,6 +801,10 @@ function initAISoundbitePulse() {
     {
       quote: "Monolith-to-microfrontend migrations in BFSI succeed only when decoupled at the edge. Zero downtime requires route-level federation, isolated blast radiuses, and automated contract tests.",
       theme: "Resilient BFSI Architecture"
+    },
+    {
+      quote: "Zero-latency dynamic CSP nonces at the edge decouple enterprise PCI-DSS v4.0 compliance from origin CDN caching — streaming HTMLRewriter transforms security from a cache-buster into a transparent edge proxy filter.",
+      theme: "EdgeNonce Zero-Latency CSP"
     },
     {
       quote: "Never trust the client runtime blindly. In transactional financial systems, client-side state must be protected against malicious DevTools tampering via runtime DOM descriptor sealing.",

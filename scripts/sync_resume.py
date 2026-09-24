@@ -120,7 +120,7 @@ def generate_workday_docx():
         ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
         ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
         ("Engineering Leadership", "Cross-Functional Leadership, Agile & Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching & Mentorship."),
-        ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
+        ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), Zero-Latency Dynamic Edge CSP (EdgeNonce), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
         ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
         ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, Adobe Experience Manager (AEM / CQ5), Workday HRIS.")
     ]
@@ -230,6 +230,11 @@ def generate_workday_docx():
 
     # 5. Technical Innovations
     paragraphs.append(make_heading("Featured Technical Innovations & Open Systems"))
+    paragraphs.append(make_p([
+        make_run("EdgeNonce (Zero-Latency CSP Nonce Streaming Engine): ", bold=True, size=19, color="1A202C"),
+        make_run("Enterprise Content Security Policy engine at the network edge deployed on Cloudflare Workers. Injects dynamic 128-bit cryptographic nonces into cached HTML responses via streaming HTMLRewriter in <1.5ms without breaking origin CDN or AEM Dispatcher caching (100% cache retention). Enforces CSP Level 3 and satisfies PCI-DSS v4.0 (6.4.3 & 11.6.1), HIPAA, and GDPR (edge-nonce.com).", size=19, color="2D3748")
+    ], space_before=25, space_after=25))
+
     paragraphs.append(make_p([
         make_run("StateGuard.js: ", bold=True, size=19, color="1A202C"),
         make_run("Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical BFSI transactional workflows (rmsuthar.github.io/StateGuard).", size=19, color="2D3748")

@@ -432,7 +432,7 @@
       color: #ffffff !important;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=20260908-wcag22">
+  <link rel="stylesheet" href="style.css?v=20260924-edgenonce">
 </head>
 <body>
   <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
@@ -533,7 +533,7 @@
           <strong>Engineering Leadership:</strong> Cross-Functional Leadership, Agile &amp; Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching &amp; Mentorship.
         </div>
         <div class="skills-category">
-          <strong>Accessibility &amp; Security:</strong> WCAG 2.1 &amp; 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), OWASP Top 10, DOM Runtime Integrity (StateGuard.js).
+          <strong>Accessibility &amp; Security:</strong> WCAG 2.1 &amp; 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), Zero-Latency Dynamic Edge CSP (EdgeNonce), OWASP Top 10, DOM Runtime Integrity (StateGuard.js).
         </div>
         <div class="skills-category">
           <strong>AI &amp; Developer Productivity:</strong> RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding.
@@ -653,6 +653,7 @@
     <section>
       <h2>Featured Technical Innovations &amp; Open Systems</h2>
       <div class="section-content">
+        <p><strong>EdgeNonce (Zero-Latency CSP Nonce Streaming Engine):</strong> Enterprise Content Security Policy engine at the network edge deployed on Cloudflare Workers. Utilizes streaming <code>HTMLRewriter</code> and V8 Isolates to inject dynamic 128-bit cryptographic nonces into cached HTML responses on the fly (&lt;1.5ms) without breaking origin CDN or AEM Dispatcher cache hits (100% cache retention). Built to enforce strict CSP Level 3 and satisfy PCI-DSS v4.0 (6.4.3 &amp; 11.6.1), HIPAA, and GDPR compliance (<a href="https://www.edge-nonce.com" target="_blank" rel="noopener noreferrer">edge-nonce.com</a>).</p>
         <p><strong>StateGuard.js:</strong> Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical BFSI transactional workflows (<a href="https://rmsuthar.github.io/StateGuard/">rmsuthar.github.io/StateGuard</a>).</p>
         <p><strong>Global Edge Sandbox &amp; Multi-Region Load Balancer Inspector:</strong> Edge proxy platform built on Cloudflare Workers simulating web access across 12 global PoPs with framebuster neutralization, biometric WebAuthn security, and WCAG AAA theme system (<a href="https://gateway.lets.gen.in/">gateway.lets.gen.in</a>).</p>
       </div>
@@ -755,6 +756,7 @@
       <div class="ai-drawer-suggestions">
         <button type="button" class="ai-drawer-chip" data-prompt="Why hire Ravindra as VP / Principal Frontend Architect?">🌟 Why Hire?</button>
         <button type="button" class="ai-drawer-chip" data-prompt="Explain his unified Non-AEM to AEM migration AI agent working with a custom VS Code extension.">🤖 AEM Agent &amp; VS Code</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="What is EdgeNonce and how does it solve CSP caching challenges?">🛡️ EdgeNonce</button>
         <button type="button" class="ai-drawer-chip" data-prompt="What is StateGuard.js and how does it protect DOM security?">🛡️ StateGuard</button>
         <button type="button" class="ai-drawer-chip" data-prompt="How did he deliver 50% application load-time improvements?">⚡ Performance</button>
         <button type="button" class="ai-drawer-chip" data-prompt="What is his experience with Workday integrations?">📋 Workday</button>
@@ -797,6 +799,6 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20260909-cfai" defer></script>
+  <script src="app.js?v=20260924-edgenonce" defer></script>
 </body>
 </html>

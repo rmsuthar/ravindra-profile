@@ -9,7 +9,7 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 Verified Profile & Career Background:
 - Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
-- Personal / Open-Source Projects: Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
+- Personal / Open-Source Projects: EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -59,6 +59,20 @@ const KNOWLEDGE_FALLBACKS = [
   - **Screen Wake Lock API**: Gracefully keeps the screen awake without changing system-wide timeouts.
   - **Offline PWA Service Worker**: Full caching eliminates background polling and radio power consumption.
   - **Built-in Dimmer & Night Amber**: Touch-based brightness control for bedside night use.`
+  },
+  {
+    triggers: ['edgenonce', 'nonce', 'csp', 'htmlrewriter', 'streaming', 'pci-dss', 'pci'],
+    answer: `**EdgeNonce — Zero-Latency CSP Nonce Streaming Engine (Personal / Open Source):**
+
+- **Overview**: An enterprise Content Security Policy (CSP) streaming engine at the network edge deployed on Cloudflare Workers ([https://www.edge-nonce.com](https://www.edge-nonce.com)).
+- **The Challenge**: Modern strict CSP Level 3 requires per-request dynamic cryptographic nonces, which traditionally destroys static CDN/Dispatcher caching or forces insecure \`'unsafe-inline'\` allowances.
+- **The Solution**: EdgeNonce leverages Cloudflare V8 Isolates and streaming \`HTMLRewriter\` to inject unique 128-bit nonces on the fly (<1.5ms) into cached HTML streams while origin CDNs/AEM Dispatchers retain 100% cache hit rates.
+- **Core Technology Stack**: TypeScript, Cloudflare V8 Isolates, streaming HTMLRewriter, Workers AI threat classifier, and \`csp-compat.js\` runtime bridge.
+- **Regulatory Compliance**: Built to satisfy PCI-DSS v4.0 (Requirements 6.4.3 & 11.6.1 for script authorization and tamper detection), HIPAA, and GDPR.
+- **Documentation & Architecture Guides**:
+  - [EdgeNonce Official Site](https://www.edge-nonce.com)
+  - [AEM Architecture Guide](https://www.edge-nonce.com/aem-services.html)
+  - [IHS Apache Integration Guide](https://www.edge-nonce.com/apache-ihs-integration-guide.html)`
   },
   {
     triggers: ['stateguard', 'security', 'dom', 'freeze', 'tamper'],
@@ -169,10 +183,11 @@ const KNOWLEDGE_FALLBACKS = [
     answer: `**Featured Innovations & Open-Source Projects:**
 
 1. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
-2. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
-3. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
-4. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
-5. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
+2. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (<1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
+3. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
+4. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
+5. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
+6. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
   }
 ];
 
@@ -190,7 +205,7 @@ function findFallbackAnswer(query) {
 - **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.
 - **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988 | [LinkedIn](https://www.linkedin.com/in/ravindrasuthar/).
 
-You can ask me about his **AEM AI migration agents**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
+You can ask me about his **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
 }
 
 export default {
@@ -500,6 +515,7 @@ Provide a structured evaluation in valid JSON with these exact keys:
             ],
             relevantInnovations: [
               'Agentic Non-AEM to AEM Migration Engine (RAG & AST Scripts)',
+              'EdgeNonce (Zero-Latency Dynamic CSP Nonce Streaming Engine)',
               'VS Code AI Prompt Generator Extension',
               'StateGuard.js (BFSI DOM Tamper Protection)',
               'Global Edge Sandbox & Load Balancer Inspector (Cloudflare Workers)'
