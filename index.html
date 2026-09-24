@@ -80,7 +80,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260924-edgenonce2">
+  <link rel="stylesheet" href="style.css?v=20260924-hboxes">
 </head>
 <body>
   <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
@@ -768,44 +768,14 @@
       <div class="projects-grid">
         <!-- EdgeNonce -->
         <article class="project-card">
-          <div class="project-top">
-            <div class="project-header">
-              <h3 class="project-title">EdgeNonce</h3>
+          <header class="project-header">
+            <div>
+              <h3 class="project-title">EdgeNonce <span class="project-subtitle">&bull; Zero-Latency CSP Nonce Streaming Engine</span></h3>
+              <div class="project-category-role">Cloudflare V8 Isolates &bull; HTMLRewriter &bull; Dynamic CSP Level 3 &bull; PCI-DSS v4.0 Network Edge Security</div>
+            </div>
+            <div class="project-header-actions">
               <span class="project-badge">Edge Security Engine</span>
-            </div>
-            <p class="project-desc">
-              <strong>Zero-Latency CSP Nonce Streaming Engine</strong>: Enterprise Content Security Policy at the network edge without breaking origin CDN or AEM Dispatcher caching. Uses Cloudflare V8 Isolates and streaming <code>HTMLRewriter</code> to inject unique 128-bit dynamic nonces on the fly (&lt;1.5ms) while origin retains 100% cache hit rates. Built to satisfy PCI-DSS v4.0 (6.4.3 &amp; 11.6.1), HIPAA, and GDPR.
-            </p>
-            <div class="project-docs">
-              <span class="project-docs-label">Guides:</span>
-              <a href="https://www.edge-nonce.com/aem-services.html" target="_blank" rel="noopener noreferrer" class="project-doc-link">
-                <span>AEM Architecture</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-              <span class="project-docs-sep">&bull;</span>
-              <a href="https://www.edge-nonce.com/apache-ihs-integration-guide.html" target="_blank" rel="noopener noreferrer" class="project-doc-link">
-                <span>IHS Apache Configs</span>
-                <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-          <div class="project-footer">
-            <div class="project-tags">
-              <span class="badge badge-security">Dynamic CSP Nonces</span>
-              <span class="badge badge-code">HTMLRewriter</span>
-              <span class="badge">Cloudflare Workers</span>
-              <span class="badge">PCI-DSS v4.0</span>
-            </div>
-            <div class="project-links">
-              <a href="https://www.edge-nonce.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+              <a href="https://www.edge-nonce.com" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
                 <span>Launch EdgeNonce</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -814,26 +784,36 @@
                 </svg>
               </a>
             </div>
-          </div>
+          </header>
+          <ul class="project-bullets">
+            <li><strong>The Enterprise Challenge:</strong> Modern Content Security Policy (CSP Level 3) requires per-request dynamic cryptographic nonces to defeat cross-site scripting (XSS). Traditionally, dynamic nonces destroy static CDN and Dispatcher caching or force insecure <code>'unsafe-inline'</code> allowances.</li>
+            <li><strong>Zero-Latency Streaming Injection:</strong> EdgeNonce leverages Cloudflare Workers and streaming <code>HTMLRewriter</code> to inject unique 128-bit dynamic nonces on the fly in <strong>&lt;1.5ms</strong>, allowing origin CDNs and Adobe AEM Dispatchers to retain <strong>100% cache hit rates</strong>.</li>
+            <li><strong>Regulatory Compliance:</strong> Engineered specifically to satisfy <strong>PCI-DSS v4.0 (Requirements 6.4.3 &amp; 11.6.1)</strong>, HIPAA, and GDPR standards for script authorization and tamper detection across digital banking and transactional checkouts.</li>
+            <li><strong>Runtime Compatibility Bridge:</strong> Incorporates an automated Workers AI threat classifier and runtime <code>csp-compat.js</code> bridge to ensure seamless operation with legacy tag managers, third-party SDKs, and analytics trackers.</li>
+            <li><strong>Architecture &amp; Reverse-Proxy Blueprints:</strong> Features comprehensive production documentation: <a href="https://www.edge-nonce.com/aem-services.html" target="_blank" rel="noopener noreferrer" class="project-doc-link">AEM Architecture Guide &rarr;</a> and <a href="https://www.edge-nonce.com/apache-ihs-integration-guide.html" target="_blank" rel="noopener noreferrer" class="project-doc-link">IHS Apache Integration Guide &rarr;</a>.</li>
+          </ul>
+          <footer class="project-footer">
+            <div class="project-tags">
+              <span class="badge badge-security">Dynamic CSP Nonces</span>
+              <span class="badge badge-code">HTMLRewriter</span>
+              <span class="badge">Cloudflare Workers</span>
+              <span class="badge">V8 Isolates</span>
+              <span class="badge badge-ai">Workers AI Classifier</span>
+              <span class="badge">PCI-DSS v4.0 (6.4.3 &amp; 11.6.1)</span>
+              <span class="badge">AEM Dispatcher Cache Retention</span>
+            </div>
+          </footer>
         </article>
 
         <!-- StateGuard.js -->
         <article class="project-card">
-          <div class="project-top">
-            <div class="project-header">
-              <h3 class="project-title">StateGuard.js</h3>
+          <header class="project-header">
+            <div>
+              <h3 class="project-title">StateGuard.js <span class="project-subtitle">&bull; BFSI DOM Tamper Protection Utility</span></h3>
+              <div class="project-category-role">Client-Side State Integrity &bull; Object Descriptor Sealing &bull; Fraud Prevention</div>
+            </div>
+            <div class="project-header-actions">
               <span class="project-badge">Security Innovation</span>
-            </div>
-            <p class="project-desc">
-              Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Built to guarantee client-side state integrity in mission-critical BFSI transactional workflows.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="project-tags">
-              <span class="badge badge-security">DOM Security</span>
-              <span class="badge badge-code">Object.freeze</span>
-            </div>
-            <div class="project-links">
               <a href="https://rmsuthar.github.io/StateGuard/" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
                 <span>View StateGuard</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -843,26 +823,34 @@
                 </svg>
               </a>
             </div>
-          </div>
+          </header>
+          <ul class="project-bullets">
+            <li><strong>BFSI Transactional State Integrity:</strong> Specialized browser runtime JavaScript utility that intercepts DOM mutations and protects form attributes and state values from client-side tampering via browser Developer Tools.</li>
+            <li><strong>Property Descriptor Locking:</strong> Enforces runtime immutability using <code>Object.freeze</code>, property descriptor sealing, and mutation observers &mdash; immediately reverting or alerting on unauthorized form attribute manipulations prior to submission.</li>
+            <li><strong>Zero-Dependency Lightweight Implementation:</strong> Engineered specifically for mission-critical financial checkout, authentication, and payment workflows (<a href="https://rmsuthar.github.io/StateGuard/" target="_blank" rel="noopener noreferrer" class="project-doc-link">rmsuthar.github.io/StateGuard &rarr;</a>).</li>
+          </ul>
+          <footer class="project-footer">
+            <div class="project-tags">
+              <span class="badge badge-security">DOM Security</span>
+              <span class="badge badge-code">Object.freeze</span>
+              <span class="badge badge-security">Property Descriptors</span>
+              <span class="badge">MutationObserver</span>
+              <span class="badge">BFSI Fraud Prevention</span>
+              <span class="badge">Vanilla JavaScript</span>
+              <span class="badge">OWASP Integrity</span>
+            </div>
+          </footer>
         </article>
 
         <!-- Global Edge Sandbox -->
         <article class="project-card">
-          <div class="project-top">
-            <div class="project-header">
-              <h3 class="project-title">Global Edge Sandbox &amp; LB Inspector</h3>
+          <header class="project-header">
+            <div>
+              <h3 class="project-title">Global Edge Sandbox &amp; LB Inspector <span class="project-subtitle">&bull; Multi-PoP Routing &amp; Telemetry Platform</span></h3>
+              <div class="project-category-role">Cloudflare Workers &bull; Multi-Region Load Balancing &bull; Biometric WebAuthn &bull; WCAG AAA</div>
+            </div>
+            <div class="project-header-actions">
               <span class="project-badge">Cloudflare Edge</span>
-            </div>
-            <p class="project-desc">
-              Global proxy platform built on <strong>Cloudflare Workers</strong> simulating web app access across 12 global PoP locations. Features multi-region load balancer inspection, framebuster neutralization, biometric WebAuthn security, and WCAG AAA theme system.
-            </p>
-          </div>
-          <div class="project-footer">
-            <div class="project-tags">
-              <span class="badge">Cloudflare Workers</span>
-              <span class="badge">WebAuthn</span>
-            </div>
-            <div class="project-links">
               <a href="https://gateway.lets.gen.in/" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
                 <span>Launch Edge App</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -872,9 +860,25 @@
                 </svg>
               </a>
             </div>
-          </div>
+          </header>
+          <ul class="project-bullets">
+            <li><strong>Global Multi-Region PoP Emulation:</strong> Edge-computing proxy platform built on Cloudflare Workers simulating web application access across 12 worldwide PoP locations (US, Europe, Asia, Middle East, South America).</li>
+            <li><strong>Multi-Region Load Balancer Telemetry:</strong> Real-time inspection of distributed load balancing headers (AWS ALB, GCP HTTPS LB, NGINX), live round-trip latency benchmarking, and automated cURL CLI export generators.</li>
+            <li><strong>Framebuster Neutralization &amp; WebAuthn Security:</strong> Neutralizes framebusters for CSP/X-Frame-Options visual inspection and implements biometric Touch/Face ID WebAuthn authentication backed by Cloudflare KV quota storage.</li>
+            <li><strong>High-Accessibility Interface:</strong> Features a fully responsive WCAG AAA theme engine, zero horizontal scroll, and live telemetry monitors (<a href="https://gateway.lets.gen.in/" target="_blank" rel="noopener noreferrer" class="project-doc-link">gateway.lets.gen.in &rarr;</a>).</li>
+          </ul>
+          <footer class="project-footer">
+            <div class="project-tags">
+              <span class="badge">Cloudflare Workers</span>
+              <span class="badge">Multi-Region PoPs</span>
+              <span class="badge">WebAuthn Biometrics</span>
+              <span class="badge">Load Balancer Telemetry</span>
+              <span class="badge">Framebuster Neutralizer</span>
+              <span class="badge">KV Store</span>
+              <span class="badge">WCAG AAA</span>
+            </div>
+          </footer>
         </article>
-
       </div>
     </section>
 
@@ -1082,6 +1086,6 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20260924-edgenonce" defer></script>
+  <script src="app.js?v=20260924-hboxes" defer></script>
 </body>
 </html>
