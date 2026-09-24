@@ -169,14 +169,15 @@ const KNOWLEDGE_FALLBACKS = [
 - **Talent Development**: Conducts structured bi-weekly 1-on-1s, technical skill ladders, and internal architecture workshops on micro-frontends, edge computing, and AI tools.`
   },
   {
-    triggers: ['contact', 'email', 'phone', 'location', 'linkedin', 'reach', 'connect', 'pune', 'city', 'address'],
+    triggers: ['contact', 'email', 'phone', 'location', 'linkedin', 'reach', 'connect', 'pune', 'city', 'address', 'qr', 'qrcode', 'pass', 'vcard'],
     answer: `**Contact & Professional Channels:**
 
 - **Email**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com)
 - **Phone**: [+91 83800 99988](tel:+918380099988)
 - **Location**: Pune, Maharashtra, India
 - **LinkedIn**: [linkedin.com/in/ravindrasuthar](https://www.linkedin.com/in/ravindrasuthar/)
-- **Live Portfolio & Tools**: [ravindra.lets.gen.in](https://ravindra.lets.gen.in/) | [Tools Suite](https://ravindra.lets.gen.in/tools)`
+- **Live Portfolio & Tools**: [ravindra.lets.gen.in](https://ravindra.lets.gen.in/) | [Tools Suite](https://ravindra.lets.gen.in/tools)
+- **Digital Passes & QR Codes**: [Profile QR Code](https://ravindra.lets.gen.in/qrcode.svg) | [Contact Card vCard QR](https://ravindra.lets.gen.in/contact-qr.svg)`
   },
   {
     triggers: ['project', 'tools', 'sandbox', 'edge', 'portfolio', 'inspector'],

@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSkillsFilter();
   initCopyActions();
   initVCardDownload();
+  initQRCodeTabs();
   initHistoryToggle();
   initKeyboardShortcuts();
   initDeepLinking();
@@ -146,10 +147,10 @@ function initCopyActions() {
 
 /* ── Dynamic vCard Generation & Download ─────────────────────────────────── */
 function initVCardDownload() {
-  const vcardBtn = document.getElementById('download-vcard');
-  if (!vcardBtn) return;
+  const vcardTriggers = document.querySelectorAll('#download-vcard, #hero-vcard-trigger, #contact-vcard-btn, [data-download-vcard]');
+  if (!vcardTriggers.length) return;
 
-  vcardBtn.addEventListener('click', (e) => {
+  const downloadVCard = (e) => {
     e.preventDefault();
 
     const vcardContent = [
@@ -180,6 +181,39 @@ function initVCardDownload() {
     URL.revokeObjectURL(url);
 
     showToast('Contact vCard downloaded!');
+  };
+
+  vcardTriggers.forEach(btn => btn.addEventListener('click', downloadVCard));
+}
+
+/* ── Interactive QR Code Tabs (Profile vs Contact vCard) ─────────────────── */
+function initQRCodeTabs() {
+  const tabs = document.querySelectorAll('.hero-qr-tab');
+  const panels = {
+    profile: document.getElementById('qr-panel-profile'),
+    contact: document.getElementById('qr-panel-contact')
+  };
+
+  if (!tabs.length || !panels.profile || !panels.contact) return;
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+
+      const targetType = tab.getAttribute('data-qr-type');
+      if (targetType === 'profile') {
+        panels.profile.style.display = 'flex';
+        panels.contact.style.display = 'none';
+      } else {
+        panels.profile.style.display = 'none';
+        panels.contact.style.display = 'flex';
+      }
+    });
   });
 }
 

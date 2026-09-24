@@ -80,7 +80,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260924-hboxes">
+  <link rel="stylesheet" href="style.css?v=20260924-qrpasses">
 </head>
 <body>
   <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
@@ -183,6 +183,79 @@
                 <circle cx="12" cy="10" r="3"></circle>
               </svg>
               <span>Pune, Maharashtra, India &nbsp;&bull;&nbsp; Global Remote / Hybrid</span>
+            </div>
+          </div>
+
+          <!-- Executive Digital Passes (Profile & Contact vCard QR Codes) -->
+          <div class="hero-qr-badge" id="hero-qr-badge" role="region" aria-label="Digital QR Passes">
+            <div class="hero-qr-header">
+              <span class="hero-qr-title">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                  <rect x="3" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="3" width="7" height="7"></rect>
+                  <rect x="14" y="14" width="7" height="7"></rect>
+                  <rect x="3" y="14" width="7" height="7"></rect>
+                </svg>
+                Digital Pass
+              </span>
+              <div class="hero-qr-tabs" role="tablist" aria-label="Select QR Code">
+                <button type="button" class="hero-qr-tab active" role="tab" id="tab-qr-profile" aria-selected="true" aria-controls="qr-panel-profile" data-qr-type="profile">Profile</button>
+                <button type="button" class="hero-qr-tab" role="tab" id="tab-qr-contact" aria-selected="false" aria-controls="qr-panel-contact" data-qr-type="contact">Contact</button>
+              </div>
+            </div>
+
+            <!-- Profile URL QR Display -->
+            <div class="hero-qr-panel" id="qr-panel-profile" role="tabpanel" aria-labelledby="tab-qr-profile">
+              <div class="hero-qr-canvas-wrap">
+                <img src="qrcode.svg" alt="Scan QR Code to open Ravindra Suthar Executive Profile" class="hero-qr-img" width="104" height="104" loading="eager">
+              </div>
+              <div class="hero-qr-meta">
+                <span class="hero-qr-label">ravindra.lets.gen.in</span>
+                <div class="hero-qr-actions">
+                  <a href="qrcode.svg" download="Ravindra_Suthar_Profile_QR.svg" class="hero-qr-link" title="Download Profile QR (SVG)">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>SVG</span>
+                  </a>
+                  <button type="button" class="hero-qr-link copy-btn" data-copy="https://ravindra.lets.gen.in/" data-label="Profile URL" title="Copy Profile URL">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                      <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>Copy</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact vCard QR Display -->
+            <div class="hero-qr-panel" id="qr-panel-contact" role="tabpanel" aria-labelledby="tab-qr-contact" style="display: none;">
+              <div class="hero-qr-canvas-wrap">
+                <img src="contact-qr.svg" alt="Scan QR Code to add Ravindrakumar Suthar to mobile contacts" class="hero-qr-img" width="104" height="104" loading="lazy">
+              </div>
+              <div class="hero-qr-meta">
+                <span class="hero-qr-label">Scan to Save Contact</span>
+                <div class="hero-qr-actions">
+                  <a href="contact-qr.svg" download="Ravindra_Suthar_Contact_QR.svg" class="hero-qr-link" title="Download Contact QR (SVG)">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    <span>SVG</span>
+                  </a>
+                  <button type="button" class="hero-qr-link" id="hero-vcard-trigger" title="Download vCard file (.vcf)">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="8.5" cy="7" r="4"></circle>
+                    </svg>
+                    <span>.vcf</span>
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -292,6 +365,17 @@
             </svg>
             <span>Download vCard (.vcf)</span>
           </button>
+
+          <!-- Digital QR Passes Jump Link -->
+          <a href="#contact" class="btn" title="View Executive QR Digital Passes">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="7" height="7"></rect>
+              <rect x="14" y="3" width="7" height="7"></rect>
+              <rect x="14" y="14" width="7" height="7"></rect>
+              <rect x="3" y="14" width="7" height="7"></rect>
+            </svg>
+            <span>Digital QR Passes</span>
+          </a>
         </div>
       </div>
     </section>
@@ -956,6 +1040,108 @@
               <span class="cert-meta">1996 &ndash; 1999</span>
             </li>
           </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── Executive Contact & Digital Passes Landmark ── -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="section-header">
+        <div class="section-title-wrap">
+          <h2 id="contact-heading" class="section-title">Direct Contact &amp; Digital Passes</h2>
+          <p class="section-subtitle">Instant mobile connectivity, smartphone address book synchronization, and executive advisory inquiries.</p>
+        </div>
+      </div>
+
+      <div class="qr-passes-grid">
+        <!-- Executive Web Profile Pass Card -->
+        <div class="qr-pass-card">
+          <div class="qr-pass-badge">Executive Profile Pass</div>
+          <div class="qr-pass-body">
+            <div class="qr-pass-visual">
+              <img src="qrcode.svg" alt="Scan QR Code to visit Ravindra Suthar Executive Profile" class="qr-pass-img" width="140" height="140" loading="lazy">
+              <span class="qr-pass-scan-hint">Point smartphone camera to launch</span>
+            </div>
+            <div class="qr-pass-details">
+              <h3 class="qr-pass-title">Web Portfolio &amp; Architecture Hub</h3>
+              <p class="qr-pass-desc">Direct access to comprehensive leadership portfolio, interactive AI Copilot, architecture journal, and live engineering systems.</p>
+              <div class="qr-pass-url">
+                <code>https://ravindra.lets.gen.in/</code>
+              </div>
+              <div class="qr-pass-actions">
+                <a href="https://ravindra.lets.gen.in/" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                  <span>Open Profile</span>
+                </a>
+                <a href="qrcode.svg" download="Ravindra_Suthar_Profile_QR.svg" class="btn btn-sm" title="Download High-Resolution Vector QR Code (SVG)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download SVG</span>
+                </a>
+                <button type="button" class="btn btn-sm copy-btn" data-copy="https://ravindra.lets.gen.in/" data-label="Profile URL" title="Copy Profile URL">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                  </svg>
+                  <span>Copy Link</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Instant Contact vCard Pass Card -->
+        <div class="qr-pass-card">
+          <div class="qr-pass-badge qr-pass-badge-contact">Instant Contact Pass</div>
+          <div class="qr-pass-body">
+            <div class="qr-pass-visual">
+              <img src="contact-qr.svg" alt="Scan QR Code to save Ravindra Suthar to Contacts" class="qr-pass-img" width="140" height="140" loading="lazy">
+              <span class="qr-pass-scan-hint">Scan with iOS / Android Camera to Save</span>
+            </div>
+            <div class="qr-pass-details">
+              <h3 class="qr-pass-title">Address Book vCard (v3.0)</h3>
+              <p class="qr-pass-desc">One scan adds Ravindra's direct phone number, executive email, title, and organization directly to your smartphone's contacts.</p>
+              <ul class="qr-contact-summary">
+                <li><strong>Mobile:</strong> <a href="tel:+918380099988">+91 83800 99988</a></li>
+                <li><strong>Email:</strong> <a href="mailto:ravindra.suthar@me.com">ravindra.suthar@me.com</a></li>
+                <li><strong>Role:</strong> Assistant Vice President &bull; Citicorp Services India</li>
+                <li><strong>Location:</strong> Pune, Maharashtra, India &bull; Global Remote / Hybrid</li>
+              </ul>
+              <div class="qr-pass-actions">
+                <button type="button" id="contact-vcard-btn" class="btn btn-primary btn-sm" title="Download contact vCard file (.vcf)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                    <circle cx="8.5" cy="7" r="4"></circle>
+                    <line x1="20" y1="8" x2="20" y2="14"></line>
+                    <line x1="23" y1="11" x2="17" y2="11"></line>
+                  </svg>
+                  <span>Save vCard (.vcf)</span>
+                </button>
+                <a href="contact-qr.svg" download="Ravindra_Suthar_Contact_QR.svg" class="btn btn-sm" title="Download High-Resolution Contact QR Code (SVG)">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="7 10 12 15 17 10"></polyline>
+                    <line x1="12" y1="15" x2="12" y2="3"></line>
+                  </svg>
+                  <span>Download SVG</span>
+                </a>
+                <a href="mailto:ravindra.suthar@me.com?subject=Strategic%20Opportunity%20%7C%20Ravindra%20Suthar" class="btn btn-sm">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                    <polyline points="22,6 12,13 2,6"></polyline>
+                  </svg>
+                  <span>Send Email</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>

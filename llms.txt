@@ -9,6 +9,7 @@
 - **Official Site**: https://ravindra.lets.gen.in/
 - **LinkedIn**: https://www.linkedin.com/in/ravindrasuthar/
 - **Tools & Innovations**: https://ravindra.lets.gen.in/tools
+- **Digital QR Passes**: Profile QR (https://ravindra.lets.gen.in/qrcode.svg) | Contact vCard QR (https://ravindra.lets.gen.in/contact-qr.svg)
 
 ## Key Highlights
 - **17+ Years** of enterprise product engineering experience.
