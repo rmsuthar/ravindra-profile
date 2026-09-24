@@ -99,21 +99,22 @@
       font-weight: 400;
     }
 
-    /* --- Grid Layout --- */
+    /* --- Horizontal Stack Layout --- */
     .tools-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      display: flex;
+      flex-direction: column;
       gap: 1.5rem;
       margin-bottom: 6rem;
-      animation: fadeInUp 1s ease-out 0.2s both;
+      animation: fadeInUp 0.8s ease-out 0.2s both;
     }
 
-    /* --- Card Styles --- */
+    /* --- Card Styles (Full-Width Horizontal Box) --- */
     .card {
       background-color: var(--surface-color);
       border: 1px solid var(--border-color);
-      border-radius: 20px;
-      padding: 2rem;
+      border-left: 5px solid var(--primary-accent);
+      border-radius: 16px;
+      padding: 1.75rem 2rem;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -122,6 +123,7 @@
       transition: var(--transition);
       position: relative;
       overflow: hidden;
+      box-shadow: var(--card-shadow);
     }
 
     .card::before {
@@ -131,21 +133,23 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(135deg, var(--primary-accent) 0%, transparent 100%);
+      background: linear-gradient(90deg, rgba(2, 132, 199, 0.04) 0%, transparent 100%);
       opacity: 0;
       transition: var(--transition);
       z-index: 0;
+      pointer-events: none;
     }
 
     .card:hover {
-      transform: translateY(-8px);
-      background-color: var(--surface-hover);
-      border-color: rgba(56, 189, 248, 0.3);
-      box-shadow: var(--card-shadow);
+      transform: translateY(-4px);
+      background-color: #ffffff;
+      border-color: #cbd5e1;
+      border-left-color: #0284c7;
+      box-shadow: 0 12px 32px rgba(2, 132, 199, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
     }
 
     .card:hover::before {
-      opacity: 0.03;
+      opacity: 1;
     }
 
     .card-content {
@@ -156,32 +160,34 @@
     .card-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1.25rem;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
     }
 
     .card-title {
       font-family: 'Outfit', sans-serif;
-      font-size: 1.4rem;
-      font-weight: 600;
+      font-size: 1.35rem;
+      font-weight: 700;
       color: var(--text-primary);
     }
 
     .badge {
-      background: rgba(56, 189, 248, 0.1);
+      background: rgba(2, 132, 199, 0.08);
       color: var(--primary-accent);
-      font-size: 0.7rem;
+      font-size: 0.72rem;
       font-weight: 700;
-      padding: 0.35rem 0.75rem;
+      padding: 0.25rem 0.75rem;
       border-radius: 100px;
       text-transform: uppercase;
       letter-spacing: 0.05em;
-      border: 1px solid rgba(56, 189, 248, 0.2);
+      border: 1px solid rgba(2, 132, 199, 0.2);
     }
 
     .badge-new {
       background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
-      color: var(--bg-color);
+      color: #ffffff;
       border: none;
     }
 
@@ -189,18 +195,50 @@
       color: var(--text-secondary);
       font-size: 0.95rem;
       line-height: 1.6;
-      margin-bottom: 2rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.85rem 0 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .card-list li {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
     }
 
     .card-footer {
       display: flex;
       align-items: center;
+      justify-content: space-between;
       color: var(--primary-accent);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      gap: 0.5rem;
+      padding-top: 0.85rem;
+      border-top: 1px solid var(--border-color);
+      width: 100%;
       position: relative;
       z-index: 1;
+    }
+
+    .card-footer-meta {
+      font-size: 0.82rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .card-footer-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--primary-accent);
+      font-weight: 600;
     }
 
     .card-footer svg {
@@ -208,7 +246,7 @@
     }
 
     .card:hover .card-footer svg {
-      transform: translateX(5px);
+      transform: translateX(6px);
     }
 
     /* --- Animations --- */
@@ -243,11 +281,17 @@
       }
 
       .container {
-        padding: 0 1.5rem;
+        padding: 0 1.25rem;
       }
 
-      .tools-grid {
-        grid-template-columns: 1fr;
+      .card {
+        padding: 1.35rem 1.25rem;
+      }
+
+      .card-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
       }
     }
   </style>
@@ -283,25 +327,28 @@
       <a href="https://www.edge-nonce.com" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-content">
           <div class="card-header">
-            <h2 class="card-title">EdgeNonce</h2>
+            <h2 class="card-title">EdgeNonce — Zero-Latency CSP Nonce Streaming Engine</h2>
             <span class="badge badge-new">Edge Security Engine</span>
           </div>
-          <p class="card-desc"><strong>Zero-Latency CSP Nonce Streaming Engine</strong>: Enterprise Content Security Policy at the Network Edge without breaking origin CDN or Adobe AEM Dispatcher caching.</p>
-          <ul style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.75rem;line-height:1.45;">
-            <li>⚡ <strong>Zero-Latency Streaming:</strong> Cloudflare Workers &amp; <code>HTMLRewriter</code> inject unique 128-bit dynamic nonces in &lt;1.5ms while origin retains 100% cache hit rates</li>
-            <li>🛡️ <strong>Eliminates 'unsafe-inline':</strong> Enforces strict CSP Level 3 dynamic nonces to thwart cross-site scripting (XSS)</li>
-            <li>🔒 <strong>PCI-DSS v4.0 Compliance:</strong> Engineered to satisfy requirements 6.4.3 &amp; 11.6.1 for script authorization and integrity, plus HIPAA and GDPR</li>
-            <li>🧩 <strong>Enterprise Compatibility:</strong> Features <code>csp-compat.js</code> runtime bridge and Workers AI threat classifier</li>
+          <p class="card-desc"><strong>Enterprise Content Security Policy at the Network Edge</strong>: Injects dynamic 128-bit cryptographic nonces into cached HTML responses on the fly in &lt;1.5ms without breaking origin CDN or Adobe AEM Dispatcher caching.</p>
+          <ul class="card-list">
+            <li>⚡ <strong>Zero-Latency Streaming:</strong> Cloudflare Workers &amp; <code>HTMLRewriter</code> inject unique 128-bit dynamic nonces on the fly while origin retains 100% cache hit rates</li>
+            <li>🛡️ <strong>Eliminates 'unsafe-inline':</strong> Enforces strict CSP Level 3 dynamic nonces to defeat cross-site scripting (XSS) and code injection</li>
+            <li>🔒 <strong>PCI-DSS v4.0 Compliance:</strong> Engineered specifically to satisfy requirements 6.4.3 &amp; 11.6.1 for script authorization and tamper detection, plus HIPAA and GDPR</li>
+            <li>🧩 <strong>Enterprise Compatibility:</strong> Features <code>csp-compat.js</code> runtime bridge and automated Workers AI threat classifier</li>
             <li>📚 <strong>Integration Guides:</strong> Complete AEM Architecture Guide &amp; IHS Apache configuration blueprints</li>
           </ul>
         </div>
         <div class="card-footer">
-          Launch EdgeNonce Engine
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <span class="card-footer-meta">edge-nonce.com &bull; PCI-DSS v4.0 &bull; Cloudflare V8 Isolates</span>
+          <span class="card-footer-action">
+            Launch EdgeNonce Engine
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </a>
 
@@ -312,66 +359,77 @@
             <span class="badge badge-new">Astronomical Engine</span>
           </div>
           <p class="card-desc">Automated precision astronomical calculation, edge-published web application, and messaging system delivering accurate daily Gujarati Panchang, live Choghadiyas, Vedic muhurats, and inauspicious affliction tracking (Vaar Vela, Kaal Vela, Kaal Ratri, Rahu Kaal).</p>
-          <ul style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.75rem;line-height:1.45;">
+          <ul class="card-list">
             <li>🔭 <strong>Astronomical Engine (Python / PyEphem):</strong> High-precision planetary ephemerides &amp; Lahiri Ayanamsha math for Gujarat coords (23.0225° N, 72.5714° E)</li>
             <li>⚡ <strong>Zero-Framework Edge Delivery:</strong> Pure semantic HTML5, Vanilla CSS, and modular ES6 deployed atomically to Cloudflare Pages edge</li>
-            <li>⏳ <strong>Clientside Real-Time Engine:</strong> Live IST ticker, active Choghadiya countdown, and mathematical SVG lunar crescent renderer</li>
+            <li>⏳ <strong>Clientside Real-Time Engine:</strong> Live IST ticker, active Choghadiya countdown scanner, and mathematical SVG lunar crescent renderer</li>
             <li>📢 <strong>Automated WhatsApp Distribution:</strong> Unattended morning broadcast via headless Playwright with isolated session persistence</li>
             <li>📱 <strong>100% Responsive &amp; Accessible:</strong> 0px horizontal scroll (iOS/Android down to 320px) and WCAG AA high contrast (&gt;13:1)</li>
           </ul>
         </div>
         <div class="card-footer">
-          Launch Panchang Platform
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <span class="card-footer-meta">tithi.lets.gen.in &bull; Python Ephemerides &bull; Cloudflare Pages</span>
+          <span class="card-footer-action">
+            Launch Panchang Platform
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </a>
 
-      <a href="https://gateway.lets.gen.in/" class="card">
+      <a href="https://gateway.lets.gen.in/" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-content">
           <div class="card-header">
-            <h2 class="card-title">Global Edge Proxy</h2>
+            <h2 class="card-title">Global Edge Sandbox &amp; Multi-Region Load Balancer Inspector</h2>
             <span class="badge badge-new">Cloudflare Edge</span>
           </div>
-          <p class="card-desc">Edge-computing proxy platform simulating web application access from 12 PoPs
-            (US, Europe, Asia, Middle East, South America). Ideal for multi-region routing benchmarks,
-            security previewing, and passwordless WebAuthn testing.</p>
-          <ul style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.75rem;line-height:1.4;">
-            <li>🌍 Multi-Region Load Balancer Inspection (ALB, GCP HTTPS LB, NGINX)</li>
-            <li>🛡️ Framebuster Neutralizer for CSP / X-Frame-Options</li>
-            <li>🔐 Biometric WebAuthn (Touch/Face ID) with KV quota store</li>
-            <li>🎨 Accessible theme engine + automated cURL CLI exports</li>
+          <p class="card-desc">Edge-computing proxy platform built on Cloudflare Workers simulating web application access from 12 PoPs (US, Europe, Asia, Middle East, South America). Ideal for multi-region routing benchmarks, security previewing, and passwordless WebAuthn testing.</p>
+          <ul class="card-list">
+            <li>🌍 <strong>Multi-Region Load Balancer Inspection:</strong> Real-time inspection of distributed load balancing headers (ALB, GCP HTTPS LB, NGINX)</li>
+            <li>🛡️ <strong>Framebuster Neutralizer:</strong> Neutralizes framebusters for CSP / X-Frame-Options visual inspection</li>
+            <li>🔐 <strong>Biometric WebAuthn:</strong> Touch/Face ID passwordless authentication backed by Cloudflare KV quota storage</li>
+            <li>🎨 <strong>Accessible Theme Engine:</strong> WCAG AAA theme engine + automated cURL CLI export generators</li>
           </ul>
         </div>
         <div class="card-footer">
-          Visit Gateway
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <span class="card-footer-meta">gateway.lets.gen.in &bull; 12 Global PoPs &bull; WebAuthn KV</span>
+          <span class="card-footer-action">
+            Visit Gateway
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </a>
 
-      <a href="https://rmsuthar.github.io/StateGuard/" class="card">
+      <a href="https://rmsuthar.github.io/StateGuard/" target="_blank" rel="noopener noreferrer" class="card">
         <div class="card-content">
           <div class="card-header">
-            <h2 class="card-title">StateGuard.js</h2>
+            <h2 class="card-title">StateGuard.js — DOM Tamper Protection Utility</h2>
             <span class="badge badge-new">Security</span>
           </div>
-          <p class="card-desc">Lock DOM element attributes and prevent unauthorized mutations. Detects and reverts
-            DevTools-driven changes in milliseconds to secure your application state.</p>
+          <p class="card-desc">Lock DOM element attributes and prevent unauthorized client-side mutations. Detects and reverts DevTools-driven changes in milliseconds to secure your application state in mission-critical BFSI transactional workflows.</p>
+          <ul class="card-list">
+            <li>🛡️ <strong>BFSI State Tamper Resistance:</strong> Intercepts DOM mutation events to protect read-only attributes, disabled states, and hidden IDs</li>
+            <li>🔒 <strong>Property Descriptor Sealing:</strong> Enforces runtime immutability using <code>Object.freeze</code> and property descriptor locking</li>
+            <li>⚡ <strong>Zero Dependencies:</strong> Lightweight client-side runtime with instant revert and security alert logging</li>
+          </ul>
         </div>
         <div class="card-footer">
-          Get Started
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <span class="card-footer-meta">rmsuthar.github.io/StateGuard &bull; BFSI DOM Security</span>
+          <span class="card-footer-action">
+            Explore StateGuard
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </a>
 
@@ -382,7 +440,7 @@
             <span class="badge badge-new">Hardware Upcycling PWA</span>
           </div>
           <p class="card-desc">Lightweight, ultra-crisp desk clock &amp; calendar PWA engineered to upcycle older devices (iPads, iPhones, Android tablets) into battery-friendly, burn-in protected desk companion displays.</p>
-          <ul style="color:var(--text-secondary);font-size:0.9rem;margin-top:0.75rem;line-height:1.45;">
+          <ul class="card-list">
             <li>⚡ <strong>Zero Framework Bloat (Vanilla JS/CSS):</strong> Instant boot, near-zero CPU cycles, and 60 FPS on vintage hardware</li>
             <li>🖤 <strong>OLED True-Black &amp; Spectrum Themes:</strong> #000000 pixel shutoff, Night Amber, vibrant gradients, and built-in display dimmer</li>
             <li>📊 <strong>Real-Time Metrics:</strong> Live Day Progress (%), remaining countdown, ISO week number, and lunar moon phase</li>
@@ -391,16 +449,17 @@
           </ul>
         </div>
         <div class="card-footer">
-          Launch Clock Platform
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-            stroke-linecap="round" stroke-linejoin="round">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
+          <span class="card-footer-meta">clock.lets.gen.in &bull; Wake Lock API &bull; True OLED Black</span>
+          <span class="card-footer-action">
+            Launch Clock Platform
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </span>
         </div>
       </a>
-
-      <!-- CSP Headers and JSON SVN temporarily removed per request -->
     </main>
   </div>
 </body>
