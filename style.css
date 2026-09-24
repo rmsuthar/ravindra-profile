@@ -1111,7 +1111,46 @@ select,
 
 .project-links {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   gap: 0.5rem;
+}
+
+.project-docs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.6rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.project-docs-label {
+  color: var(--text-muted);
+  font-weight: 600;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.project-doc-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color var(--transition-fast);
+}
+
+.project-doc-link:hover {
+  text-decoration: underline;
+}
+
+.project-docs-sep {
+  color: var(--border-subtle);
+  font-size: 0.75rem;
 }
 
 .projects-more-cta {
