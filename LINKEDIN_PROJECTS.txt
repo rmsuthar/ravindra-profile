@@ -1,0 +1,276 @@
+================================================================================
+  LINKEDIN PROJECTS SHOWCASE — READY FOR COPY & PASTE
+  Profile: Ravindrakumar M. Suthar (https://www.linkedin.com/in/ravindrasuthar/)
+  Direct Form: https://www.linkedin.com/in/ravindrasuthar/edit/forms/project/new/
+================================================================================
+
+This document contains pre-formatted fields ready to copy-paste into LinkedIn's
+"Add Project" form, along with recommended skill tags and direct URLs.
+
+--------------------------------------------------------------------------------
+PROJECT 1: FoodScan AI (Google Play App & Edge Scanner)
+--------------------------------------------------------------------------------
+[Project Name]
+FoodScan AI — AI Dietary Scanner & Foreign Food Label Decoder
+
+[Associated with]
+Leave blank (or Independent / Founder)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+September 2026
+
+[End Date]
+Present
+
+[Project URL]
+https://play.google.com/store/apps/details?id=in.gen.lets.foodscan
+
+[Skills to tag on LinkedIn]
+Mobile Application Development • Optical Character Recognition (OCR) • Artificial Intelligence (AI) • Edge Computing • Computer Vision • Product Architecture • Food Safety & Allergen Detection • Android Development
+
+[Description - Copy & Paste below]
+Officially launched and live on the Google Play Store! FoodScan AI is an edge-powered mobile AI application engineered for conscious travelers abroad (Vegetarian, Jain, Vegan, Celiac gluten-free, and severe allergen sufferers) who face intense anxiety in foreign supermarkets and airports.
+
+• The Global Travel Dietary Dilemma: In India, grocery shoppers spot food suitability in 0.5s via statutory Green Dots. In Western supermarkets (London, Frankfurt, Paris, Tokyo), statutory dots do not exist. Deceptive packaging marks (e.g. Germany’s "Der Grüne Punkt" recycling mark on pork snacks) and microscopic foreign-language labels conceal animal gelatins, rennet, carmine (E120), or hidden wheat thickeners.
+
+• Dual Barcode & Multilingual OCR: Instant camera scan of foreign food packages or barcodes provides a complete dietary breakdown in under 1 second — translating microscopic French, German, or Japanese ingredients without slow cloud round-trips.
+
+• Deterministic Dietary Safeguards:
+  - Jain Ahimsa: Flags underground root vegetables (potatoes, onions, garlic, beets, carrots), honey, and animal gelatins.
+  - 100% Pure Veg & Vegan: Detects hidden animal rennet in cheese, beef tallow, carmine dye (E120), shellac, and animal-derived E471 emulsifiers.
+  - Celiac Gluten-Free (<20 ppm): Cross-checks wheat, barley, rye, malt, and cross-contamination alerts.
+  - Major Allergen Alerts: Real-time safety notifications for peanuts, tree nuts, dairy/milk, soy, eggs, and sesame seeds.
+
+• Chemical E-Number Decoder: Automatically demystifies confusing European additive codes (E-numbers) into plain English with deterministic plant vs. animal origin classification.
+
+• Traveler Edge Architecture: High-performance edge processing designed to operate reliably in low-reception airport departure gates and underground grocery stores.
+
+Google Play: https://play.google.com/store/apps/details?id=in.gen.lets.foodscan
+Web Companion: https://foodscan.lets.gen.in/packaging-marks
+
+
+--------------------------------------------------------------------------------
+PROJECT 2: Citibank AI Innovation (Autonomous AEM Migration Agent & VS Code)
+--------------------------------------------------------------------------------
+[Project Name]
+Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension
+
+[Associated with]
+Citicorp Services India Pvt. Ltd.
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+January 2024
+
+[End Date]
+Present
+
+[Project URL]
+https://ravindra.lets.gen.in/
+
+[Skills to tag on LinkedIn]
+Generative AI • Retrieval-Augmented Generation (RAG) • Adobe Experience Manager (AEM) • Visual Studio Code Extensions • Abstract Syntax Tree (AST) • Enterprise Architecture • Frontend Architecture • Multi-Agent Systems
+
+[Description - Copy & Paste below]
+Architected an enterprise-grade AI developer productivity platform at Citicorp that pairs an autonomous migration AI agent with a custom Visual Studio Code IDE extension to automate the conversion of legacy non-AEM component ecosystems into modern Adobe Experience Manager (AEM) Core Components and Sling Models.
+
+• IDE-Integrated Extension: Custom VS Code extension standardizes prompt templates, injects file tree hierarchies and AST snippets directly into developer workflows, eliminating context drift and standardizing model prompts.
+
+• Autonomous RAG Pipeline: Ingests legacy component templates, client scripts, styles, and data structures; cross-references them against enterprise AEM design systems using Retrieval-Augmented Generation (RAG).
+
+• AST Transformation Toolchain: Custom Abstract Syntax Tree (AST) scripts parse markup and programmatically generate production-ready AEM HTL templates, Sling Models, Touch UI authoring dialogs, and clientlibs with automated syntax validation.
+
+• Measurable Business Impact: Slashed enterprise CMS replatforming timelines by over 60%, reduced developer manual translation errors to near zero, and established reusable agentic engineering standards across squads.
+
+
+--------------------------------------------------------------------------------
+PROJECT 3: EdgeNonce (Zero-Latency Dynamic CSP Nonce Streaming Engine)
+--------------------------------------------------------------------------------
+[Project Name]
+EdgeNonce — Zero-Latency Dynamic CSP Nonce Streaming Engine
+
+[Associated with]
+Leave blank (or Independent Project)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+March 2024
+
+[End Date]
+Present
+
+[Project URL]
+https://www.edge-nonce.com
+
+[Skills to tag on LinkedIn]
+Cloudflare Workers • V8 Isolates • Content Security Policy (CSP) • PCI-DSS • Web Security • TypeScript • HTMLRewriter • Edge Computing • Streaming Architecture
+
+[Description - Copy & Paste below]
+Architected EdgeNonce, an enterprise Content Security Policy (CSP Level 3) streaming engine deployed on Cloudflare Workers edge nodes running across 300+ global data centers.
+
+• The Enterprise Challenge: Strict CSP Level 3 requires unique, dynamic per-request cryptographic nonces to defeat cross-site scripting (XSS). Traditionally, dynamic nonces destroy static CDN caching and Adobe AEM Dispatcher hit rates or force insecure 'unsafe-inline' allowances.
+
+• Zero-Latency Streaming Injection: Leverages Cloudflare V8 Isolates and streaming HTMLRewriter to inject unique 128-bit dynamic nonces on the fly in <1.5ms into cached HTML streams, enabling origins and CDNs to retain 100% cache hit rates.
+
+• PCI-DSS v4.0 Regulatory Compliance: Engineered specifically to satisfy PCI-DSS v4.0 Requirements 6.4.3 & 11.6.1 for script authorization and tamper detection across mission-critical financial checkouts and digital banking portals.
+
+• Runtime Compatibility: Incorporates an automated Workers AI threat classifier and runtime csp-compat.js bridge for backward compatibility with legacy tag managers, third-party analytics, and tracking scripts.
+
+Live Engine: https://www.edge-nonce.com
+AEM Guide: https://www.edge-nonce.com/aem-services.html
+IHS Apache Guide: https://www.edge-nonce.com/apache-ihs-integration-guide.html
+
+
+--------------------------------------------------------------------------------
+PROJECT 4: StateGuard.js (BFSI DOM Tamper Protection Utility)
+--------------------------------------------------------------------------------
+[Project Name]
+StateGuard.js — DOM Tamper Protection for BFSI Workflows
+
+[Associated with]
+Leave blank (or Open Source)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+August 2023
+
+[End Date]
+Present
+
+[Project URL]
+https://rmsuthar.github.io/StateGuard/
+
+[Skills to tag on LinkedIn]
+Web Security • Client-Side Security • JavaScript • Object Immutability • MutationObserver • Fraud Prevention • BFSI Architecture • OWASP
+
+[Description - Copy & Paste below]
+Engineered StateGuard.js, a specialized client-side runtime security utility designed to prevent client-side form attribute and state tampering in high-stakes financial services and transactional checkout applications.
+
+• Client-Side Tamper Resistance: Intercepts DOM mutation events to protect read-only attributes, disabled submit states, hidden account identifiers, and transaction amounts against unauthorized manipulation via browser Developer Tools.
+
+• Property Descriptor Locking: Enforces runtime immutability using Object.freeze, property descriptor sealing, and mutation observers — instantly reverting and alerting on unauthorized attribute overrides prior to submission.
+
+• Zero-Dependency Footprint: Lightweight vanilla JavaScript implementation with zero external dependencies, built for seamless integration into enterprise BFSI transaction funnels.
+
+Live Showcase & Demo: https://rmsuthar.github.io/StateGuard/
+
+
+--------------------------------------------------------------------------------
+PROJECT 5: Global Edge Sandbox & Multi-Region Load Balancer Inspector
+--------------------------------------------------------------------------------
+[Project Name]
+Global Edge Sandbox & Multi-Region Load Balancer Inspector
+
+[Associated with]
+Leave blank (or Independent Project)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+November 2023
+
+[End Date]
+Present
+
+[Project URL]
+https://gateway.lets.gen.in/
+
+[Skills to tag on LinkedIn]
+Cloudflare Workers • Multi-Region Load Balancing • WebAuthn • Biometric Authentication • Edge Telemetry • WCAG 2.1 AAA • Cloudflare KV
+
+[Description - Copy & Paste below]
+Engineered an edge-computing proxy platform on Cloudflare Workers that simulates web application access from 12 global PoPs (US, Europe, Asia, Middle East, and South America) for distributed performance benchmarking and telemetry inspection.
+
+• Multi-Region Load Balancer Telemetry: Real-time inspection and decoding of distributed load balancer headers (AWS ALB, GCP HTTPS LB, NGINX), live round-trip latency benchmarking, and automated cURL CLI export generators.
+
+• Framebuster Neutralization & WebAuthn: Implements framebuster neutralizers for visual CSP/X-Frame-Options inspection, paired with biometric Touch ID / Face ID WebAuthn authentication backed by Cloudflare KV quota storage.
+
+• Universal Accessibility: Designed with a fully responsive WCAG AAA theme engine, zero horizontal scroll down to 320px, and real-time network telemetry graphs.
+
+Live Platform: https://gateway.lets.gen.in/
+
+
+--------------------------------------------------------------------------------
+PROJECT 6: Gujarat Panchang & Automated Broadcast System
+--------------------------------------------------------------------------------
+[Project Name]
+Gujarat Panchang & Automated Broadcast Platform
+
+[Associated with]
+Leave blank (or Independent Project)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+October 2023
+
+[End Date]
+Present
+
+[Project URL]
+https://tithi.lets.gen.in/
+
+[Skills to tag on LinkedIn]
+Python • Astronomical Algorithms (PyEphem) • Playwright Automation • Cloudflare Pages • Web Performance • WhatsApp Automation • WCAG AA
+
+[Description - Copy & Paste below]
+Architected an automated precision astronomical calculation engine, edge-published web application, and messaging system delivering accurate daily Gujarati Panchang, live Choghadiyas, Vedic muhurats, and inauspicious affliction tracking.
+
+• Astronomical Calculation Engine: Built with Python & PyEphem computing high-precision planetary ephemerides, sunrise/sunset, and Chitrapaksha (Lahiri) Ayanamsha for Gujarat coordinates (23.0225° N, 72.5714° E). Evaluates classical Vedic afflictions, flagging contaminated slots with actionable warnings.
+
+• Zero-Framework Edge Delivery: Pure semantic HTML5, Vanilla CSS, and modular ES6 deployed atomically to Cloudflare Pages edge network with SHA-256 asset manifest hashing.
+
+• Clientside Real-Time Engine: IST clock ticker locked to Asia/Kolkata, dynamic Choghadiya countdown scanner finding the next truly unblemished auspicious slot, and mathematically rendered dynamic SVG lunar crescent geometry.
+
+• Automated Broadcast Distribution: Automated daily morning broadcast to WhatsApp Channel subscribers using headless Playwright with isolated session persistence.
+
+Live Platform: https://tithi.lets.gen.in/
+
+
+--------------------------------------------------------------------------------
+PROJECT 7: Digital Table Clock & Calendar PWA
+--------------------------------------------------------------------------------
+[Project Name]
+Digital Table Clock & Calendar PWA (Hardware Upcycling)
+
+[Associated with]
+Leave blank (or Independent Project)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+May 2023
+
+[End Date]
+Present
+
+[Project URL]
+https://clock.lets.gen.in/
+
+[Skills to tag on LinkedIn]
+Progressive Web Apps (PWA) • Screen Wake Lock API • Vanilla JavaScript • OLED Display Optimization • Service Workers • Hardware Upcycling
+
+[Description - Copy & Paste below]
+Ultra-crisp, battery-friendly digital table clock & calendar PWA designed to upcycle older tablets and smartphones (iPads, iPhones, Android devices) into dedicated, burn-in-protected desk companions and bedside docks.
+
+• Hardware Upcycling Architecture: Built with zero framework overhead (pure Vanilla JS & CSS) delivering sub-millisecond boot times, near-zero CPU cycles, and 60 FPS smooth rendering on vintage mobile hardware.
+
+• OLED True-Black & Dimmer: True black (#000000) pixel shutoff prevents OLED burn-in and conserves battery life, complemented by Night Amber mode and touch-based brightness controls.
+
+• Web API Integration: Employs the Screen Wake Lock API to keep the display active seamlessly and offline Service Worker caching to eliminate background network polling.
+
+Live Application: https://clock.lets.gen.in/
+PWA Installer: https://widget.lets.gen.in/
+================================================================================
