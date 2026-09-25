@@ -9,7 +9,7 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 Verified Profile & Career Background:
 - Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
-- Personal / Open-Source Projects: EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
+- Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -59,6 +59,24 @@ const KNOWLEDGE_FALLBACKS = [
   - **Screen Wake Lock API**: Gracefully keeps the screen awake without changing system-wide timeouts.
   - **Offline PWA Service Worker**: Full caching eliminates background polling and radio power consumption.
   - **Built-in Dimmer & Night Amber**: Touch-based brightness control for bedside night use.`
+  },
+  {
+    triggers: ['foodscan', 'food', 'dietary', 'jain', 'vegan', 'celiac', 'allergen', 'e-number', 'google play', 'label', 'supermarket', 'traveler'],
+    answer: `**FoodScan AI — AI Dietary Scanner & Multilingual Food Label Decoder (Google Play):**
+
+- **Overview**: Mobile AI application officially live on Google Play, engineered for conscious travelers abroad (Vegetarian, Jain, Vegan, Celiac gluten-free, and severe allergen sufferers) who face anxiety in foreign supermarkets and airports.
+- **The Core Problem**: In India, food is marked with mandatory Green Dots. Abroad (UK, Europe, US, Japan), statutory dietary dots do not exist, and recycling symbols like Germany's "Der Grüne Punkt" (a green circular arrow mark) deceive travelers into purchasing meat or pork snacks. Microscopic foreign ingredients hide animal gelatins, rennet, carmine (E120), or hidden wheat.
+- **Key Capabilities**:
+  - **Dual Barcode & Multilingual OCR**: Instant camera scanning of foreign food labels (French, German, Japanese, Italian, etc.) and barcodes in <1 second.
+  - **Jain Ahimsa Safeguards**: Flags underground root vegetables (onions, garlic, potatoes, carrots, beets), honey, and animal gelatins.
+  - **100% Pure Veg & Vegan**: Detects hidden animal rennet, beef tallow, carmine (E120), shellac, and animal-derived E471 emulsifiers.
+  - **Celiac Gluten-Free (<20 ppm)**: Rigorously cross-checks wheat, barley, rye, malt, and cross-contamination alerts.
+  - **Major Allergen Shield**: Real-time alerts for peanuts, tree nuts, dairy, soy, eggs, and sesame.
+  - **Chemical E-Number Decoder**: Translates confusing additive numbers into plain English with deterministic plant vs. animal origin determination.
+  - **Traveler Edge Architecture**: Ultra-fast edge processing built to work reliably even in spotty supermarket reception.
+- **Official Resources**:
+  - [Download on Google Play Store](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan)
+  - [Global Packaging Marks Guide](https://foodscan.lets.gen.in/packaging-marks)`
   },
   {
     triggers: ['edgenonce', 'nonce', 'csp', 'htmlrewriter', 'streaming', 'pci-dss', 'pci'],
@@ -184,11 +202,12 @@ const KNOWLEDGE_FALLBACKS = [
     answer: `**Featured Innovations & Open-Source Projects:**
 
 1. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
-2. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (<1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
-3. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
-4. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
-5. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
-6. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
+2. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
+3. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (<1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
+4. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
+5. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
+6. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
+7. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
   }
 ];
 
@@ -202,11 +221,11 @@ function findFallbackAnswer(query) {
   return `**Ravindrakumar M. Suthar — Executive Overview:**
 
 - **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).
-- **Core Specializations**: Micro-frontends, React/Next.js, TypeScript, Autonomous AI Migration Agents (Non-AEM to AEM using RAG), VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.
+- **Core Specializations**: Micro-frontends, React/Next.js, TypeScript, Autonomous AI Migration Agents (Non-AEM to AEM using RAG), VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.
 - **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.
 - **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988 | [LinkedIn](https://www.linkedin.com/in/ravindrasuthar/).
 
-You can ask me about his **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
+You can ask me about his **FoodScan AI app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
 }
 
 export default {

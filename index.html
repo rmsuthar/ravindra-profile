@@ -80,7 +80,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20260924-contactqr">
+  <link rel="stylesheet" href="style.css?v=20260925-foodscan">
 </head>
 <body>
   <!-- Multi-Anchor Skip Navigation for WCAG 2.2 Accessibility -->
@@ -391,6 +391,9 @@
         </button>
         <button type="button" class="prompt-chip" data-prompt="Explain Ravindra's autonomous Non-AEM to AEM migration agent and integrated VS Code extension using RAG and AST scripts.">
           <span>🤖 AEM Agent &amp; VS Code Extension</span>
+        </button>
+        <button type="button" class="prompt-chip" data-prompt="Tell me about FoodScan AI, the dietary scanner app for Jain, Vegan, and Celiac travelers live on Google Play.">
+          <span>✈️ FoodScan AI App</span>
         </button>
         <button type="button" class="prompt-chip" data-prompt="Explain EdgeNonce and how it enables dynamic CSP nonces at the network edge without breaking CDN caching.">
           <span>🛡️ EdgeNonce CSP Engine</span>
@@ -777,6 +780,58 @@
       </div>
 
       <div class="projects-grid">
+        <!-- FoodScan AI -->
+        <article class="project-card">
+          <header class="project-header">
+            <div>
+              <h3 class="project-title">FoodScan AI <span class="project-subtitle">&bull; AI Dietary Scanner &amp; Multilingual Label Decoder</span></h3>
+              <div class="project-category-role">Android (Google Play Store) &bull; Multilingual OCR &bull; Barcode Engine &bull; Deterministic Dietary Safeguards</div>
+            </div>
+            <div class="project-header-actions">
+              <span class="project-badge">Google Play Live</span>
+              <a href="https://play.google.com/store/apps/details?id=in.gen.lets.foodscan" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-primary">
+                <span>Google Play</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+              <a href="https://foodscan.lets.gen.in/packaging-marks" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+                <span>Packaging Marks Guide</span>
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <line x1="10" y1="14" x2="21" y2="3"></line>
+                </svg>
+              </a>
+            </div>
+          </header>
+          <ul class="project-bullets">
+            <li><strong>The Global Travel Dietary Dilemma:</strong> In India, grocery shoppers spot food suitability in 0.5 seconds via the mandatory Green Dot. In Western supermarkets and international airports (London, Frankfurt, Paris, Tokyo), zero dietary dots exist. Deceptive European recycling marks (e.g., Germany&rsquo;s <em>Der Gr&uuml;ne Punkt</em> on meat and pork snacks) and microscopic foreign-language labels conceal animal gelatins, rennet, carmine (E120), or hidden wheat thickeners.</li>
+            <li><strong>Dual Barcode &amp; Multilingual OCR:</strong> Instant camera scan of foreign food packages or barcodes provides a complete dietary breakdown in <strong>under 1 second</strong> &mdash; translating microscopic French, German, or Japanese ingredients without slow cloud round-trips.</li>
+            <li><strong>Deterministic Dietary Safeguards:</strong>
+              <br>&bull; <em>Jain Ahimsa:</em> Rigorously flags root vegetables (potatoes, onions, garlic, beets, carrots), honey, and animal gelatins.
+              <br>&bull; <em>100% Pure Veg &amp; Vegan:</em> Immediately detects hidden animal rennet in cheese, beef tallow, carmine dye (E120), shellac, and animal-derived E471 emulsifiers.
+              <br>&bull; <em>Celiac Gluten-Free (&lt;20 ppm):</em> Cross-checks wheat, barley, rye, malt, and cross-contamination disclaimers.
+              <br>&bull; <em>Major Allergen Alerts:</em> Real-time safety notifications for peanuts, tree nuts, dairy/milk, soy, eggs, and sesame seeds.</li>
+            <li><strong>Chemical E-Number Decoder:</strong> Automatically demystifies confusing European additive codes (E-numbers) into plain English with deterministic plant vs. animal origin classification.</li>
+            <li><strong>Traveler Edge Architecture:</strong> High-performance edge processing designed to operate reliably in low-reception airport departure gates and underground grocery stores (<a href="https://play.google.com/store/apps/details?id=in.gen.lets.foodscan" target="_blank" rel="noopener noreferrer" class="project-doc-link">Download FoodScan AI on Google Play &rarr;</a> | <a href="https://foodscan.lets.gen.in/packaging-marks" target="_blank" rel="noopener noreferrer" class="project-doc-link">Global Packaging Marks Guide &rarr;</a>).</li>
+          </ul>
+          <footer class="project-footer">
+            <div class="project-tags">
+              <span class="badge badge-ai">Multilingual OCR</span>
+              <span class="badge badge-code">Barcode Engine</span>
+              <span class="badge">Google Play Store</span>
+              <span class="badge badge-security">Deterministic Safeguards</span>
+              <span class="badge">Jain Ahimsa</span>
+              <span class="badge">Celiac Gluten-Free (&lt;20 ppm)</span>
+              <span class="badge">E-Number Decoder</span>
+              <span class="badge">Edge Processing</span>
+            </div>
+          </footer>
+        </article>
+
         <!-- EdgeNonce -->
         <article class="project-card">
           <header class="project-header">
@@ -1145,7 +1200,7 @@
         <div class="ai-message assistant">
           <div class="ai-message-bubble">
             <p><strong>Hello! I am Ravindra's Executive AI Copilot.</strong></p>
-            <p>I can answer inquiries regarding Ravindra's 17+ years of frontend architecture leadership at Citicorp, his unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, EdgeNonce CSP streaming engine, StateGuard.js DOM security, or evaluate alignment with your open requisition.</p>
+            <p>I can answer inquiries regarding Ravindra's 17+ years of frontend architecture leadership at Citicorp, his unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, FoodScan AI mobile scanner on Google Play, EdgeNonce CSP streaming engine, StateGuard.js DOM security, or evaluate alignment with your open requisition.</p>
           </div>
           <div class="ai-message-meta">
             <span>Verified Knowledge Base &bull; Cloudflare Workers AI</span>
@@ -1155,11 +1210,11 @@
 
       <div class="ai-drawer-suggestions">
         <button type="button" class="ai-drawer-chip" data-prompt="Why hire Ravindra as VP / Principal Frontend Architect?">🌟 Why Hire?</button>
+        <button type="button" class="ai-drawer-chip" data-prompt="Tell me about FoodScan AI on Google Play and how it solves foreign food label anxiety.">✈️ FoodScan AI</button>
         <button type="button" class="ai-drawer-chip" data-prompt="Explain his unified Non-AEM to AEM migration AI agent working with a custom VS Code extension.">🤖 AEM Agent &amp; VS Code</button>
         <button type="button" class="ai-drawer-chip" data-prompt="What is EdgeNonce and how does it solve CSP caching challenges?">🛡️ EdgeNonce</button>
         <button type="button" class="ai-drawer-chip" data-prompt="What is StateGuard.js and how does it protect DOM security?">🛡️ StateGuard</button>
         <button type="button" class="ai-drawer-chip" data-prompt="How did he deliver 50% application load-time improvements?">⚡ Performance</button>
-        <button type="button" class="ai-drawer-chip" data-prompt="What is his experience with Workday integrations?">📋 Workday</button>
       </div>
 
       <form id="ai-chat-form" class="ai-input-form">
@@ -1199,6 +1254,6 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20260924-hboxes" defer></script>
+  <script src="app.js?v=20260925-foodscan" defer></script>
 </body>
 </html>

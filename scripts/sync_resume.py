@@ -231,6 +231,11 @@ def generate_workday_docx():
     # 5. Technical Innovations
     paragraphs.append(make_heading("Featured Technical Innovations & Open Systems"))
     paragraphs.append(make_p([
+        make_run("FoodScan AI (AI Dietary Scanner & Label Decoder): ", bold=True, size=19, color="1A202C"),
+        make_run("Mobile AI application officially published on the Google Play Store engineered for conscious travelers (Vegetarian, Jain, Vegan, Celiac gluten-free, and severe allergen sufferers). Leverages dual barcode scanning and multilingual OCR to decode foreign food labels (French, German, Japanese, etc.) and European E-numbers in under one second with deterministic dietary safeguards (play.google.com/store/apps/details?id=in.gen.lets.foodscan | foodscan.lets.gen.in/packaging-marks).", size=19, color="2D3748")
+    ], space_before=25, space_after=25))
+
+    paragraphs.append(make_p([
         make_run("EdgeNonce (Zero-Latency CSP Nonce Streaming Engine): ", bold=True, size=19, color="1A202C"),
         make_run("Enterprise Content Security Policy engine at the network edge deployed on Cloudflare Workers. Injects dynamic 128-bit cryptographic nonces into cached HTML responses via streaming HTMLRewriter in <1.5ms without breaking origin CDN or AEM Dispatcher caching (100% cache retention). Enforces CSP Level 3 and satisfies PCI-DSS v4.0 (6.4.3 & 11.6.1), HIPAA, and GDPR (edge-nonce.com).", size=19, color="2D3748")
     ], space_before=25, space_after=25))

@@ -611,6 +611,7 @@ function initCloudflareAICopilot() {
             'Section 508, ADA, and WCAG 2.1/2.2 AA Compliance Governance with axe-core'
           ],
           relevantInnovations: [
+            'FoodScan AI (AI Dietary Scanner & Foreign Label Decoder on Google Play)',
             'Agentic Non-AEM to AEM Migration Engine (RAG & AST Scripts)',
             'EdgeNonce (Zero-Latency Dynamic CSP Nonce Streaming Engine)',
             'VS Code AI Prompt Generator Extension',
@@ -748,6 +749,13 @@ function initCloudflareAICopilot() {
       };
     }
 
+    if (q.includes('foodscan') || q.includes('food') || q.includes('dietary') || q.includes('jain') || q.includes('vegan') || q.includes('celiac') || q.includes('allergen') || q.includes('e-number') || q.includes('play store') || q.includes('label')) {
+      return {
+        answer: `**FoodScan AI — AI Dietary Scanner & Multilingual Label Decoder (Google Play):**\n\n- **Problem**: In India, food suitability is marked with mandatory Green Dots. Abroad (UK, Europe, US, Japan), statutory dietary dots do not exist, and recycling symbols like Germany's "Der Grüne Punkt" deceive travelers into buying meat or pork snacks. Microscopic foreign ingredients conceal animal gelatins, rennet, carmine (E120), or hidden wheat.\n- **Dual Barcode & Multilingual OCR**: Instantly scans foreign labels (French, German, Japanese, etc.) and barcodes via camera in under one second.\n- **Deterministic Dietary Safeguards**:\n  - *Jain Ahimsa*: Flags root vegetables (potatoes, onions, garlic, beets, carrots), honey, and animal gelatins.\n  - *100% Pure Veg & Vegan*: Detects hidden animal rennet, beef tallow, carmine (E120), shellac, and animal-derived E471 emulsifiers.\n  - *Celiac Gluten-Free (<20 ppm)*: Cross-checks wheat, barley, rye, malt, and cross-contamination alerts.\n  - *Major Allergens*: Instant alerts for peanuts, tree nuts, dairy, soy, eggs, and sesame.\n- **E-Number Decoder**: Translates European chemical additive numbers into plain English with plant vs. animal origin determination.\n- **Built for Travelers**: Ultra-fast edge processing designed to function reliably in low-reception airport terminals and underground supermarkets.\n- **Download & Guides**: [Get FoodScan AI on Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Packaging Marks Guide](https://foodscan.lets.gen.in/packaging-marks)`,
+        source: 'Verified Knowledge Base (Edge Fallback)'
+      };
+    }
+
     if (q.includes('edgenonce') || q.includes('nonce') || q.includes('csp') || q.includes('htmlrewriter') || q.includes('pci')) {
       return {
         answer: `**EdgeNonce — Zero-Latency Dynamic CSP Nonce Streaming Engine:**\n\n- **Problem**: Modern Content Security Policy (CSP Level 3) requires dynamic per-request nonces, which breaks static CDN/Dispatcher caching or forces insecure \`'unsafe-inline'\` scripts.\n- **Solution**: EdgeNonce uses Cloudflare Workers and streaming \`HTMLRewriter\` to inject unique 128-bit dynamic nonces on the fly (<1.5ms) while the origin retains 100% cache hit rates.\n- **Tech Stack**: TypeScript, Cloudflare V8 Isolates, HTMLRewriter, Workers AI threat classifier, and \`csp-compat.js\` runtime bridge.\n- **Compliance**: Satisfies PCI-DSS v4.0 (6.4.3 & 11.6.1), HIPAA, and GDPR.\n- **Live Platform & Guides**: [edge-nonce.com](https://www.edge-nonce.com) | [AEM Architecture Guide](https://www.edge-nonce.com/aem-services.html) | [IHS Apache Configs](https://www.edge-nonce.com/apache-ihs-integration-guide.html)`,
@@ -812,7 +820,7 @@ function initCloudflareAICopilot() {
     }
 
     return {
-      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
+      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **FoodScan AI mobile app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
       source: 'Verified Knowledge Base (Edge Fallback)'
     };
   }
