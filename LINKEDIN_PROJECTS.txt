@@ -4,8 +4,9 @@
   Direct Form: https://www.linkedin.com/in/ravindrasuthar/edit/forms/project/new/
 ================================================================================
 
-This document contains pre-formatted fields ready to copy-paste into LinkedIn's
-"Add Project" form, along with recommended skill tags and direct URLs.
+LinkedIn allows up to 5 top skills per project.
+Each skill below matches LinkedIn's canonical skills autocomplete dropdown.
+Copy-paste each skill into the LinkedIn "Add skill" field one by one.
 
 --------------------------------------------------------------------------------
 PROJECT 1: FoodScan AI (Google Play App & Edge Scanner)
@@ -28,8 +29,12 @@ Present
 [Project URL]
 https://play.google.com/store/apps/details?id=in.gen.lets.foodscan
 
-[Skills to tag on LinkedIn]
-Mobile Application Development • Optical Character Recognition (OCR) • Artificial Intelligence (AI) • Edge Computing • Computer Vision • Product Architecture • Food Safety & Allergen Detection • Android Development
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Mobile Application Development
+Optical Character Recognition (OCR)
+Artificial Intelligence (AI)
+Edge Computing
+Android Development
 
 [Description - Copy & Paste below]
 Officially launched and live on the Google Play Store! FoodScan AI is an edge-powered mobile AI application engineered for conscious travelers abroad (Vegetarian, Jain, Vegan, Celiac gluten-free, and severe allergen sufferers) who face intense anxiety in foreign supermarkets and airports.
@@ -73,8 +78,12 @@ Present
 [Project URL]
 https://ravindra.lets.gen.in/
 
-[Skills to tag on LinkedIn]
-Generative AI • Retrieval-Augmented Generation (RAG) • Adobe Experience Manager (AEM) • Visual Studio Code Extensions • Abstract Syntax Tree (AST) • Enterprise Architecture • Frontend Architecture • Multi-Agent Systems
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Generative AI
+Adobe Experience Manager (AEM)
+Retrieval-Augmented Generation (RAG)
+Visual Studio Code
+Frontend Architecture
 
 [Description - Copy & Paste below]
 Architected an enterprise-grade AI developer productivity platform at Citicorp that pairs an autonomous migration AI agent with a custom Visual Studio Code IDE extension to automate the conversion of legacy non-AEM component ecosystems into modern Adobe Experience Manager (AEM) Core Components and Sling Models.
@@ -109,8 +118,12 @@ Present
 [Project URL]
 https://www.edge-nonce.com
 
-[Skills to tag on LinkedIn]
-Cloudflare Workers • V8 Isolates • Content Security Policy (CSP) • PCI-DSS • Web Security • TypeScript • HTMLRewriter • Edge Computing • Streaming Architecture
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Cloudflare Workers
+Content Security Policy (CSP)
+Web Security
+TypeScript
+Edge Computing
 
 [Description - Copy & Paste below]
 Architected EdgeNonce, an enterprise Content Security Policy (CSP Level 3) streaming engine deployed on Cloudflare Workers edge nodes running across 300+ global data centers.
@@ -149,8 +162,12 @@ Present
 [Project URL]
 https://rmsuthar.github.io/StateGuard/
 
-[Skills to tag on LinkedIn]
-Web Security • Client-Side Security • JavaScript • Object Immutability • MutationObserver • Fraud Prevention • BFSI Architecture • OWASP
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Web Security
+JavaScript
+Front-End Development
+Object-Oriented Programming (OOP)
+Fraud Prevention
 
 [Description - Copy & Paste below]
 Engineered StateGuard.js, a specialized client-side runtime security utility designed to prevent client-side form attribute and state tampering in high-stakes financial services and transactional checkout applications.
@@ -185,8 +202,12 @@ Present
 [Project URL]
 https://gateway.lets.gen.in/
 
-[Skills to tag on LinkedIn]
-Cloudflare Workers • Multi-Region Load Balancing • WebAuthn • Biometric Authentication • Edge Telemetry • WCAG 2.1 AAA • Cloudflare KV
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Cloudflare Workers
+Load Balancing
+Web Accessibility (A11y)
+Biometrics
+Cloud Computing
 
 [Description - Copy & Paste below]
 Engineered an edge-computing proxy platform on Cloudflare Workers that simulates web application access from 12 global PoPs (US, Europe, Asia, Middle East, and South America) for distributed performance benchmarking and telemetry inspection.
@@ -221,8 +242,12 @@ Present
 [Project URL]
 https://tithi.lets.gen.in/
 
-[Skills to tag on LinkedIn]
-Python • Astronomical Algorithms (PyEphem) • Playwright Automation • Cloudflare Pages • Web Performance • WhatsApp Automation • WCAG AA
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Python (Programming Language)
+Playwright
+Web Performance
+Automation
+Cloudflare
 
 [Description - Copy & Paste below]
 Architected an automated precision astronomical calculation engine, edge-published web application, and messaging system delivering accurate daily Gujarati Panchang, live Choghadiyas, Vedic muhurats, and inauspicious affliction tracking.
@@ -259,8 +284,12 @@ Present
 [Project URL]
 https://clock.lets.gen.in/
 
-[Skills to tag on LinkedIn]
-Progressive Web Apps (PWA) • Screen Wake Lock API • Vanilla JavaScript • OLED Display Optimization • Service Workers • Hardware Upcycling
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Progressive Web Applications (PWAs)
+JavaScript
+Cascading Style Sheets (CSS)
+Web Development
+Responsive Web Design
 
 [Description - Copy & Paste below]
 Ultra-crisp, battery-friendly digital table clock & calendar PWA designed to upcycle older tablets and smartphones (iPads, iPhones, Android devices) into dedicated, burn-in-protected desk companions and bedside docks.
