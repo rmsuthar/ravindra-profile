@@ -1,6 +1,6 @@
 # Ravindrakumar M. Suthar — Executive Profile & Resume
 
-> Senior Frontend Architect & Engineering Leader with 17+ years of experience in enterprise BFSI platforms, React, Next.js, Micro-frontends, Web Performance, WCAG Accessibility, and AI-Augmented Engineering.
+> Senior Frontend Architect & Engineering Leader with 17+ years of experience in enterprise Banking, Financial Services, and Insurance (BFSI) platforms, React, Next.js, Micro-frontends, Web Performance, WCAG Accessibility, and AI-Augmented Engineering.
 
 ## Summary
 - **Current Role**: Assistant Vice President, Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (May 2013 – Present)
@@ -17,7 +17,7 @@
 - **100% WCAG 2.1 & 2.2 (Level AA/AAA) & ADA Compliance** operationalized with axe-core, Lighthouse CI, and NVDA.
 - **~35% Engineering Effort Saved** by pioneering Devin AI autonomous coding agents.
 - **60%+ Faster Replatforming at Citicorp**: Architected an autonomous Non-AEM to AEM Migration AI Agent working in tandem with a custom VS Code extension — leveraging RAG, automated prompt templates, and AST scripts directly in developer IDEs to convert non-AEM components into Adobe Experience Manager (AEM).
-- **Micro-Frontend Migration** of legacy BFSI systems with 100% uptime.
+- **Micro-Frontend Migration** of legacy Banking, Financial Services, and Insurance (BFSI) systems with 100% uptime.
 
 ## Core Technical Competencies
 - **Architecture**: Micro-frontends, Reference Architecture, Enterprise SDKs, UI Platforms, postMessage protocols.
@@ -28,7 +28,7 @@
 - **AI & DevOps**: RAG (Retrieval-Augmented Generation), Autonomous Migration Agents, VS Code Extension Development, Prompt Engineering, Devin AI, GitHub Copilot, Google Antigravity SDK, GitHub Actions, Dependabot, Cloudflare Workers & Pages.
 
 ## Professional Career History
-- **Assistant Vice President, Frontend Architecture**: Citicorp Services India Pvt. Ltd. (Pune, Maharashtra, India | May 2013 – Present | 12+ years at Citi) — Leading enterprise BFSI frontend architecture, autonomous Non-AEM to AEM migration AI agents & VS Code extensions, micro-frontends, performance optimization, and institutional accessibility governance.
+- **Assistant Vice President, Frontend Architecture**: Citicorp Services India Pvt. Ltd. (Pune, Maharashtra, India | May 2013 – Present | 12+ years at Citi) — Leading enterprise Banking, Financial Services, and Insurance (BFSI) frontend architecture, autonomous Non-AEM to AEM migration AI agents & VS Code extensions, micro-frontends, performance optimization, and institutional accessibility governance.
 - **Senior Interactive Developer**: Sapient (Bangalore, Karnataka, India | March 2013 – May 2013) — High-performance responsive retail UI components with modern HTML5, CSS3, and Adobe Experience Manager (AEM / CQ5).
 - **Senior Consultant, CRM UI Architecture**: Cognizant Technology Solutions (Hyderabad, Telangana, India | December 2010 – February 2013) — Mobile CRM frontends with Siebel CRM for Google Chrome and enterprise tablets, Oracle CRM SOAP integrations, usability testing, and heuristic evaluations.
 - **Module Lead, UI Development & Usability Analyst**: Impetus Infotech India Pvt. Ltd. (Indore, Madhya Pradesh, India | June 2007 – December 2010) — Led UI engineering pods for enterprise web clients, translating concept visualizations into robust implementations; conducted usability studies, competitive benchmarking, and heuristic evaluations; partnered with organizational leads on architecture decisions, UI design standards, and industry best practices.

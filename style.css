@@ -818,7 +818,7 @@ select,
 
 .skills-matrix {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 1.25rem;
 }
 
@@ -829,6 +829,11 @@ select,
   padding: 1.25rem;
   box-shadow: var(--shadow-xs);
   transition: all var(--transition-fast);
+  min-width: 0;
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 .skill-category-card:hover {
@@ -846,12 +851,16 @@ select,
   margin-bottom: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.04em;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
 }
 
 .skill-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  max-width: 100%;
 }
 
 .badge {
@@ -867,7 +876,12 @@ select,
   border: 1px solid var(--border-subtle);
   transition: all var(--transition-fast);
   line-height: 1.4;
-  white-space: nowrap;
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  text-wrap: pretty;
+  max-width: 100%;
+  text-align: left;
 }
 
 .badge:hover {
@@ -3398,6 +3412,10 @@ body.ai-drawer-open .ai-copilot-trigger,
     box-shadow: none !important;
     -webkit-backdrop-filter: none !important;
     backdrop-filter: none !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
   }
 
   .project-card {

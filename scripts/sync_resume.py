@@ -102,7 +102,7 @@ def generate_workday_docx():
     paragraphs.append(make_p([
         make_run("Product Engineering Leader and Senior Frontend Architect with "),
         make_run("17+ years of experience", bold=True),
-        make_run(" designing resilient, enterprise-scale web platforms for global BFSI clients. Proven track record of leading multi-team engineering organizations, driving "),
+        make_run(" designing resilient, enterprise-scale web platforms for global Banking, Financial Services, and Insurance (BFSI) clients. Proven track record of leading multi-team engineering organizations, driving "),
         make_run("Workday platform uploads and HRIS integrations", bold=True),
         make_run(", modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1 & 2.2 Level AA/AAA, ADA, Section 508) and client-side security practices.")
     ], space_before=30, space_after=60))
@@ -161,7 +161,7 @@ def generate_workday_docx():
         location="Pune, India",
         dates="May 2013 – Present",
         bullets=[
-            ("Led legacy BFSI platform migration", "to Micro-frontend architectures across multi-team squads, ensuring 100% business continuity throughout the multi-phase rollout."),
+            ("Led legacy Banking, Financial Services, and Insurance (BFSI) platform migration", "to Micro-frontend architectures across multi-team squads, ensuring 100% business continuity throughout the multi-phase rollout."),
             ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension — combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60%."),
             ("Facilitated Workday platform uploads", "and HRIS configuration workflows, validating data integrity at enterprise scale with zero business disruption."),
             ("Architected enterprise UI, API, and iframe integrations", "across multiple distributed platforms, cutting integration complexity by 40% and accelerating feature time-to-market."),
@@ -250,7 +250,7 @@ def generate_workday_docx():
 
     paragraphs.append(make_p([
         make_run("StateGuard.js: ", bold=True, size=19, color="1A202C"),
-        make_run("Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical BFSI transactional workflows (rmsuthar.github.io/StateGuard).", size=19, color="2D3748")
+        make_run("Specialized browser runtime JavaScript utility that protects DOM attributes from tampering via browser developer tools. Engineered for client-side state integrity in mission-critical Banking, Financial Services, and Insurance (BFSI) transactional workflows (rmsuthar.github.io/StateGuard).", size=19, color="2D3748")
     ], space_before=25, space_after=25))
 
     paragraphs.append(make_p([
