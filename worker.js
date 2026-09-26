@@ -140,7 +140,7 @@ const KNOWLEDGE_FALLBACKS = [
 - **IBM Design Thinking Practitioner** — Human-centric enterprise UX architecture, design system co-creation, and rapid prototyping.`
   },
   {
-    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history'],
+    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'sapient', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
 - **Assistant Vice President & Senior Frontend Architect** — Citicorp Services India Pvt. Ltd. (May 2013 – Present | 12+ years):
@@ -148,9 +148,18 @@ const KNOWLEDGE_FALLBACKS = [
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
   - Modernized legacy monoliths to micro-frontends with zero downtime, cutting Core Web Vitals load times by up to 50%.
   - Established automated WCAG 2.1/2.2 AA and Section 508 CI/CD regression gates with axe-core.
-- **Senior Software Engineer / Tech Lead** — Prior enterprise consulting & delivery roles (2007 – 2013):
-  - Delivered scalable web portals, interactive SPAs, and responsive platforms for international clients.
-  - Total Career: **17+ years of continuous software engineering and architectural leadership**.`
+- **Senior Interactive Developer** — Sapient (March 2013 – May 2013):
+  - Engineered high-traffic responsive retail UI components using HTML5, CSS3, and Adobe AEM / CQ5.
+- **Senior Consultant — CRM UI Architecture** — Cognizant Technology Solutions (Dec 2010 – Feb 2013):
+  - Architected mobile CRM frontends with Siebel CRM and Oracle CRM SOAP integrations; directed usability and heuristic testing.
+- **Module Lead & Usability Analyst** — Impetus Infotech India Pvt. Ltd. (Jun 2007 – Dec 2010):
+  - Led UI engineering pods for enterprise web clients, translating concept visualizations into robust implementations and governing client-side architecture.
+  - Executed usability studies, competitive benchmarking, and heuristic evaluations to optimize web client interfaces.
+  - Partnered with organizational leadership to drive architecture decisions, UI design standards, and industry best practices.
+- **Lead Web Specialist** — Gatesix Technologies India Pvt. Ltd. (Aug 2004 – Jun 2007):
+  - Formulated frontend strategy across UI/UX design, development standards, SEO architecture, and W3C compliance.
+  - Directed concept visualization, application user flows, and client-side R&D on emerging web technologies.
+- Total Career: **17+ years of continuous software engineering and architectural leadership**.`
   },
   {
     triggers: ['skills', 'tech', 'stack', 'technologies', 'react', 'next', 'typescript', 'frontend', 'microfrontend', 'javascript', 'css'],

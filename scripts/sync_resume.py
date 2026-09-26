@@ -197,12 +197,14 @@ def generate_workday_docx():
 
     # Impetus
     add_job(
-        title="Module Lead — UI Development",
+        title="Module Lead — UI Development & Usability Analyst",
         company="Impetus Infotech India Pvt. Ltd.",
         location="India",
         dates="June 2007 – December 2010",
         bullets=[
-            ("", "Led UI engineering pods for enterprise web applications, collaborating closely with senior leadership to govern UI standards and usability lifecycles.")
+            ("Led UI engineering pods and concept implementations", "for enterprise web clients, translating product specs into robust architectures and governing client-side standards."),
+            ("Directed usability studies and heuristic evaluations,", "conducting competitive benchmarking, usability testing, and UX analysis to optimize web clients."),
+            ("Partnered with organizational leads", "to drive collaborative technical discussions, architectural decisions, design standards, and industry best practices.")
         ]
     )
 
@@ -213,7 +215,9 @@ def generate_workday_docx():
         location="India",
         dates="August 2004 – June 2007",
         bullets=[
-            ("", "Defined design systems, development standards, SEO architecture, and W3C web compliance.")
+            ("Formulated frontend and SEO strategies", "spanning UI/UX design, development standards, W3C compliance, and search architecture for web applications."),
+            ("Directed concept visualization and application flows,", "translating business requirements into intuitive UI designs and interactive web experiences."),
+            ("Spearheaded client-side R&D", "on emerging web technologies and established implementation standards across project teams.")
         ]
     )
 
