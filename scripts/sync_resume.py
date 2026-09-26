@@ -101,7 +101,9 @@ def generate_workday_docx():
     paragraphs.append(make_heading("Professional Summary"))
     paragraphs.append(make_p([
         make_run("Engineering leader with "),
-        make_run("17+ years of experience", bold=True),
+        make_run("20+ years of total experience", bold=True),
+        make_run(", including "),
+        make_run("13+ years in enterprise BFSI platforms", bold=True),
         make_run(" steering multi-team engineering organisations through large-scale digital transformation in regulated Banking, Financial Services, and Insurance (BFSI) environments. At Citicorp Services India, progressed through the engineering ladder from Technical Lead to "),
         make_run("Senior Principal Architect & Engineering Leader", bold=True),
         make_run(", building and retaining high-performance squads with sustained "),
@@ -171,8 +173,8 @@ def generate_workday_docx():
         bullets=[
             ("Led enterprise CMS modernisation", "Orchestrated the full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM), standardising content authoring workflows, component governance, and multi-brand publishing pipelines across institutional platforms."),
             ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension — combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60% with automated validation."),
-            ("Pioneered enterprise-wide Devin AI and GitHub Copilot adoption", "across squads, saving ~35% developer effort on boilerplate, test scaffolding, and migrations while boosting PR review velocity by 40%."),
-            ("Lead cross-functional frontend engineering squads (~12 engineers)", "with sustained <8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
+            ("Championed and scaled enterprise-wide adoption of Devin AI and GitHub Copilot", "across squads, saving ~35% developer effort on boilerplate, test scaffolding, and migrations while boosting PR review velocity by 40%."),
+            ("Led cross-functional frontend engineering squads (~12 engineers)", "with sustained <8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
             ("Executive reporting & governance", "Translated multi-quarter engineering roadmaps into C-suite narratives; managed programme risk, release calendar, vendor relationships, and End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption."),
             ("Enterprise GenAI Architecture & Local Vector RAG", "Architected enterprise Gemini LLM integrations with offline local vector store RAG for secure contextual retrieval within banking network boundaries. Engineered developer acceleration tools including an automated AEM layout analyzer (screenshot-to-component mapping), Adobe Experience Cloud release tracking across Launch, Analytics, and Target, and automated release validation workflows."),
             ("Autonomous Code Remediation & AI Pipelines", "Orchestrated autonomous AI agents (Devin) with scheduled automation pipelines to detect End-of-Vendor-Support (EOVS) components, synthesize automated pull requests, apply framework upgrades, and manage tracking workflows autonomously across institutional banking and CMS applications post-migration."),
@@ -219,8 +221,8 @@ def generate_workday_docx():
         location="Hyderabad, India",
         dates="December 2010 – February 2013",
         bullets=[
-            ("Architected mobile CRM frontends", "with Siebel CRM targeting Google Chrome and enterprise tablets, boosting field-force productivity."),
-            ("Developed Oracle CRM API SOAP integrations", "and led usability testing and heuristic evaluations.")
+            ("Architected mobile CRM frontends", "with Siebel CRM targeting Google Chrome and enterprise tablets, boosting field-force productivity across distributed enterprise client accounts."),
+            ("Developed Oracle CRM API SOAP integrations", "established client-side performance benchmarks, and led usability testing and heuristic evaluations.")
         ]
     )
 
@@ -259,7 +261,7 @@ def generate_workday_docx():
         bullets=[
             ("Designed, developed, and maintained client portals", "and digital marketing platforms with bespoke software integrations."),
             ("Engineered W3C-compliant website architectures", "and structured content implementations, ensuring cross-platform browser compatibility."),
-            ("Produced interactive Flash applications", "and comprehensive digital media and print marketing collateral.")
+            ("Developed rich interactive web applications", "and digital media collateral, driving early adoption of standards-based browser technologies.")
         ]
     )
 

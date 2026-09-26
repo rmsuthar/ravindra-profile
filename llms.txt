@@ -1,9 +1,9 @@
 # Ravindrakumar M. Suthar — Executive Profile & Resume
 
-> Senior Principal Architect & Engineering Leader with 17+ years of experience in enterprise Banking, Financial Services, and Insurance (BFSI) platforms, Full-Stack Architecture, React, Next.js, Angular, Spring Boot, Micro-frontends, Web Performance, WCAG Accessibility, and Generative AI systems.
+> Senior Principal Architect & Engineering Leader with 20+ years of total experience (including 13+ years in enterprise Banking, Financial Services, and Insurance (BFSI) platforms), Full-Stack Architecture, React, Next.js, Angular, Spring Boot, Micro-frontends, Web Performance, WCAG Accessibility, and Generative AI systems.
 
 ## Summary
-- **Current Role**: Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (May 2013 – Present)
+- **Current Role**: Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (May 2013 – Present, 13+ yrs at Citi)
 - **Location**: Pune, Maharashtra, India
 - **Contact**: ravindra.suthar@me.com | +91 83800 99988
 - **Official Site**: https://ravindra.lets.gen.in/
@@ -12,10 +12,10 @@
 - **Digital QR Passes**: Profile QR (https://ravindra.lets.gen.in/qrcode.svg) | Contact vCard QR (https://ravindra.lets.gen.in/contact-qr.svg)
 
 ## Key Highlights
-- **17+ Years** of enterprise product engineering experience.
+- **20+ Years** of total engineering experience (including 13+ years in enterprise BFSI).
 - **50% Frontend Performance Improvement** via Core Web Vitals, lazy loading, and bundle splitting.
 - **100% WCAG 2.1 & 2.2 (Level AA/AAA) & ADA Compliance** operationalized with axe-core, Lighthouse CI, and NVDA.
-- **~35% Engineering Effort Saved** by pioneering Devin AI autonomous coding agents and scheduled automated pipelines.
+- **~35% Engineering Effort Saved** by championing and scaling Devin AI autonomous coding agents and scheduled automated pipelines.
 - **60%+ Faster Replatforming at Citicorp**: Architected an autonomous Non-AEM to AEM Migration AI Agent working in tandem with a custom VS Code extension — leveraging offline local vector store RAG, automated prompt templates, and AST scripts directly in developer IDEs to convert legacy OpenText TeamSite and intranet components into Adobe Experience Manager (AEM).
 - **Micro-Frontend Migration** of legacy Banking, Financial Services, and Insurance (BFSI) systems with 100% uptime.
 - **Platform Modernization**: Directed complex Angular upgrades (v10 to v21) with SSR routing, core Spring Boot 3.x to 4.x upgrades, and full ownership of GitHub Enterprise (GHE) migration with Renovate automation.
