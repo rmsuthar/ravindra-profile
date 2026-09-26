@@ -7,6 +7,32 @@
   Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
   Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; font-src 'self' data:; connect-src 'self';
 
+# HTML Pages & Navigation - Always revalidate, never serve stale edge cache
+/*.html
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/resume
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/tools
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/cover-letter
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 # Cache static assets
 /style.css
   Cache-Control: public, max-age=0, must-revalidate
@@ -27,10 +53,10 @@
   Cache-Control: public, max-age=86400
 
 /llms.txt
-  Cache-Control: public, max-age=86400
+  Cache-Control: public, max-age=0, must-revalidate
 
 /Ravindrakumar_Suthar_Resume.pdf
-  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+  Cache-Control: public, max-age=0, must-revalidate
 
 /Ravindrakumar_Suthar_Resume.docx
-  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+  Cache-Control: public, max-age=0, must-revalidate

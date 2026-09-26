@@ -140,16 +140,23 @@ const KNOWLEDGE_FALLBACKS = [
 - **IBM Design Thinking Practitioner** — Human-centric enterprise UX architecture, design system co-creation, and rapid prototyping.`
   },
   {
-    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'sapient', 'cognizant'],
+    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
-- **Senior Frontend Architect & Engineering Leader** — Citicorp Services India Pvt. Ltd. (May 2013 – Present | 12+ years):
-  - Leads enterprise frontend architecture across multi-pod engineering teams in BFSI.
+- **Senior Frontend Architect & AI Platform Lead** — Citicorp Services India Pvt. Ltd. (2022 – Present):
+  - Leads enterprise CMS modernisation, orchestrating full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM).
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
-  - Modernized legacy monoliths to micro-frontends with zero downtime, cutting Core Web Vitals load times by up to 50%.
-  - Established automated WCAG 2.1/2.2 AA and Section 508 CI/CD regression gates with axe-core.
-- **Senior Interactive Developer** — Sapient (March 2013 – May 2013):
-  - Engineered high-traffic responsive retail UI components using HTML5, CSS3, and Adobe AEM / CQ5.
+  - Pioneered enterprise GenAI adoption (Devin AI, GitHub Copilot), saving ~35% developer effort.
+  - Leads cross-functional frontend engineering squads (~12 engineers) maintaining <8% attrition.
+- **Senior Lead Engineer — Frontend Architecture** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
+  - Led InView core framework development and platform performance (team of 6, up to 50% load-time gains).
+  - Owned end-to-end project delivery from kickoff to production with business stakeholders.
+  - Engineered CI/CD pipelines with TeamCity and IBM UrbanDeploy; contributed full-stack Java solutions.
+  - Established company-wide Section 508 and ADA compliance programme with axe-core and Lighthouse CI.
+- **Senior Engineer / Technical Lead — UI Architecture** — Citicorp Services India Pvt. Ltd. (2013 – 2018):
+  - Built and delivered Citi InView application modules including Alerts & Notifications and InView UI Framework.
+  - Architected enterprise UI, API, and iframe integrations with postMessage protocol governance across 6+ squads.
+  - Built and mentored a team of 4–5 frontend engineers.
 - **Senior Consultant — CRM UI Architecture** — Cognizant Technology Solutions (Dec 2010 – Feb 2013):
   - Architected mobile CRM frontends with Siebel CRM and Oracle CRM SOAP integrations; directed usability and heuristic testing.
 - **Module Lead & Usability Analyst** — Impetus Infotech India Pvt. Ltd. (Jun 2007 – Dec 2010):
@@ -747,15 +754,42 @@ Guidelines:
       }
     }
 
-    // ── Clean URL Rewrites for Static Assets ────────────────────────────────
-    if (url.pathname === '/cover-letter' && env.ASSETS) {
-      url.pathname = '/cover-letter.html';
-      return env.ASSETS.fetch(new Request(url.toString(), request));
-    }
-
-    // ── Static Assets Fallback ──────────────────────────────────────────────
+    // ── Static Assets Serving with Cache-Busting for HTML & Documents ───
     if (env.ASSETS) {
-      return env.ASSETS.fetch(request);
+      let assetRequest = request;
+      if (url.pathname === '/cover-letter') {
+        url.pathname = '/cover-letter.html';
+        assetRequest = new Request(url.toString(), request);
+      }
+
+      const response = await env.ASSETS.fetch(assetRequest);
+      const contentType = response.headers.get('content-type') || '';
+
+      // Force edge and client revalidation for HTML, PDF, and DOCX so updates reflect instantly
+      if (
+        contentType.includes('text/html') ||
+        url.pathname === '/' ||
+        url.pathname === '/resume' ||
+        url.pathname === '/tools' ||
+        url.pathname.endsWith('.html') ||
+        url.pathname.endsWith('.pdf') ||
+        url.pathname.endsWith('.docx')
+      ) {
+        const newHeaders = new Headers(response.headers);
+        newHeaders.set('Cache-Control', 'public, max-age=0, must-revalidate, no-cache');
+        newHeaders.set('CDN-Cache-Control', 'no-cache, must-revalidate');
+        newHeaders.set('Cloudflare-CDN-Cache-Control', 'no-cache, must-revalidate');
+        newHeaders.set('Pragma', 'no-cache');
+        newHeaders.set('Expires', '0');
+
+        return new Response(response.body, {
+          status: response.status,
+          statusText: response.statusText,
+          headers: newHeaders
+        });
+      }
+
+      return response;
     }
 
     return new Response('Resource Not Found', { status: 404 });
