@@ -140,7 +140,7 @@ const KNOWLEDGE_FALLBACKS = [
 - **IBM Design Thinking Practitioner** — Human-centric enterprise UX architecture, design system co-creation, and rapid prototyping.`
   },
   {
-    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'sapient', 'cognizant'],
+    triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'sapient', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
 - **Assistant Vice President & Senior Frontend Architect** — Citicorp Services India Pvt. Ltd. (May 2013 – Present | 12+ years):
@@ -159,6 +159,9 @@ const KNOWLEDGE_FALLBACKS = [
 - **Lead Web Specialist** — Gatesix Technologies India Pvt. Ltd. (Aug 2004 – Jun 2007):
   - Formulated frontend strategy across UI/UX design, development standards, SEO architecture, and W3C compliance.
   - Directed concept visualization, application user flows, and client-side R&D on emerging web technologies.
+- **Senior Web Designer** — Pinnacle Technosys (May 2003 – Jul 2004):
+  - Designed, developed, and maintained client portals and digital marketing platforms with bespoke software integrations.
+  - Engineered W3C-compliant websites, interactive Flash applications, and digital/print media collateral.
 - Total Career: **17+ years of continuous software engineering and architectural leadership**.`
   },
   {

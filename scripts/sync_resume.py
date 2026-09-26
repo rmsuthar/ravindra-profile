@@ -228,7 +228,9 @@ def generate_workday_docx():
         location="India",
         dates="May 2003 – July 2004",
         bullets=[
-            ("", "Designed and launched compliant web interfaces while conducting R&D on emerging client-side web technologies.")
+            ("Designed, developed, and maintained client portals", "and digital marketing platforms with bespoke software integrations."),
+            ("Engineered W3C-compliant website architectures", "and structured content implementations, ensuring cross-platform browser compatibility."),
+            ("Produced interactive Flash applications", "and comprehensive digital media and print marketing collateral.")
         ]
     )
 
