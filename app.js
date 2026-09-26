@@ -159,7 +159,7 @@ function initVCardDownload() {
       'N:Suthar;Ravindrakumar;M.;;',
       'FN:Ravindrakumar M. Suthar',
       'ORG:Citicorp Services India Pvt. Ltd.',
-      'TITLE:Assistant Vice President - Frontend Architecture & Engineering Leadership',
+      'TITLE:Senior Frontend Architect & Engineering Leader',
       'TEL;TYPE=CELL,VOICE:+918380099988',
       'EMAIL;TYPE=PREF,INTERNET:ravindra.suthar@me.com',
       'URL;TYPE=Profile:https://ravindra.lets.gen.in/',
@@ -800,7 +800,7 @@ function initCloudflareAICopilot() {
 
     if (q.includes('experience') || q.includes('citi') || q.includes('career') || q.includes('background') || q.includes('role')) {
       return {
-        answer: `**Professional Experience & Career Milestones:**\n\n- **Assistant Vice President & Senior Frontend Architect** at **Citicorp Services India** (May 2013 – Present | 12+ years at Citi):\n  - Enterprise BFSI architecture governance, micro-frontend modernization, AEM RAG AI migration agent, WCAG 2.1/2.2 AA automation, and Workday HRIS integrations.\n- **17+ Years Total Experience**: Prior senior software engineering and technical leadership roles across high-traffic digital platforms.`,
+        answer: `**Professional Experience & Career Milestones:**\n\n- **Senior Frontend Architect & Engineering Leader** at **Citicorp Services India** (May 2013 – Present | 12+ years at Citi):\n  - Enterprise BFSI architecture governance, micro-frontend modernization, AEM RAG AI migration agent, WCAG 2.1/2.2 AA automation, and Workday HRIS integrations.\n- **17+ Years Total Experience**: Prior senior software engineering and technical leadership roles across high-traffic digital platforms.`,
         source: 'Verified Knowledge Base (Edge Fallback)'
       };
     }
@@ -820,7 +820,7 @@ function initCloudflareAICopilot() {
     }
 
     return {
-      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **FoodScan AI mobile app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
+      answer: `**Ravindrakumar M. Suthar — Executive Overview:**\n\n- **Role**: Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).\n- **Core Capabilities**: Micro-frontends, React/Next.js, TypeScript, Autonomous AEM Migration Agents, VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.\n- **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.\n- **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988.\n\nYou can ask about his **FoodScan AI mobile app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **education**, **certifications**, **Workday integrations**, or **architectural leadership**!`,
       source: 'Verified Knowledge Base (Edge Fallback)'
     };
   }

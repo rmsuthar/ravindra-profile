@@ -74,7 +74,7 @@ def generate_workday_docx():
 
     # Title
     paragraphs.append(make_p([
-        make_run("Assistant Vice President — Senior Frontend Architect & Engineering Leader", bold=True, italic=True, size=21, color="2B6CB0")
+        make_run("Senior Frontend Architect & Engineering Leader", bold=True, italic=True, size=21, color="2B6CB0")
     ], space_before=0, space_after=60, align="center"))
 
     # Contact line 1 (Clean ATS labels without emojis)
@@ -90,27 +90,35 @@ def generate_workday_docx():
     # Contact line 2
     paragraphs.append(make_p([
         make_run("LinkedIn: ", bold=True, size=18, color="4A5568"),
-        make_run("https://www.linkedin.com/in/ravindrasuthar/  |  ", size=18, color="2B6CB0"),
+        make_run("linkedin.com/in/ravindrasuthar  |  ", size=18, color="2B6CB0"),
+        make_run("GitHub: ", bold=True, size=18, color="4A5568"),
+        make_run("github.com/rmsuthar  |  ", size=18, color="2B6CB0"),
         make_run("Portfolio: ", bold=True, size=18, color="4A5568"),
-        make_run("https://ravindra.lets.gen.in/  |  ", size=18, color="2B6CB0"),
-        make_run("Tools: ", bold=True, size=18, color="4A5568"),
-        make_run("https://ravindra.lets.gen.in/tools", size=18, color="2B6CB0")
+        make_run("ravindra.lets.gen.in", size=18, color="2B6CB0")
     ], space_before=0, space_after=140, align="center"))
 
     # 2. Professional Summary
     paragraphs.append(make_heading("Professional Summary"))
     paragraphs.append(make_p([
-        make_run("Product Engineering Leader and Senior Frontend Architect with "),
+        make_run("Engineering leader with "),
         make_run("17+ years of experience", bold=True),
-        make_run(" designing resilient, enterprise-scale web platforms for global Banking, Financial Services, and Insurance (BFSI) clients. Proven track record of leading multi-team engineering organizations, driving "),
-        make_run("Workday platform uploads and HRIS integrations", bold=True),
-        make_run(", modernizing legacy systems into zero-downtime micro-frontends, and establishing enterprise accessibility (WCAG 2.1 & 2.2 Level AA/AAA, ADA, Section 508) and client-side security practices.")
+        make_run(" steering multi-team frontend organisations through large-scale digital transformation in regulated Banking, Financial Services, and Insurance (BFSI) environments. At Citicorp Services India, progressed through the engineering ladder from Technical Lead to "),
+        make_run("Senior Frontend Architect & Engineering Leader", bold=True),
+        make_run(", building and retaining high-performance squads with sustained "),
+        make_run("<8% attrition", bold=True),
+        make_run(" — a benchmark exceptional in enterprise engineering.")
     ], space_before=30, space_after=60))
 
     paragraphs.append(make_p([
-        make_run("Deep expertise across "),
-        make_run("React, Next.js, TypeScript, JavaScript ES6+, micro-frontend architectures, web performance (Core Web Vitals), and generative AI developer workflows (Devin AI, GitHub Copilot)", bold=True),
-        make_run(". Experienced in translating complex technical roadmaps into executive narratives, managing risk, forecasting budgets, and cultivating high-retention engineering cultures (<8% attrition).")
+        make_run("Delivered measurable, executive-visible impact: "),
+        make_run("60% reduction in migration cycle times", bold=True),
+        make_run(" via an autonomous AI agent & integrated VS Code extension; "),
+        make_run("50% application load-time improvement", bold=True),
+        make_run(" through React / Next.js performance engineering; "),
+        make_run("40% cut in integration complexity", bold=True),
+        make_run(" across distributed platforms; and "),
+        make_run("35% developer effort saved", bold=True),
+        make_run(" through AI-augmented workflows (Devin AI, GitHub Copilot). Deep practitioner across micro-frontend architecture, enterprise accessibility (WCAG 2.1/2.2 AA/AAA, ADA, Section 508), and agentic AI developer toolchains.")
     ], space_before=30, space_after=100))
 
     # 3. Technical Skills & Competencies (Workday Skill Cloud Compatible)
@@ -154,34 +162,46 @@ def generate_workday_docx():
             runs.append(make_run(body, size=19, color="2D3748"))
             paragraphs.append(make_p(runs, space_before=25, space_after=25, is_bullet=True))
 
-    # Citicorp
+    # Citicorp — Role 1: Senior Frontend Architect
     add_job(
-        title="Assistant Vice President, Frontend Architecture",
+        title="Senior Frontend Architect & AI Platform Lead",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
-        dates="May 2013 – Present",
+        dates="2022 – Present",
         bullets=[
-            ("Led legacy Banking, Financial Services, and Insurance (BFSI) platform migration", "to Micro-frontend architectures across multi-team squads, ensuring 100% business continuity throughout the multi-phase rollout."),
-            ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension — combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60%."),
-            ("Facilitated Workday platform uploads", "and HRIS configuration workflows, validating data integrity at enterprise scale with zero business disruption."),
-            ("Architected enterprise UI, API, and iframe integrations", "across multiple distributed platforms, cutting integration complexity by 40% and accelerating feature time-to-market."),
-            ("Delivered up to 50% application load-time improvements", "via React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry."),
-            ("Pioneered Devin AI and GitHub Copilot adoption", "across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%."),
-            ("Established enterprise-wide Section 508 and ADA compliance programme", "integrating axe-core and Lighthouse CI into GitHub Actions alongside NVDA audits, reducing post-deployment remediation spend by 60%."),
-            ("Engineered GitHub-first DevOps pipelines", "using GitHub Actions, Advanced Security scanning, Dependabot auto-patching, and GitHub Projects for Agile delivery."),
-            ("Managed End-of-Vendor-Support (EOVS/EOL) transitions", "with zero business disruption through strategic migration roadmaps and coordinated cross-functional stakeholder alignments."),
-            ("Maintained team attrition below 8%", "across engineering squads through structured 1-on-1s, technical skill ladders, and internal Communities of Practice.")
+            ("Lead cross-functional frontend engineering squads (~12 engineers)", "delivering enterprise Banking, Financial Services, and Insurance (BFSI) platform programmes, with sustained <8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
+            ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform combining Retrieval-Augmented Generation (RAG), automated prompt engineering, and custom AST parsing scripts to migrate legacy component trees into idiomatic AEM Core Components, HTL templates, and Sling models — slashing migration cycle times by over 60%."),
+            ("Pioneered enterprise-wide Devin AI and GitHub Copilot adoption", "across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%."),
+            ("Executive reporting & governance", "Translated multi-quarter engineering roadmaps into executive narratives for C-suite and global stakeholders; managed programme risk, release calendar, and vendor relationships."),
+            ("Managed End-of-Vendor-Support (EOVS/EOL) transitions", "with zero business disruption through strategic migration roadmaps and coordinated cross-functional stakeholder alignments.")
         ]
     )
 
-    # Sapient
+    # Citicorp — Role 2: Senior Lead
     add_job(
-        title="Senior Interactive Developer",
-        company="Sapient",
-        location="Bangalore, India",
-        dates="March 2013 – May 2013",
+        title="Senior Lead Engineer — Frontend Architecture",
+        company="Citicorp Services India Pvt. Ltd.",
+        location="Pune, India",
+        dates="2018 – 2022",
         bullets=[
-            ("", "Engineered high-performance responsive UI components for retail clients utilizing HTML5, CSS3, and Adobe Experience Manager (AEM / CQ5).")
+            ("Led legacy BFSI platform migration", "to micro-frontend architectures across 2 squads (~8 engineers), ensuring 100% business continuity throughout the multi-phase rollout using Module Federation and npm Workspaces."),
+            ("Delivered up to 50% application load-time improvement", "via React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry integrated into CI pipelines."),
+            ("Established enterprise-wide Section 508 and ADA compliance programme", "integrating axe-core and Lighthouse CI into GitHub Actions alongside NVDA screen-reader audits, reducing post-deployment remediation spend by 60%."),
+            ("Facilitated Workday platform uploads", "and HRIS configuration workflows, validating data integrity at enterprise scale with zero business disruption."),
+            ("Engineered GitHub-first DevOps pipelines", "using GitHub Actions, Advanced Security scanning, Dependabot auto-patching, and GitHub Projects for Agile delivery governance.")
+        ]
+    )
+
+    # Citicorp — Role 3: Senior Engineer / Tech Lead
+    add_job(
+        title="Senior Engineer / Technical Lead — UI Architecture",
+        company="Citicorp Services India Pvt. Ltd.",
+        location="Pune, India",
+        dates="2013 – 2018",
+        bullets=[
+            ("Architected enterprise UI, API, and iframe integrations", "across multiple distributed BFSI platforms, cutting integration complexity by 40% and accelerating feature time-to-market for global trading and retail banking products."),
+            ("Established frontend architecture reference standards", "postMessage protocol governance, and API integration patterns adopted across 6+ product squads."),
+            ("Built and grew a team of 4–5 frontend engineers", "instituting code review culture, reusable UI component libraries, and cross-browser compatibility benchmarks.")
         ]
     )
 
@@ -403,10 +423,10 @@ def audit_workday_compatibility():
         ("Standard Section 4", "EDUCATION"),
         ("Standard Section 5", "CERTIFICATIONS"),
         ("Employer 1", "Citicorp Services India"),
-        ("Employer 2", "Sapient"),
-        ("Employer 3", "Cognizant"),
+        ("Employer 2", "Cognizant"),
+        ("Employer 3", "Impetus"),
         ("Key Initiative", "Non-AEM to AEM"),
-        ("Role Fit", "Assistant Vice President"),
+        ("Role Fit", "Senior Frontend Architect"),
         ("LinkedIn URL", "linkedin.com/in/ravindrasuthar"),
         ("Micro-frontend Skill", "Module Federation"),
         ("Modern State Skill", "Redux Toolkit"),

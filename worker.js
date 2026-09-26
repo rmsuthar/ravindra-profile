@@ -3,11 +3,11 @@
  * Deployed on Cloudflare Workers with Static Assets & Workers AI Binding (env.AI)
  */
 
-const RAVINDRA_SYSTEM_PROMPT = `You are the executive AI copilot for Ravindrakumar M. Suthar, Assistant Vice President and Senior Frontend Architect at Citicorp Services India Pvt. Ltd.
+const RAVINDRA_SYSTEM_PROMPT = `You are the executive AI copilot for Ravindrakumar M. Suthar, Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.
 You represent Ravindra with executive clarity, architectural authority, and precise factual accuracy.
 
 Verified Profile & Career Background:
-- Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
+- Current Role: Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
 - Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
@@ -143,7 +143,7 @@ const KNOWLEDGE_FALLBACKS = [
     triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'sapient', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
-- **Assistant Vice President & Senior Frontend Architect** — Citicorp Services India Pvt. Ltd. (May 2013 – Present | 12+ years):
+- **Senior Frontend Architect & Engineering Leader** — Citicorp Services India Pvt. Ltd. (May 2013 – Present | 12+ years):
   - Leads enterprise frontend architecture across multi-pod engineering teams in BFSI.
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
   - Modernized legacy monoliths to micro-frontends with zero downtime, cutting Core Web Vitals load times by up to 50%.
@@ -235,7 +235,7 @@ function findFallbackAnswer(query) {
   }
   return `**Ravindrakumar M. Suthar — Executive Overview:**
 
-- **Role**: Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).
+- **Role**: Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (17+ years total experience, 12+ years at Citi).
 - **Core Specializations**: Micro-frontends, React/Next.js, TypeScript, Autonomous AI Migration Agents (Non-AEM to AEM using RAG), VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.
 - **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.
 - **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988 | [LinkedIn](https://www.linkedin.com/in/ravindrasuthar/).
@@ -352,7 +352,7 @@ export default {
             messages: [
               {
                 role: 'system',
-                content: `You are the executive AI copilot for Ravindrakumar M. Suthar (AVP & Senior Frontend Architect at Citicorp, 17+ yrs experience).
+                content: `You are the executive AI copilot for Ravindrakumar M. Suthar (Senior Frontend Architect & Engineering Leader at Citicorp, 17+ yrs experience).
 Generate exactly one crisp, inspiring, authoritative architectural quote or engineering metric (1 to 2 sentences max) reflecting his expertise in micro-frontends, AEM AI migration agents, StateGuard.js DOM security, 50% CWV gains, <8% attrition, or WCAG 2.2 AA.
 Output valid JSON with keys: "quote", "theme", "category". No extra markdown.`
               },
@@ -629,7 +629,7 @@ Provide a structured evaluation in valid JSON with these exact keys:
 
         // 1. Attempt Cloudflare Workers AI execution
         if (env.AI && typeof env.AI.run === 'function') {
-          const prompt = `You are writing an executive cover letter for Ravindrakumar M. Suthar (Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd., 17+ years experience).
+          const prompt = `You are writing an executive cover letter for Ravindrakumar M. Suthar (Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd., 17+ years experience).
 Write an articulate, compelling, customized executive cover letter for:
 Target Company: ${company}
 Target Role: ${roleTitle}
@@ -643,7 +643,7 @@ ${jd.slice(0, 3000)}
 """
 
 Ravindra's Core Verified Credentials (MUST weave into the narrative):
-- 17+ years product engineering experience; 12+ years as Assistant Vice President / Senior Frontend Architect at Citicorp Services India.
+- 17+ years product engineering experience; 12+ years as Senior Frontend Architect / Senior Frontend Architect at Citicorp Services India.
 - Architected Citibank's unified Non-AEM to AEM Migration AI Agent paired with custom VS Code extension (RAG + AST scripts, 60%+ faster replatforming).
 - Led legacy Banking, Financial Services, and Insurance (BFSI) monolith migration to micro-frontend architectures with 100% uptime and zero downtime across squads.
 - Delivered up to 50% application load-time improvements via modern React, Next.js, TypeScript, route splitting, and Core Web Vitals telemetry.
@@ -689,7 +689,7 @@ Guidelines:
           const hasDevOps = /devops|ci\/cd|pipeline|openshift|docker|kubernetes/i.test(jd);
           const hasLeadership = /lead|director|vp|manager|head|coach|mentor/i.test(jd);
 
-          const p1 = `I am writing to express my strong interest in the ${roleTitle} role at ${company}. With over 17 years of enterprise software engineering leadership—including more than 12 years as Assistant Vice President and Senior Frontend Architect at Citicorp Services India Pvt. Ltd.—I have dedicated my career to spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and delivering resilient, high-performance web platforms for Tier-1 Banking, Financial Services, and Insurance (BFSI) scale.`;
+          const p1 = `I am writing to express my strong interest in the ${roleTitle} role at ${company}. With over 17 years of enterprise software engineering leadership—including more than 12 years as Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.—I have dedicated my career to spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and delivering resilient, high-performance web platforms for Tier-1 Banking, Financial Services, and Insurance (BFSI) scale.`;
 
           const p2 = hasMicrofrontends 
             ? `Throughout my tenure at Citicorp, I have successfully governed the end-to-end modernization of complex monolithic Banking, Financial Services, and Insurance (BFSI) platforms into modular, zero-downtime micro-frontend architectures. By establishing reference design systems, enforcing strict UI/API boundary contracts, and implementing route-based code splitting with Core Web Vitals telemetry, our engineering squads delivered up to a 50% improvement in application load times while ensuring uninterrupted 100% business continuity across multi-phase rollouts.`
@@ -706,17 +706,17 @@ Guidelines:
           const pClose = `I welcome the opportunity to discuss how my 17+ years of architectural rigor, hands-on AI toolchain innovation, and executive leadership experience can accelerate ${company}'s strategic digital initiatives. You can explore my verified portfolio and open-source systems at https://ravindra.lets.gen.in/. Thank you for your consideration, and I look forward to connecting.`;
 
           if (format === 'bullets') {
-            coverLetter = `Dear ${addressee},\n\n${p1}\n\nKey Strategic Alignments with ${company}'s Requirements:\n\n• Enterprise Architecture & Micro-Frontends: 17+ years architecting scalable React/Next.js platforms at Citicorp scale, achieving up to 50% load-time gains and zero downtime during monolithic replatforming.\n• Agentic AI & Developer Toolchains: Architected an autonomous Non-AEM to AEM Migration AI Agent and custom VS Code extension (60%+ faster delivery), while standardizing Devin AI and GitHub Copilot across squads.\n• Institutional Governance & DevOps: Operationalized WCAG 2.1/2.2 AA accessibility gates, OpenShift DevOps pipelines, and client-side DOM security protocols (StateGuard.js, EdgeNonce).\n• High-Retention People Leadership: Sustained team attrition below 8% through structured engineering guilds, SDLC release governance, and cross-functional agile delivery (CSM).\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nAssistant Vice President & Senior Frontend Architect\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India`;
+            coverLetter = `Dear ${addressee},\n\n${p1}\n\nKey Strategic Alignments with ${company}'s Requirements:\n\n• Enterprise Architecture & Micro-Frontends: 17+ years architecting scalable React/Next.js platforms at Citicorp scale, achieving up to 50% load-time gains and zero downtime during monolithic replatforming.\n• Agentic AI & Developer Toolchains: Architected an autonomous Non-AEM to AEM Migration AI Agent and custom VS Code extension (60%+ faster delivery), while standardizing Devin AI and GitHub Copilot across squads.\n• Institutional Governance & DevOps: Operationalized WCAG 2.1/2.2 AA accessibility gates, OpenShift DevOps pipelines, and client-side DOM security protocols (StateGuard.js, EdgeNonce).\n• High-Retention People Leadership: Sustained team attrition below 8% through structured engineering guilds, SDLC release governance, and cross-functional agile delivery (CSM).\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nSenior Frontend Architect & Engineering Leader\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India`;
           } else if (format === 'concise') {
-            coverLetter = `Dear ${addressee},\n\nI am writing to express my enthusiastic interest in the ${roleTitle} opportunity at ${company}. With over 17 years of enterprise frontend engineering and architecture leadership—including 12+ years as Assistant Vice President at Citicorp Services India—I specialize in modernizing legacy Banking, Financial Services, and Insurance (BFSI) systems into resilient micro-frontends, accelerating delivery through autonomous AI migration agents (60%+ cycle time reduction), and scaling high-retention engineering teams (<8% attrition).\n\nHaving reviewed ${company}'s technical trajectory, I am confident my proven track record in Core Web Vitals optimization (50% gains), WCAG 2.2 AA accessibility governance, and OpenShift DevOps pipelines directly aligns with your strategic goals. I welcome the opportunity to discuss how my architectural rigor can drive tangible impact for your team.\n\nSincerely,\nRavindrakumar M. Suthar\nhttps://ravindra.lets.gen.in/ | +91 83800 99988 | ravindra.suthar@me.com`;
+            coverLetter = `Dear ${addressee},\n\nI am writing to express my enthusiastic interest in the ${roleTitle} opportunity at ${company}. With over 17 years of enterprise frontend engineering and architecture leadership—including 12+ years as Senior Frontend Architect at Citicorp Services India—I specialize in modernizing legacy Banking, Financial Services, and Insurance (BFSI) systems into resilient micro-frontends, accelerating delivery through autonomous AI migration agents (60%+ cycle time reduction), and scaling high-retention engineering teams (<8% attrition).\n\nHaving reviewed ${company}'s technical trajectory, I am confident my proven track record in Core Web Vitals optimization (50% gains), WCAG 2.2 AA accessibility governance, and OpenShift DevOps pipelines directly aligns with your strategic goals. I welcome the opportunity to discuss how my architectural rigor can drive tangible impact for your team.\n\nSincerely,\nRavindrakumar M. Suthar\nhttps://ravindra.lets.gen.in/ | +91 83800 99988 | ravindra.suthar@me.com`;
           } else {
-            coverLetter = `Dear ${addressee},\n\n${p1}\n\n${p2}\n\n${p3}\n\n${p4}\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nAssistant Vice President & Senior Frontend Architect\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India\nhttps://ravindra.lets.gen.in/ | linkedin.com/in/ravindrasuthar`;
+            coverLetter = `Dear ${addressee},\n\n${p1}\n\n${p2}\n\n${p3}\n\n${p4}\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nSenior Frontend Architect & Engineering Leader\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India\nhttps://ravindra.lets.gen.in/ | linkedin.com/in/ravindrasuthar`;
           }
         }
 
         // Alignments metadata
         const alignments = [
-          'Enterprise Architecture & Micro-Frontends (17+ yrs, Citicorp AVP)',
+          'Enterprise Architecture & Micro-Frontends (17+ yrs, Citicorp Senior Architect)',
           'Agentic AI Productivity (Non-AEM to AEM Agent & VS Code Extension)',
           'Performance Engineering (50% Core Web Vitals Gains)',
           'OpenShift DevOps & Agile Release Governance',
