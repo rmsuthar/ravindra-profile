@@ -10,9 +10,9 @@ Verified Profile & Career Background:
 - Current Role: Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Platform & Platform Modernization:
   - Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: Autonomous GitHub migration agent paired with custom VS Code extension, utilizing offline local vector store RAG and AST transformation scripts to migrate legacy OpenText TeamSite and intranet components to Adobe Experience Manager (AEM) Core Components, slashing cycle times by 60%+.
-  - Enterprise GenAI & Presets: Integrated ARC (Gemini ADK) to leverage project-level Gemini LLMs; created Stylus Workspace Presets (AEM Assistant, AEC Release Tracker, JIRA JQL/Mythos/CVM release sign-offs); automated code remediation with Devin AI Scheduler.
-  - Platform Modernization: Upgraded Angular from 10.x to 21.x across MSA PCF/non-PCF with SSR routing; upgraded core EEMS microservices from Spring Boot 3.x to 4.x; led GitHub Enterprise (GHE) migration with Renovate.
-  - Accessibility & Integrations: WCAG 2.2 AA compliance with bespoke Kaltura fixes; Salesforce SSG gateway integration with 2026 security headers; Citi Ignite Innovation Program 2026.
+  - Enterprise GenAI & Tooling: Integrated enterprise Gemini LLMs with offline local vector store RAG; created developer acceleration tooling including automated AEM layout analysis and Adobe Experience Cloud release governance pipelines; automated code remediation with scheduled AI agent pipelines.
+  - Platform Modernization: Upgraded Angular from 10.x to 21.x across cloud-native microservices with SSR routing; upgraded core microservices from Spring Boot 3.x to 4.x; led GitHub Enterprise (GHE) migration with Renovate.
+  - Accessibility & Integrations: WCAG 2.2 AA compliance with bespoke multimedia vendor fixes; enterprise Salesforce integration with strict security headers; organization-wide innovation and hackathon mentorship.
 - Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
@@ -150,8 +150,8 @@ const KNOWLEDGE_FALLBACKS = [
 - **Senior Principal Architect & AI Platform Lead** — Citicorp Services India Pvt. Ltd. (2022 – Present):
   - Leads enterprise CMS modernisation, orchestrating full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM).
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
-  - Pioneered enterprise GenAI adoption (Devin AI, Devin Scheduler, ARC Gemini ADK, Stylus Presets), saving ~35% developer effort.
-  - Modernized Angular (v10–v21) with SSR routing, EEMS Spring Boot 3.x to 4.x, and led GHE migration with Renovate.
+  - Pioneered enterprise GenAI adoption (Devin AI, enterprise Gemini LLMs, developer productivity tools), saving ~35% developer effort.
+  - Modernized Angular (v10–v21) with SSR routing, Spring Boot 3.x to 4.x, and led GitHub Enterprise migration with Renovate.
   - Leads cross-functional engineering squads (~12 engineers) maintaining <8% attrition.
 - **Senior Lead Engineer — Frontend Architecture** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
   - Led InView core framework development and platform performance (team of 6, up to 50% load-time gains).
