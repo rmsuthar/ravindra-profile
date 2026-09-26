@@ -1021,6 +1021,105 @@ select,
   border-top: 1px solid var(--border-subtle);
 }
 
+/* ── LinkedIn-Style Grouped Company & Sub-Roles ── */
+.company-group-card {
+  position: relative;
+}
+
+.company-main-header {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.95rem;
+  margin-bottom: 1.35rem;
+}
+
+.company-meta-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.35rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+  background: var(--bg-surface-alt);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+.company-subroles {
+  position: relative;
+  padding-left: 1.85rem;
+  margin-left: 0.45rem;
+}
+
+.company-subroles::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.65rem;
+  bottom: 1.5rem;
+  width: 2px;
+  background: linear-gradient(180deg, var(--brand-primary) 0%, var(--border-medium) 100%);
+  border-radius: 1px;
+}
+
+.subrole-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.subrole-item:last-child {
+  margin-bottom: 0.25rem;
+}
+
+.subrole-node {
+  position: absolute;
+  left: -1.85rem;
+  top: 0.35rem;
+  transform: translateX(-50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--brand-primary);
+  border: 2.5px solid var(--bg-surface);
+  box-shadow: 0 0 0 2px var(--brand-primary);
+  z-index: 2;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.subrole-item:hover .subrole-node {
+  transform: translateX(-50%) scale(1.25);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.3);
+}
+
+.subrole-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.65rem;
+}
+
+.subrole-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+  line-height: 1.35;
+}
+
+.subrole-period {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.6rem;
+  background: var(--bg-surface-alt);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
 /* Older roles collapse toggle */
 .toggle-history-btn {
   width: 100%;

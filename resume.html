@@ -233,6 +233,56 @@
       color: #64748b;
     }
 
+    /* ── LinkedIn-Style Grouped Experience in Resume ── */
+    .company-main-header {
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 5pt;
+      margin-bottom: 8pt;
+    }
+
+    .company-name-lg {
+      font-size: 11pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+
+    .resume-subroles {
+      position: relative;
+      border-left: 2px solid #93c5fd;
+      margin-left: 4pt;
+      padding-left: 12pt;
+      margin-top: 8pt;
+    }
+
+    .resume-subrole {
+      position: relative;
+      margin-bottom: 12pt;
+    }
+
+    .resume-subrole:last-child {
+      margin-bottom: 0;
+    }
+
+    .resume-subrole::before {
+      content: "";
+      position: absolute;
+      left: -15.5pt;
+      top: 3.5pt;
+      width: 6.5pt;
+      height: 6.5pt;
+      border-radius: 50%;
+      background: #2563eb;
+      border: 1.5pt solid #ffffff;
+      box-shadow: 0 0 0 1pt #2563eb;
+    }
+
+    .subrole-job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3pt;
+    }
+
     /* Bullet Lists */
     ul {
       list-style-type: disc;
@@ -433,6 +483,18 @@
         break-inside: avoid;
       }
 
+      .resume-subroles {
+        border-left: 1.5pt solid #94a3b8 !important;
+        margin-left: 3pt !important;
+        padding-left: 10pt !important;
+      }
+
+      .resume-subrole::before {
+        background: #1e293b !important;
+        border-color: #ffffff !important;
+        box-shadow: none !important;
+      }
+
       .action-bar,
       .ai-copilot-trigger,
       .ai-copilot-drawer,
@@ -459,7 +521,7 @@
       color: #ffffff !important;
     }
   </style>
-  <link rel="stylesheet" href="style.css?v=20260926-v2">
+  <link rel="stylesheet" href="style.css?v=20260926-v3">
 </head>
 
 <body>
@@ -614,61 +676,63 @@
     <section id="experience-section" aria-labelledby="experience-heading">
       <h2 id="experience-heading">Professional Experience</h2>
 
-      <!-- Citicorp: Role 1 - Senior Frontend Architect -->
-        <div class="job-block">
-        <div class="job-header">
-          <span class="job-title">Senior Frontend Architect &amp; AI Platform Lead</span>
-          <span class="job-dates">2022 &ndash; Present</span>
-        </div>
-        <div class="job-company-row">
-          <span>Citicorp Services India Pvt. Ltd.</span>
-          <span class="job-location">Pune, India</span>
-        </div>
-        <ul>
-          <li><strong>Led enterprise CMS modernisation</strong> — orchestrating the full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM), standardising content authoring workflows, component governance, and multi-brand publishing pipelines across institutional platforms.</li>
-          <li><strong>Architected Autonomous Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension:</strong> Engineered a unified developer productivity platform combining Retrieval-Augmented Generation (RAG), automated prompt engineering, and custom AST parsing scripts to migrate legacy component trees into idiomatic AEM Core Components, HTL templates, and Sling models &mdash; slashing migration cycle times by over <strong>60%</strong>.</li>
-          <li><strong>Pioneered enterprise-wide Devin AI and GitHub Copilot adoption</strong> across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%.</li>
-          <li><strong>Lead cross-functional frontend engineering squads (~12 engineers)</strong> with sustained &lt;8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice.</li>
-          <li><strong>Executive reporting &amp; governance:</strong> Translated multi-quarter engineering roadmaps into C-suite narratives; managed programme risk, release calendar, vendor relationships, and End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption.</li>
-        </ul>
-      </div>
-
-      <!-- Citicorp: Role 2 - Senior Lead -->
+      <!-- Citicorp Services India Pvt. Ltd. (Grouped Experience) -->
       <div class="job-block">
-        <div class="job-header">
-          <span class="job-title">Senior Lead Engineer &mdash; Frontend Architecture</span>
-          <span class="job-dates">2018 &ndash; 2022</span>
+        <div class="job-header company-main-header">
+          <span class="company-name-lg">Citicorp Services India Pvt. Ltd.</span>
+          <span class="job-dates">May 2013 &ndash; Present &bull; 12+ yrs</span>
         </div>
         <div class="job-company-row">
-          <span>Citicorp Services India Pvt. Ltd.</span>
-          <span class="job-location">Pune, India</span>
+          <span>Pune, Maharashtra, India</span>
+          <span class="job-location">Full-time</span>
         </div>
-        <ul>
-          <li><strong>Led InView core framework development</strong> and platform-wide performance improvements, managing a team of 6 engineers across multiple application module ownerships; delivered up to <strong>50% load-time gains</strong> via React, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.</li>
-          <li><strong>Owned end-to-end project delivery</strong> &mdash; from business kickoff and requirement analysis through technical architecture, budget estimation, timeline planning, and production release &mdash; collaborating directly with business stakeholders and global programme leads.</li>
-          <li><strong>Engineered CI/CD delivery pipelines</strong> using TeamCity and IBM UrbanDeploy, enabling zero-downtime releases and reducing manual deployment effort across concurrent module delivery streams.</li>
-          <li><strong>Full-stack engineering contributions</strong> including Java backend problem-solving to unblock critical frontend integration dependencies and accelerate feature delivery.</li>
-          <li><strong>Governed change management, vendor management, and release management</strong> processes across concurrent module delivery streams, ensuring regulatory compliance and zero production incidents.</li>
-          <li><strong>Established enterprise-wide Section 508 and ADA compliance programme</strong>, integrating axe-core and Lighthouse CI into pipelines alongside NVDA screen-reader audits, reducing post-deployment remediation spend by 60%.</li>
-        </ul>
-      </div>
 
-      <!-- Citicorp: Role 3 - Senior Engineer / Tech Lead -->
-      <div class="job-block">
-        <div class="job-header">
-          <span class="job-title">Senior Engineer / Technical Lead &mdash; UI Architecture</span>
-          <span class="job-dates">2013 &ndash; 2018</span>
+        <div class="resume-subroles">
+          <!-- Role 1 -->
+          <div class="resume-subrole">
+            <div class="subrole-job-header">
+              <span class="job-title">Senior Frontend Architect &amp; AI Platform Lead</span>
+              <span class="job-dates">2022 &ndash; Present</span>
+            </div>
+            <ul>
+              <li><strong>Led enterprise CMS modernisation</strong> — orchestrating the full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM), standardising content authoring workflows, component governance, and multi-brand publishing pipelines across institutional platforms.</li>
+              <li><strong>Architected Autonomous Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension:</strong> Engineered a unified developer productivity platform combining Retrieval-Augmented Generation (RAG), automated prompt engineering, and custom AST parsing scripts to migrate legacy component trees into idiomatic AEM Core Components, HTL templates, and Sling models &mdash; slashing migration cycle times by over <strong>60%</strong>.</li>
+              <li><strong>Pioneered enterprise-wide Devin AI and GitHub Copilot adoption</strong> across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%.</li>
+              <li><strong>Lead cross-functional frontend engineering squads (~12 engineers)</strong> with sustained &lt;8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice.</li>
+              <li><strong>Executive reporting &amp; governance:</strong> Translated multi-quarter engineering roadmaps into C-suite narratives; managed programme risk, release calendar, vendor relationships, and End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption.</li>
+            </ul>
+          </div>
+
+          <!-- Role 2 -->
+          <div class="resume-subrole">
+            <div class="subrole-job-header">
+              <span class="job-title">Senior Lead Engineer &mdash; Frontend Architecture</span>
+              <span class="job-dates">2018 &ndash; 2022</span>
+            </div>
+            <ul>
+              <li><strong>Led InView core framework development</strong> and platform-wide performance improvements, managing a team of 6 engineers across multiple application module ownerships; delivered up to <strong>50% load-time gains</strong> via React, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.</li>
+              <li><strong>Owned end-to-end project delivery</strong> &mdash; from business kickoff and requirement analysis through technical architecture, budget estimation, timeline planning, and production release &mdash; collaborating directly with business stakeholders and global programme leads.</li>
+              <li><strong>Engineered CI/CD delivery pipelines</strong> using TeamCity and IBM UrbanDeploy, enabling zero-downtime releases and reducing manual deployment effort across concurrent module delivery streams.</li>
+              <li><strong>Full-stack engineering contributions</strong> including Java backend problem-solving to unblock critical frontend integration dependencies and accelerate feature delivery.</li>
+              <li><strong>Governed change management, vendor management, and release management</strong> processes across concurrent module delivery streams, ensuring regulatory compliance and zero production incidents.</li>
+              <li><strong>Established enterprise-wide Section 508 and ADA compliance programme</strong>, integrating axe-core and Lighthouse CI into pipelines alongside NVDA screen-reader audits, reducing post-deployment remediation spend by 60%.</li>
+            </ul>
+          </div>
+
+          <!-- Role 3 -->
+          <div class="resume-subrole">
+            <div class="subrole-job-header">
+              <span class="job-title">Senior Engineer / Technical Lead &mdash; UI Architecture</span>
+              <span class="job-dates">2013 &ndash; 2018</span>
+            </div>
+            <ul>
+              <li><strong>Built and delivered Citi InView application modules</strong> &mdash; a mission-critical institutional client platform &mdash; including the <strong>Alerts &amp; Notifications</strong> module (real-time account activity triggers, threshold alerts for global institutional clients) and foundational InView UI Framework components adopted across downstream application modules.</li>
+              <li><strong>Engineered the InView UI Framework</strong>, establishing component standards, rendering performance patterns, and API/iframe integration protocols, cutting integration complexity by 40% and accelerating time-to-market for global trading and retail banking products.</li>
+              <li><strong>Architected enterprise UI, API, and iframe integrations</strong> across InView platform modules, establishing postMessage protocol governance and integration patterns adopted across 6+ product squads.</li>
+              <li><strong>Built and mentored a team of 4&ndash;5 frontend engineers</strong>, instituting code review culture, reusable component libraries, and cross-browser compatibility benchmarks.</li>
+            </ul>
+          </div>
         </div>
-        <div class="job-company-row">
-          <span>Citicorp Services India Pvt. Ltd.</span>
-          <span class="job-location">Pune, India</span>
-        </div>
-        <ul>
-          <li><strong>Built and delivered Citi InView application modules</strong> &mdash; a mission-critical institutional client platform &mdash; including the <strong>Alerts &amp; Notifications</strong> module (real-time account activity triggers, threshold alerts for global institutional clients) and foundational InView UI Framework components adopted across downstream application modules.</li>
-          <li><strong>Engineered the InView UI Framework</strong>, establishing component standards, rendering performance patterns, and API/iframe integration protocols, cutting integration complexity by 40% and accelerating time-to-market for global trading and retail banking products.</li>
-          <li><strong>Architected enterprise UI, API, and iframe integrations</strong> across InView platform modules, establishing postMessage protocol governance and integration patterns adopted across 6+ product squads.</li>
-          <li><strong>Built and mentored a team of 4&ndash;5 frontend engineers</strong>, instituting code review culture, reusable component libraries, and cross-browser compatibility benchmarks.</li>
-        </ul>
       </div>
 
 
@@ -945,7 +1009,7 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20260926-v2" defer></script>
+  <script src="app.js?v=20260926-v3" defer></script>
 </body>
 
 </html>
