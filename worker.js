@@ -214,13 +214,14 @@ const KNOWLEDGE_FALLBACKS = [
 - **Talent Development**: Conducts structured bi-weekly 1-on-1s, technical skill ladders, and internal architecture workshops on micro-frontends, edge computing, and AI tools.`
   },
   {
-    triggers: ['contact', 'email', 'phone', 'location', 'linkedin', 'reach', 'connect', 'pune', 'city', 'address', 'qr', 'qrcode', 'pass', 'vcard'],
+    triggers: ['contact', 'email', 'phone', 'location', 'linkedin', 'github', 'reach', 'connect', 'pune', 'city', 'address', 'qr', 'qrcode', 'pass', 'vcard'],
     answer: `**Contact & Professional Channels:**
 
 - **Email**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com)
 - **Phone**: [+91 83800 99988](tel:+918380099988)
 - **Location**: Pune, Maharashtra, India
 - **LinkedIn**: [linkedin.com/in/ravindrasuthar](https://www.linkedin.com/in/ravindrasuthar/)
+- **GitHub**: [github.com/rmsuthar](https://github.com/rmsuthar)
 - **Live Portfolio & Tools**: [ravindra.lets.gen.in](https://ravindra.lets.gen.in/) | [Tools Suite](https://ravindra.lets.gen.in/tools)
 - **Digital Passes & QR Codes**: [Profile QR Code](https://ravindra.lets.gen.in/qrcode.svg) | [Contact Card vCard QR](https://ravindra.lets.gen.in/contact-qr.svg)`
   },
@@ -655,7 +656,7 @@ ${jd.slice(0, 3000)}
 """
 
 Ravindra's Core Verified Credentials (MUST weave into the narrative):
-- 17+ years product engineering experience; 12+ years as Senior Frontend Architect / Senior Frontend Architect at Citicorp Services India.
+- 17+ years product engineering experience; 12+ years as Senior Principal Architect & Engineering Leader at Citicorp Services India.
 - Architected Citibank's unified Non-AEM to AEM Migration AI Agent paired with custom VS Code extension (RAG + AST scripts, 60%+ faster replatforming).
 - Led legacy Banking, Financial Services, and Insurance (BFSI) monolith migration to micro-frontend architectures with 100% uptime and zero downtime across squads.
 - Delivered up to 50% application load-time improvements via modern React, Next.js, TypeScript, route splitting, and Core Web Vitals telemetry.
