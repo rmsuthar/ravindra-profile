@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dynamic AI Cover Letter Generator | Ravindrakumar M. Suthar</title>
+  <meta name="description"
+    content="Dynamically generate executive, ATS-tailored cover letters for Ravindrakumar M. Suthar (Assistant Vice President & Senior Frontend Architect) by pasting any target job description. Powered by Cloudflare Workers AI.">
+  <link rel="canonical" href="https://ravindra.lets.gen.in/cover-letter">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --bg-color: #f8fafc;
+      --surface-color: #ffffff;
+      --surface-hover: #f1f5f9;
+      --primary-accent: #0284c7;
+      --primary-hover: #0369a1;
+      --secondary-accent: #6366f1;
+      --secondary-hover: #4f46e5;
+      --text-primary: #0f172a;
+      --text-secondary: #475569;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --border-focus: #0284c7;
+      --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      --letter-shadow: 0 10px 30px rgba(15, 23, 42, 0.08), 0 2px 8px rgba(15, 23, 42, 0.04);
+      --transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      --font-heading: 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* --- Navigation Bar --- */
+    .nav-bar {
+      border-bottom: 1px solid var(--border-color);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(12px);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      gap: 1rem;
+    }
+
+    .nav-brand {
+      color: var(--text-primary);
+      font-weight: 700;
+      font-size: 1.05rem;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: var(--font-heading);
+    }
+
+    .nav-brand:hover {
+      color: var(--primary-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .nav-btn {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      padding: 6px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--border-color);
+      background: #ffffff;
+      transition: var(--transition);
+    }
+
+    .nav-btn:hover {
+      color: var(--primary-accent);
+      border-color: #cbd5e1;
+      background: var(--surface-hover);
+    }
+
+    .nav-btn.active {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: var(--primary-accent);
+      font-weight: 600;
+    }
+
+    /* --- Main Container --- */
+    .main-wrap {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      width: 100%;
+      flex: 1;
+    }
+
+    /* --- Page Header --- */
+    .page-header {
+      margin-bottom: 2rem;
+    }
+
+    .breadcrumb {
+      font-family: var(--font-heading);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--primary-accent);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--text-primary);
+    }
+
+    .header-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .page-title {
+      font-family: var(--font-heading);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 800;
+      line-height: 1.2;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+    }
+
+    .page-title span {
+      background: linear-gradient(135deg, var(--primary-accent), var(--secondary-accent));
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e0f2fe;
+      color: #0369a1;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      border: 1px solid #bae6fd;
+      letter-spacing: 0.02em;
+    }
+
+    .badge-pill .pulse-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #0284c7;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.85); }
+    }
+
+    .page-subtitle {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+      max-width: 900px;
+      line-height: 1.55;
+    }
+
+    /* --- Workspace Two-Column Grid --- */
+    .workspace-grid {
+      display: grid;
+      grid-template-columns: 520px 1fr;
+      gap: 1.75rem;
+      align-items: start;
+    }
+
+    @media (max-width: 1100px) {
+      .workspace-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* --- Form Panel (Left) --- */
+    .control-panel {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 18px;
+      padding: 1.5rem;
+      box-shadow: var(--card-shadow);
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      position: sticky;
+      top: 5rem;
+    }
+
+    @media (max-width: 1100px) {
+      .control-panel {
+        position: static;
+      }
+    }
+
+    .panel-section-title {
+      font-family: var(--font-heading);
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Quick Preset Chips */
+    .preset-chips-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .preset-label {
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .preset-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .preset-chip {
+      background: #f1f5f9;
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 5px 10px;
+      border-radius: 6px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: left;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .preset-chip:hover {
+      background: #e2e8f0;
+      color: var(--text-primary);
+      border-color: #cbd5e1;
+    }
+
+    .preset-chip.active {
+      background: #e0f2fe;
+      border-color: #7dd3fc;
+      color: #0369a1;
+      font-weight: 600;
+    }
+
+    /* Input Groups */
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-label-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .form-label {
+      font-size: 0.86rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .char-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+    }
+
+    .form-textarea {
+      width: 100%;
+      min-height: 180px;
+      max-height: 420px;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      font-family: var(--font-body);
+      font-size: 0.88rem;
+      color: var(--text-primary);
+      background: #fcfdfe;
+      resize: vertical;
+      line-height: 1.5;
+      transition: var(--transition);
+    }
+
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+      background: #ffffff;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .form-input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 0.86rem;
+      color: var(--text-primary);
+      background: #fcfdfe;
+      font-family: var(--font-body);
+      transition: var(--transition);
+    }
+
+    .form-input:focus {
+      outline: none;
+      border-color: var(--border-focus);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+      background: #ffffff;
+    }
+
+    .helper-text {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+
+    /* Option Pills (Tone & Format) */
+    .pill-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .pill-btn {
+      flex: 1 1 calc(50% - 6px);
+      background: #f8fafc;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 8px 10px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: var(--transition);
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+
+    .pill-btn small {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    .pill-btn:hover {
+      background: #f1f5f9;
+      color: var(--text-primary);
+      border-color: #cbd5e1;
+    }
+
+    .pill-btn.selected {
+      background: #eff6ff;
+      border-color: #60a5fa;
+      color: #1d4ed8;
+      font-weight: 600;
+      box-shadow: 0 1px 3px rgba(37, 99, 235, 0.1);
+    }
+
+    .pill-btn.selected small {
+      color: #3b82f6;
+    }
+
+    /* Generate Button */
+    .btn-generate {
+      width: 100%;
+      background: linear-gradient(135deg, #0284c7 0%, #4f46e5 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 12px;
+      padding: 14px 20px;
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 14px rgba(2, 132, 199, 0.35);
+      transition: var(--transition);
+      letter-spacing: 0.01em;
+    }
+
+    .btn-generate:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(2, 132, 199, 0.45);
+      filter: brightness(1.05);
+    }
+
+    .btn-generate:active {
+      transform: translateY(0);
+    }
+
+    .btn-generate:disabled {
+      opacity: 0.65;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .spinner {
+      width: 18px;
+      height: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+      display: none;
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    /* --- Right Preview Column --- */
+    .preview-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    /* Preview Toolbar */
+    .preview-toolbar {
+      background: var(--surface-color);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .preview-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+    }
+
+    .preview-status .source-tag {
+      background: #f1f5f9;
+      color: var(--text-primary);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.75rem;
+      border: 1px solid #e2e8f0;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .action-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      color: var(--text-primary);
+      padding: 7px 12px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: var(--transition);
+    }
+
+    .action-btn:hover {
+      background: var(--surface-hover);
+      border-color: #cbd5e1;
+      color: var(--primary-accent);
+    }
+
+    .action-btn.btn-primary {
+      background: #0284c7;
+      color: #ffffff;
+      border-color: #0284c7;
+    }
+
+    .action-btn.btn-primary:hover {
+      background: #0369a1;
+      border-color: #0369a1;
+      color: #ffffff;
+    }
+
+    .edit-indicator {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.74rem;
+      color: #059669;
+      background: #ecfdf5;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-weight: 600;
+    }
+
+    /* --- The Document Paper (A4 / Letter Styling) --- */
+    .document-paper {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      padding: 3rem 3.5rem;
+      box-shadow: var(--letter-shadow);
+      min-height: 780px;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    @media (max-width: 768px) {
+      .document-paper {
+        padding: 2rem 1.5rem;
+      }
+    }
+
+    /* Formal Letterhead */
+    .letterhead {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.75rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .letterhead-title h1 {
+      font-family: var(--font-heading);
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+    }
+
+    .letterhead-title .role-sub {
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #0284c7;
+      margin-top: 2px;
+    }
+
+    .letterhead-title .citi-sub {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .letterhead-contact {
+      text-align: right;
+      font-size: 0.82rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 600px) {
+      .letterhead-contact {
+        text-align: left;
+      }
+    }
+
+    .letterhead-contact a {
+      color: var(--primary-accent);
+      text-decoration: none;
+    }
+
+    .letterhead-contact a:hover {
+      text-decoration: underline;
+    }
+
+    /* Letter Meta (Date & Addressee) */
+    .letter-meta {
+      margin-bottom: 1.5rem;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .letter-meta .letter-date {
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--text-secondary);
+    }
+
+    .letter-meta .addressee-block {
+      line-height: 1.45;
+    }
+
+    /* Letter Body Content */
+    .letter-content {
+      font-size: 0.96rem;
+      line-height: 1.7;
+      color: #1e293b;
+      white-space: pre-wrap;
+      font-family: var(--font-body);
+      outline: none;
+      min-height: 380px;
+    }
+
+    .letter-content:focus {
+      background: #fafcff;
+      border-radius: 4px;
+      box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.2);
+      padding: 4px;
+    }
+
+    /* Sign-off */
+    .letter-signoff {
+      margin-top: 2rem;
+      font-size: 0.95rem;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+
+    .signature-name {
+      font-weight: 700;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      margin-top: 1.5rem;
+      color: #0f172a;
+    }
+
+    .signature-role {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+    }
+
+    /* Alignments Card */
+    .alignment-card {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 1.25rem 1.5rem;
+      box-shadow: var(--card-shadow);
+    }
+
+    .alignment-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .alignment-title {
+      font-family: var(--font-heading);
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .alignment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 8px;
+    }
+
+    .align-pill {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 3px solid #0284c7;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    /* Toast Notification */
+    .toast-container {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      z-index: 1000;
+      pointer-events: none;
+    }
+
+    .toast {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 20px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 500;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: auto;
+    }
+
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .toast-success {
+      border-left: 4px solid #10b981;
+    }
+
+    .toast-info {
+      border-left: 4px solid #0284c7;
+    }
+
+    /* Footer */
+    .footer {
+      border-top: 1px solid var(--border-color);
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      background: #ffffff;
+      margin-top: auto;
+    }
+
+    .footer a {
+      color: var(--primary-accent);
+      text-decoration: none;
+    }
+
+    /* ==========================================================================
+       PRINT STYLESHEET: Pristine Corporate Letterhead for PDF / Print
+       ========================================================================== */
+    @media print {
+      body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        font-size: 11pt !important;
+        line-height: 1.5 !important;
+      }
+
+      .nav-bar,
+      .page-header,
+      .control-panel,
+      .preview-toolbar,
+      .alignment-card,
+      .footer,
+      .toast-container {
+        display: none !important;
+      }
+
+      .main-wrap {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+
+      .workspace-grid {
+        display: block !important;
+      }
+
+      .document-paper {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        min-height: auto !important;
+      }
+
+      .letterhead {
+        border-bottom: 2pt solid #000000 !important;
+        padding-bottom: 12pt !important;
+        margin-bottom: 16pt !important;
+      }
+
+      .letterhead-title h1 {
+        font-size: 16pt !important;
+        color: #000000 !important;
+      }
+
+      .letterhead-title .role-sub {
+        color: #000000 !important;
+        font-size: 10.5pt !important;
+      }
+
+      .letterhead-contact {
+        font-size: 9pt !important;
+        color: #222222 !important;
+      }
+
+      .letterhead-contact a {
+        color: #000000 !important;
+        text-decoration: none !important;
+      }
+
+      .letter-content {
+        font-size: 10.5pt !important;
+        line-height: 1.55 !important;
+        color: #000000 !important;
+      }
+
+      @page {
+        margin: 20mm 20mm 20mm 20mm;
+        size: A4 portrait;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Top Navigation Bar -->
+  <nav class="nav-bar">
+    <a href="/" class="nav-brand">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+      </svg>
+      Ravindra Suthar
+    </a>
+    <div class="nav-links">
+      <a href="/" class="nav-btn">Executive Profile</a>
+      <a href="/resume" class="nav-btn">Workday ATS Resume</a>
+      <a href="/tools" class="nav-btn">Developer Tools</a>
+      <a href="/cover-letter" class="nav-btn active">Cover Letter AI</a>
+      <a href="/blog" class="nav-btn">Architecture Journal</a>
+    </div>
+  </nav>
+
+  <!-- Main Container -->
+  <main class="main-wrap">
+    <!-- Header -->
+    <header class="page-header">
+      <nav class="breadcrumb">
+        <a href="/">Ravindra</a>
+        <span>/</span>
+        <a href="/tools">Utilities</a>
+        <span>/</span>
+        <span>Executive Cover Letter AI</span>
+      </nav>
+      <div class="header-title-row">
+        <h1 class="page-title">Executive <span>AI Cover Letter</span> Generator</h1>
+        <div class="badge-pill">
+          <span class="pulse-dot"></span>
+          Cloudflare Workers AI &bull; Edge Engine Online
+        </div>
+      </div>
+      <p class="page-subtitle">
+        Paste any target Job Description (JD) below to dynamically synthesize an articulate, ATS-tailored executive cover letter matching 
+        <strong>Ravindrakumar M. Suthar's</strong> verified 17+ years enterprise engineering credentials, BFSI modernization leadership, and AI agent innovations.
+      </p>
+    </header>
+
+    <!-- Workspace Grid -->
+    <div class="workspace-grid">
+
+      <!-- LEFT: Control & Input Panel -->
+      <section class="control-panel" aria-label="Cover Letter Configuration">
+        
+        <!-- Preset Chips -->
+        <div class="preset-chips-wrap">
+          <span class="preset-label">⚡ Fast-Load Target JD Presets:</span>
+          <div class="preset-chips" id="presetChips">
+            <button type="button" class="preset-chip active" data-preset="mastercard">
+              🏦 VP Software Eng (Mastercard BFSI)
+            </button>
+            <button type="button" class="preset-chip" data-preset="principal">
+              📐 Principal Frontend Architect
+            </button>
+            <button type="button" class="preset-chip" data-preset="director">
+              🚀 Director of Web Architecture
+            </button>
+            <button type="button" class="preset-chip" data-preset="agentic">
+              🤖 Staff Engineer (Agentic AI &amp; Web)
+            </button>
+          </div>
+        </div>
+
+        <!-- JD Textarea -->
+        <div class="form-group">
+          <div class="form-label-row">
+            <label for="jobDescription" class="form-label">Job Description (JD) *</label>
+            <span class="char-count" id="charCount">0 chars</span>
+          </div>
+          <textarea id="jobDescription" class="form-textarea" placeholder="Paste full or excerpted job description here... (e.g. Responsibilities, Required Skills, Qualifications)"></textarea>
+          <span class="helper-text">Supports up to 5,000 characters. Our edge model analyzes key competencies automatically.</span>
+        </div>
+
+        <!-- Target Company & Role Overrides -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="targetCompany" class="form-label">Target Company</label>
+            <input type="text" id="targetCompany" class="form-input" placeholder="e.g. Mastercard (Auto-detected if blank)">
+          </div>
+          <div class="form-group">
+            <label for="roleTitle" class="form-label">Target Role Title</label>
+            <input type="text" id="roleTitle" class="form-input" placeholder="e.g. VP Software Eng (Auto-detected)">
+          </div>
+        </div>
+
+        <!-- Addressee -->
+        <div class="form-group">
+          <label for="addressee" class="form-label">Addressed To</label>
+          <input type="text" id="addressee" class="form-input" value="Hiring Team" placeholder="e.g. Hiring Committee, VP of Engineering">
+        </div>
+
+        <!-- Executive Tone Focus -->
+        <div class="form-group">
+          <label class="form-label">Executive Tone Focus</label>
+          <div class="pill-group" id="tonePills" role="radiogroup">
+            <button type="button" class="pill-btn selected" data-value="balanced" role="radio" aria-checked="true">
+              👔 Balanced Executive
+              <small>Strategic &amp; Technical Rigor</small>
+            </button>
+            <button type="button" class="pill-btn" data-value="leadership" role="radio" aria-checked="false">
+              👥 Leadership &amp; Culture
+              <small>&lt;8% Attrition, Guilds, Coaching</small>
+            </button>
+            <button type="button" class="pill-btn" data-value="technical" role="radio" aria-checked="false">
+              ⚡ Technical Architecture
+              <small>Micro-Frontends, CWV, StateGuard</small>
+            </button>
+            <button type="button" class="pill-btn" data-value="bfsi" role="radio" aria-checked="false">
+              🏛️ BFSI &amp; Modernization
+              <small>AEM AI Agent, Zero Downtime</small>
+            </button>
+          </div>
+        </div>
+
+        <!-- Format Mode -->
+        <div class="form-group">
+          <label class="form-label">Format Style</label>
+          <div class="pill-group" id="formatPills" role="radiogroup">
+            <button type="button" class="pill-btn selected" data-value="standard" role="radio" aria-checked="true">
+              📄 Standard Executive (4 Para)
+            </button>
+            <button type="button" class="pill-btn" data-value="bullets" role="radio" aria-checked="false">
+              📌 Strategic Highlights (Bullets)
+            </button>
+            <button type="button" class="pill-btn" data-value="concise" role="radio" aria-checked="false">
+              ⚡ Concise Brief (300 Words)
+            </button>
+          </div>
+        </div>
+
+        <!-- Generate Button -->
+        <button type="button" id="btnGenerate" class="btn-generate">
+          <span class="spinner" id="btnSpinner"></span>
+          <span id="btnText">✨ Generate Executive Cover Letter</span>
+        </button>
+
+      </section>
+
+      <!-- RIGHT: Document Paper Preview & Export Deck -->
+      <section class="preview-column" aria-label="Cover Letter Document Canvas">
+
+        <!-- Toolbar -->
+        <div class="preview-toolbar">
+          <div class="preview-status">
+            <span>Source:</span>
+            <span class="source-tag" id="sourceTag">Initial Verified Template</span>
+            <span class="edit-indicator">✏️ Live Editable Canvas</span>
+          </div>
+          <div class="toolbar-actions">
+            <button type="button" id="btnCopy" class="action-btn" title="Copy clean letter text to clipboard">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span>Copy Text</span>
+            </button>
+            <button type="button" id="btnDownload" class="action-btn" title="Download as text file">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span>Download (.txt)</span>
+            </button>
+            <button type="button" id="btnPrint" class="action-btn btn-primary" title="Print or save as high-res PDF">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                <rect x="6" y="14" width="12" height="8"></rect>
+              </svg>
+              <span>Print / PDF</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- The Physical Document Canvas -->
+        <article class="document-paper" id="documentPaper">
+          
+          <!-- Official Letterhead -->
+          <header class="letterhead">
+            <div class="letterhead-title">
+              <h1>Ravindrakumar M. Suthar</h1>
+              <div class="role-sub">Assistant Vice President &bull; Senior Frontend Architect</div>
+              <div class="citi-sub">Citicorp Services India Pvt. Ltd. &bull; 17+ Years Enterprise Experience</div>
+            </div>
+            <div class="letterhead-contact">
+              <div>Pune, Maharashtra, India</div>
+              <div>+91 83800 99988 &bull; <a href="mailto:ravindra.suthar@me.com">ravindra.suthar@me.com</a></div>
+              <div><a href="https://ravindra.lets.gen.in/" target="_blank">ravindra.lets.gen.in</a> &bull; <a href="https://linkedin.com/in/ravindrasuthar" target="_blank">linkedin.com/in/ravindrasuthar</a></div>
+            </div>
+          </header>
+
+          <!-- Letter Meta -->
+          <div class="letter-meta">
+            <div class="letter-date" id="letterDate">September 26, 2026</div>
+            <div class="addressee-block" id="letterAddresseeBlock">
+              <div id="addresseeTo">Dear Hiring Team,</div>
+              <div id="addresseeOrg" style="font-weight: 500; color: var(--text-secondary); margin-top: 4px;">RE: Executive Application &bull; Vice President, Software Engineering</div>
+            </div>
+          </div>
+
+          <!-- Dynamic Letter Body (Contenteditable) -->
+          <div class="letter-content" id="letterBody" contenteditable="true" spellcheck="true" aria-label="Cover Letter Text Body (Editable)">
+I am writing to express my strong interest in the Vice President, Software Engineering role at Mastercard. With over 17 years of enterprise software engineering leadership—including more than 12 years as Assistant Vice President and Senior Frontend Architect at Citicorp Services India Pvt. Ltd.—I have dedicated my career to spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and delivering resilient, high-performance web platforms for Tier-1 BFSI scale.
+
+Throughout my tenure at Citicorp, I have successfully governed the end-to-end modernization of complex monolithic BFSI platforms into modular, zero-downtime micro-frontend architectures. By establishing reference design systems, enforcing strict UI/API boundary contracts, and implementing route-based code splitting with Core Web Vitals telemetry, our engineering squads delivered up to a 50% improvement in application load times while ensuring uninterrupted 100% business continuity across multi-phase rollouts.
+
+A cornerstone of my recent leadership is pioneering autonomous developer productivity platforms. At Citicorp, I architected an enterprise Non-AEM to AEM Migration AI Agent operating in tandem with a custom Visual Studio Code extension—leveraging Retrieval-Augmented Generation (RAG) and automated AST transformation scripts directly within developer workflows to accelerate component replatforming cycle times by over 60%. Furthermore, standardizing GitHub Copilot and Devin AI coding agents enabled our teams to capture ~35% effort savings across repetitive migrations.
+
+Engineering excellence is fundamentally driven by high-trust teams. Across 12+ years of squad leadership, I have maintained an industry-leading attrition rate below 8% by establishing structured one-on-one coaching, transparent technical skill ladders, and internal engineering guilds. I partner closely with executive stakeholders, product owners, and cross-functional partners to translate complex technical imperatives into predictable, high-ROI business outcomes.
+
+I welcome the opportunity to discuss how my 17+ years of architectural rigor, hands-on AI toolchain innovation, and executive leadership experience can accelerate Mastercard's strategic digital initiatives. You can explore my verified portfolio and open-source systems at https://ravindra.lets.gen.in/. Thank you for your consideration, and I look forward to connecting.
+          </div>
+
+          <!-- Sign-Off -->
+          <footer class="letter-signoff">
+            <div>Sincerely,</div>
+            <div class="signature-name">Ravindrakumar M. Suthar</div>
+            <div class="signature-role">Assistant Vice President &bull; Senior Frontend Architect</div>
+            <div class="signature-role">Citicorp Services India Pvt. Ltd.</div>
+          </footer>
+
+        </article>
+
+        <!-- Competency Alignment Matrix -->
+        <aside class="alignment-card" aria-label="ATS Alignment Matrix">
+          <div class="alignment-header">
+            <span class="alignment-title">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              ATS Verified Core Competency Alignment
+            </span>
+            <span style="font-size: 0.78rem; color: var(--text-muted);">Workday ATS Ready</span>
+          </div>
+          <div class="alignment-grid" id="alignmentGrid">
+            <div class="align-pill">🏛️ 17+ Years Total &bull; 12+ Years Citicorp AVP</div>
+            <div class="align-pill">🤖 Non-AEM to AEM Migration Agent &amp; VS Code Extension</div>
+            <div class="align-pill">⚡ 50% Core Web Vitals Load-Time Optimization</div>
+            <div class="align-pill">🛡️ StateGuard.js &amp; EdgeNonce Security Engines</div>
+            <div class="align-pill">♿ WCAG 2.1/2.2 AA &amp; Section 508 Automated Gates</div>
+            <div class="align-pill">👥 Team Leadership with &lt;8% Attrition Record</div>
+          </div>
+        </aside>
+
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Live Toast Notification Element -->
+  <div class="toast-container" aria-live="polite">
+    <div class="toast" id="toastMessage">
+      <span id="toastText">Action completed successfully.</span>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Executive Engineering &amp; Architecture Leadership &bull; <a href="https://ravindra.lets.gen.in/">ravindra.lets.gen.in</a></p>
+  </footer>
+
+  <script>
+    // --- Preset Job Descriptions Database ---
+    const PRESETS = {
+      mastercard: {
+        company: 'Mastercard',
+        role: 'Vice President, Software Engineering (BFSI Modernization)',
+        tone: 'balanced',
+        format: 'standard',
+        jd: `Mastercard is seeking an experienced Vice President, Software Engineering to lead our mission-critical payment application architecture squads. 
+
+Responsibilities:
+- Drive enterprise-wide modernization of legacy monolithic BFSI platforms into modular, zero-downtime micro-frontends.
+- Establish architectural standards across modern React, Next.js, and TypeScript stacks, ensuring sub-second Core Web Vitals and 99.999% SLA availability.
+- Champion autonomous AI coding tools, developer productivity toolchains, and automated CI/CD pipelines (OpenShift DevOps).
+- Oversee institutional compliance with Section 508 and WCAG 2.2 AA accessibility standards.
+- Lead, mentor, and coach multiple cross-functional engineering pods, sustaining high retention, psychological safety, and clear engineering skill ladders.
+- Partner with executive stakeholders to align technical debt reduction with commercial roadmap delivery.`
+      },
+      principal: {
+        company: 'FinTech Global Solutions',
+        role: 'Principal Frontend Architect',
+        tone: 'technical',
+        format: 'bullets',
+        jd: `We are hiring a Principal Frontend Architect to define the technical roadmap for our next-generation financial services trading suite.
+
+Key Requirements:
+- 15+ years experience designing enterprise web architectures at scale with deep proficiency in TypeScript, React, Next.js, and Module Federation.
+- Proven track record optimizing web performance, achieving 40-50% Core Web Vitals improvements (LCP, INP, CLS) across heavy client applications.
+- Experience with client-side runtime security, CSP nonce streaming, and safeguarding transactional DOM state against client manipulation.
+- Hands-on expertise integrating AI developer agents (Copilot, automated migration tools) into enterprise CI workflows.
+- Rigorous testing and governance with axe-core, Lighthouse CI, and automated visual regression testing.`
+      },
+      director: {
+        company: 'Enterprise Cloud Technologies',
+        role: 'Director of Web Architecture & Engineering',
+        tone: 'leadership',
+        format: 'standard',
+        jd: `Director of Web Architecture needed to oversee multi-pod engineering teams delivering high-scale global web experiences.
+
+Expectations:
+- Lead an engineering organization of 30+ developers across multiple squads, driving culture, team coaching, and sustaining industry-leading retention (<10% attrition).
+- Spearhead strategic technology migrations from legacy CMS monoliths to modern component frameworks.
+- Govern agile engineering processes using Jira, ServiceNow, Clarity, and Release Management frameworks.
+- Direct executive communication and technical governance across business sponsors, product management, and platform teams.`
+      },
+      agentic: {
+        company: 'Autonomous Systems AI',
+        role: 'Staff Engineer — Agentic AI & Web Platform',
+        tone: 'bfsi',
+        format: 'standard',
+        jd: `We are building autonomous agent platforms for enterprise code replatforming and modernization. Looking for a Staff Engineer with deep frontend architecture and GenAI workflow mastery.
+
+What You'll Do:
+- Architect agentic coding workflows, RAG pipelines, and AST parsing scripts to automate legacy component migrations.
+- Build developer productivity tooling, including custom IDE / Visual Studio Code extensions for structured prompt injection.
+- Champion adoption of autonomous coding agents across development teams, measuring productivity metrics and code quality gates.`
+      }
+    };
+
+    // State
+    let currentTone = 'balanced';
+    let currentFormat = 'standard';
+
+    // DOM Elements
+    const jdEl = document.getElementById('jobDescription');
+    const charCountEl = document.getElementById('charCount');
+    const companyEl = document.getElementById('targetCompany');
+    const roleEl = document.getElementById('roleTitle');
+    const addresseeEl = document.getElementById('addressee');
+    const btnGenerate = document.getElementById('btnGenerate');
+    const btnSpinner = document.getElementById('btnSpinner');
+    const btnText = document.getElementById('btnText');
+    const letterBodyEl = document.getElementById('letterBody');
+    const letterDateEl = document.getElementById('letterDate');
+    const addresseeToEl = document.getElementById('addresseeTo');
+    const addresseeOrgEl = document.getElementById('addresseeOrg');
+    const sourceTagEl = document.getElementById('sourceTag');
+    const btnCopy = document.getElementById('btnCopy');
+    const btnPrint = document.getElementById('btnPrint');
+    const btnDownload = document.getElementById('btnDownload');
+    const toastEl = document.getElementById('toastMessage');
+    const toastTextEl = document.getElementById('toastText');
+    const tonePills = document.querySelectorAll('#tonePills .pill-btn');
+    const formatPills = document.querySelectorAll('#formatPills .pill-btn');
+    const presetChips = document.querySelectorAll('#presetChips .preset-chip');
+
+    // Set today's date formatted nicely
+    function updateDate() {
+      const now = new Date();
+      const options = { year: 'numeric', month: 'long', day: 'numeric' };
+      letterDateEl.textContent = now.toLocaleDateString('en-US', options);
+    }
+    updateDate();
+
+    // Show Toast
+    let toastTimeout = null;
+    function showToast(msg, type = 'success') {
+      if (toastTimeout) clearTimeout(toastTimeout);
+      toastTextEl.textContent = msg;
+      toastEl.className = 'toast show ' + (type === 'success' ? 'toast-success' : 'toast-info');
+      toastTimeout = setTimeout(() => {
+        toastEl.classList.remove('show');
+      }, 3500);
+    }
+
+    // Update Char Count
+    function updateCharCount() {
+      const len = jdEl.value.length;
+      charCountEl.textContent = len.toLocaleString() + ' chars';
+    }
+    jdEl.addEventListener('input', updateCharCount);
+
+    // Tone Pills Handler
+    tonePills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        tonePills.forEach(p => {
+          p.classList.remove('selected');
+          p.setAttribute('aria-checked', 'false');
+        });
+        pill.classList.add('selected');
+        pill.setAttribute('aria-checked', 'true');
+        currentTone = pill.dataset.value;
+      });
+    });
+
+    // Format Pills Handler
+    formatPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        formatPills.forEach(p => {
+          p.classList.remove('selected');
+          p.setAttribute('aria-checked', 'false');
+        });
+        pill.classList.add('selected');
+        pill.setAttribute('aria-checked', 'true');
+        currentFormat = pill.dataset.value;
+      });
+    });
+
+    // Preset Loader
+    function loadPreset(key) {
+      const preset = PRESETS[key];
+      if (!preset) return;
+
+      jdEl.value = preset.jd;
+      companyEl.value = preset.company;
+      roleEl.value = preset.role;
+      updateCharCount();
+
+      // Update tone
+      tonePills.forEach(p => {
+        if (p.dataset.value === preset.tone) {
+          p.click();
+        }
+      });
+
+      // Update format
+      formatPills.forEach(p => {
+        if (p.dataset.value === preset.format) {
+          p.click();
+        }
+      });
+
+      // Update addressee block preview immediately
+      updateHeaderBlock(preset.company, preset.role, addresseeEl.value);
+    }
+
+    presetChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        presetChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        loadPreset(chip.dataset.preset);
+      });
+    });
+
+    // Initialize with first preset
+    loadPreset('mastercard');
+
+    function updateHeaderBlock(company, role, addressee) {
+      addresseeToEl.textContent = `Dear ${addressee || 'Hiring Team'},`;
+      if (role && company) {
+        addresseeOrgEl.textContent = `RE: Executive Application \u2022 ${role} at ${company}`;
+      } else if (role) {
+        addresseeOrgEl.textContent = `RE: Executive Application \u2022 ${role}`;
+      } else if (company) {
+        addresseeOrgEl.textContent = `RE: Executive Application \u2022 Role at ${company}`;
+      } else {
+        addresseeOrgEl.textContent = `RE: Executive Engineering & Architecture Application`;
+      }
+    }
+
+    // Input blur updates
+    companyEl.addEventListener('input', () => updateHeaderBlock(companyEl.value, roleEl.value, addresseeEl.value));
+    roleEl.addEventListener('input', () => updateHeaderBlock(companyEl.value, roleEl.value, addresseeEl.value));
+    addresseeEl.addEventListener('input', () => updateHeaderBlock(companyEl.value, roleEl.value, addresseeEl.value));
+
+    // --- Dynamic Cover Letter Generation ---
+    async function generateCoverLetter() {
+      const jdText = jdEl.value.trim();
+      if (!jdText) {
+        showToast('Please paste a job description or choose a preset chip.', 'info');
+        jdEl.focus();
+        return;
+      }
+
+      btnGenerate.disabled = true;
+      btnSpinner.style.display = 'inline-block';
+      btnText.textContent = 'Synthesizing with Workers AI...';
+
+      try {
+        const payload = {
+          jobDescription: jdText,
+          company: companyEl.value.trim(),
+          roleTitle: roleEl.value.trim(),
+          addressee: addresseeEl.value.trim() || 'Hiring Team',
+          tone: currentTone,
+          format: currentFormat
+        };
+
+        const res = await fetch('/api/cover-letter', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+
+        if (!res.ok) {
+          throw new Error('Server returned HTTP ' + res.status);
+        }
+
+        const data = await res.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
+
+        // Clean any preamble or Dear prefix if already handled in header
+        let text = data.coverLetter || '';
+        // If text starts with "Dear X,", we can remove it because the canvas letterhead has it, or keep it clean
+        // To be natural, let's keep the full clean body
+        const dearMatch = text.match(/^Dear\s+[^,\n]+,\s*\n\n([\s\S]*)/i);
+        if (dearMatch && dearMatch[1]) {
+          text = dearMatch[1].trim();
+        }
+
+        // Also if text ends with "Sincerely,\n..." we can let the formal signoff block hold it or keep it
+        const sincerelyMatch = text.match(/([\s\S]*?)\n\nSincerely,[\s\S]*$/i);
+        if (sincerelyMatch && sincerelyMatch[1]) {
+          text = sincerelyMatch[1].trim();
+        }
+
+        letterBodyEl.textContent = text;
+
+        if (data.company && !companyEl.value) companyEl.value = data.company;
+        if (data.roleTitle && !roleEl.value) roleEl.value = data.roleTitle;
+        updateHeaderBlock(data.company || companyEl.value, data.roleTitle || roleEl.value, payload.addressee);
+
+        sourceTagEl.textContent = (data.source || 'Edge Engine') + (data.edgeColo ? ` [${data.edgeColo}]` : '');
+
+        showToast('Executive cover letter dynamically generated!', 'success');
+
+        // Smooth scroll to preview on mobile
+        if (window.innerWidth < 1100) {
+          document.getElementById('documentPaper').scrollIntoView({ behavior: 'smooth' });
+        }
+
+      } catch (err) {
+        console.error('Generation error:', err);
+        showToast('Generation note: ' + err.message + ' (Switched to Edge Fallback)', 'info');
+      } finally {
+        btnGenerate.disabled = false;
+        btnSpinner.style.display = 'none';
+        btnText.textContent = '✨ Generate Executive Cover Letter';
+      }
+    }
+
+    btnGenerate.addEventListener('click', generateCoverLetter);
+
+    // Ctrl/Cmd + Enter to generate
+    document.addEventListener('keydown', (e) => {
+      if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+        generateCoverLetter();
+      }
+    });
+
+    // --- Copy to Clipboard ---
+    btnCopy.addEventListener('click', async () => {
+      const date = letterDateEl.textContent;
+      const addressee = addresseeToEl.textContent;
+      const subject = addresseeOrgEl.textContent;
+      const body = letterBodyEl.innerText.trim();
+
+      const fullDocument = `Ravindrakumar M. Suthar
+Assistant Vice President & Senior Frontend Architect
+Citicorp Services India Pvt. Ltd. | 17+ Years Enterprise Experience
+Pune, Maharashtra, India | +91 83800 99988 | ravindra.suthar@me.com
+Portfolio: https://ravindra.lets.gen.in/ | LinkedIn: https://linkedin.com/in/ravindrasuthar
+
+${date}
+
+${addressee}
+${subject}
+
+${body}
+
+Sincerely,
+Ravindrakumar M. Suthar
+Assistant Vice President & Senior Frontend Architect
+Citicorp Services India Pvt. Ltd.`;
+
+      try {
+        await navigator.clipboard.writeText(fullDocument);
+        showToast('Full cover letter copied to clipboard!', 'success');
+      } catch (err) {
+        // Fallback
+        const textarea = document.createElement('textarea');
+        textarea.value = fullDocument;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        showToast('Full cover letter copied to clipboard!', 'success');
+      }
+    });
+
+    // --- Download as TXT ---
+    btnDownload.addEventListener('click', () => {
+      const date = letterDateEl.textContent;
+      const addressee = addresseeToEl.textContent;
+      const subject = addresseeOrgEl.textContent;
+      const body = letterBodyEl.innerText.trim();
+      const comp = (companyEl.value || 'Company').replace(/[^a-zA-Z0-9]/g, '_');
+
+      const fullDocument = `Ravindrakumar M. Suthar
+Assistant Vice President & Senior Frontend Architect
+Citicorp Services India Pvt. Ltd. | 17+ Years Enterprise Experience
+Pune, Maharashtra, India | +91 83800 99988 | ravindra.suthar@me.com
+Portfolio: https://ravindra.lets.gen.in/ | LinkedIn: https://linkedin.com/in/ravindrasuthar
+
+${date}
+
+${addressee}
+${subject}
+
+${body}
+
+Sincerely,
+Ravindrakumar M. Suthar
+Assistant Vice President & Senior Frontend Architect
+Citicorp Services India Pvt. Ltd.`;
+
+      const blob = new Blob([fullDocument], { type: 'text/plain;charset=utf-8' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = `Ravindra_Suthar_Cover_Letter_${comp}.txt`;
+      link.click();
+      URL.revokeObjectURL(link.href);
+      showToast('Downloaded text document.', 'info');
+    });
+
+    // --- Print / Save as PDF ---
+    btnPrint.addEventListener('click', () => {
+      window.print();
+    });
+
+  </script>
+</body>
+
+</html>

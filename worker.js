@@ -9,7 +9,7 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 Verified Profile & Career Background:
 - Current Role: Assistant Vice President — Frontend Architecture & Engineering Leadership at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 12+ years at Citi, 17+ years total experience).
 - Citicorp AI Innovation: Unified Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: At Citicorp, Ravindra architected a single, unified developer productivity platform where an autonomous AI migration agent operates in tandem with a custom Visual Studio Code extension. The VS Code extension standardizes prompt templates and IDE context injection, while the migration agent uses Retrieval-Augmented Generation (RAG) and custom AST transformation scripts to convert non-AEM components into Adobe Experience Manager (AEM) Core Components and Sling models, slashing migration cycle times by over 60%.
-- Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools platform (https://ravindra.lets.gen.in/tools).
+- Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -580,6 +580,177 @@ Provide a structured evaluation in valid JSON with these exact keys:
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
         });
       }
+    }
+
+    // ── API: Dynamic AI Cover Letter Generator ──────────────────────────────
+    if (url.pathname === '/api/cover-letter' && request.method === 'POST') {
+      try {
+        const body = await request.json();
+        const jd = (body.jobDescription || '').trim();
+        let company = (body.company || '').trim();
+        let roleTitle = (body.roleTitle || '').trim();
+        const addressee = (body.addressee || 'Hiring Team').trim();
+        const tone = (body.tone || 'balanced').trim(); // 'leadership', 'technical', 'bfsi', 'balanced'
+        const format = (body.format || 'standard').trim(); // 'standard', 'bullets', 'concise'
+
+        if (!jd) {
+          return new Response(JSON.stringify({ error: 'Job description text is required' }), {
+            status: 400,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+          });
+        }
+
+        // Auto-extract Company if missing
+        if (!company) {
+          const compMatches = jd.match(/(?:at|with|join|about)\s+([A-Z][A-Za-z0-9&.\- ]{2,30}?)(?:,|\.|\n|'s|\s+is|\s+in|\s+team)/i);
+          if (compMatches && compMatches[1]) {
+            company = compMatches[1].trim();
+          } else if (/mastercard/i.test(jd)) company = 'Mastercard';
+          else if (/citibank|citigroup|citi/i.test(jd)) company = 'Citigroup';
+          else if (/jpmorgan|chase/i.test(jd)) company = 'JPMorgan Chase';
+          else if (/barclays/i.test(jd)) company = 'Barclays';
+          else if (/sapient/i.test(jd)) company = 'Publicis Sapient';
+          else company = 'the Hiring Organization';
+        }
+
+        // Auto-extract Role Title if missing
+        if (!roleTitle) {
+          const titleMatches = jd.match(/(?:seeking|hiring|role of|position of|looking for a|title:)\s*([A-Za-z0-9&,\- ]{4,40}?)(?:\.|\n|\r|who|to lead|to join)/i);
+          if (titleMatches && titleMatches[1]) {
+            roleTitle = titleMatches[1].trim();
+          } else if (/vice president|vp/i.test(jd)) roleTitle = 'Vice President, Software Engineering';
+          else if (/principal/i.test(jd)) roleTitle = 'Principal Frontend Architect';
+          else if (/director/i.test(jd)) roleTitle = 'Director of Frontend Architecture';
+          else roleTitle = 'Engineering Leader / Senior Frontend Architect';
+        }
+
+        let coverLetter = null;
+        let source = null;
+
+        // 1. Attempt Cloudflare Workers AI execution
+        if (env.AI && typeof env.AI.run === 'function') {
+          const prompt = `You are writing an executive cover letter for Ravindrakumar M. Suthar (Assistant Vice President & Senior Frontend Architect at Citicorp Services India Pvt. Ltd., 17+ years experience).
+Write an articulate, compelling, customized executive cover letter for:
+Target Company: ${company}
+Target Role: ${roleTitle}
+Addressed To: ${addressee}
+Tone Focus: ${tone}
+Format Mode: ${format}
+
+Job Description:
+"""
+${jd.slice(0, 3000)}
+"""
+
+Ravindra's Core Verified Credentials (MUST weave into the narrative):
+- 17+ years product engineering experience; 12+ years as Assistant Vice President / Senior Frontend Architect at Citicorp Services India.
+- Architected Citibank's unified Non-AEM to AEM Migration AI Agent paired with custom VS Code extension (RAG + AST scripts, 60%+ faster replatforming).
+- Led legacy BFSI monolith migration to micro-frontend architectures with 100% uptime and zero downtime across squads.
+- Delivered up to 50% application load-time improvements via modern React, Next.js, TypeScript, route splitting, and Core Web Vitals telemetry.
+- Pioneered Devin AI & GitHub Copilot autonomous coding agents (~35% engineering effort saved).
+- Established institutional WCAG 2.1 & 2.2 AA/AAA accessibility compliance programs with axe-core and NVDA audits (60% remediation cost reduction).
+- Governed OpenShift DevOps pipelines, Jira, ServiceNow, Clarity, MS Project, and Workday HRIS platform uploads.
+- Sustained <8% team attrition across engineering squads through structured mentorship and internal guilds.
+- Live personal innovations: FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
+
+Guidelines:
+- Tone must be executive, strategic, confident, and professional.
+- Focus directly on solving the challenges stated in the Job Description.
+- Output ONLY the clean cover letter text from "Dear ${addressee}," to "Sincerely,\\nRavindrakumar M. Suthar". No markdown code fences, no quotes around text, no conversational preamble.`;
+
+          for (const model of AI_MODELS) {
+            try {
+              const aiResult = await env.AI.run(model, {
+                messages: [
+                  { role: 'system', content: RAVINDRA_SYSTEM_PROMPT },
+                  { role: 'user', content: prompt }
+                ],
+                max_tokens: 850,
+                temperature: 0.35
+              });
+
+              if (aiResult && (aiResult.response || aiResult.text)) {
+                coverLetter = (aiResult.response || aiResult.text).replace(/```(?:markdown|text)?/gi, '').replace(/```/g, '').trim();
+                source = `Cloudflare Workers AI (${model} @ Edge)`;
+                break;
+              }
+            } catch (err) {
+              console.error(`Cover letter generation error with ${model}:`, err.message);
+            }
+          }
+        }
+
+        // 2. Deterministic Edge Fallback Generator
+        if (!coverLetter) {
+          source = 'Executive Profile Dynamic Generator (Edge Engine)';
+          const hasMicrofrontends = /micro-?frontends?|federation|monolith/i.test(jd);
+          const hasAI = /ai|genai|llm|copilot|rag|agent|automation/i.test(jd);
+          const hasA11y = /accessibility|a11y|wcag|508|ada/i.test(jd);
+          const hasDevOps = /devops|ci\/cd|pipeline|openshift|docker|kubernetes/i.test(jd);
+          const hasLeadership = /lead|director|vp|manager|head|coach|mentor/i.test(jd);
+
+          const p1 = `I am writing to express my strong interest in the ${roleTitle} role at ${company}. With over 17 years of enterprise software engineering leadership—including more than 12 years as Assistant Vice President and Senior Frontend Architect at Citicorp Services India Pvt. Ltd.—I have dedicated my career to spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and delivering resilient, high-performance web platforms for Tier-1 BFSI scale.`;
+
+          const p2 = hasMicrofrontends 
+            ? `Throughout my tenure at Citicorp, I have successfully governed the end-to-end modernization of complex monolithic BFSI platforms into modular, zero-downtime micro-frontend architectures. By establishing reference design systems, enforcing strict UI/API boundary contracts, and implementing route-based code splitting with Core Web Vitals telemetry, our engineering squads delivered up to a 50% improvement in application load times while ensuring uninterrupted 100% business continuity across multi-phase rollouts.`
+            : `At Citicorp, I lead enterprise frontend architecture across multi-pod engineering teams, establishing scalable architectural standards across React, Next.js, and TypeScript ecosystems. By aligning engineering execution with business roadmaps, our squads consistently achieved up to 50% application load-time improvements through route-based code splitting, Core Web Vitals optimization, and automated performance observability.`;
+
+          const p3 = hasAI
+            ? `A cornerstone of my recent leadership is pioneering autonomous developer productivity platforms. At Citicorp, I architected an enterprise Non-AEM to AEM Migration AI Agent operating in tandem with a custom Visual Studio Code extension—leveraging Retrieval-Augmented Generation (RAG) and automated AST transformation scripts directly within developer workflows to accelerate component replatforming cycle times by over 60%. Furthermore, standardizing GitHub Copilot and Devin AI coding agents enabled our teams to capture ~35% effort savings across repetitive migrations.`
+            : `Beyond core frontend delivery, I operationalized institutional governance across accessibility, client-side security, and continuous delivery. I spearheaded company-wide Section 508 and WCAG 2.1/2.2 AA compliance initiatives by integrating axe-core and Lighthouse CI regression gates into OpenShift DevOps and GitHub Actions pipelines—slashing post-deployment remediation spend by 60%.`;
+
+          const p4 = hasLeadership
+            ? `Engineering excellence is fundamentally driven by high-trust teams. Across 12+ years of squad leadership, I have maintained an industry-leading attrition rate below 8% by establishing structured one-on-one coaching, transparent technical skill ladders, and internal engineering guilds. I partner closely with executive stakeholders, product owners, and cross-functional partners to translate complex technical imperatives into predictable, high-ROI business outcomes.`
+            : `I pride myself on building collaborative partnerships across product, architecture, and executive leadership, managing technical risk, and balancing rapid feature delivery with architectural integrity.`;
+
+          const pClose = `I welcome the opportunity to discuss how my 17+ years of architectural rigor, hands-on AI toolchain innovation, and executive leadership experience can accelerate ${company}'s strategic digital initiatives. You can explore my verified portfolio and open-source systems at https://ravindra.lets.gen.in/. Thank you for your consideration, and I look forward to connecting.`;
+
+          if (format === 'bullets') {
+            coverLetter = `Dear ${addressee},\n\n${p1}\n\nKey Strategic Alignments with ${company}'s Requirements:\n\n• Enterprise Architecture & Micro-Frontends: 17+ years architecting scalable React/Next.js platforms at Citicorp scale, achieving up to 50% load-time gains and zero downtime during monolithic replatforming.\n• Agentic AI & Developer Toolchains: Architected an autonomous Non-AEM to AEM Migration AI Agent and custom VS Code extension (60%+ faster delivery), while standardizing Devin AI and GitHub Copilot across squads.\n• Institutional Governance & DevOps: Operationalized WCAG 2.1/2.2 AA accessibility gates, OpenShift DevOps pipelines, and client-side DOM security protocols (StateGuard.js, EdgeNonce).\n• High-Retention People Leadership: Sustained team attrition below 8% through structured engineering guilds, SDLC release governance, and cross-functional agile delivery (CSM).\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nAssistant Vice President & Senior Frontend Architect\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India`;
+          } else if (format === 'concise') {
+            coverLetter = `Dear ${addressee},\n\nI am writing to express my enthusiastic interest in the ${roleTitle} opportunity at ${company}. With over 17 years of enterprise frontend engineering and architecture leadership—including 12+ years as Assistant Vice President at Citicorp Services India—I specialize in modernizing legacy BFSI systems into resilient micro-frontends, accelerating delivery through autonomous AI migration agents (60%+ cycle time reduction), and scaling high-retention engineering teams (<8% attrition).\n\nHaving reviewed ${company}'s technical trajectory, I am confident my proven track record in Core Web Vitals optimization (50% gains), WCAG 2.2 AA accessibility governance, and OpenShift DevOps pipelines directly aligns with your strategic goals. I welcome the opportunity to discuss how my architectural rigor can drive tangible impact for your team.\n\nSincerely,\nRavindrakumar M. Suthar\nhttps://ravindra.lets.gen.in/ | +91 83800 99988 | ravindra.suthar@me.com`;
+          } else {
+            coverLetter = `Dear ${addressee},\n\n${p1}\n\n${p2}\n\n${p3}\n\n${p4}\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nAssistant Vice President & Senior Frontend Architect\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India\nhttps://ravindra.lets.gen.in/ | linkedin.com/in/ravindrasuthar`;
+          }
+        }
+
+        // Alignments metadata
+        const alignments = [
+          'Enterprise Architecture & Micro-Frontends (17+ yrs, Citicorp AVP)',
+          'Agentic AI Productivity (Non-AEM to AEM Agent & VS Code Extension)',
+          'Performance Engineering (50% Core Web Vitals Gains)',
+          'OpenShift DevOps & Agile Release Governance',
+          'Institutional Accessibility (WCAG 2.1/2.2 AA with axe-core)',
+          'High-Retention Leadership (<8% Team Attrition)'
+        ];
+
+        return new Response(JSON.stringify({
+          coverLetter,
+          company,
+          roleTitle,
+          alignments,
+          source,
+          edgeColo: request.cf?.colo || 'EDGE',
+          timestamp: new Date().toISOString()
+        }), {
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+
+      } catch (err) {
+        return new Response(JSON.stringify({
+          error: 'Failed to generate cover letter',
+          details: err.message
+        }), {
+          status: 500,
+          headers: { ...corsHeaders, 'Content-Type': 'application/json' }
+        });
+      }
+    }
+
+    // ── Clean URL Rewrites for Static Assets ────────────────────────────────
+    if (url.pathname === '/cover-letter' && env.ASSETS) {
+      url.pathname = '/cover-letter.html';
+      return env.ASSETS.fetch(new Request(url.toString(), request));
     }
 
     // ── Static Assets Fallback ──────────────────────────────────────────────
