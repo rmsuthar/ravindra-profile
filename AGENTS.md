@@ -1,6 +1,6 @@
 # AI Agent Operating Guidelines & Workspace Rules
 
-This repository hosts the executive digital portfolio, ATS-optimized resumes, and Cloudflare Workers AI edge copilot for **Ravindrakumar M. Suthar** (Senior Frontend Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.).
+This repository hosts the executive digital portfolio, ATS-optimized resumes, and Cloudflare Workers AI edge copilot for **Ravindrakumar M. Suthar** (Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.).
 
 ---
 
@@ -131,10 +131,10 @@ If you or a visitor still see old HTML content:
 ## 🔒 Inviolable Project Invariants
 
 1. **Light Mode Only**: The portfolio is strictly light mode (`data-theme="light"`). Never re-enable dark mode toggles or dark color scheme overrides.
-2. **Title Invariant**: Do NOT use "Assistant Vice President" or "AVP". The official functional title is **Senior Frontend Architect & Engineering Leader**.
+2. **Title Invariant**: Do NOT use "Assistant Vice President" or "AVP". The official functional title is **Senior Principal Architect & Engineering Leader**.
 3. **Citicorp Grouped Experience Layout (LinkedIn Style)**:
    Citicorp Services India Pvt. Ltd. (May 2013 – Present · 12+ yrs) must remain **ONE single grouped company section** with 3 internal sub-roles connected by a vertical timeline rail:
-   - **Role 1 (2022 – Present)**: Senior Frontend Architect & AI Platform Lead
+   - **Role 1 (2022 – Present)**: Senior Principal Architect & AI Platform Lead
    - **Role 2 (2018 – 2022)**: Senior Lead Engineer — Frontend Architecture
    - **Role 3 (2013 – 2018)**: Senior Engineer / Technical Lead — UI Architecture
 4. **Enterprise Initiative Attribution**: The **Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension** is an enterprise initiative under **Citicorp Services India Pvt. Ltd.** (2013–Present). It is **not** a personal side project.

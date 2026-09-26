@@ -74,7 +74,7 @@ def generate_workday_docx():
 
     # Title
     paragraphs.append(make_p([
-        make_run("Senior Frontend Architect & Engineering Leader", bold=True, italic=True, size=21, color="2B6CB0")
+        make_run("Senior Principal Architect & Engineering Leader", bold=True, italic=True, size=21, color="2B6CB0")
     ], space_before=0, space_after=60, align="center"))
 
     # Contact line 1 (Clean ATS labels without emojis)
@@ -102,8 +102,8 @@ def generate_workday_docx():
     paragraphs.append(make_p([
         make_run("Engineering leader with "),
         make_run("17+ years of experience", bold=True),
-        make_run(" steering multi-team frontend organisations through large-scale digital transformation in regulated Banking, Financial Services, and Insurance (BFSI) environments. At Citicorp Services India, progressed through the engineering ladder from Technical Lead to "),
-        make_run("Senior Frontend Architect & Engineering Leader", bold=True),
+        make_run(" steering multi-team engineering organisations through large-scale digital transformation in regulated Banking, Financial Services, and Insurance (BFSI) environments. At Citicorp Services India, progressed through the engineering ladder from Technical Lead to "),
+        make_run("Senior Principal Architect & Engineering Leader", bold=True),
         make_run(", building and retaining high-performance squads with sustained "),
         make_run("<8% attrition", bold=True),
         make_run(" — a benchmark exceptional in enterprise engineering.")
@@ -125,14 +125,14 @@ def generate_workday_docx():
     paragraphs.append(make_heading("Technical Skills & Competencies"))
     
     skills = [
-        ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
-        ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
-        ("Delivery & Project Governance", "Agile / Scrum / Kanban, Certified ScrumMaster (CSM), SDLC, Release Management, Change Management, Risk & Issue Management, Budget & Resource Planning, Financial Management, Executive Reporting & Governance, Vendor Management."),
-        ("Enterprise Tools & PM Platforms", "Jira, OpenShift DevOps, ServiceNow, Clarity, MS Project, GitHub Projects, Workday Platform Uploads, Workday HRIS, Adobe Experience Manager (AEM / CQ5)."),
-        ("Leadership & Key Competencies", "Cross-Functional Leadership, Strategic Thinking, Leadership and Influence, Stakeholder Management, Financial Management, Vendor Management, Communication and Presentation Skills, Decision Making, Conflict Resolution, Team Collaboration and Coaching, Talent Acquisition."),
-        ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), Zero-Latency Dynamic Edge CSP (EdgeNonce), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
-        ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
-        ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes.")
+        ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization, Server-Side Rendering (SSR)."),
+        ("Core Technologies", "React, Next.js, Angular (v10–v21), TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
+        ("Delivery & Project Governance", "Agile / Scrum / Kanban, Certified ScrumMaster (CSM), SDLC, Release Management, Change Management, Risk & Issue Management, Budget & Resource Planning, Financial Management, Executive Reporting & Governance, Vendor Management, GitHub Enterprise (GHE) Migration, Renovate Bot."),
+        ("Enterprise Tools & PM Platforms", "Jira, OpenShift DevOps, ServiceNow, Clarity, MS Project, GitHub Projects, Workday Platform Uploads, Workday HRIS, Adobe Experience Manager (AEM / CQ5), OpenText TeamSite, Salesforce SSG Gateway, Bitbucket, TeamCity, UrbanDeploy."),
+        ("Leadership & Key Competencies", "Cross-Functional Leadership, Strategic Thinking, Leadership and Influence, Stakeholder Management, Financial Management, Vendor Management, Communication and Presentation Skills, Decision Making, Conflict Resolution, Team Collaboration and Coaching, Talent Acquisition, Citi Ignite Innovation 2026."),
+        ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), Kaltura Player Accessibility, axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), Zero-Latency Dynamic Edge CSP (EdgeNonce), OWASP Top 10, DOM Runtime Integrity (StateGuard.js), Checkmarx, CVM Remediation."),
+        ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Local Vector Store RAG, Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, ARC (Gemini ADK), Stylus Workspace Presets & Tooling, Devin AI Autonomous Agents & Devin Scheduler, GitHub Copilot, Enterprise Prompt Engineering, AST Transformation Scripts, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
+        ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, OpenShift, Spring Boot 4.x.")
     ]
     for cat, items in skills:
         paragraphs.append(make_p([
@@ -162,18 +162,25 @@ def generate_workday_docx():
             runs.append(make_run(body, size=19, color="2D3748"))
             paragraphs.append(make_p(runs, space_before=25, space_after=25, is_bullet=True))
 
-    # Citicorp — Role 1: Senior Frontend Architect
+    # Citicorp — Role 1: Senior Principal Architect
     add_job(
-        title="Senior Frontend Architect & AI Platform Lead",
+        title="Senior Principal Architect & AI Platform Lead",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="2022 – Present",
         bullets=[
-            ("Lead cross-functional frontend engineering squads (~12 engineers)", "delivering enterprise Banking, Financial Services, and Insurance (BFSI) platform programmes, with sustained <8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
-            ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform combining Retrieval-Augmented Generation (RAG), automated prompt engineering, and custom AST parsing scripts to migrate legacy component trees into idiomatic AEM Core Components, HTL templates, and Sling models — slashing migration cycle times by over 60%."),
-            ("Pioneered enterprise-wide Devin AI and GitHub Copilot adoption", "across squads, saving ~35% developer effort on boilerplate and test scaffolding while accelerating PR review velocity by 40%."),
-            ("Executive reporting & governance", "Translated multi-quarter engineering roadmaps into executive narratives for C-suite and global stakeholders; managed programme risk, release calendar, and vendor relationships."),
-            ("Managed End-of-Vendor-Support (EOVS/EOL) transitions", "with zero business disruption through strategic migration roadmaps and coordinated cross-functional stakeholder alignments.")
+            ("Led enterprise CMS modernisation", "Orchestrated the full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM), standardising content authoring workflows, component governance, and multi-brand publishing pipelines across institutional platforms."),
+            ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension — combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60% with automated validation."),
+            ("Pioneered enterprise-wide Devin AI and GitHub Copilot adoption", "across squads, saving ~35% developer effort on boilerplate, test scaffolding, and migrations while boosting PR review velocity by 40%."),
+            ("Lead cross-functional frontend engineering squads (~12 engineers)", "with sustained <8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
+            ("Executive reporting & governance", "Translated multi-quarter engineering roadmaps into C-suite narratives; managed programme risk, release calendar, vendor relationships, and End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption."),
+            ("Enterprise GenAI Tooling, RAG & Operational Presets (Demonstrated to Senior Leadership)", "Enhanced integration with ARC (Gemini ADK) agent to leverage enterprise project-level Gemini LLMs rather than consuming individual developer tokens; implemented offline local vector store RAG for secure contextual retrieval within bank network boundaries. Engineered custom Stylus Workspace Presets including AEM Assistant & Layout Analyser (screenshot-to-wireframe mapping to AEM layout templates), Adobe Experience Cloud (AEC) Release Tracker (automated risk tiering across Launch, Analytics, and Target), and automated JIRA JQL / EEMS CVM / Mythos release sign-off tools replacing manual validation."),
+            ("Autonomous Code Remediation & Devin Scheduler", "Configured Devin Scheduler workflows to automatically detect End-of-Vendor-Support (EOVS) components, generate automated pull requests, apply CCP framework Java upgrades, and update tracking JIRAs autonomously; successfully onboarded CPB and CGCPC applications across AEM, EEMS, and Drupal onto Devin post-GHE migration."),
+            ("Strategic Platform Modernization & Angular Ecosystem Upgrade", "Directed frontend ecosystem modernization upgrading Angular from 10.x to 21.x across MSA PCF and non-PCF services integrated seamlessly within Drupal; resolved critical Server-Side Rendering (SSR) routing challenges between PCF and non-PCF modules and spearheaded ongoing Angular component upgrades for the ESOK Intranet platform."),
+            ("GitHub Enterprise (GHE) Migration Ownership & CI/CD Optimization", "Assumed full technical ownership of GHE migration initiative, engineering Bitbucket cleanup automation, designing standardized repository structures, integrating Renovate for automated dependency management, and optimizing CI/CD delivery pipelines with zero downtime."),
+            ("Enterprise Security & Accessibility (WCAG 2.2 AA)", "Spearheaded monthly analysis and resolution of critical accessibility challenges impacting Citi Global Wealth and Public Site platforms, partnering with Kaltura to engineer bespoke video player fixes for non-standard defects (WCAG 2.2 AA); systematically cleared CVM vulnerabilities and Checkmarx findings across core EEMS microservices (including Spring Boot 3.x to 4.x upgrades)."),
+            ("Salesforce Integration & Production Validation Automation", "Delivered Contact Us backend message-routing enhancements via SSG gateway with 2026 mandatory custom security header compliance; built Shell automation suites validating EEMS APIs, container health, and OpenShift deployment statuses, slashing release validation overhead."),
+            ("Firm-Wide Innovation (Citi Ignite 2026)", "Volunteered for the global Citi Ignite Innovation Program 2026, actively evaluating and championing transformative engineering ideas across Citi.")
         ]
     )
 
@@ -426,7 +433,7 @@ def audit_workday_compatibility():
         ("Employer 2", "Cognizant"),
         ("Employer 3", "Impetus"),
         ("Key Initiative", "Non-AEM to AEM"),
-        ("Role Fit", "Senior Frontend Architect"),
+        ("Role Fit", "Architect"),
         ("LinkedIn URL", "linkedin.com/in/ravindrasuthar"),
         ("Micro-frontend Skill", "Module Federation"),
         ("Modern State Skill", "Redux Toolkit"),
