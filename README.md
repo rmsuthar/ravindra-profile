@@ -29,6 +29,18 @@ Engineered specifically for instantaneous global edge hosting on **Cloudflare** 
 
 ---
 
+---
+
+## 🧰 Tools & Utilities
+
+The following internal tools are intentionally **not linked** from the public navigation. Access them directly via their URLs:
+
+| Tool | URL | Description |
+|---|---|---|
+| **Cover Letter AI** | [`/cover-letter`](https://ravindra.lets.gen.in/cover-letter) | Dynamic AI Cover Letter Generator — paste any JD and synthesize a tailored, ATS-optimised executive cover letter powered by Cloudflare Workers AI |
+
+---
+
 ## 📁 Project Structure
 
 ```
