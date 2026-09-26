@@ -165,11 +165,14 @@ const KNOWLEDGE_FALLBACKS = [
 - Total Career: **17+ years of continuous software engineering and architectural leadership**.`
   },
   {
-    triggers: ['skills', 'tech', 'stack', 'technologies', 'react', 'next', 'typescript', 'frontend', 'microfrontend', 'javascript', 'css'],
+    triggers: ['skills', 'tech', 'stack', 'technologies', 'react', 'next', 'typescript', 'frontend', 'microfrontend', 'javascript', 'css', 'devops', 'openshift', 'jira', 'governance'],
     answer: `**Core Technical Competencies & Technology Stack:**
 
 - **Architecture & Frameworks**: React, Next.js, TypeScript, Micro-Frontends (Module Federation), Single Page Applications (SPA), Server-Side Rendering (SSR), Progressive Web Apps (PWA).
-- **AI & Automation**: Autonomous AI Agents (RAG pipelines), Abstract Syntax Tree (AST) scripts, VS Code Extension Development, GitHub Copilot, Devin AI.
+- **Delivery & Project Governance**: Agile / Scrum / Kanban (CSM), SDLC, Release & Change Management, Risk & Issue Management, Budget & Resource Planning, Financial Management, Executive Reporting & Governance, Vendor Management.
+- **Enterprise Tools & PM Platforms**: Jira, OpenShift DevOps, ServiceNow, Clarity, MS Project, GitHub Projects, Workday Platform Uploads, Workday HRIS.
+- **Leadership & Key Competencies**: Strategic Thinking, Leadership & Influence, Stakeholder Management, Decision Making, Conflict Resolution, Team Coaching & Mentorship.
+- **AI & Automation**: Autonomous AI Agents (RAG pipelines), Abstract Syntax Tree (AST) scripts, VS Code Extension Development, GitHub Copilot, Devin AI, Google Antigravity SDK.
 - **Cloud & Edge**: Cloudflare Workers, Edge Computing, AWS (Cloud Practitioner), CI/CD pipelines (GitHub Actions, Jenkins).
 - **Design & Accessibility**: WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, axe-core, Lighthouse CI, NVDA screen reader audits, Vanilla CSS, Design Systems.`
   },

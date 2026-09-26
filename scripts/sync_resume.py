@@ -119,10 +119,12 @@ def generate_workday_docx():
     skills = [
         ("Frontend Architecture", "Micro-frontends, Module Federation, Reference Architecture, UI SDK Development, npm & Yarn Workspaces, System Design, UI Platforms, API and Iframe Integration, postMessage Protocols, Core Web Vitals, Bundle Optimization."),
         ("Core Technologies", "React, Next.js, TypeScript, JavaScript (ES6+), Redux, Redux Toolkit, Zustand, Tailwind CSS, Vanilla CSS, SCSS, LESS, Vite, Webpack, Babel, Cypress, Jest, React Testing Library."),
-        ("Engineering Leadership", "Cross-Functional Leadership, Agile & Scrum Leadership, Certified ScrumMaster (CSM), SDLC Optimization, Workday Platform Uploads, Budget Management, Vendor Management, Talent Acquisition, Coaching & Mentorship."),
+        ("Delivery & Project Governance", "Agile / Scrum / Kanban, Certified ScrumMaster (CSM), SDLC, Release Management, Change Management, Risk & Issue Management, Budget & Resource Planning, Financial Management, Executive Reporting & Governance, Vendor Management."),
+        ("Enterprise Tools & PM Platforms", "Jira, OpenShift DevOps, ServiceNow, Clarity, MS Project, GitHub Projects, Workday Platform Uploads, Workday HRIS, Adobe Experience Manager (AEM / CQ5)."),
+        ("Leadership & Key Competencies", "Cross-Functional Leadership, Strategic Thinking, Leadership and Influence, Stakeholder Management, Financial Management, Vendor Management, Communication and Presentation Skills, Decision Making, Conflict Resolution, Team Collaboration and Coaching, Talent Acquisition."),
         ("Accessibility & Security", "WCAG 2.1 & 2.2 (Level AA / AAA), Section 508, ADA Compliance, Focus Appearance (SC 2.4.13), Focus Not Obscured (SC 2.4.11), Target Size (SC 2.5.8), axe-core, Lighthouse CI, NVDA Audits, Content Security Policy (CSP), Zero-Latency Dynamic Edge CSP (EdgeNonce), OWASP Top 10, DOM Runtime Integrity (StateGuard.js)."),
-        ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Claude, OpenAI APIs, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
-        ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes, Adobe Experience Manager (AEM / CQ5), Workday HRIS.")
+        ("AI & Developer Productivity", "RAG (Retrieval-Augmented Generation), Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension, Enterprise Prompt Engineering, AST Transformation Scripts, Devin AI Autonomous Agents, GitHub Copilot, Google Antigravity SDK, LangChain, Automated Test Scaffolding."),
+        ("Cloud & DevOps", "Cloudflare Pages & Workers, GitHub Actions, GitHub Advanced Security, Dependabot, Docker, Kubernetes.")
     ]
     for cat, items in skills:
         paragraphs.append(make_p([
@@ -154,7 +156,7 @@ def generate_workday_docx():
 
     # Citicorp
     add_job(
-        title="Assistant Vice President — Frontend Architecture & Engineering Leadership",
+        title="Assistant Vice President, Frontend Architecture",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="May 2013 – Present",
@@ -185,7 +187,7 @@ def generate_workday_docx():
 
     # Cognizant
     add_job(
-        title="Senior Consultant — CRM UI Architecture",
+        title="Senior Consultant, CRM UI Architecture",
         company="Cognizant Technology Solutions",
         location="Hyderabad, India",
         dates="December 2010 – February 2013",
@@ -197,9 +199,9 @@ def generate_workday_docx():
 
     # Impetus
     add_job(
-        title="Module Lead — UI Development & Usability Analyst",
+        title="Module Lead, UI Development & Usability Analyst",
         company="Impetus Infotech India Pvt. Ltd.",
-        location="India",
+        location="Indore, MP, India",
         dates="June 2007 – December 2010",
         bullets=[
             ("Led UI engineering pods and concept implementations", "for enterprise web clients, translating product specs into robust architectures and governing client-side standards."),
@@ -212,7 +214,7 @@ def generate_workday_docx():
     add_job(
         title="Lead Web Specialist",
         company="Gatesix Technologies India Pvt. Ltd.",
-        location="India",
+        location="Indore, MP, India",
         dates="August 2004 – June 2007",
         bullets=[
             ("Formulated frontend and SEO strategies", "spanning UI/UX design, development standards, W3C compliance, and search architecture for web applications."),
@@ -225,7 +227,7 @@ def generate_workday_docx():
     add_job(
         title="Senior Web Designer",
         company="Pinnacle Technosys",
-        location="India",
+        location="Vadodara, Gujarat, India",
         dates="May 2003 – July 2004",
         bullets=[
             ("Designed, developed, and maintained client portals", "and digital marketing platforms with bespoke software integrations."),
