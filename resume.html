@@ -173,6 +173,8 @@
       padding-bottom: 3pt;
       margin-top: 16pt;
       margin-bottom: 8pt;
+      page-break-after: avoid;
+      break-after: avoid;
     }
 
     /* Section Styling */
@@ -193,8 +195,8 @@
       border-radius: 6px;
       padding: 16px 20px;
       margin-bottom: 16px;
-      page-break-inside: avoid;
-      break-inside: avoid;
+      page-break-inside: auto;
+      break-inside: auto;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
     }
 
@@ -479,8 +481,27 @@
         border-left: none !important;
         padding: 0 0 10pt 0 !important;
         margin-bottom: 8pt !important;
-        page-break-inside: avoid;
-        break-inside: avoid;
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+      }
+
+      .resume-subrole {
+        page-break-inside: auto !important;
+        break-inside: auto !important;
+      }
+
+      h2, h3, h4,
+      .company-main-header,
+      .subrole-job-header,
+      .job-header,
+      .job-company-row {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+
+      li {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
       }
 
       .resume-subroles {
