@@ -71,6 +71,7 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -79,6 +80,9 @@ body {
   color: var(--text-primary);
   line-height: 1.65;
   min-height: 100vh;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
   transition: background-color var(--transition-normal), color var(--transition-normal);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

@@ -37,7 +37,7 @@ const KNOWLEDGE_FALLBACKS = [
 1. **20+ Years of Proven BFSI & Enterprise Delivery**: Over 13 years of executive engineering leadership at **Citicorp**, governing enterprise Banking, Financial Services, and Insurance (BFSI) architecture across multi-team squads with zero downtime and strict risk governance.
 2. **Citibank AI & Agentic Innovation**: Architected Citibank's unified **Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension** — pairing an autonomous migration agent with a custom VS Code prompt generator (accelerating replatforming by 60%+ using RAG and AST scripts).
 3. **Enterprise Web Performance & Security**: Delivered **50% Core Web Vitals load-time improvements** via React/Next.js architectures, created **StateGuard.js** for DOM tamper resistance, and deployed edge platforms on **Cloudflare Workers**.
-4. **World-Class Accessibility & Culture**: Established enterprise **WCAG 2.1/2.2 AA and Section 508** automated CI pipelines with axe-core and NVDA audits, while sustaining exceptional team retention (**<8% attrition**).`
+4. **World-Class Accessibility & Culture**: Established enterprise **WCAG 2.1/2.2 AA and Section 508** automated CI pipelines with axe-core and NVDA audits, while sustaining exceptional team retention (**under 8% attrition**).`
   },
   {
     triggers: ['aem', 'migration', 'rag', 'non-aem', 'agent', 'scripts', 'vscode', 'prompt', 'extension', 'prompts'],
@@ -88,7 +88,7 @@ const KNOWLEDGE_FALLBACKS = [
 
 - **Overview**: An enterprise Content Security Policy (CSP) streaming engine at the network edge deployed on Cloudflare Workers ([https://www.edge-nonce.com](https://www.edge-nonce.com)).
 - **The Challenge**: Modern strict CSP Level 3 requires per-request dynamic cryptographic nonces, which traditionally destroys static CDN/Dispatcher caching or forces insecure \`'unsafe-inline'\` allowances.
-- **The Solution**: EdgeNonce leverages Cloudflare V8 Isolates and streaming \`HTMLRewriter\` to inject unique 128-bit nonces on the fly (<1.5ms) into cached HTML streams while origin CDNs/AEM Dispatchers retain 100% cache hit rates.
+- **The Solution**: EdgeNonce leverages Cloudflare V8 Isolates and streaming \`HTMLRewriter\` to inject unique 128-bit nonces on the fly (under 1.5ms) into cached HTML streams while origin CDNs/AEM Dispatchers retain 100% cache hit rates.
 - **Core Technology Stack**: TypeScript, Cloudflare V8 Isolates, streaming HTMLRewriter, Workers AI threat classifier, and \`csp-compat.js\` runtime bridge.
 - **Regulatory Compliance**: Built to satisfy PCI-DSS v4.0 (Requirements 6.4.3 & 11.6.1 for script authorization and tamper detection), HIPAA, and GDPR.
 - **Documentation & Architecture Guides**:
@@ -152,7 +152,7 @@ const KNOWLEDGE_FALLBACKS = [
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
   - Pioneered enterprise GenAI adoption (Devin AI, enterprise Gemini LLMs, developer productivity tools), saving ~35% developer effort.
   - Modernized Angular (v10–v21) with SSR routing, Spring Boot 3.x to 4.x, and led GitHub Enterprise migration with Renovate.
-  - Leads cross-functional engineering squads (~12 engineers) maintaining <8% attrition.
+  - Leads cross-functional engineering squads (~12 engineers) maintaining under 8% attrition.
 - **Applications Development Manager** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
   - Led InView core framework development and platform performance (team of 6, up to 50% load-time gains).
   - Owned end-to-end project delivery from kickoff to production with business stakeholders.
@@ -231,7 +231,7 @@ const KNOWLEDGE_FALLBACKS = [
 
 1. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
 2. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
-3. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (<1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
+3. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (under 1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
 4. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
 5. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
 6. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
@@ -366,7 +366,7 @@ export default {
               {
                 role: 'system',
                 content: `You are the executive AI copilot for Ravindrakumar M. Suthar (Senior Principal Architect & Engineering Leader at Citicorp, 20+ yrs total experience, 13+ yrs in enterprise BFSI).
-Generate exactly one crisp, inspiring, authoritative architectural quote or engineering metric (1 to 2 sentences max) reflecting his expertise in micro-frontends, AEM AI migration agents, StateGuard.js DOM security, 50% CWV gains, <8% attrition, or WCAG 2.2 AA.
+Generate exactly one crisp, inspiring, authoritative architectural quote or engineering metric (1 to 2 sentences max) reflecting his expertise in micro-frontends, AEM AI migration agents, StateGuard.js DOM security, 50% CWV gains, under 8% attrition, or WCAG 2.2 AA.
 Output valid JSON with keys: "quote", "theme", "category". No extra markdown.`
               },
               { role: 'user', content: 'Generate a fresh high-impact architectural soundbite for a visiting engineering leader.' }
@@ -571,7 +571,7 @@ Provide a structured evaluation in valid JSON with these exact keys:
             interviewTopics: [
               'How he orchestrated multi-agent RAG pipelines for legacy AEM replatforming',
               'Strategies for zero-downtime micro-frontend migration in highly regulated BFSI environments',
-              'His approach to cultivating high-retention engineering teams (<8% attrition)'
+              'His approach to cultivating high-retention engineering teams (under 8% attrition)'
             ]
           };
         }
@@ -663,7 +663,7 @@ Ravindra's Core Verified Credentials (MUST weave into the narrative):
 - Pioneered Devin AI & GitHub Copilot autonomous coding agents (~35% engineering effort saved).
 - Established institutional WCAG 2.1 & 2.2 AA/AAA accessibility compliance programs with axe-core and NVDA audits (60% remediation cost reduction).
 - Governed OpenShift DevOps pipelines, Jira, ServiceNow, Clarity, MS Project, and Workday HRIS platform uploads.
-- Sustained <8% team attrition across engineering squads through structured mentorship and internal guilds.
+- Sustained under 8% team attrition across engineering squads through structured mentorship and internal guilds.
 - Live personal innovations: FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
 
 Guidelines:
@@ -721,7 +721,7 @@ Guidelines:
           if (format === 'bullets') {
             coverLetter = `Dear ${addressee},\n\n${p1}\n\nKey Strategic Alignments with ${company}'s Requirements:\n\n• Enterprise Architecture & Micro-Frontends: 20+ years total experience (13+ years at Citicorp scale), achieving up to 50% load-time gains and zero downtime during monolithic replatforming.\n• Agentic AI & Developer Toolchains: Architected an autonomous Non-AEM to AEM Migration AI Agent and custom VS Code extension (60%+ faster delivery), while standardizing Devin AI and GitHub Copilot across squads.\n• Institutional Governance & DevOps: Operationalized WCAG 2.1/2.2 AA accessibility gates, OpenShift DevOps pipelines, and client-side DOM security protocols (StateGuard.js, EdgeNonce).\n• High-Retention People Leadership: Sustained team attrition below 8% through structured engineering guilds, SDLC release governance, and cross-functional agile delivery (CSM).\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nSenior Principal Architect & Engineering Leader\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India`;
           } else if (format === 'concise') {
-            coverLetter = `Dear ${addressee},\n\nI am writing to express my enthusiastic interest in the ${roleTitle} opportunity at ${company}. With over 20 years of total software engineering and architecture leadership—including 13+ years as Senior Principal Architect at Citicorp Services India—I specialize in modernizing legacy Banking, Financial Services, and Insurance (BFSI) systems into resilient micro-frontends, accelerating delivery through autonomous AI migration agents (60%+ cycle time reduction), and scaling high-retention engineering teams (<8% attrition).\n\nHaving reviewed ${company}'s technical trajectory, I am confident my proven track record in Core Web Vitals optimization (50% gains), WCAG 2.2 AA accessibility governance, and OpenShift DevOps pipelines directly aligns with your strategic goals. I welcome the opportunity to discuss how my architectural rigor can drive tangible impact for your team.\n\nSincerely,\nRavindrakumar M. Suthar\nhttps://ravindra.lets.gen.in/ | +91 83800 99988 | ravindra.suthar@me.com`;
+            coverLetter = `Dear ${addressee},\n\nI am writing to express my enthusiastic interest in the ${roleTitle} opportunity at ${company}. With over 20 years of total software engineering and architecture leadership—including 13+ years as Senior Principal Architect at Citicorp Services India—I specialize in modernizing legacy Banking, Financial Services, and Insurance (BFSI) systems into resilient micro-frontends, accelerating delivery through autonomous AI migration agents (60%+ cycle time reduction), and scaling high-retention engineering teams (under 8% attrition).\n\nHaving reviewed ${company}'s technical trajectory, I am confident my proven track record in Core Web Vitals optimization (50% gains), WCAG 2.2 AA accessibility governance, and OpenShift DevOps pipelines directly aligns with your strategic goals. I welcome the opportunity to discuss how my architectural rigor can drive tangible impact for your team.\n\nSincerely,\nRavindrakumar M. Suthar\nhttps://ravindra.lets.gen.in/ | +91 83800 99988 | ravindra.suthar@me.com`;
           } else {
             coverLetter = `Dear ${addressee},\n\n${p1}\n\n${p2}\n\n${p3}\n\n${p4}\n\n${pClose}\n\nSincerely,\nRavindrakumar M. Suthar\nSenior Principal Architect & Engineering Leader\nravindra.suthar@me.com | +91 83800 99988 | Pune, Maharashtra, India\nhttps://ravindra.lets.gen.in/ | linkedin.com/in/ravindrasuthar`;
           }
@@ -734,7 +734,7 @@ Guidelines:
           'Performance Engineering (50% Core Web Vitals Gains)',
           'OpenShift DevOps & Agile Release Governance',
           'Institutional Accessibility (WCAG 2.1/2.2 AA with axe-core)',
-          'High-Retention Leadership (<8% Team Attrition)'
+          'High-Retention Leadership (under 8% Team Attrition)'
         ];
 
         return new Response(JSON.stringify({

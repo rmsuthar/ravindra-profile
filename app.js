@@ -566,7 +566,7 @@ function initCloudflareAICopilot() {
   const presetDescriptions = {
     'VP of Engineering / Frontend Architect': 'Seeking a Senior Frontend Architect / VP of Engineering to lead enterprise web architecture, modernize legacy systems to micro-frontends with zero downtime, establish WCAG 2.1/2.2 AA accessibility gates, integrate AI coding agents (Devin/Copilot), and govern Workday HRIS integrations across global squads.',
     'Head of Web Platform & AEM Modernization': 'Looking for an enterprise CMS & Frontend Leader to oversee migration of legacy platforms to Adobe Experience Manager (AEM Core Components, HTL, Sling models), orchestrate autonomous AI agent workflows (RAG, AST scripts), and enforce client-side DOM security in BFSI environments.',
-    'Director of Frontend Architecture (BFSI)': 'Hiring a Director of Frontend Architecture to architect high-performance React/Next.js applications, achieve sub-second Core Web Vitals, seal client-side runtime vulnerabilities (DOM attribute tampering), and lead engineering organizations with <8% attrition.'
+    'Director of Frontend Architecture (BFSI)': 'Hiring a Director of Frontend Architecture to architect high-performance React/Next.js applications, achieve sub-second Core Web Vitals, seal client-side runtime vulnerabilities (DOM attribute tampering), and lead engineering organizations with under 8% attrition.'
   };
 
   presetChips.forEach(chip => {
@@ -622,7 +622,7 @@ function initCloudflareAICopilot() {
           interviewTopics: [
             'How he orchestrated multi-agent RAG pipelines for legacy AEM replatforming',
             'Strategies for zero-downtime micro-frontend migration in highly regulated BFSI environments',
-            'His approach to cultivating high-retention engineering teams (<8% attrition)'
+            'His approach to cultivating high-retention engineering teams (under 8% attrition)'
           ]
         };
         renderMatchResult(fallbackMatch, 'Verified Executive Profile Matcher (Client Fallback)');
@@ -738,7 +738,7 @@ function initCloudflareAICopilot() {
 
     if (q.includes('why') || q.includes('hire') || q.includes('fit') || q.includes('vp') || q.includes('architect') || q.includes('leadership')) {
       return {
-        answer: `**Why Ravindra is an exceptional fit for an Executive Frontend Architect / VP role:**\n\n- **17+ Years Enterprise Scale**: 12+ years governing mission-critical BFSI architecture at **Citicorp Services India**, sustaining zero-downtime rollouts.\n- **Pioneering AI & Agentic Tooling**: Architected autonomous **Non-AEM to AEM Migration Agents** using **RAG & AST scripts** (60%+ faster replatforming) and custom **VS Code Prompt Generator Extensions**.\n- **Proven Metrics**: 50% web application load-time gains, 60% remediation reduction via Section 508/ADA CI pipelines, and <8% team attrition.\n- **Workday & Cloudflare**: Direct experience leading Workday platform uploads, micro-frontend migrations, and Cloudflare Workers edge computing.`,
+        answer: `**Why Ravindra is an exceptional fit for an Executive Frontend Architect / VP role:**\n\n- **17+ Years Enterprise Scale**: 12+ years governing mission-critical BFSI architecture at **Citicorp Services India**, sustaining zero-downtime rollouts.\n- **Pioneering AI & Agentic Tooling**: Architected autonomous **Non-AEM to AEM Migration Agents** using **RAG & AST scripts** (60%+ faster replatforming) and custom **VS Code Prompt Generator Extensions**.\n- **Proven Metrics**: 50% web application load-time gains, 60% remediation reduction via Section 508/ADA CI pipelines, and under 8% team attrition.\n- **Workday & Cloudflare**: Direct experience leading Workday platform uploads, micro-frontend migrations, and Cloudflare Workers edge computing.`,
         source: 'Verified Knowledge Base (Edge Fallback)'
       };
     }
