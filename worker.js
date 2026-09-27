@@ -147,13 +147,13 @@ const KNOWLEDGE_FALLBACKS = [
     triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
-- **Senior Principal Architect & AI Platform Lead** — Citicorp Services India Pvt. Ltd. (2022 – Present):
+- **Applications Development Sr Programmer Analyst** — Citicorp Services India Pvt. Ltd. (2022 – Present):
   - Leads enterprise CMS modernisation, orchestrating full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM).
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
   - Pioneered enterprise GenAI adoption (Devin AI, enterprise Gemini LLMs, developer productivity tools), saving ~35% developer effort.
   - Modernized Angular (v10–v21) with SSR routing, Spring Boot 3.x to 4.x, and led GitHub Enterprise migration with Renovate.
   - Leads cross-functional engineering squads (~12 engineers) maintaining <8% attrition.
-- **Senior Lead Engineer — Frontend Architecture** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
+- **Applications Development Manager** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
   - Led InView core framework development and platform performance (team of 6, up to 50% load-time gains).
   - Owned end-to-end project delivery from kickoff to production with business stakeholders.
   - Engineered CI/CD pipelines with TeamCity and IBM UrbanDeploy; contributed full-stack Java solutions.

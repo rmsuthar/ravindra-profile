@@ -166,7 +166,7 @@ def generate_workday_docx():
 
     # Citicorp — Role 1: Senior Principal Architect
     add_job(
-        title="Senior Principal Architect & AI Platform Lead",
+        title="Applications Development Sr Programmer Analyst",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="2022 – Present",
@@ -188,7 +188,7 @@ def generate_workday_docx():
 
     # Citicorp — Role 2: Senior Lead
     add_job(
-        title="Senior Lead Engineer — Frontend Architecture",
+        title="Applications Development Manager",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="2018 – 2022",
