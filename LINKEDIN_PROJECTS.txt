@@ -302,4 +302,62 @@ Ultra-crisp, battery-friendly digital table clock & calendar PWA designed to upc
 
 Live Application: https://clock.lets.gen.in/
 PWA Installer: https://widget.lets.gen.in/
+
+
+--------------------------------------------------------------------------------
+PROJECT 8: a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner)
+--------------------------------------------------------------------------------
+[Project Name]
+a11ysis — In-Page Live Accessibility Inspector & Triple-Engine Scanner
+
+[Associated with]
+Leave blank (or Independent / Founder)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+October 2026
+
+[End Date]
+Present
+
+[Project URL]
+https://a11ysis.lets.gen.in/
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Accessibility
+Web Accessibility
+Software Architecture
+Frontend Development
+Web Standards
+
+[Description - Copy & Paste below]
+Over my 20+ years architecting enterprise software and high-scale platforms, one persistent frustration kept coming up across engineering teams: Why is automated digital accessibility (a11y) still fragmented and noisy?
+
+Most teams run a single scanner (either axe-core or IBM Equal Access) in CI/CD, only to face:
+❌ Discrepancies between audit tools (what one tool flags as Critical, another ignores).
+❌ Clunky context switching between browser DevTools and static PDF audit spreadsheets.
+❌ Compliance blind spots that slip past automated scans straight into production.
+
+That’s why I built and launched a11ysis: an In-Page Live Accessibility Inspector and Continuous Scanner powered by a Triple-Engine Consensus architecture.
+
+💡 What makes it different?
+
+1️⃣ Triple-Engine Consensus:
+Instead of relying on one opinion, a11ysis aggregates and cross-validates rules simultaneously across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5. If all three engines agree on a violation, you have bulletproof proof of non-compliance.
+
+2️⃣ Zero Context Switching (Live In-Page Widget):
+With a single script tag or bookmarklet, an interactive Shadow DOM HUD mounts directly onto any live web application or staging environment. You can highlight elements on-hover, inspect contrast ratios, and view immediate remediation code snippets without leaving the UI.
+
+3️⃣ Zero Data Retention by Design:
+Scans, DOM nodes, and specimen tests run client-side. No customer HTML or proprietary markup is persisted on external servers.
+
+4️⃣ Standards Aligned:
+Supports WCAG 2.1 & WCAG 2.2 across Levels A, AA, and AAA, Section 508, and EN 301 549.
+
+Accessibility isn't a checkbox you audit once a quarter—it should be an automated, continuous, in-flow experience for every engineer and designer.
+
+Try the live scanner and inspect specimens here:
+🔗 https://a11ysis.lets.gen.in/
 ================================================================================

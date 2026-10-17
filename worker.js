@@ -13,7 +13,7 @@ Verified Profile & Career Background:
   - Enterprise GenAI & Tooling: Integrated enterprise Gemini LLMs with offline local vector store RAG; created developer acceleration tooling including automated AEM layout analysis and Adobe Experience Cloud release governance pipelines; automated code remediation with scheduled AI agent pipelines.
   - Platform Modernization: Upgraded Angular from 10.x to 21.x across cloud-native microservices with SSR routing; upgraded core microservices from Spring Boot 3.x to 4.x; led GitHub Enterprise (GHE) migration with Renovate.
   - Accessibility & Integrations: WCAG 2.2 AA compliance with bespoke multimedia vendor fixes; enterprise Salesforce integration with strict security headers; organization-wide innovation and hackathon mentorship.
-- Personal / Open-Source Projects: FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
+- Personal / Open-Source Projects: a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner powered by Triple-Engine Consensus across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with Shadow DOM HUD at https://a11ysis.lets.gen.in/), FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -81,6 +81,19 @@ const KNOWLEDGE_FALLBACKS = [
 - **Official Resources**:
   - [Download on Google Play Store](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan)
   - [Global Packaging Marks Guide](https://foodscan.lets.gen.in/packaging-marks)`
+  },
+  {
+    triggers: ['a11ysis', 'triple-engine', 'triple engine', 'accessibility inspector', 'equal access', 'html_codesniffer', 'consensus'],
+    answer: `**a11ysis — In-Page Live Accessibility Inspector & Continuous Scanner (Triple-Engine Consensus):**
+
+- **Overview**: An in-page live accessibility inspector and continuous scanner engineered to solve audit fragmentation and noise across engineering, QA, and design teams ([Live Platform at https://a11ysis.lets.gen.in/](https://a11ysis.lets.gen.in/)).
+- **The Core Problem**: Most enterprise teams run a single scanner (axe-core or IBM Equal Access) in CI/CD, leading to tool discrepancies, clunky context switching between DevTools and static spreadsheets, and compliance escapes straight into production.
+- **Key Architectural Innovations**:
+  1. **Triple-Engine Consensus**: Aggregates and cross-validates rule violations concurrently across **IBM Equal Access 4.0**, **Deque Axe-core 4.10**, and **HTML_CodeSniffer 2.5**. When all three engines agree on a violation, teams have bulletproof, mathematically verifiable proof of non-compliance.
+  2. **Zero Context Switching (In-Page Shadow DOM HUD)**: Embeds an interactive, collision-free Shadow DOM HUD directly onto any live web application or staging environment via single script tag or bookmarklet. Provides on-hover element highlighting, live contrast ratio inspection, and immediate code remediation snippets without leaving the UI flow.
+  3. **Zero Data Retention by Design**: Scans, DOM nodes, specimen tests, and AST checks run 100% client-side in the browser. Zero customer HTML or proprietary markup is persisted on external servers.
+  4. **Standards Aligned**: Comprehensive verification for **WCAG 2.1 & WCAG 2.2 across Levels A, AA, and AAA**, Section 508, and European standard EN 301 549.
+- **Live Demo & Specimens**: [https://a11ysis.lets.gen.in/](https://a11ysis.lets.gen.in/)`
   },
   {
     triggers: ['edgenonce', 'nonce', 'csp', 'htmlrewriter', 'streaming', 'pci-dss', 'pci'],
@@ -190,9 +203,10 @@ const KNOWLEDGE_FALLBACKS = [
   },
   {
     triggers: ['accessibility', 'wcag', '508', 'ada', 'axe', 'lighthouse', 'aria', 'screen reader'],
-    answer: `**Enterprise Web Accessibility (a11y) Governance:**
+    answer: `**Enterprise Web Accessibility (a11y) Governance & a11ysis Innovation:**
 
 - **Standards Compliance**: Spearheaded institutional WCAG 2.1 and 2.2 (Level AA & AAA), Section 508, and ADA compliance programs across Citicorp enterprise web platforms.
+- **a11ysis Flagship Innovation**: Built and launched **a11ysis** ([https://a11ysis.lets.gen.in/](https://a11ysis.lets.gen.in/)), an in-page live accessibility inspector and continuous scanner powered by a concurrent Triple-Engine Consensus architecture across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with a zero-context-switching Shadow DOM HUD.
 - **Automated Gates**: Integrated **axe-core** and **Lighthouse CI** into automated regression pipelines, catching accessibility regressions pre-commit.
 - **Screen Reader Auditing**: Conducted rigorous assistive technology evaluations using NVDA and VoiceOver, achieving zero critical audit findings.
 - **ROI & Impact**: Slashed post-deployment accessibility remediation overhead by **60%**, ensuring inclusive banking experiences for millions of global users.`
@@ -229,13 +243,14 @@ const KNOWLEDGE_FALLBACKS = [
     triggers: ['project', 'tools', 'sandbox', 'edge', 'portfolio', 'inspector'],
     answer: `**Featured Innovations & Open-Source Projects:**
 
-1. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
-2. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
-3. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (under 1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
-4. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
-5. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
-6. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
-7. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
+1. **a11ysis**: In-Page Live Accessibility Inspector and Continuous Scanner powered by a Triple-Engine Consensus architecture (IBM Equal Access 4.0, Deque Axe-core 4.10, HTML_CodeSniffer 2.5) with Shadow DOM HUD and zero data retention ([Live Platform](https://a11ysis.lets.gen.in/)).
+2. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
+3. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
+4. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (under 1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
+5. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
+6. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
+7. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
+8. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
   }
 ];
 
@@ -249,11 +264,11 @@ function findFallbackAnswer(query) {
   return `**Ravindrakumar M. Suthar — Executive Overview:**
 
 - **Role**: Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (20+ years total experience, 13+ years at Citi).
-- **Core Specializations**: Micro-frontends, React/Next.js, TypeScript, Autonomous AI Migration Agents (Non-AEM to AEM using RAG), VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.
+- **Core Specializations**: Micro-frontends, React/Next.js, TypeScript, Autonomous AI Migration Agents (Non-AEM to AEM using RAG), a11ysis triple-engine accessibility scanner, VS Code Extensions, FoodScan AI mobile scanner, StateGuard.js, Cloudflare Workers, and WCAG 2.1/2.2 AA Accessibility.
 - **Credentials**: Certified ScrumMaster (CSM®), AWS Cloud Practitioner, PGDIT, HDSE, B.Sc.
 - **Contact**: [ravindra.suthar@me.com](mailto:ravindra.suthar@me.com) | +91 83800 99988 | [LinkedIn](https://www.linkedin.com/in/ravindrasuthar/).
 
-You can ask me about his **FoodScan AI app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
+You can ask me about his **a11ysis platform**, **FoodScan AI app**, **AEM AI migration agents**, **EdgeNonce**, **StateGuard.js**, **Workday integrations**, **education**, **certifications**, or **architectural leadership**!`;
 }
 
 export default {
@@ -315,6 +330,11 @@ export default {
           quote: "Enterprise WCAG 2.2 AA and Section 508 compliance cannot be treated as an audit afterthought; it must run as an automated pre-commit regression gate in CI/CD pipelines.",
           theme: "Inclusive Engineering Standard",
           category: "Accessibility"
+        },
+        {
+          quote: "Automated accessibility audits shouldn't be fragmented or noisy. Cross-validating rule violations simultaneously across IBM Equal Access, axe-core, and HTML_CodeSniffer provides consensus proof of non-compliance right in an in-page HUD.",
+          theme: "a11ysis Triple-Engine Architecture",
+          category: "Digital Accessibility"
         },
         {
           quote: "Sustaining under 8% team attrition across 12 years of enterprise delivery comes from radical architectural transparency, technical skill ladders, and genuine psychological safety.",
@@ -664,7 +684,7 @@ Ravindra's Core Verified Credentials (MUST weave into the narrative):
 - Established institutional WCAG 2.1 & 2.2 AA/AAA accessibility compliance programs with axe-core and NVDA audits (60% remediation cost reduction).
 - Governed OpenShift DevOps pipelines, Jira, ServiceNow, Clarity, MS Project, and Workday HRIS platform uploads.
 - Sustained under 8% team attrition across engineering squads through structured mentorship and internal guilds.
-- Live personal innovations: FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
+- Live personal innovations: a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner at https://a11ysis.lets.gen.in/), FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
 
 Guidelines:
 - Tone must be executive, strategic, confident, and professional.
