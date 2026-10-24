@@ -140,6 +140,26 @@ const KNOWLEDGE_FALLBACKS = [
   - **Semantic ATS Web View**: Dedicated single-column web resume at [ravindra.lets.gen.in/resume](https://ravindra.lets.gen.in/resume).`
   },
   {
+    triggers: ['microfrontend', 'micro frontend', 'micro-frontend', 'mfe', 'module federation', 'single-spa', 'mfe-architecture'],
+    answer: `**Micro Frontend (MFE) Architectures — Principles & Enterprise Production Guide:**
+
+- **Executive Experience**: Governed the end-to-end modernization of complex monolithic Banking, Financial Services, and Insurance (BFSI) platforms at Citicorp into modular, zero-downtime micro-frontend architectures with 100% business continuity.
+- **Architectural Taxonomy**:
+  1. **Webpack 5 / Vite Module Federation**: Dynamic runtime composition sharing dependencies (React 19, ReactDOM, Core SDK) via runtime shared scopes (\`__webpack_share_scopes__\`).
+  2. **Web Components & Shadow DOM**: Native W3C standard for multi-framework encapsulation (e.g. hosting Angular and React micro-apps side-by-side with zero CSS leakage).
+  3. **single-spa Lifecycle Orchestration**: Router-level mounting (\`bootstrap\`, \`mount\`, \`unmount\`) for legacy migration.
+  4. **Cross-Origin iFrames**: Maximum sandboxing via Same-Origin Policy (SOP) mandated for PCI-DSS payment tokenization.
+- **Core Engineering Patterns**:
+  - **Singletons & Deduplication**: Using \`singleton: true, strictVersion: true\` to eliminate duplicate React runtimes and avoid \`Invalid hook call\` fatal errors.
+  - **Decoupled Communication**: Typed Event Bus with Custom DOM Events wrapped in an Enterprise Core SDK, avoiding brittle global state or window mutations.
+  - **Dual-Router Coordination**: Shell-level path prefixing paired with in-memory child routers and bidirectional URL synchronization.
+  - **Resilience & Circuit Breakers**: Asynchronous remote loaders with timeout guards and localized React Error Boundaries to prevent remote CDN outages from crashing the application shell.
+  - **Zero-Downtime Releases**: Remote Discovery Manifest service (via Cloudflare KV/S3) enabling instant canary rollouts and sub-second rollbacks.
+- **Read the Complete Guide**:
+  - [Complete Micro Frontend Architectural Whitepaper](https://ravindra.lets.gen.in/mfe-architecture)
+  - [Engineering Journal & Architecture Guide](https://ravindra.lets.gen.in/blog#chapter-02)`
+  },
+  {
     triggers: ['education', 'degree', 'university', 'qualification', 'study', 'college', 'school', 'chemistry', 'mathematics', 'smu', 'diploma'],
     answer: `**Educational Background & Academic Credentials:**
 
@@ -787,6 +807,14 @@ Guidelines:
         url.pathname = '/cover-letter.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/mfe-architecture') {
+        url.pathname = '/mfe-architecture.html';
+        assetRequest = new Request(url.toString(), request);
+      }
+      if (url.pathname === '/blog') {
+        url.pathname = '/blog.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -797,6 +825,8 @@ Guidelines:
         url.pathname === '/' ||
         url.pathname === '/resume' ||
         url.pathname === '/tools' ||
+        url.pathname === '/blog' ||
+        url.pathname === '/mfe-architecture' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')

@@ -26,9 +26,15 @@
   </url>
   <url>
     <loc>https://ravindra.lets.gen.in/blog</loc>
-    <lastmod>2026-10-17</lastmod>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
+    <loc>https://ravindra.lets.gen.in/mfe-architecture</loc>
+    <lastmod>2026-10-24</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://ravindra.lets.gen.in/experience</loc>

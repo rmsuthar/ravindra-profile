@@ -1,0 +1,1517 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro Frontend (MFE) Architectures: The Complete Guide (Basic to Advanced) | Ravindra Suthar</title>
+  <meta name="description" content="A comprehensive architectural guide to Micro Frontends (MFE) from fundamentals to advanced enterprise BFSI scale. Covers Module Federation, Web Components, single-spa, runtime dependency sharing, state decoupling, dual-router sync, and resilient circuit breakers.">
+  <meta name="author" content="Ravindrakumar M. Suthar">
+  <meta name="keywords" content="Micro Frontends, MFE, Webpack Module Federation, Vite, single-spa, Web Components, Enterprise Architecture, System Design, Frontend Architecture, Citicorp, BFSI, State Management, Resiliency">
+  
+  <link rel="canonical" href="https://ravindra.lets.gen.in/mfe-architecture">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css?v=20261024-v1">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Micro Frontend (MFE) Architectures: The Complete Guide (Basic to Advanced)">
+  <meta property="og:description" content="Comprehensive engineering whitepaper on Micro Frontend systems: composition models, Webpack 5 Module Federation, dependency deduplication, typed event buses, and zero-downtime BFSI rollouts.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ravindra.lets.gen.in/mfe-architecture">
+  <meta property="og:site_name" content="Ravindra Suthar - Engineering Journal">
+
+  <!-- Schema.org Article Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Micro Frontend (MFE) Architectures: The Complete Guide from Fundamentals to Enterprise Scale",
+    "description": "Comprehensive engineering whitepaper covering architectural taxonomy, Webpack Module Federation, runtime dependency sharing, typed event bus communication, and BFSI resilience.",
+    "author": {
+      "@type": "Person",
+      "name": "Ravindrakumar M. Suthar",
+      "jobTitle": "Senior Principal Architect & Engineering Leader",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Citicorp Services India Pvt. Ltd."
+      },
+      "url": "https://ravindra.lets.gen.in/"
+    },
+    "datePublished": "2026-10-24",
+    "inLanguage": "en-US",
+    "mainEntityOfPage": "https://ravindra.lets.gen.in/mfe-architecture"
+  }
+  </script>
+
+  <style>
+    /* ── Progress Bar ────────────────────────────── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, var(--brand-primary) 0%, var(--brand-secondary, #2563eb) 100%);
+      z-index: 1001;
+      transition: width 0.1s ease-out;
+    }
+
+    /* ── Layout & Typography ─────────────────────── */
+    .mfe-article-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 6rem;
+    }
+
+    .mfe-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .mfe-breadcrumbs a {
+      color: var(--brand-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .mfe-breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .mfe-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--border-subtle);
+      padding-bottom: 2rem;
+    }
+
+    .mfe-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .mfe-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .mfe-lead {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .mfe-meta-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+      font-size: 0.88rem;
+    }
+
+    .mfe-author-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .mfe-author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid var(--brand-primary);
+      background: #f1f5f9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: var(--brand-primary);
+      font-size: 1rem;
+    }
+    .mfe-author-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .mfe-author-name {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .mfe-author-title {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .mfe-stats-box {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      color: var(--text-muted);
+    }
+    .mfe-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Quick Jump TOC ──────────────────────────── */
+    .mfe-toc {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid var(--brand-primary);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-xs);
+    }
+    .mfe-toc h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .mfe-toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 0.5rem 1.5rem;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .mfe-toc-grid li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: block;
+      padding: 0.3rem 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .mfe-toc-grid li a:hover {
+      color: var(--brand-primary);
+      transform: translateX(3px);
+    }
+
+    /* ── Content Sections ────────────────────────── */
+    .mfe-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xs);
+    }
+    .mfe-section h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .mfe-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.75rem;
+    }
+    .mfe-section h4 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--brand-secondary, #1d4ed8);
+      margin: 1.25rem 0 0.5rem;
+    }
+    .mfe-section p {
+      color: var(--text-secondary);
+      margin-bottom: 1.15rem;
+      line-height: 1.75;
+      font-size: 0.98rem;
+    }
+    .mfe-section ul, .mfe-section ol {
+      color: var(--text-secondary);
+      margin-bottom: 1.25rem;
+      padding-left: 1.4rem;
+      line-height: 1.7;
+      font-size: 0.98rem;
+    }
+    .mfe-section li {
+      margin-bottom: 0.5rem;
+    }
+    .mfe-section strong {
+      color: var(--text-primary);
+    }
+
+    /* ── Comparison Table ────────────────────────── */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+    }
+    .mfe-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .mfe-table th {
+      background: var(--bg-surface-alt);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .mfe-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .mfe-table tr:last-child td {
+      border-bottom: none;
+    }
+    .mfe-table tr:hover td {
+      background: var(--bg-surface-alt);
+    }
+
+    /* ── Code Blocks ─────────────────────────────── */
+    .code-container {
+      position: relative;
+      margin: 1.5rem 0;
+    }
+    .code-header {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      border-top-left-radius: var(--radius-sm);
+      border-top-right-radius: var(--radius-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+    .code-title {
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .code-copy-btn {
+      background: #334155;
+      color: #f8fafc;
+      border: none;
+      padding: 0.25rem 0.65rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .code-copy-btn:hover {
+      background: #475569;
+    }
+    .code-block {
+      background: #0f172a;
+      color: #f8fafc;
+      border: 1px solid #334155;
+      border-top: none;
+      border-bottom-left-radius: var(--radius-sm);
+      border-bottom-right-radius: var(--radius-sm);
+      padding: 1.15rem;
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      overflow-x: auto;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ── Callout Boxes ───────────────────────────── */
+    .callout {
+      border-radius: var(--radius-sm);
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+      border-left: 4px solid;
+      background: var(--bg-surface-alt);
+    }
+    .callout-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 0.4rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .callout-tip {
+      border-left-color: #10b981;
+      background: #f0fdf4;
+    }
+    .callout-tip .callout-title { color: #065f46; }
+    .callout-tip p { color: #166534; margin: 0; }
+
+    .callout-warning {
+      border-left-color: #f59e0b;
+      background: #fffbeb;
+    }
+    .callout-warning .callout-title { color: #92400e; }
+    .callout-warning p { color: #78350f; margin: 0; }
+
+    .callout-critical {
+      border-left-color: #ef4444;
+      background: #fef2f2;
+    }
+    .callout-critical .callout-title { color: #991b1b; }
+    .callout-critical p { color: #7f1d1d; margin: 0; }
+
+    .callout-info {
+      border-left-color: var(--brand-primary);
+      background: #eff6ff;
+    }
+    .callout-info .callout-title { color: #1e40af; }
+    .callout-info p { color: #1e3a8a; margin: 0; }
+
+    /* ── Architectural ASCII / Diagram Box ───────── */
+    .architecture-diagram {
+      background: #0f172a;
+      color: #38bdf8;
+      border: 1px solid #334155;
+      border-radius: var(--radius-sm);
+      padding: 1.25rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      line-height: 1.4;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ── Author Bio Card ─────────────────────────── */
+    .author-bio-card {
+      background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2rem;
+      margin-top: 3.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+    }
+    .bio-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: var(--brand-primary);
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      font-weight: 800;
+      box-shadow: var(--shadow-md);
+      flex-shrink: 0;
+    }
+    .bio-content {
+      flex: 1;
+      min-width: 260px;
+    }
+    .bio-content h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.35rem;
+    }
+    .bio-content p {
+      color: var(--text-secondary);
+      font-size: 0.92rem;
+      line-height: 1.6;
+      margin-bottom: 0.85rem;
+    }
+    .bio-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* ── Floating Back to Top ────────────────────── */
+    .back-to-top {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: var(--brand-primary);
+      color: white;
+      width: 3rem;
+      height: 3rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-md);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 1000;
+      text-decoration: none;
+    }
+    .back-to-top.visible {
+      opacity: 0.85;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      opacity: 1;
+      transform: translateY(-3px);
+      color: white;
+    }
+    .back-to-top svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .mfe-article-wrapper {
+        padding: 1.5rem 1rem 4rem;
+      }
+      .mfe-section {
+        padding: 1.5rem 1.25rem;
+      }
+      .mfe-toc {
+        padding: 1.25rem;
+      }
+      .back-to-top {
+        bottom: 1.25rem;
+        right: 1.25rem;
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress" role="progressbar" aria-label="Reading Progress" aria-valuemin="0" aria-valuemax="100"></div>
+
+  <!-- Top Sticky Navigation -->
+  <header class="top-nav" role="banner">
+    <div class="container top-nav-inner">
+      <a href="/" class="brand-badge">
+        <img src="favicon.svg" alt="RS Logo" class="brand-logo" width="36" height="36">
+        <div class="brand-info">
+          <span class="brand-name">Ravindra Suthar</span>
+          <span class="brand-title">Engineering Journal &amp; Whitepapers</span>
+        </div>
+      </a>
+      <div class="nav-actions">
+        <a href="/" class="btn btn-sm">&larr; Profile &amp; CV</a>
+        <a href="/blog" class="btn btn-sm">Architecture Journal</a>
+        <a href="/resume" class="btn btn-sm">Workday ATS Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="mfe-article-wrapper">
+    
+    <!-- Breadcrumb -->
+    <nav class="mfe-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>&rsaquo;</span>
+      <a href="/blog">Engineering Journal</a>
+      <span>&rsaquo;</span>
+      <span aria-current="page">Micro Frontend Architectures Guide</span>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="mfe-header">
+      <div class="mfe-badge-row">
+        <span class="status-pill"><span class="status-dot"></span> Architectural Whitepaper</span>
+        <span class="badge">System Design</span>
+        <span class="badge">Module Federation</span>
+        <span class="badge">Enterprise BFSI Scale</span>
+      </div>
+
+      <h1 class="mfe-title">Micro Frontend (MFE) Architectures: The Complete Guide from Fundamentals to Enterprise Scale</h1>
+
+      <p class="mfe-lead">
+        A deep-dive architectural blueprint on decomposing monolithic frontends into resilient, independently deployable, and autonomous micro-applications. Covering everything from core mental models and composition patterns to Webpack 5 Module Federation, runtime dependency sharing, cross-MFE event buses, dual-router synchronization, and zero-downtime BFSI rollouts.
+      </p>
+
+      <div class="mfe-meta-card">
+        <div class="mfe-author-box">
+          <div class="mfe-author-avatar">RS</div>
+          <div class="mfe-author-details">
+            <span class="mfe-author-name">Ravindrakumar M. Suthar</span>
+            <span class="mfe-author-title">Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</span>
+          </div>
+        </div>
+        <div class="mfe-stats-box">
+          <div class="mfe-stat-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+            <span>22 min read</span>
+          </div>
+          <div class="mfe-stat-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+            <span>Updated October 2026</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Table of Contents -->
+    <nav class="mfe-toc" aria-label="Table of Contents">
+      <h2>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+        Table of Contents
+      </h2>
+      <ul class="mfe-toc-grid">
+        <li><a href="#section-01">1. The Fundamentals: What &amp; Why</a></li>
+        <li><a href="#section-02">2. When to Use (and When NOT to Use)</a></li>
+        <li><a href="#section-03">3. Composition Patterns Taxonomy</a></li>
+        <li><a href="#section-04">4. Enterprise System Topology Diagram</a></li>
+        <li><a href="#section-05">5. Webpack 5 &amp; Module Federation Deep Dive</a></li>
+        <li><a href="#section-06">6. Dependency Sharing &amp; Version Governance</a></li>
+        <li><a href="#section-07">7. Cross-MFE State &amp; Event Bus Architecture</a></li>
+        <li><a href="#section-08">8. Dual-Router Coordination &amp; Deep Linking</a></li>
+        <li><a href="#section-09">9. CSS Encapsulation &amp; Design System Governance</a></li>
+        <li><a href="#section-10">10. Blast Radius Resiliency &amp; Circuit Breakers</a></li>
+        <li><a href="#section-11">11. Security: CSP, Nonces &amp; Token Brokerage</a></li>
+        <li><a href="#section-12">12. CI/CD &amp; Dynamic Remote Discovery</a></li>
+        <li><a href="#section-13">13. Production Reference Code Implementation</a></li>
+        <li><a href="#section-14">14. Architectural Readiness Checklist</a></li>
+      </ul>
+    </nav>
+
+    <!-- ── SECTION 1: The Fundamentals ── -->
+    <section class="mfe-section" id="section-01">
+      <h2>01. The Fundamentals: What &amp; Why</h2>
+      <p>
+        Over the past decade, backend engineering successfully tackled monolithic bloat by breaking codebases into distributed microservices. However, frontend architectures often lagged behind. Large organizations found themselves deploying massive, single-page application (SPA) monoliths maintained by 10 to 30 disparate squads.
+      </p>
+      <p>
+        A <strong>Micro Frontend (MFE)</strong> architecture applies the principles of microservices to the presentation layer. It decomposes a monolithic client application into smaller, semi-autonomous, domain-oriented frontend applications that are orchestrated at runtime or build time to deliver a unified, seamless user experience.
+      </p>
+
+      <h3>Conway's Law &amp; Team Topologies</h3>
+      <p>
+        Melvin Conway observed that <em>"organizations which design systems are constrained to produce designs which are copies of the communication structures of these organizations."</em> 
+      </p>
+      <p>
+        In a monolithic frontend, vertical domain teams (e.g., Credit Cards, Commercial Loans, KYC Onboarding) must coordinate changes within a single shared git repository. Release freezes, merge conflicts, pull-request backlogs, and synchronized regression testing turn simple one-line fixes into multi-week bureaucratic ordeals. 
+      </p>
+      <p>
+        Micro-frontends align frontend code boundaries directly with <strong>Domain-Driven Design (DDD)</strong> subdomains. Each cross-functional squad (Product Owner, UX Designer, Backend Engineers, Frontend Engineers, QA) owns their feature slice from the database all the way to the visual DOM elements rendered on the customer's glass.
+      </p>
+
+      <div class="callout callout-info">
+        <div class="callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+          Key Definition: Autonomous Sub-Applications
+        </div>
+        <p>
+          A true Micro-Frontend is independently developable, independently testable, and independently deployable to production without requiring the host shell application or sibling micro-frontends to be rebuilt, tested, or redeployed.
+        </p>
+      </div>
+
+      <h3>Core Drivers for Enterprise BFSI Scale</h3>
+      <ul>
+        <li><strong>Independent CI/CD Pipelines:</strong> The Payments squad can deploy 5 times a day to production via automated GitHub Actions/OpenShift pipelines without waiting for the Mortgages squad to complete their quarterly sprint regression.</li>
+        <li><strong>Incremental Platform Modernization:</strong> Large banks cannot afford a complete multi-million dollar "ground-up rewrite." MFEs permit strangler-fig migration patterns—gradually replacing legacy AngularJS 1.x or Angular 10 routes with modern React 19 or Angular 21 micro-apps side-by-side.</li>
+        <li><strong>Blast Radius Containment:</strong> A runtime JavaScript exception in an unessential "Special Offers / Promotions" widget must never crash the core "Wire Transfer" or "Account Balance" transaction flows.</li>
+        <li><strong>Autonomous Tech Stacks:</strong> While governance is essential, specialized squads can select tools optimized for their domain (e.g., Svelte for an ultra-lightweight real-time FX ticker vs. React for complex transactional workflows).</li>
+      </ul>
+    </section>
+
+    <!-- ── SECTION 2: When to Use (and When NOT to Use) ── -->
+    <section class="mfe-section" id="section-02">
+      <h2>02. When to Use (and When NOT to Use)</h2>
+      <p>
+        Micro-frontends are an <strong>organizational and scaling pattern</strong>, not a silver bullet. Every architectural decision introduces trade-offs. Implementing micro-frontends when your organization does not need them will introduce crippling complexity for zero tangible return.
+      </p>
+
+      <h3>The Micro-Frontend Decision Matrix</h3>
+      <div class="table-container">
+        <table class="mfe-table">
+          <thead>
+            <tr>
+              <th>Criteria</th>
+              <th>Modular Monolith (Single SPA)</th>
+              <th>Micro-Frontend Architecture</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Team Scale</strong></td>
+              <td>1 to 3 squads (&lt; 20 frontend engineers)</td>
+              <td>4+ squads (30 to 200+ frontend engineers)</td>
+            </tr>
+            <tr>
+              <td><strong>Release Frequency</strong></td>
+              <td>Coordinated weekly / bi-weekly sprints</td>
+              <td>Multiple independent daily deployments per squad</td>
+            </tr>
+            <tr>
+              <td><strong>Domain Coupling</strong></td>
+              <td>Single tightly coupled business domain</td>
+              <td>Distinct, autonomous business domains (e.g., Cards, Loans, Fraud)</td>
+            </tr>
+            <tr>
+              <td><strong>Technology Stack</strong></td>
+              <td>Single unified framework &amp; build system</td>
+              <td>Evolving stacks or gradual strangler migrations</td>
+            </tr>
+            <tr>
+              <td><strong>Operational Complexity</strong></td>
+              <td>Low (single bundle, single CI/CD pipeline)</td>
+              <td>High (distributed CDNs, contract testing, shared scopes)</td>
+            </tr>
+            <tr>
+              <td><strong>Initial Page Payload</strong></td>
+              <td>Optimal (single tree-shaken JS bundle)</td>
+              <td>Requires strict shared dependency governance to prevent duplicate libs</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout-critical">
+        <div class="callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2"></polygon><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+          Warning: The Premature Optimization Trap
+        </div>
+        <p>
+          If your company has fewer than 20 developers, or if your application fits comfortably in a single team's cognitive headspace, <strong>do not use micro-frontends</strong>. A clean, well-architected modular monorepo (using tools like Nx or Turborepo) with strict package boundaries will deliver 95% of the codebase isolation with 10% of the operational overhead.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SECTION 3: Composition Patterns Taxonomy ── -->
+    <section class="mfe-section" id="section-03">
+      <h2>03. Composition Patterns Taxonomy</h2>
+      <p>
+        How do disparate sub-applications assemble into a cohesive user interface? There are three distinct composition vectors: <strong>Build-Time</strong>, <strong>Server-Side / Edge</strong>, and <strong>Client-Side Runtime</strong>.
+      </p>
+
+      <h3>1. Build-Time Composition (The Anti-Pattern for Autonomous Delivery)</h3>
+      <p>
+        In this model, individual teams write sub-applications and publish them as versioned npm packages (e.g., <code>@bank/mfe-cards@2.4.0</code>). The container shell imports these packages in its <code>package.json</code> and bundles everything into one final bundle at compile time.
+      </p>
+      <p>
+        <strong>Why it fails at scale:</strong> Build-time composition completely destroys independent deployment. Whenever Squad A fixes a bug in the Cards MFE, the container shell team must update their <code>package.json</code>, run a full build, pass full regression testing, and deploy the entire shell. You retain the monolithic release bottleneck with the added friction of npm package version management.
+      </p>
+
+      <h3>2. Client-Side Runtime Composition (The Enterprise Standard)</h3>
+      <p>
+        In runtime composition, the container shell loads external JavaScript bundles over the network on demand. The shell does not know the internal implementation details of the remotes at compile time; it dynamically downloads and executes them when the user navigates to the relevant route or mounts a specific widget.
+      </p>
+
+      <div class="table-container">
+        <table class="mfe-table">
+          <thead>
+            <tr>
+              <th>Pattern</th>
+              <th>Mechanism</th>
+              <th>Isolation Strength</th>
+              <th>Pros</th>
+              <th>Cons</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Webpack 5 / Vite Module Federation</strong></td>
+              <td>Dynamic container manifest (<code>remoteEntry.js</code>) with shared memory scope</td>
+              <td>High (Component &amp; Route level)</td>
+              <td>Blazing fast, zero iframe friction, seamless shared dependencies (React singleton)</td>
+              <td>Requires modern bundler alignment; build configuration rigor</td>
+            </tr>
+            <tr>
+              <td><strong>Web Components &amp; Custom Elements</strong></td>
+              <td>W3C standards (<code>customElements.define</code>, Shadow DOM)</td>
+              <td>Very High (True DOM &amp; CSS isolation)</td>
+              <td>100% framework-agnostic; standards-based; native browser support</td>
+              <td>SSR hydration challenges; complex form control participation; event retargeting</td>
+            </tr>
+            <tr>
+              <td><strong>single-spa Framework</strong></td>
+              <td>Lifecycle contracts (<code>bootstrap</code>, <code>mount</code>, <code>unmount</code>)</td>
+              <td>High (Router-level)</td>
+              <td>Mature ecosystem, excellent multi-framework orchestration</td>
+              <td>Steep learning curve, routing abstraction overhead</td>
+            </tr>
+            <tr>
+              <td><strong>Cross-Origin iFrames</strong></td>
+              <td>Separate browser window contexts with <code>postMessage</code></td>
+              <td>Maximum (Zero-Trust browser boundary)</td>
+              <td>Bulletproof security isolation, impossible CSS or JS leakage</td>
+              <td>Poor UX (clunky responsive resizing, accessibility tab traps, high memory footprint)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>3. Server-Side &amp; Edge Composition (SSR / Streaming)</h3>
+      <p>
+        For public-facing e-commerce or content sites where Search Engine Optimization (SEO) and Largest Contentful Paint (LCP) are paramount, composition happens upstream at the server or edge worker layer.
+      </p>
+      <p>
+        Edge workers (such as <strong>Cloudflare Workers with HTMLRewriter</strong>) intercept incoming requests, fetch pre-rendered HTML fragments from different origin microservices in parallel, and stream the stitched HTML document down to the client. The browser receives a fully-formed document, and client-side micro-frontends hydrate their respective DOM sections asynchronously.
+      </p>
+    </section>
+
+    <!-- ── SECTION 4: Enterprise System Topology Diagram ── -->
+    <section class="mfe-section" id="section-04">
+      <h2>04. Enterprise System Topology Diagram</h2>
+      <p>
+        The following architectural diagram illustrates the topology of an enterprise Tier-1 BFSI micro-frontend platform running on a global edge CDN with dynamic module federation:
+      </p>
+
+      <div class="architecture-diagram">
++-----------------------------------------------------------------------------------------------------+
+|                                    GLOBAL CLOUDFLARE EDGE / CDN                                    |
+|  - Edge Routing &amp; Geo-steering              - EdgeNonce Dynamic CSP Injection                       |
+|  - Micro-Frontend Dynamic Discovery Manifest - Stale-While-Revalidate Asset Invalidation           |
++-----------------------------------------------------------------------------------------------------+
+                                                   │
+                                                   ▼
++-----------------------------------------------------------------------------------------------------+
+|                                   HOST CONTAINER (APP SHELL)                                        |
+|                                                                                                     |
+|  ┌───────────────────────┐   ┌───────────────────────┐   ┌───────────────────────────────────────┐  |
+|  │ Top Nav &amp; Breadcrumbs │   │ Shell Router (/app/*) │   │ Central Token Broker (OIDC / OAuth)   │  |
+|  └───────────────────────┘   └───────────────────────┘   └───────────────────────────────────────┘  |
+|  ┌───────────────────────────────────────────────────────────────────────────────────────────────┐  |
+|  │ Enterprise Core SDK: Typed Event Bus &bull; Observability Hooks &bull; Design Tokens Theme Provider     │  |
+|  └───────────────────────────────────────────────────────────────────────────────────────────────┘  |
+|  ┌───────────────────────────────────────────────────────────────────────────────────────────────┐  |
+|  │ Shared Runtime Scope (__webpack_share_scopes__.default): React 19, ReactDOM, Core-JS Singleton│  |
+|  └───────────────────────────────────────────────────────────────────────────────────────────────┘  |
++-----------------------------------------------------------------------------------------------------+
+                                                   │
+                ┌──────────────────────────────────┼──────────────────────────────────┐
+                ▼                                  ▼                                  ▼
++──────────────────────────────+   +──────────────────────────────+   +──────────────────────────────+
+|     PAYMENTS REMOTE MFE      |   |       CARDS REMOTE MFE       |   |      WEALTH REMOTE MFE       |
+|                              |   |                              |   |                              |
+| - Squad: Payments Engineering|   | - Squad: Card Operations     |   | - Squad: Wealth Management   |
+| - CDN: /payments/remoteEntry |   | - CDN: /cards/remoteEntry    |   | - CDN: /wealth/remoteEntry   |
+| - React 19 + Tailwind Scoped |   | - React 19 + CSS Modules     |   | - Angular 21 (Custom Element)|
+| - Error Boundary + Circuit   |   | - Error Boundary + Circuit   |   | - Shadow DOM Style Shield    |
++──────────────────────────────+   +──────────────────────────────+   +──────────────────────────────+
+                │                                  │                                  │
+                ▼                                  ▼                                  ▼
++──────────────────────────────+   +──────────────────────────────+   +──────────────────────────────+
+|  Payments BFF / Microservice |   |    Cards BFF / Microservice  |   |   Wealth BFF / Microservice  |
+|  (Spring Boot / Node.js)     |   |    (Spring Boot / Java)      |   |   (Go / Cloudflare Worker)   |
++──────────────────────────────+   +──────────────────────────────+   +──────────────────────────────+
+      </div>
+
+      <p>
+        Notice the key architectural boundaries: The <strong>Host Shell</strong> acts as the orchestrator and security boundary. The <strong>Remotes</strong> are completely decoupled, consuming shared runtime singletons from the global scope and communicating across boundaries strictly via the typed <strong>Core SDK Event Bus</strong>.
+      </p>
+    </section>
+
+    <!-- ── SECTION 5: Webpack 5 & Module Federation Deep Dive ── -->
+    <section class="mfe-section" id="section-05">
+      <h2>05. Webpack 5 &amp; Module Federation Deep Dive</h2>
+      <p>
+        Introduced by Zack Jackson in Webpack 5, <strong>Module Federation</strong> revolutionized micro-frontends by making dynamic code sharing a first-class citizen of JavaScript bundlers.
+      </p>
+
+      <h3>How Module Federation Works Under the Hood</h3>
+      <p>
+        Module Federation operates through three primary building blocks:
+      </p>
+      <ol>
+        <li><strong>Container Manifest (<code>remoteEntry.js</code>):</strong> A tiny (~3KB to 8KB) manifest generated at build time. It contains a map of all modules exposed by the remote, along with a list of dependencies it provides or consumes from the shared scope.</li>
+        <li><strong>Container Initialization (<code>container.init(sharedScope)</code>):</strong> When the host loads a remote, it invokes the remote's <code>init()</code> method, passing its own shared dependencies scope (<code>__webpack_share_scopes__.default</code>). This merges dependency trees at runtime.</li>
+        <li><strong>Module Factory Resolution (<code>container.get(module)</code>):</strong> The host calls <code>get('./PaymentWidget')</code>, which returns a factory function. Executing this factory returns the evaluated ES module.</li>
+      </ol>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Host App Webpack Configuration &bull; webpack.config.js</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>// host-app/webpack.config.js
+const { ModuleFederationPlugin } = require('webpack').container;
+const deps = require('./package.json').dependencies;
+
+module.exports = {
+  entry: './src/index', // Points to dynamic import bootstrap
+  mode: 'production',
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'bank_shell',
+      remotes: {
+        // Remotes configured via environment-specific CDN URLs
+        paymentsRemote: `paymentsRemote@${process.env.PAYMENTS_CDN_URL}/remoteEntry.js`,
+        cardsRemote: `cardsRemote@${process.env.CARDS_CDN_URL}/remoteEntry.js`,
+      },
+      shared: {
+        ...deps,
+        react: {
+          singleton: true,
+          requiredVersion: deps.react,
+          strictVersion: true,
+        },
+        'react-dom': {
+          singleton: true,
+          requiredVersion: deps['react-dom'],
+          strictVersion: true,
+        },
+        '@bank/core-sdk': {
+          singleton: true,
+          requiredVersion: '^2.0.0',
+        }
+      },
+    }),
+  ],
+};</code></pre>
+      </div>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Remote MFE Webpack Configuration &bull; webpack.config.js</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>// payments-mfe/webpack.config.js
+const { ModuleFederationPlugin } = require('webpack').container;
+const deps = require('./package.json').dependencies;
+
+module.exports = {
+  entry: './src/index',
+  mode: 'production',
+  output: {
+    publicPath: 'auto', // Automatically resolves asset paths relative to remoteEntry.js
+  },
+  plugins: [
+    new ModuleFederationPlugin({
+      name: 'paymentsRemote',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './PaymentsDashboard': './src/components/PaymentsDashboard.tsx',
+        './QuickTransferWidget': './src/components/QuickTransferWidget.tsx',
+      },
+      shared: {
+        react: { singleton: true, requiredVersion: deps.react },
+        'react-dom': { singleton: true, requiredVersion: deps['react-dom'] },
+        '@bank/core-sdk': { singleton: true, requiredVersion: '^2.0.0' },
+      },
+    }),
+  ],
+};</code></pre>
+      </div>
+
+      <div class="callout callout-tip">
+        <div class="callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+          The Async Bootstrap Pattern (index.js vs. bootstrap.js)
+        </div>
+        <p>
+          Notice that the entry point points to <code>./src/index</code>, which only contains a dynamic <code>import('./bootstrap')</code>. This asynchronous boundary is mandatory in Module Federation: it gives Webpack an asynchronous turn of the event loop to negotiate and download shared scopes before your root application code attempts to execute.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SECTION 6: Dependency Sharing & Version Governance ── -->
+    <section class="mfe-section" id="section-06">
+      <h2>06. Dependency Sharing &amp; Version Governance</h2>
+      <p>
+        The most common technical crisis encountered by teams adopting micro-frontends is <strong>dependency divergence and library duplication</strong>.
+      </p>
+
+      <h3>The Dreaded "Multiple React Instances" Bug</h3>
+      <p>
+        React maintains internal state globally in its runtime module (e.g., <code>ReactCurrentDispatcher</code>). If your host loads React 18.2.0 and a remote child loads React 18.3.1 without sharing configuration, two distinct React modules execute in browser memory. 
+      </p>
+      <p>
+        The moment a component in the remote child invokes a hook (e.g., <code>useState</code> or <code>useContext</code>), the runtime encounters:
+      </p>
+      <div class="code-block" style="color: #f87171;">
+Uncaught Error: Invalid hook call. Hooks can only be called inside of the body of a function component.
+1. You might have mismatching versions of React and the renderer (such as React DOM)
+2. You might be breaking the Rules of Hooks
+3. You might have more than one copy of React in the same app
+      </div>
+
+      <h3>Configuring Singletons &amp; Semantic Versioning</h3>
+      <p>
+        To prevent this, Module Federation provides three critical flags inside the <code>shared</code> configuration block:
+      </p>
+      <ul>
+        <li><code>singleton: true</code> &mdash; Guarantees that only ONE instance of the library will be loaded into the shared scope. If multiple remotes request the package, Webpack resolves to the highest compatible version.</li>
+        <li><code>strictVersion: true</code> &mdash; Instructs Webpack to throw a runtime error (or console warning) if the version requested by a remote falls outside the <code>requiredVersion</code> range, rather than silently falling back to a duplicate instance.</li>
+        <li><code>requiredVersion: '^18.2.0'</code> &mdash; Defines the semver constraint matching your enterprise dependency policies.</li>
+      </ul>
+
+      <h3>Vendor Chunk Preloading Strategy</h3>
+      <p>
+        To optimize Core Web Vitals (specifically Largest Contentful Paint and Interaction to Next Paint), the Shell container should preload foundational vendor chunks using modern browser hints in the HTML header:
+      </p>
+      <div class="code-block">
+&lt;!-- Preload core shared singletons on the Shell --&gt;
+&lt;link rel="modulepreload" href="https://cdn.bank.com/vendor/react-core.js"&gt;
+&lt;link rel="modulepreload" href="https://cdn.bank.com/vendor/core-sdk.js"&gt;
+      </div>
+    </section>
+
+    <!-- ── SECTION 7: Cross-MFE State & Event Bus Architecture ── -->
+    <section class="mfe-section" id="section-07">
+      <h2>07. Cross-MFE State &amp; Event Bus Architecture</h2>
+      <p>
+        How do micro-frontends communicate without creating catastrophic coupling?
+      </p>
+
+      <h3>The Anti-Pattern: Shared Mutable State (The Global Window Dump)</h3>
+      <p>
+        In inexperienced implementations, teams often create a global Redux store on <code>window.__GLOBAL_STORE__</code> and let all sub-apps dispatch actions directly to it.
+      </p>
+      <p>
+        <strong>Why this is toxic:</strong> Shared global state tightly couples sub-applications. If the Payments squad refactors an action payload or renames a state slice, the Cards MFE silently crashes at runtime. You have recreated a distributed monolith with zero compile-time safety.
+      </p>
+
+      <h3>The 4 Decoupled Communication Patterns</h3>
+
+      <h4>Pattern 1: The Browser URL as the Single Source of Truth</h4>
+      <p>
+        The most robust, resilient state synchronization mechanism is the URL itself (query parameters, pathnames, and hash fragments). If the Cards MFE needs the Payments MFE to open a specific card transaction, it navigates to:
+      </p>
+      <div class="code-block">
+https://bank.com/payments/transfer?sourceAccount=CARD-9842&amp;amount=1500.00
+      </div>
+      <p>
+        This is bookmarkable, shareable, supports browser back/forward navigation natively, and completely decouples internal component lifecycles.
+      </p>
+
+      <h4>Pattern 2: The Decoupled Typed Event Bus (Enterprise Core SDK)</h4>
+      <p>
+        For transient, real-time in-page events (such as session expiration warnings, user profile updates, or shopping cart badge counts), use a <strong>Publisher/Subscriber Typed Event Bus</strong> encapsulated within a shared SDK.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Typed Event Bus Implementation &bull; @bank/core-sdk</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>// @bank/core-sdk/src/event-bus.ts
+export interface MfeEventMap {
+  'AUTH:SESSION_TIMEOUT': { remainingSeconds: number };
+  'PAYMENT:TRANSFER_INITIATED': { transactionId: string; amount: number; currency: string };
+  'ACCOUNT:SELECTED': { accountId: string; accountType: 'CHECKING' | 'SAVINGS' };
+}
+
+type EventCallback&lt;T&gt; = (payload: T) =&gt; void;
+
+class EnterpriseEventBus {
+  private target = new EventTarget();
+
+  public emit&lt;K extends keyof MfeEventMap&gt;(event: K, payload: MfeEventMap[K]): void {
+    const customEvent = new CustomEvent(event, {
+      detail: { ...payload, __timestamp: Date.now() },
+      bubbles: false,
+    });
+    this.target.dispatchEvent(customEvent);
+  }
+
+  public on&lt;K extends keyof MfeEventMap&gt;(event: K, callback: EventCallback&lt;MfeEventMap[K]&gt;): () =&gt; void {
+    const listener = (e: Event) =&gt; {
+      const customEvent = e as CustomEvent&lt;MfeEventMap[K]&gt;;
+      callback(customEvent.detail);
+    };
+
+    this.target.addEventListener(event, listener);
+    // Return unsubscribe cleanup function to prevent memory leaks on MFE unmount
+    return () =&gt; this.target.removeEventListener(event, listener);
+  }
+}
+
+export const eventBus = new EnterpriseEventBus();</code></pre>
+      </div>
+
+      <div class="callout callout-warning">
+        <div class="callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+          Crucial Rule: Deterministic Unsubscribe on Unmount
+        </div>
+        <p>
+          Whenever a Micro-Frontend component subscribes to an event bus or window listener, it <strong>must return an unsubscription handler</strong> in its unmount lifecycle (e.g. inside React's <code>useEffect</code> cleanup function). Failure to do so causes detached DOM references and massive JavaScript memory leaks as users navigate between tabs.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── SECTION 8: Dual-Router Coordination & Deep Linking ── -->
+    <section class="mfe-section" id="section-08">
+      <h2>08. Dual-Router Coordination &amp; Deep Linking</h2>
+      <p>
+        When an application contains a Shell Router and multiple Child Routers, navigation conflicts frequently occur. If both the Shell and the Child instantiate HTML5 Browser History routers, both will listen to browser <code>popstate</code> events and attempt to manipulate the URL history stack simultaneously.
+      </p>
+
+      <h3>The Solution: Parent Route Prefixing + Memory Routers</h3>
+      <p>
+        The gold-standard architectural pattern for micro-frontend routing is:
+      </p>
+      <ol>
+        <li><strong>Shell Owns the Top-Level Path Prefix:</strong> The host shell router delegates sub-paths to remotes (e.g., <code>/payments/*</code> is assigned to the Payments MFE; <code>/cards/*</code> is assigned to the Cards MFE).</li>
+        <li><strong>Child Remote Uses Memory History or Scoped Basename:</strong> When operating as an embedded micro-frontend, the child router operates on an in-memory history stack with its <code>basename</code> set to <code>/payments</code>.</li>
+        <li><strong>Bidirectional Route Synchronization:</strong> The child notifies the shell whenever its internal route changes, and the shell updates the browser address bar without triggering a hard reload.</li>
+      </ol>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Synchronized Router Mounting Contract &bull; Remote Sub-App</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>// payments-mfe/src/mount.tsx
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { createMemoryHistory } from 'history';
+import { App } from './App';
+
+interface MountOptions {
+  initialPath?: string;
+  onNavigate?: (newPath: string) =&gt; void;
+}
+
+export const mount = (el: HTMLElement, { initialPath = '/', onNavigate }: MountOptions = {}) =&gt; {
+  const history = createMemoryHistory({ initialEntries: [initialPath] });
+
+  if (onNavigate) {
+    history.listen(({ location }) =&gt; {
+      onNavigate(location.pathname);
+    });
+  }
+
+  const root = ReactDOM.createRoot(el);
+  root.render(&lt;App history={history} /&gt;);
+
+  // Return unmount lifecycle for graceful teardown
+  return {
+    onParentNavigate(newPath: string) {
+      if (history.location.pathname !== newPath) {
+        history.push(newPath);
+      }
+    },
+    unmount() {
+      root.unmount();
+    }
+  };
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- ── SECTION 9: CSS Encapsulation & Design System Governance ── -->
+    <section class="mfe-section" id="section-09">
+      <h2>09. CSS Encapsulation &amp; Design System Governance</h2>
+      <p>
+        In an enterprise platform where 10 squads contribute components, CSS bleed can be catastrophic. A stray <code>button { padding: 12px; }</code> or <code>.card { position: fixed; }</code> written in Squad C's micro-frontend can break the entire Shell navigation or corrupt transactional modals in Squad A's flow.
+      </p>
+
+      <h3>Techniques for CSS Isolation</h3>
+      <ul>
+        <li><strong>CSS Modules / Scoped CSS:</strong> At build time, class names are hashed (e.g., <code>.btn_payments_x89a1</code>), guaranteeing that style selectors can never collide across remote boundaries.</li>
+        <li><strong>PostCSS Namespace Prefixing:</strong> Automatically prepending an MFE-specific root class (e.g. <code>.mfe-payments-scope .card</code>) to all output selectors during the Webpack build.</li>
+        <li><strong>Shadow DOM (Web Components):</strong> Native browser encapsulation. Styles declared inside a Shadow Root never bleed out, and global styles (except CSS Custom Properties) cannot bleed in.</li>
+      </ul>
+
+      <h3>Shared Design Tokens (The Bridge Between Consistency &amp; Isolation)</h3>
+      <p>
+        To preserve corporate brand consistency across independently styled micro-frontends, standard design tokens (colors, typography, spacing, border radii) are declared as <strong>CSS Custom Properties</strong> at the Shell's <code>:root</code> level:
+      </p>
+      <div class="code-block">
+/* Shell Host Theme Tokens */
+:root {
+  --bank-primary: #002d72;
+  --bank-secondary: #0076a8;
+  --bank-accent: #00a3e0;
+  --bank-font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --bank-radius-sm: 4px;
+  --bank-radius-md: 8px;
+}
+      </div>
+      <p>
+        Because CSS Custom Properties penetrate Shadow DOM boundaries and are accessible across all child frames, sub-apps can style their components autonomously while maintaining 100% adherence to corporate brand guidelines.
+      </p>
+    </section>
+
+    <!-- ── SECTION 10: Blast Radius Resiliency & Circuit Breakers ── -->
+    <section class="mfe-section" id="section-10">
+      <h2>10. Blast Radius Resiliency &amp; Circuit Breakers</h2>
+      <p>
+        In high-availability BFSI platforms, network and third-party failures are inevitable. What happens if a CDN node serving the Payments MFE <code>remoteEntry.js</code> goes down, returns an HTTP 504 Gateway Timeout, or serves corrupted JavaScript?
+      </p>
+
+      <h3>The Remote Module Circuit Breaker</h3>
+      <p>
+        In a standard single-page app, an unhandled script failure triggers an unrecoverable blank white screen. In a resilient micro-frontend architecture, we wrap remote loaders inside an <strong>Asynchronous Circuit Breaker with Error Boundaries</strong>.
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Resilient Remote Module Loader &bull; Shell App</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>// shell/src/utils/resilient-loader.tsx
+import React, { Suspense, lazy } from 'react';
+import { MfeErrorBoundary } from '../components/MfeErrorBoundary';
+import { SkeletonLoader } from '../components/SkeletonLoader';
+
+interface RemoteLoaderProps {
+  url: string;
+  scope: string;
+  module: string;
+  fallbackTitle?: string;
+  timeoutMs?: number;
+}
+
+export function loadRemoteComponent({
+  url,
+  scope,
+  module,
+  fallbackTitle = 'Service Temporarily Unavailable',
+  timeoutMs = 4000,
+}: RemoteLoaderProps) {
+  const LazyComponent = lazy(async () =&gt; {
+    // 1. Enforce strict timeout to prevent hung connections from freezing the UI
+    const timeoutPromise = new Promise((_, reject) =&gt;
+      setTimeout(() =&gt; reject(new Error(`Timeout loading remote ${scope} from ${url}`)), timeoutMs)
+    );
+
+    const loadPromise = (async () =&gt; {
+      // Dynamically load remoteEntry.js if not already present in DOM
+      if (!window[scope]) {
+        await new Promise&lt;void&gt;((resolve, reject) =&gt; {
+          const script = document.createElement('script');
+          script.src = url;
+          script.type = 'text/javascript';
+          script.async = true;
+          script.onload = () =&gt; resolve();
+          script.onerror = () =&gt; reject(new Error(`Failed to load script ${url}`));
+          document.head.appendChild(script);
+        });
+      }
+
+      // Initialize container and retrieve factory
+      await window[scope].init(__webpack_share_scopes__.default);
+      const factory = await window[scope].get(module);
+      return factory();
+    })();
+
+    return Promise.race([loadPromise, timeoutPromise]) as Promise&lt;{ default: React.ComponentType&lt;any&gt; }&gt;;
+  });
+
+  return function ResilientRemote(props: any) {
+    return (
+      &lt;MfeErrorBoundary fallbackTitle={fallbackTitle} scope={scope}&gt;
+        &lt;Suspense fallback={&lt;SkeletonLoader /&gt;}&gt;
+          &lt;LazyComponent {...props} /&gt;
+        &lt;/Suspense&gt;
+      &lt;/MfeErrorBoundary&gt;
+    );
+  };
+}</code></pre>
+      </div>
+
+      <p>
+        If the remote fails to load within 4 seconds or throws a runtime syntax error, the circuit breaker opens: the shell gracefully isolates the failure, renders a localized error fallback widget with an automated retry button, and logs telemetry to Datadog/Splunk—while the rest of the banking dashboard remains 100% operational.
+      </p>
+    </section>
+
+    <!-- ── SECTION 11: Security: CSP, Nonces & Token Brokerage ── -->
+    <section class="mfe-section" id="section-011">
+      <h2>11. Security: CSP, Nonces &amp; Token Brokerage</h2>
+      <p>
+        In banking, security and regulatory compliance (PCI-DSS, SOC2, FFIEC) take precedence over developer convenience.
+      </p>
+
+      <h3>Dynamic Content Security Policy (CSP) &amp; Edge Nonces</h3>
+      <p>
+        Strict Content Security Policies prohibit <code>unsafe-eval</code> and require cryptographic nonces on all <code>&lt;script&gt;</code> tags. When Module Federation dynamically injects script tags for remoteEntry files or code-split chunks, the browser will block them unless the runtime passes the correct nonce.
+      </p>
+      <p>
+        By leveraging <strong>EdgeNonce streaming on Cloudflare Workers</strong>, a cryptographically unique nonce is generated at the edge for every incoming HTTP request. Webpack is configured to populate <code>__webpack_nonce__</code> dynamically from the Shell:
+      </p>
+      <div class="code-block">
+// In Shell entry point:
+__webpack_nonce__ = document.querySelector('meta[name="csp-nonce"]')?.getAttribute('content');
+      </div>
+
+      <h3>The Central Token Broker Pattern</h3>
+      <div class="callout callout-critical">
+        <div class="callout-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+          Security Anti-Pattern: Storing Access Tokens in LocalStorage
+        </div>
+        <p>
+          Never allow individual micro-frontends to manage their own OAuth tokens or write JWTs to <code>localStorage</code> or <code>sessionStorage</code>. Any XSS vulnerability in a single low-security micro-frontend would allow attackers to steal session tokens for the entire enterprise.
+        </p>
+      </div>
+      <p>
+        <strong>The Enterprise Standard:</strong> The Host Shell authenticates against the Identity Provider via <code>HttpOnly, SameSite=Strict, Secure</code> cookies. If a remote micro-frontend needs to call its respective Backend-for-Frontend (BFF), it requests an in-memory, short-lived token via the Core SDK Token Broker:
+      </p>
+      <div class="code-block">
+import { tokenBroker } from '@bank/core-sdk';
+
+// Remotes fetch ephemeral, scoped authorization headers on-demand:
+const authHeaders = await tokenBroker.getAuthorizationHeaders('PAYMENTS_API_SCOPE');
+const response = await fetch('/api/v2/payments', { headers: authHeaders });
+      </div>
+    </section>
+
+    <!-- ── SECTION 12: CI/CD & Dynamic Remote Discovery ── -->
+    <section class="mfe-section" id="section-12">
+      <h2>12. CI/CD &amp; Dynamic Remote Discovery</h2>
+      <p>
+        How do you deploy micro-frontends without hardcoding remote URLs in the Shell's Webpack configuration?
+      </p>
+
+      <h3>The Remote Manifest Service (Dynamic Discovery)</h3>
+      <p>
+        In enterprise production setups, the Shell does not hardcode static URLs like <code>https://cdn.bank.com/payments/remoteEntry.js</code>. Instead, it queries a lightweight <strong>Dynamic Remote Discovery Service</strong> (backed by Cloudflare Workers KV or an edge configuration bucket) on initial boot:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Discovery Manifest &bull; GET /api/v1/mfe-manifest.json</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>{
+  "version": "2026.10.24",
+  "remotes": {
+    "paymentsRemote": {
+      "url": "https://cdn.bank.com/payments/v2.4.1/remoteEntry.js",
+      "integrity": "sha384-oqVuAfXRKap7fdgcCY5uykM6+R9GqQ8K/uxy9rx7HNqlGYl1kPzQho1wx4JwY8wC"
+    },
+    "cardsRemote": {
+      "url": "https://cdn.bank.com/cards/v1.9.0/remoteEntry.js",
+      "integrity": "sha384-m6y4NqL2K8jA0B1c2D3e4F5g6H7i8J9k0L1m2N3o4P5q6R7s8T9u0V1w2X3y4Z5"
+    }
+  }
+}</code></pre>
+      </div>
+
+      <h3>Instant Zero-Downtime Rollouts &amp; Canaries</h3>
+      <p>
+        When the Payments squad deploys version <code>v2.4.2</code>:
+      </p>
+      <ol>
+        <li>Their CI pipeline builds and uploads assets to an immutable, versioned S3/Cloudflare bucket directory: <code>/payments/v2.4.2/</code>.</li>
+        <li>Automated smoke tests run against the newly uploaded assets.</li>
+        <li>The pipeline updates the pointer in the <strong>Remote Discovery Manifest</strong> to <code>v2.4.2</code>.</li>
+        <li>Immediately, new user sessions load the new code in under 100 milliseconds without touching the Shell build or restarting any containers!</li>
+        <li>If an anomaly is detected in Datadog, rolling back to <code>v2.4.1</code> takes less than 5 seconds simply by reverting the manifest pointer.</li>
+      </ol>
+    </section>
+
+    <!-- ── SECTION 13: Production Reference Code Implementation ── -->
+    <section class="mfe-section" id="section-13">
+      <h2>13. Production Reference Code Implementation</h2>
+      <p>
+        Here is the complete, modular container component showcasing the dynamic import, error boundary, and unmount cleanup in modern TypeScript:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Enterprise Remote Container &bull; PaymentsMfeWrapper.tsx</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy</button>
+        </div>
+        <pre class="code-block"><code>import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { eventBus } from '@bank/core-sdk';
+
+interface MountResult {
+  onParentNavigate?: (path: string) =&gt; void;
+  unmount: () =&gt; void;
+}
+
+export const PaymentsMfeWrapper: React.FC = () =&gt; {
+  const containerRef = useRef&lt;HTMLDivElement&gt;(null);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const mountInstanceRef = useRef&lt;MountResult | null&gt;(null);
+  const [loadError, setLoadError] = useState&lt;string | null&gt;(null);
+
+  useEffect(() =&gt; {
+    let isSubscribed = true;
+
+    async function bootstrapMfe() {
+      try {
+        // Dynamic import of exposed mount function
+        // @ts-ignore (Module Federation remote)
+        const { mount } = await import('paymentsRemote/PaymentsMount');
+
+        if (!isSubscribed || !containerRef.current) return;
+
+        mountInstanceRef.current = mount(containerRef.current, {
+          initialPath: location.pathname.replace('/payments', '') || '/',
+          onNavigate: (newSubPath: string) =&gt; {
+            const targetPath = `/payments${newSubPath === '/' ? '' : newSubPath}`;
+            if (location.pathname !== targetPath) {
+              navigate(targetPath);
+            }
+          },
+        });
+      } catch (err: any) {
+        if (isSubscribed) {
+          console.error('[MFE Shell] Failed to mount paymentsRemote:', err);
+          setLoadError(err.message || 'Error loading payments module');
+        }
+      }
+    }
+
+    bootstrapMfe();
+
+    // Listen for global theme or auth changes
+    const unsub = eventBus.on('AUTH:SESSION_TIMEOUT', () =&gt; {
+      console.warn('[MFE Shell] Session timeout broadcasted to child');
+    });
+
+    return () =&gt; {
+      isSubscribed = false;
+      unsub();
+      // Clean up DOM and memory allocations deterministically
+      if (mountInstanceRef.current) {
+        mountInstanceRef.current.unmount();
+        mountInstanceRef.current = null;
+      }
+    };
+  }, []);
+
+  if (loadError) {
+    return (
+      &lt;div className="mfe-fallback-card" role="alert"&gt;
+        &lt;h3&gt;Payments Module Offline&lt;/h3&gt;
+        &lt;p&gt;We are experiencing technical issues loading your transaction history.&lt;/p&gt;
+        &lt;button onClick={() =&gt; window.location.reload()} className="btn btn-sm"&gt;
+          Retry Loading
+        &lt;/button&gt;
+      &lt;/div&gt;
+    );
+  }
+
+  return &lt;div ref={containerRef} id="mfe-payments-host" className="mfe-remote-container" /&gt;;
+};</code></pre>
+      </div>
+    </section>
+
+    <!-- ── SECTION 14: Architectural Readiness Checklist ── -->
+    <section class="mfe-section" id="section-14">
+      <h2>14. Architectural Readiness Checklist</h2>
+      <p>
+        Before promoting your micro-frontend architecture to enterprise production, verify each requirement:
+      </p>
+
+      <ul>
+        <li><strong>&check; Dependency Singletons Governed:</strong> Shared libraries (React, ReactDOM, Core SDK) configured with <code>singleton: true</code> and verified via automated CI bundle audits.</li>
+        <li><strong>&check; Asynchronous Bootstrap Enforced:</strong> All entry points utilize dynamic <code>import('./bootstrap')</code> boundaries.</li>
+        <li><strong>&check; Router Isolation Proven:</strong> Deep linking and back/forward browser buttons tested across transitions between Shell and multiple child routes without URL corruption.</li>
+        <li><strong>&check; Circuit Breakers &amp; Fallbacks in Place:</strong> Simulated 404/504 errors on <code>remoteEntry.js</code> prove the rest of the shell remains fully functional with zero blank screens.</li>
+        <li><strong>&check; Event Bus Cleanup Guaranteed:</strong> Every subscription returns an unmount cleanup function; zero detached DOM leaks under memory profiling.</li>
+        <li><strong>&check; CSS Scoping Validated:</strong> No bare tag selectors (e.g. <code>p</code>, <code>button</code>, <code>input</code>) or un-scoped classes bleed outside the child DOM.</li>
+        <li><strong>&check; Dynamic Discovery Enabled:</strong> Remotes deployed independently to versioned CDN buckets without rebuilding the Shell application.</li>
+        <li><strong>&check; Token Broker Secured:</strong> Zero OAuth tokens or credentials stored in <code>localStorage</code>; ephemeral tokens requested through the Shell SDK.</li>
+      </ul>
+
+      <div class="tag-strip" style="margin-top: 2rem;">
+        <span class="badge">Micro-frontends</span>
+        <span class="badge">Module Federation</span>
+        <span class="badge">Webpack 5</span>
+        <span class="badge">System Design</span>
+        <span class="badge">Enterprise Architecture</span>
+        <span class="badge">State Management</span>
+        <span class="badge">Resilience Engineering</span>
+      </div>
+    </section>
+
+    <!-- Author Bio Card -->
+    <aside class="author-bio-card" aria-label="Author Information">
+      <div class="bio-avatar">RS</div>
+      <div class="bio-content">
+        <h3>Ravindrakumar M. Suthar</h3>
+        <p>
+          Senior Principal Architect &amp; Engineering Leader at <strong>Citicorp Services India Pvt. Ltd.</strong> with 20+ years of enterprise software engineering experience (including 13+ years governing mission-critical Banking, Financial Services, and Insurance architectures). Specializing in large-scale micro-frontends, agentic AI developer platforms, web performance optimization, and institutional accessibility governance.
+        </p>
+        <div class="bio-links">
+          <a href="/" class="btn btn-sm">&larr; Return to Profile &amp; CV</a>
+          <a href="/blog" class="btn btn-sm">Read More Architecture Guides</a>
+          <a href="/resume" class="btn btn-sm">View Workday ATS Resume</a>
+        </div>
+      </div>
+    </aside>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="edge-badge">
+        <span>Hosted on Cloudflare Global Edge &bull; ravindra.lets.gen.in</span>
+      </div>
+      <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &bull; Citicorp Services India</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- Script for Progress Bar & Copy Code -->
+  <script>
+    // Scroll progress bar & Back to Top visibility
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / docHeight) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }
+    });
+
+    // Copy code snippet to clipboard
+    function copyCode(button) {
+      const container = button.closest('.code-container');
+      const code = container.querySelector('code');
+      if (!code) return;
+
+      navigator.clipboard.writeText(code.innerText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = 'Copied!';
+        button.style.background = '#10b981';
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.style.background = '';
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy code: ', err);
+      });
+    }
+  </script>
+  <script src="app.js?v=20261024-v1" defer></script>
+</body>
+</html>
