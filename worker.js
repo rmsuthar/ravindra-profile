@@ -13,7 +13,7 @@ Verified Profile & Career Background:
   - Enterprise GenAI & Tooling: Integrated enterprise Gemini LLMs with offline local vector store RAG; created developer acceleration tooling including automated AEM layout analysis and Adobe Experience Cloud release governance pipelines; automated code remediation with scheduled AI agent pipelines.
   - Platform Modernization: Upgraded Angular from 10.x to 21.x across cloud-native microservices with SSR routing; upgraded core microservices from Spring Boot 3.x to 4.x; led GitHub Enterprise (GHE) migration with Renovate.
   - Accessibility & Integrations: WCAG 2.2 AA compliance with bespoke multimedia vendor fixes; enterprise Salesforce integration with strict security headers; organization-wide innovation and hackathon mentorship.
-- Personal / Open-Source Projects: a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner powered by Triple-Engine Consensus across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with Shadow DOM HUD at https://a11ysis.lets.gen.in/), FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
+- Personal / Open-Source Projects: castserv (Stateless, zero-storage onomastic intelligence & cultural lineage engine at https://castserv.lets.gen.in), a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner powered by Triple-Engine Consensus across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with Shadow DOM HUD at https://a11ysis.lets.gen.in/), FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan and https://foodscan.lets.gen.in/packaging-marks), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), Digital Table Clock & Calendar PWA (hardware upcycling & battery-friendly desk companion at https://clock.lets.gen.in/), Gujarat Panchang & Automated Broadcast System (precision astronomical calculation & WhatsApp broadcasting at https://tithi.lets.gen.in/), StateGuard.js (DOM tamper protection for transactional state integrity), Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations, and Developer Tools & Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/tools & https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -158,6 +158,21 @@ const KNOWLEDGE_FALLBACKS = [
 - **Read the Complete Guide**:
   - [Complete Micro Frontend Architectural Whitepaper](https://ravindra.lets.gen.in/mfe-architecture)
   - [Engineering Journal & Architecture Guide](https://ravindra.lets.gen.in/blog#chapter-02)`
+  },
+  {
+    triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
+    answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
+
+- **Overview**: An open onomastic intelligence platform deployed at the edge ([https://castserv.lets.gen.in](https://castserv.lets.gen.in)). Built to decode Indian lineage, heritage, and cultural identity with mathematical precision.
+- **The Core Problem**: Names in India carry centuries of migration, linguistic roots, and regional history. Surnames alone rarely tell the complete story.
+- **Key Architectural Innovations**:
+  1. **Multi-Dimensional Analysis**: Concurrently models First Name, Patronymic/Husband Name, and Clan Surname to compute nuanced onomastic signals.
+  2. **Granular Probability Distributions**: Mathematical probability distributions across 7 religious and cultural traditions with regional demographic granularity.
+  3. **Blazing Fast 5-Tier Cache Pipeline**: Delivers sub-0.5ms lookups across 330+ Cloudflare global edge locations.
+  4. **Strict Zero Persistence**: In-memory streaming only. No personal queries, names, or IP addresses are ever stored, logged, or retained.
+  5. **Enterprise Spreadsheet Ready**: Seamless custom formula integration for Microsoft Excel and Google Sheets via custom \`=IndiaCastServ()\` functions.
+  6. **Modern Edge Python Stack**: Engineered with Python 3.12, Astral uv, and Cloudflare Workers (Pyodide Wasm) for instant global execution.
+- **Try Live (No Sign-Up Required)**: [https://castserv.lets.gen.in](https://castserv.lets.gen.in)`
   },
   {
     triggers: ['education', 'degree', 'university', 'qualification', 'study', 'college', 'school', 'chemistry', 'mathematics', 'smu', 'diploma'],

@@ -360,4 +360,76 @@ Accessibility isn't a checkbox you audit once a quarter—it should be an automa
 
 Try the live scanner and inspect specimens here:
 🔗 https://a11ysis.lets.gen.in/
+
+
+--------------------------------------------------------------------------------
+PROJECT 9: castserv (Stateless Onomastic Intelligence & Cultural Identity Engine)
+--------------------------------------------------------------------------------
+[Project Name]
+castserv — Stateless Onomastic Intelligence & Cultural Identity Engine
+
+[Associated with]
+Leave blank (or Independent Project)
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+October 2026
+
+[End Date]
+Present
+
+[Project URL]
+https://castserv.lets.gen.in
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Python (Programming Language)
+Edge Computing
+Data Engineering
+Cloudflare Workers
+Artificial Intelligence (AI)
+
+[Description - Copy & Paste below]
+Architected castserv, a stateless, zero-storage onomastic intelligence service built to decode Indian lineage, heritage, and cultural identity with mathematical precision.
+
+• Multi-Dimensional Onomastic Modeling: Surnames alone rarely tell the complete story. castserv analyzes First Name, Patronymic/Husband Name, and Clan Surname concurrently to evaluate centuries of linguistic roots and regional migration.
+
+• Granular Cultural Distributions: Calculates mathematical probability distributions across 7 religious and cultural traditions with regional demographic granularity.
+
+• 5-Tier Cache Edge Pipeline: Engineered a high-throughput 5-tier caching architecture delivering sub-0.5ms lookup latency across 330+ Cloudflare global edge locations.
+
+• Zero-Persistence Architecture: Strict privacy-by-design architecture executing in-memory streaming with zero database persistence, zero personal query retention, and zero logging.
+
+• Enterprise Spreadsheet Integration: Plug-and-play formula support for Microsoft Excel and Google Sheets via custom =IndiaCastServ() functions for bulk data science workflows.
+
+• Modern Python & Edge Stack: Built with Python 3.12, Astral uv, and Cloudflare Workers (Pyodide WebAssembly) for instant global execution.
+
+Live Engine: https://castserv.lets.gen.in
+
+
+--------------------------------------------------------------------------------
+LINKEDIN POST COPY & PASTE:
+--------------------------------------------------------------------------------
+Excited to share castserv 🇮🇳 — Decoding Indian Lineage, Heritage & Cultural Identity.
+
+Names in India carry centuries of migration, linguistic roots, and regional history. Surnames alone don't tell the whole story.
+
+castserv is a stateless, zero-storage onomastic intelligence service built to decode this with mathematical precision.
+
+🚀 The Highlights:
+• 🧠 Multi-dimensional analysis: First Name, Patronymic/Husband Name & Clan Surname
+• 📊 Granular probability distributions across 7 religious & cultural traditions
+• ⚡ Blazing fast: 5-tier cache pipeline delivering <0.5ms lookups at 330+ edge locations
+• 🔒 Zero Persistence: In-memory streaming only. No personal queries stored or logged
+• 📈 Excel & Google Sheets ready via custom `=IndiaCastServ()` functions
+• 🛠️ Built with Python 3.12, Astral uv, and Cloudflare Workers (Pyodide Wasm)
+
+Try it live (no sign-up required):
+🔗 https://castserv.lets.gen.in
+
+Feedback and thoughts from the community are warmly welcome!
+
+#Python #EdgeAI #OpenSource #DataEngineering #Cloudflare #TechCommunity
 ================================================================================
+
