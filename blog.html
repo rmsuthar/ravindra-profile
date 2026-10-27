@@ -208,14 +208,17 @@
     .arch-diagram {
       background: #0f172a;
       color: #38bdf8;
-      padding: 1.25rem;
+      padding: 1.25rem 1.5rem;
       border-radius: var(--radius-sm);
-      font-family: var(--font-mono);
+      font-family: var(--font-mono), 'Fira Code', 'Courier New', monospace;
       font-size: 0.82rem;
-      line-height: 1.45;
+      line-height: 1.5;
+      white-space: pre;
       overflow-x: auto;
-      margin: 1.25rem 0;
+      margin: 0;
       border: 1px solid #1e293b;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+      display: block;
     }
   </style>
 </head>
@@ -764,8 +767,12 @@ app.post('/login', async (req, res) => {
         Code looks like text on your screen, but compilers cannot operate on raw strings. Every build tool—whether bundling, linting, or type-checking—must process source files through an <strong>Abstract Syntax Tree (AST)</strong> assembly line:
       </p>
 
-      <div class="arch-diagram">
-[ Raw Source File (.ts / .tsx) ]
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Architecture Flow: The 6-Stage AST Compiler Assembly Line</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Diagram</button>
+        </div>
+        <pre class="arch-diagram"><code>[ Raw Source File (.ts / .tsx) ]
                │
                ▼  1. Lexing / Tokenizing (Nanosecond per character)
 [ Flat Token Stream: 'const', 'total', ':', 'number', '=', 'price', '*', '2', ';' ]
@@ -782,7 +789,7 @@ app.post('/login', async (req, res) => {
        └───────┬───────────────────────┴───────────────────────┘
                │
                ▼  6. Code Generation &amp; Source Maps
-[ Final Minified ECMAScript + Column-Accurate .map Files ]
+[ Final Minified ECMAScript + Column-Accurate .map Files ]</code></pre>
       </div>
 
       <p>
@@ -869,8 +876,12 @@ app.post('/login', async (req, res) => {
         The answer lies in Node’s concurrency model. Node.js threads are not shared-memory threads—they are <strong>V8 Isolates</strong>:
       </p>
 
-      <div class="arch-diagram">
-Node.js Worker Architecture (Isolated Heaps)
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Concurrency Architecture: Node.js Isolated Heaps vs. Shared Memory</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Diagram</button>
+        </div>
+        <pre class="arch-diagram"><code>Node.js Worker Architecture (Isolated Heaps)
 ┌─────────────────────────────────┐     ┌─────────────────────────────────┐
 │     Main Thread (Isolate 1)     │     │    Worker Thread (Isolate 2)    │
 │  ┌───────────────────────────┐  │     │  ┌───────────────────────────┐  │
@@ -884,7 +895,7 @@ Node.js Worker Architecture (Isolated Heaps)
        [ Structured Clone Algorithm ] ───────────────────┘
        (Deep-serializes entire AST into raw bytes,
         then deserializes brand-new objects on thread 2)
-       ⚠️ Cost of serialization &gt; cost of single-threaded parsing!
+       ⚠️ Cost of serialization &gt; cost of single-threaded parsing!</code></pre>
       </div>
 
       <p>
