@@ -404,7 +404,7 @@
         <li><a href="#chapter-06">06. Security Governance &amp; Accessibility (WCAG 2.1/2.2 AA)</a></li>
         <li><a href="#chapter-07">07. Zero-Trust Payment UI: Why Global Processors Use Cross-Origin iFrames</a></li>
         <li><a href="#chapter-08">08. Identity Architecture: Why Banks Split Username and Password Screens</a></li>
-        <li><a href="#chapter-09">09. Systems Engineering: Why Frontend Infra is Migrating from JavaScript to Rust &amp; Go</a></li>
+        <li><a href="#chapter-09">09. The Post-JavaScript Engine Room: Why Frontend Toolchains Migrated to Rust &amp; Go</a></li>
       </ul>
     </div>
 
@@ -810,9 +810,12 @@ app.post('/login', async (req, res) => {
     <!-- Chapter 9: Systems Engineering - The Migration to Rust and Go -->
     <article class="journal-section">
       <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
-        <h2 id="chapter-09" style="margin-bottom: 0;">09. Systems Engineering: Why Frontend Infra is Migrating from JavaScript to Rust &amp; Go</h2>
+        <h2 id="chapter-09" style="margin-bottom: 0;">09. The Post-JavaScript Engine Room: Why Frontend Toolchains Migrated to Rust &amp; Go</h2>
         <span class="badge" style="background: #e0f2fe; color: #0369a1; border-color: #bae6fd; font-weight: 600;">Systems Architecture Whitepaper</span>
       </div>
+      <p style="font-size: 1.02rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 1.25rem; font-style: italic;">
+        Deconstructing JIT warm-up taxes, V8 heap isolation, and the multi-core compiler physics that broke Atwood’s Law.
+      </p>
 
       <p>
         For over a decade, frontend engineering was governed by Atwood’s Law: <em>“Any application that can be written in JavaScript, will eventually be written in JavaScript.”</em> We built web clients in JavaScript, backends in Node.js, and an entire generation of developer tooling (Webpack, Babel, Rollup, ESLint, Prettier, and the TypeScript compiler itself) in JavaScript.
