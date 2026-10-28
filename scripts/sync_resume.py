@@ -265,8 +265,8 @@ def generate_workday_docx():
         ]
     )
 
-    # 5. Key Enterprise & Company Projects
-    paragraphs.append(make_heading("Key Enterprise & Company Projects"))
+    # 5. Enterprise & Company Projects
+    paragraphs.append(make_heading("Enterprise & Company Projects"))
 
     def add_project(title, company, role_timeline, tech_stack, bullets):
         paragraphs.append(make_p([
@@ -360,16 +360,11 @@ def generate_workday_docx():
         ]
     )
 
-    # 6. Technical Innovations
-    paragraphs.append(make_heading("Featured Technical Innovations & Open Systems"))
+    # 6. Personal & Open-Source Projects
+    paragraphs.append(make_heading("Personal & Open-Source Projects"))
     paragraphs.append(make_p([
         make_run("a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner): ", bold=True, size=19, color="1A202C"),
         make_run("Continuous digital accessibility platform engineered to eliminate audit fragmentation and noise. Combines a concurrent triple-engine consensus architecture (IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5) with an interactive, collision-free Shadow DOM HUD that mounts directly onto live web applications via script tag or bookmarklet. Provides on-hover element highlighting, real-time contrast inspection, and actionable code remediation snippets with zero data retention (100% client-side DOM evaluation) across WCAG 2.1/2.2 Levels A/AA/AAA, Section 508, and EN 301 549 (a11ysis.lets.gen.in).", size=19, color="2D3748")
-    ], space_before=25, space_after=25))
-
-    paragraphs.append(make_p([
-        make_run("FoodScan AI (AI Dietary Scanner & Label Decoder): ", bold=True, size=19, color="1A202C"),
-        make_run("Mobile AI application officially published on the Google Play Store engineered for conscious travelers (Vegetarian, Jain, Vegan, Celiac gluten-free, and severe allergen sufferers). Leverages dual barcode scanning and multilingual OCR to decode foreign food labels (French, German, Japanese, etc.) and European E-numbers in under one second with deterministic dietary safeguards (play.google.com/store/apps/details?id=in.gen.lets.foodscan | foodscan.lets.gen.in/packaging-marks).", size=19, color="2D3748")
     ], space_before=25, space_after=25))
 
     paragraphs.append(make_p([

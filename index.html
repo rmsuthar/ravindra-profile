@@ -86,7 +86,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
-  <link rel="stylesheet" href="style.css?v=20261028-v1">
+  <link rel="stylesheet" href="style.css?v=20261028-v3">
 </head>
 
 <body>
@@ -94,6 +94,8 @@
   <nav class="skip-links-container" aria-label="Skip navigation links">
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <a href="#experience" class="skip-link">Skip to professional experience</a>
+    <a href="#enterprise-projects" class="skip-link">Skip to enterprise company projects</a>
+    <a href="#personal-projects" class="skip-link">Skip to personal &amp; open-source projects</a>
     <a href="#skills" class="skip-link">Skip to technical skills</a>
     <a href="#contact" class="skip-link">Skip to contact information</a>
   </nav>
@@ -161,7 +163,8 @@
       <a href="#summary" class="nav-chip" data-nav="summary">Summary</a>
       <a href="#experience" class="nav-chip" data-nav="experience">Experience</a>
       <a href="#skills" class="nav-chip" data-nav="skills">Skills Matrix</a>
-      <a href="#projects" class="nav-chip" data-nav="projects">Innovations</a>
+      <a href="#enterprise-projects" class="nav-chip" data-nav="enterprise-projects">Enterprise Projects</a>
+      <a href="#personal-projects" class="nav-chip" data-nav="personal-projects">Personal Projects</a>
       <a href="#education" class="nav-chip" data-nav="education">Credentials</a>
       <a href="#contact" class="nav-chip" data-nav="contact">Contact &amp; QR Passes</a>
       <span style="color: var(--border-medium); font-size: 0.8rem;">|</span>
@@ -466,12 +469,12 @@
           <span>🤖 AEM Agent &amp; VS Code Extension</span>
         </button>
         <button type="button" class="prompt-chip"
-          data-prompt="Tell me about FoodScan AI, the dietary scanner app for Jain, Vegan, and Celiac travelers live on Google Play.">
-          <span>✈️ FoodScan AI App</span>
+          data-prompt="What are his key enterprise company projects and platform replatforming initiatives at Citicorp?">
+          <span>🏢 Citicorp Enterprise Projects</span>
         </button>
         <button type="button" class="prompt-chip"
-          data-prompt="Tell me about castserv, the stateless onomastic intelligence and cultural lineage engine.">
-          <span>🇮🇳 castserv Onomastic AI</span>
+          data-prompt="How did Ravindra architect zero-downtime micro-frontends and deliver 50% load-time improvements on Citi InView?">
+          <span>⚡ Citi InView Micro-Frontends</span>
         </button>
         <button type="button" class="prompt-chip"
           data-prompt="Explain EdgeNonce and how it enables dynamic CSP nonces at the network edge without breaking CDN caching.">
@@ -1007,24 +1010,16 @@
       </div>
     </section>
 
-    <!-- ── Featured Projects & Innovations ── -->
-    <section class="section" id="projects" aria-labelledby="projects-title">
+    <!-- ── Enterprise & Company Projects ── -->
+    <section class="section" id="enterprise-projects" aria-labelledby="enterprise-projects-title">
       <div class="section-header">
-        <h2 id="projects-title" class="section-title">
+        <h2 id="enterprise-projects-title" class="section-title">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polygon
-              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
-            </polygon>
+            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+            <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
           </svg>
-          Enterprise Projects &amp; Featured Innovations
+          Enterprise &amp; Company Projects
         </h2>
-        <a href="/tools" class="section-action-link" title="Explore all Enterprise Developer Tools &amp; Utilities">
-          <span>View More Tools</span>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="5" y1="12" x2="19" y2="12"></line>
-            <polyline points="12 5 19 12 12 19"></polyline>
-          </svg>
-        </a>
       </div>
 
       <div class="projects-grid">
@@ -1089,6 +1084,30 @@
             </div>
           </footer>
         </article>
+      </div>
+    </section>
+
+    <!-- ── Personal & Open-Source Projects ── -->
+    <section class="section" id="personal-projects" aria-labelledby="personal-projects-title">
+      <div class="section-header">
+        <h2 id="personal-projects-title" class="section-title">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon
+              points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+            </polygon>
+          </svg>
+          Personal &amp; Open-Source Projects
+        </h2>
+        <a href="/tools" class="section-action-link" title="Explore all Enterprise Developer Tools &amp; Utilities">
+          <span>Explore All Developer Tools &rarr;</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+
+      <div class="projects-grid">
 
         <!-- a11ysis -->
         <article class="project-card">
@@ -1127,119 +1146,6 @@
               <span class="badge">WCAG 2.1 &amp; 2.2 (AAA)</span>
               <span class="badge">Zero Data Retention</span>
               <span class="badge">Section 508 &amp; EN 301 549</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- castserv 🇮🇳 -->
-        <article class="project-card">
-          <header class="project-header">
-            <div>
-              <h3 class="project-title">castserv 🇮🇳 <span class="project-subtitle">&bull; Stateless Onomastic Intelligence &amp; Cultural Lineage Engine</span></h3>
-              <div class="project-category-role">Python 3.12 &bull; Astral uv &bull; Pyodide Wasm &bull; Cloudflare Workers Edge &bull; 5-Tier Cache</div>
-            </div>
-            <div class="project-header-actions">
-              <span class="project-badge">Edge AI Live</span>
-              <a href="https://castserv.lets.gen.in" target="_blank"
-                rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                <span>Launch castserv</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </header>
-          <ul class="project-bullets">
-            <li><strong>Decoding Indian Heritage with Mathematical Precision:</strong> Names in India carry centuries of migration, linguistic roots, and regional history. Surnames alone don't tell the whole story. castserv is a stateless onomastic intelligence service built to decode cultural lineage with scientific rigor.</li>
-            <li><strong>Multi-Dimensional Analysis:</strong> Concurrently analyzes First Name, Patronymic/Husband Name, and Clan Surname to compute granular probability distributions across 7 religious and cultural traditions with regional demographic mapping.</li>
-            <li><strong>Blazing Fast 5-Tier Cache Pipeline:</strong> Ultra-low latency pipeline delivering &lt;0.5ms lookups across 330+ Cloudflare global edge locations.</li>
-            <li><strong>Zero Persistence by Design:</strong> In-memory streaming only. No personal queries, names, or IP addresses are ever stored, logged, or retained.</li>
-            <li><strong>Enterprise Spreadsheet Ready:</strong> Integrates directly with Microsoft Excel &amp; Google Sheets via custom <code>=IndiaCastServ()</code> formula functions (<a href="https://castserv.lets.gen.in" target="_blank" rel="noopener noreferrer" class="project-doc-link">Try Live castserv Engine &rarr;</a>).</li>
-          </ul>
-          <footer class="project-footer">
-            <div class="project-tags">
-              <span class="badge badge-ai">Onomastic AI</span>
-              <span class="badge badge-code">Python 3.12</span>
-              <span class="badge">Pyodide Wasm</span>
-              <span class="badge badge-security">Zero Persistence</span>
-              <span class="badge">Cloudflare Workers Edge</span>
-              <span class="badge">&lt;0.5ms Latency</span>
-              <span class="badge">Excel &amp; Sheets Ready</span>
-            </div>
-          </footer>
-        </article>
-
-        <!-- FoodScan AI -->
-        <article class="project-card">
-          <header class="project-header">
-            <div>
-              <h3 class="project-title">FoodScan AI <span class="project-subtitle">&bull; AI Dietary Scanner &amp;
-                  Multilingual Label Decoder</span></h3>
-              <div class="project-category-role">Android (Google Play Store) &bull; Multilingual OCR &bull; Barcode
-                Engine &bull; Deterministic Dietary Safeguards</div>
-            </div>
-            <div class="project-header-actions">
-              <span class="project-badge">Google Play Live</span>
-              <a href="https://play.google.com/store/apps/details?id=in.gen.lets.foodscan" target="_blank"
-                rel="noopener noreferrer" class="btn btn-sm btn-primary">
-                <span>Google Play</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-              <a href="https://foodscan.lets.gen.in/packaging-marks" target="_blank" rel="noopener noreferrer"
-                class="btn btn-sm">
-                <span>Packaging Marks Guide</span>
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </header>
-          <ul class="project-bullets">
-            <li><strong>The Global Travel Dietary Dilemma:</strong> In India, grocery shoppers spot food suitability in
-              0.5 seconds via the mandatory Green Dot. In Western supermarkets and international airports (London,
-              Frankfurt, Paris, Tokyo), zero dietary dots exist. Deceptive European recycling marks (e.g.,
-              Germany&rsquo;s <em>Der Gr&uuml;ne Punkt</em> on meat and pork snacks) and microscopic foreign-language
-              labels conceal animal gelatins, rennet, carmine (E120), or hidden wheat thickeners.</li>
-            <li><strong>Dual Barcode &amp; Multilingual OCR:</strong> Instant camera scan of foreign food packages or
-              barcodes provides a complete dietary breakdown in <strong>under 1 second</strong> &mdash; translating
-              microscopic French, German, or Japanese ingredients without slow cloud round-trips.</li>
-            <li><strong>Deterministic Dietary Safeguards:</strong>
-              <br>&bull; <em>Jain Ahimsa:</em> Rigorously flags root vegetables (potatoes, onions, garlic, beets,
-              carrots), honey, and animal gelatins.
-              <br>&bull; <em>100% Pure Veg &amp; Vegan:</em> Immediately detects hidden animal rennet in cheese, beef
-              tallow, carmine dye (E120), shellac, and animal-derived E471 emulsifiers.
-              <br>&bull; <em>Celiac Gluten-Free (&lt;20 ppm):</em> Cross-checks wheat, barley, rye, malt, and
-              cross-contamination disclaimers.
-              <br>&bull; <em>Major Allergen Alerts:</em> Real-time safety notifications for peanuts, tree nuts,
-              dairy/milk, soy, eggs, and sesame seeds.
-            </li>
-            <li><strong>Chemical E-Number Decoder:</strong> Automatically demystifies confusing European additive codes
-              (E-numbers) into plain English with deterministic plant vs. animal origin classification.</li>
-            <li><strong>Traveler Edge Architecture:</strong> High-performance edge processing designed to operate
-              reliably in low-reception airport departure gates and underground grocery stores (<a
-                href="https://play.google.com/store/apps/details?id=in.gen.lets.foodscan" target="_blank"
-                rel="noopener noreferrer" class="project-doc-link">Download FoodScan AI on Google Play &rarr;</a> | <a
-                href="https://foodscan.lets.gen.in/packaging-marks" target="_blank" rel="noopener noreferrer"
-                class="project-doc-link">Global Packaging Marks Guide &rarr;</a>).</li>
-          </ul>
-          <footer class="project-footer">
-            <div class="project-tags">
-              <span class="badge badge-ai">Multilingual OCR</span>
-              <span class="badge badge-code">Barcode Engine</span>
-              <span class="badge">Google Play Store</span>
-              <span class="badge badge-security">Deterministic Safeguards</span>
-              <span class="badge">Jain Ahimsa</span>
-              <span class="badge">Celiac Gluten-Free (&lt;20 ppm)</span>
-              <span class="badge">E-Number Decoder</span>
-              <span class="badge">Edge Processing</span>
             </div>
           </footer>
         </article>
@@ -1678,8 +1584,7 @@
             <p><strong>Hello! I am Ravindra's Executive AI Copilot.</strong></p>
             <p>I can answer inquiries regarding Ravindra's 20+ years of engineering leadership (including 13+ years in
               enterprise BFSI at Citicorp),
-              his unified Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, FoodScan AI mobile
-              scanner on Google Play, EdgeNonce CSP streaming engine, StateGuard.js DOM security, or evaluate alignment
+              his flagship enterprise company projects (such as the Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, Citi InView Micro-Frontends, and Alerts engine), EdgeNonce CSP streaming, StateGuard.js DOM security, or evaluate alignment
               with your open requisition.</p>
           </div>
           <div class="ai-message-meta">
@@ -1692,12 +1597,9 @@
         <button type="button" class="ai-drawer-chip"
           data-prompt="Why hire Ravindra as VP / Principal Frontend Architect?">🌟 Why Hire?</button>
         <button type="button" class="ai-drawer-chip"
+          data-prompt="What are his key enterprise company projects and platform replatforming initiatives at Citicorp?">🏢 Enterprise Projects</button>
+        <button type="button" class="ai-drawer-chip"
           data-prompt="What is a11ysis and how does its triple-engine consensus architecture solve accessibility audit discrepancies?">🎯 a11ysis Scanner</button>
-        <button type="button" class="ai-drawer-chip"
-          data-prompt="Tell me about FoodScan AI on Google Play and how it solves foreign food label anxiety.">✈️
-          FoodScan AI</button>
-        <button type="button" class="ai-drawer-chip"
-          data-prompt="What is castserv and how does it decode Indian cultural lineage?">🇮🇳 castserv</button>
         <button type="button" class="ai-drawer-chip"
           data-prompt="Explain his unified Non-AEM to AEM migration AI agent working with a custom VS Code extension.">🤖
           AEM Agent &amp; VS Code</button>
@@ -1757,7 +1659,7 @@
   </section>
 
   <!-- App Script -->
-  <script src="app.js?v=20261028-v1" defer></script>
+  <script src="app.js?v=20261028-v3" defer></script>
 </body>
 
 </html>
