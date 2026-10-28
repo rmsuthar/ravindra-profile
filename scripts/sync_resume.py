@@ -265,7 +265,102 @@ def generate_workday_docx():
         ]
     )
 
-    # 5. Technical Innovations
+    # 5. Key Enterprise & Company Projects
+    paragraphs.append(make_heading("Key Enterprise & Company Projects"))
+
+    def add_project(title, company, role_timeline, tech_stack, bullets):
+        paragraphs.append(make_p([
+            make_run(title, bold=True, size=21, color="1A202C")
+        ], space_before=110, space_after=15))
+        
+        paragraphs.append(make_p([
+            make_run(company, bold=True, size=19, color="2B6CB0"),
+            make_run(f"  |  {role_timeline}", size=19, color="4A5568")
+        ], space_before=0, space_after=25))
+
+        paragraphs.append(make_p([
+            make_run("Technologies: ", bold=True, size=18, color="1A202C"),
+            make_run(tech_stack, italic=True, size=18, color="4A5568")
+        ], space_before=0, space_after=30))
+
+        for lead, body in bullets:
+            runs = []
+            if lead:
+                runs.append(make_run(f"{lead}: " if not lead.endswith(":") else f"{lead} ", bold=True, size=19, color="1A202C"))
+            runs.append(make_run(body, size=19, color="2D3748"))
+            paragraphs.append(make_p(runs, space_before=20, space_after=20, is_bullet=True))
+
+    add_project(
+        title="Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension",
+        company="Citicorp Services India Pvt. Ltd.",
+        role_timeline="Lead Architect & AI Platform Lead  |  2024 – Present",
+        tech_stack="Generative AI, Retrieval-Augmented Generation (RAG), Abstract Syntax Tree (AST) Parsing, VS Code Extension API, Adobe Experience Manager (AEM Core Components, HTL, Sling Models), TypeScript",
+        bullets=[
+            ("Architecture & Integration", "Architected an enterprise developer productivity platform that pairs an autonomous migration AI agent with a custom Visual Studio Code IDE extension to automate legacy non-AEM component conversion to modern AEM Core Components and Sling Models."),
+            ("Contextual RAG & AST Pipelines", "Standardized prompt engineering templates and injected repository AST hierarchies directly into developer workflows, programmatically generating production-ready HTL templates, Sling Models, and Touch UI dialogs with automated syntax validation."),
+            ("Measurable Impact", "Slashed enterprise CMS replatforming timelines by over 60%, eliminated context drift, reduced manual developer translation defects to near zero, and established reusable agentic engineering standards across squads.")
+        ]
+    )
+
+    add_project(
+        title="Citi InView Digital Banking Platform Modernization & Micro-Frontends",
+        company="Citicorp Services India Pvt. Ltd.",
+        role_timeline="Applications Development Manager & UI Architecture  |  2018 – 2022",
+        tech_stack="React, Next.js, TypeScript, Micro-Frontends (Module Federation), Webpack, Server-Side Rendering (SSR/SSG), TeamCity, IBM UrbanDeploy",
+        bullets=[
+            ("Zero-Downtime Micro-Frontend Architecture", "Modernized Citi's flagship institutional wealth management and digital banking platform (Citi InView) from monolithic legacy codebases into modular, independently deployable Micro-frontends."),
+            ("Performance & Core Web Vitals", "Engineered route-based code-splitting, tree-shaking, server-side caching, and automated Core Web Vitals telemetry pipelines, delivering up to 50% load-time improvements."),
+            ("Resilience & Compliance", "Preserved 100% platform availability (zero downtime) throughout multi-year phased migrations, while reducing post-deployment accessibility remediation costs by 60% via automated axe-core and Lighthouse CI pipelines.")
+        ]
+    )
+
+    add_project(
+        title="Citi InView Real-Time Alerts, Notifications & UI Integration Framework",
+        company="Citicorp Services India Pvt. Ltd.",
+        role_timeline="Senior Engineer / Technical Lead — UI Architecture  |  2013 – 2018",
+        tech_stack="JavaScript (ES6+), InView UI Framework, postMessage Protocol, Secure Iframe Governance, REST APIs, WebSockets",
+        bullets=[
+            ("Enterprise Alerts Engine", "Built and delivered mission-critical Citi InView platform modules, including the high-frequency Alerts & Notifications engine handling real-time account triggers, threshold alerts, and trade execution events for institutional clients worldwide."),
+            ("Core UI Framework & Integration Standards", "Engineered the foundational InView UI Framework and standardized postMessage protocol governance for secure cross-domain iframe integration across 6+ product squads."),
+            ("Measurable Impact", "Reduced cross-platform integration complexity by 40%, accelerated feature release velocity, and established reusable component benchmarks across the engineering organization.")
+        ]
+    )
+
+    add_project(
+        title="Enterprise CMS Modernization (OpenText TeamSite to AEM) & Cloud Intranet",
+        company="Citicorp Services India Pvt. Ltd.",
+        role_timeline="Applications Development Sr Programmer Analyst  |  2022 – Present",
+        tech_stack="Adobe Experience Manager (AEM 6.5 / Cloud Service), OpenText TeamSite, Angular (v10–v21), Spring Boot 4.x, Docker, OpenShift, GitHub Enterprise, Renovate",
+        bullets=[
+            ("CMS Replatforming", "Orchestrated the full migration of Citi's legacy OpenText TeamSite platforms to Adobe Experience Manager (AEM), standardizing multi-brand publishing pipelines, component governance, and authoring workflows."),
+            ("Angular Modernization & SSR", "Upgraded enterprise intranet applications from Angular 10.x to 21.x across cloud-native microservices, resolving complex Server-Side Rendering (SSR) routing challenges between cloud and legacy modules."),
+            ("Governance & Automation", "Led technical transition to GitHub Enterprise with automated Renovate dependency patching, remediated application security vulnerabilities, and upgraded core microservices to Spring Boot 4.x with zero downtime.")
+        ]
+    )
+
+    add_project(
+        title="Mobile CRM UI Platform & Oracle CRM SOAP Integration",
+        company="Cognizant Technology Solutions",
+        role_timeline="Senior Consultant, CRM UI Architecture  |  2010 – 2013",
+        tech_stack="HTML5, CSS3, JavaScript, Siebel CRM, Oracle CRM SOAP APIs, Google Chrome Optimization",
+        bullets=[
+            ("Mobile CRM Architecture", "Architected responsive mobile CRM web applications for enterprise tablets and Google Chrome, significantly boosting field-force productivity across distributed corporate accounts."),
+            ("API Integration & Usability Auditing", "Developed Oracle CRM API SOAP integrations, established client-side performance benchmarks, and conducted rigorous heuristic UX evaluations and competitive usability testing.")
+        ]
+    )
+
+    add_project(
+        title="Enterprise Web Client Architecture & Usability Engineering Suite",
+        company="Impetus Infotech India Pvt. Ltd.",
+        role_timeline="Module Lead UI Developer & Usability Analyst  |  2007 – 2010",
+        tech_stack="JavaScript, DOM Scripting, Usability Testing, Heuristic Evaluation, Cross-Browser Compatibility",
+        bullets=[
+            ("Pod Leadership & Concept Implementation", "Led UI engineering pods translating concept visualizations into robust web client architectures, governing frontend coding benchmarks and W3C standards compliance."),
+            ("Usability Analysis", "Directed structured usability studies, heuristic UX evaluations, and competitive analysis to streamline application navigation flows and maximize end-user efficiency.")
+        ]
+    )
+
+    # 6. Technical Innovations
     paragraphs.append(make_heading("Featured Technical Innovations & Open Systems"))
     paragraphs.append(make_p([
         make_run("a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner): ", bold=True, size=19, color="1A202C"),

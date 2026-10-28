@@ -8,6 +8,13 @@ You represent Ravindra with executive clarity, architectural authority, and prec
 
 Verified Profile & Career Background:
 - Current Role: Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd. (Pune, India; May 2013 – Present, 13+ years at Citi, 20+ years total experience).
+- Key Enterprise & Company Projects:
+  - Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension (Citicorp, 2024–Present): Enterprise developer productivity platform pairing an autonomous migration AI agent with a custom VS Code extension. Uses RAG and AST transformation scripts to migrate legacy component trees into idiomatic AEM Core Components and Sling models, slashing cycle times by over 60%.
+  - Citi InView Digital Banking Platform Modernization & Micro-Frontends (Citicorp, 2018–2022): Micro-frontend architecture via Module Federation for flagship institutional wealth platform, delivering up to 50% application load-time gains and 100% platform availability (zero downtime).
+  - Citi InView Real-Time Alerts, Notifications & UI Integration Framework (Citicorp, 2013–2018): High-frequency institutional alerts engine, InView core UI framework, and postMessage cross-domain iframe standards cutting integration complexity by 40% across 6+ squads.
+  - Enterprise CMS Modernization & Cloud Intranet (Citicorp, 2022–Present): Full OpenText TeamSite to Adobe Experience Manager (AEM) migration, Angular 10–21 upgrades with SSR routing, Spring Boot 4.x upgrades, and GitHub Enterprise migration with Renovate.
+  - Mobile CRM UI Platform & Oracle CRM SOAP Integration (Cognizant, 2010–2013): Mobile CRM web applications for tablets/Chrome integrating Siebel CRM with Oracle CRM SOAP APIs.
+  - Enterprise Web Client Architecture & Usability Engineering (Impetus, 2007–2010): Web client pod leadership, usability studies, and UX heuristic evaluations.
 - Citicorp AI Platform & Platform Modernization:
   - Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension: Autonomous GitHub migration agent paired with custom VS Code extension, utilizing offline local vector store RAG and AST transformation scripts to migrate legacy OpenText TeamSite and intranet components to Adobe Experience Manager (AEM) Core Components, slashing cycle times by 60%+.
   - Enterprise GenAI & Tooling: Integrated enterprise Gemini LLMs with offline local vector store RAG; created developer acceleration tooling including automated AEM layout analysis and Adobe Experience Cloud release governance pipelines; automated code remediation with scheduled AI agent pipelines.
@@ -49,6 +56,40 @@ const KNOWLEDGE_FALLBACKS = [
 - **RAG & Agentic Execution**: The agent uses Retrieval-Augmented Generation (RAG) to cross-reference legacy non-AEM component markups and behaviors with modern Adobe Experience Manager (AEM) Core Component schemas.
 - **AST Transformation Scripts**: Custom Abstract Syntax Tree (AST) scripts parse and synthesize production-grade **AEM HTL templates, Sling Models, and Touch UI dialog XMLs** with automated validation.
 - **Business Impact**: Slashed enterprise CMS replatforming timelines by **over 60%** while ensuring 100% template fidelity and adherence to AEM best practices.`
+  },
+  {
+    triggers: ['projects', 'company projects', 'enterprise projects', 'citibank projects', 'citi projects', 'inview', 'work projects'],
+    answer: `**Key Enterprise & Company Projects Led by Ravindra:**
+
+1. **Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension** (Citicorp, 2024–Present):
+   - **Role**: Senior Principal Architect & AI Platform Lead
+   - **Stack**: Generative AI, Retrieval-Augmented Generation (RAG), AST Parsing, VS Code Extension API, Adobe Experience Manager (AEM Core Components, HTL, Sling Models), TypeScript.
+   - **Impact**: Slashed enterprise CMS replatforming cycle times by **>60%**, eliminating context drift and reducing developer manual translation defects to near zero.
+
+2. **Citi InView Institutional Digital Banking Platform & Micro-Frontends** (Citicorp, 2018–2022):
+   - **Role**: Applications Development Manager & Lead Architect
+   - **Stack**: React, Next.js, TypeScript, Micro-Frontends (Module Federation), Webpack, Server-Side Rendering (SSR/SSG), TeamCity, IBM UrbanDeploy.
+   - **Impact**: Delivered up to **50% application load-time improvements**, preserved 100% platform availability (zero downtime) during phased multi-year migration, and cut accessibility remediation spend by 60%.
+
+3. **Citi InView Real-Time Alerts, Notifications & UI Integration Framework** (Citicorp, 2013–2018):
+   - **Role**: Senior Engineer / Technical Lead — UI Architecture
+   - **Stack**: JavaScript (ES6+), InView UI Framework, postMessage Protocol, Secure Iframe Governance, REST APIs.
+   - **Impact**: Built high-frequency institutional alerts engine; established iframe integration and postMessage standards across 6+ squads, cutting cross-app integration complexity by **40%**.
+
+4. **Enterprise CMS Modernization & Cloud Intranet** (Citicorp, 2022–Present):
+   - **Role**: Applications Development Sr Programmer Analyst
+   - **Stack**: Adobe AEM 6.5 / Cloud Service, OpenText TeamSite, Angular (v10–v21), Spring Boot 4.x, Docker, OpenShift, GitHub Enterprise, Renovate.
+   - **Impact**: Retired legacy TeamSite with zero downtime, upgraded Angular microservices with SSR routing, and migrated to GitHub Enterprise with automated Renovate patching.
+
+5. **Mobile CRM UI Platform & Oracle CRM SOAP Integration** (Cognizant, 2010–2013):
+   - **Role**: Senior Consultant, CRM UI Architecture
+   - **Stack**: HTML5, CSS3, JavaScript, Siebel CRM, Oracle CRM SOAP APIs, Chrome Optimization.
+   - **Impact**: Delivered mobile CRM frontends for tablets/Chrome, boosting field-force productivity.
+
+6. **Enterprise Web Client Architecture & Usability Engineering** (Impetus, 2007–2010):
+   - **Role**: Module Lead UI Developer & Usability Analyst
+   - **Stack**: JavaScript, DOM Scripting, Usability Testing, Heuristic Evaluation.
+   - **Impact**: Led UI pods translating concept visualizations into robust web clients; conducted formal usability studies.`
   },
   {
     triggers: ['clock', 'table clock', 'desk clock', 'calendar widget', 'widget', 'upcycling', 'battery', 'wake lock', 'oled'],
@@ -830,6 +871,10 @@ Guidelines:
         url.pathname = '/blog.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/cv') {
+        url.pathname = '/cv.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -839,6 +884,7 @@ Guidelines:
         contentType.includes('text/html') ||
         url.pathname === '/' ||
         url.pathname === '/resume' ||
+        url.pathname === '/cv' ||
         url.pathname === '/tools' ||
         url.pathname === '/blog' ||
         url.pathname === '/mfe-architecture' ||

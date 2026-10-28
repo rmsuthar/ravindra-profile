@@ -98,6 +98,186 @@ Architected an enterprise-grade AI developer productivity platform at Citicorp t
 
 
 --------------------------------------------------------------------------------
+PROJECT 2B: Citi InView Digital Banking Platform & Micro-Frontend Modernization
+--------------------------------------------------------------------------------
+[Project Name]
+Citi InView Digital Banking Platform & Micro-Frontend Modernization
+
+[Associated with]
+Citicorp Services India Pvt. Ltd.
+
+[Currently working on this project]
+No (Unchecked)
+
+[Start Date]
+January 2018
+
+[End Date]
+December 2022
+
+[Project URL]
+https://ravindra.lets.gen.in/
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Micro-frontends
+React.js
+Module Federation
+Web Performance
+TypeScript
+
+[Description - Copy & Paste below]
+Led the frontend architecture and multi-squad modernization of Citi InView — Citi's flagship institutional wealth management and digital banking platform — migrating complex monolithic legacy codebases into modular, independently deployable Micro-frontends.
+
+• Zero-Downtime Delivery: Modernized platform architectures across multiple product squads using Webpack Module Federation and enterprise core SDKs, preserving 100% platform availability throughout multi-year phased migrations.
+
+• Web Performance Engineering: Engineered route-based code-splitting, tree-shaking, server-side caching, and automated Core Web Vitals telemetry pipelines, cutting page load latency by up to 50%.
+
+• Enterprise Accessibility Governance: Operationalized axe-core and Lighthouse CI inside CI/CD pipelines paired with NVDA screen-reader audits, reducing post-release WCAG 2.1/2.2 AA and Section 508 remediation costs by 60%.
+
+
+--------------------------------------------------------------------------------
+PROJECT 2C: Citi InView Real-Time Alerts, Notifications & UI Integration Framework
+--------------------------------------------------------------------------------
+[Project Name]
+Citi InView Real-Time Alerts, Notifications & UI Integration Framework
+
+[Associated with]
+Citicorp Services India Pvt. Ltd.
+
+[Currently working on this project]
+No (Unchecked)
+
+[Start Date]
+May 2013
+
+[End Date]
+December 2018
+
+[Project URL]
+https://ravindra.lets.gen.in/
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Front-End Development
+JavaScript
+Software Architecture
+Application Programming Interfaces (API)
+Banking Technology
+
+[Description - Copy & Paste below]
+Built and delivered mission-critical Citi InView platform modules, including the high-frequency Alerts & Notifications engine and the foundational InView UI Framework.
+
+• Real-Time Alerts Engine: Engineered real-time account triggers, threshold alerts, and trade execution notifications for global institutional banking clients.
+
+• Core UI Framework: Designed foundational UI component architecture, rendering performance patterns, and standardized iframe/API integration protocols adopted across downstream platform modules.
+
+• Cross-Domain Integration: Established postMessage protocol governance and integration standards across 6+ product squads, reducing cross-app integration complexity by 40%.
+
+
+--------------------------------------------------------------------------------
+PROJECT 2D: Enterprise CMS Modernization (OpenText TeamSite to AEM) & Cloud Intranet
+--------------------------------------------------------------------------------
+[Project Name]
+Enterprise CMS Modernization (OpenText TeamSite to AEM) & Cloud Intranet
+
+[Associated with]
+Citicorp Services India Pvt. Ltd.
+
+[Currently working on this project]
+Yes (Checked)
+
+[Start Date]
+January 2022
+
+[End Date]
+Present
+
+[Project URL]
+https://ravindra.lets.gen.in/
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Adobe Experience Manager (AEM)
+Angular
+Spring Boot
+Continuous Integration and Continuous Delivery (CI/CD)
+Enterprise Architecture
+
+[Description - Copy & Paste below]
+Orchestrated the enterprise-wide CMS modernization from legacy OpenText TeamSite to Adobe Experience Manager (AEM), standardizing multi-brand publishing pipelines, component governance, and authoring workflows across institutional platforms.
+
+• Intranet & Angular Modernization: Upgraded enterprise intranet applications from Angular 10.x to 21.x across cloud-native microservices, resolving complex Server-Side Rendering (SSR) routing challenges between cloud and legacy modules.
+
+• GitHub Enterprise Migration: Led technical ownership of the GHE migration initiative, integrating Renovate for automated dependency patching and optimizing CI/CD delivery pipelines with zero downtime.
+
+• Security & Vulnerability Remediation: Remediated static analysis findings across core microservices, including Spring Boot 3.x to 4.x upgrades and custom multimedia player fixes for WCAG 2.2 AA compliance.
+
+
+--------------------------------------------------------------------------------
+PROJECT 2E: Mobile CRM UI Platform & Oracle CRM SOAP Integration
+--------------------------------------------------------------------------------
+[Project Name]
+Mobile CRM UI Platform & Oracle CRM SOAP Integration
+
+[Associated with]
+Cognizant Technology Solutions
+
+[Currently working on this project]
+No (Unchecked)
+
+[Start Date]
+December 2010
+
+[End Date]
+February 2013
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+Customer Relationship Management (CRM)
+HTML5
+Cascading Style Sheets (CSS)
+Simple Object Access Protocol (SOAP)
+Usability Testing
+
+[Description - Copy & Paste below]
+Architected mobile CRM frontends with Siebel CRM targeting Google Chrome and enterprise tablets, boosting field-force productivity across distributed enterprise client accounts.
+
+• Mobile Architecture: Engineered responsive HTML5/CSS3 client interfaces for corporate tablets and mobile browsers.
+
+• SOAP API Integration: Integrated Oracle CRM SOAP APIs, established client-side performance benchmarks, and conducted usability testing and heuristic UX evaluations.
+
+
+--------------------------------------------------------------------------------
+PROJECT 2F: Enterprise Web Client Architecture & Usability Engineering Suite
+--------------------------------------------------------------------------------
+[Project Name]
+Enterprise Web Client Architecture & Usability Engineering Suite
+
+[Associated with]
+Impetus Infotech India Pvt. Ltd.
+
+[Currently working on this project]
+No (Unchecked)
+
+[Start Date]
+June 2007
+
+[End Date]
+December 2010
+
+[Top 5 Skills - Copy & paste each one into LinkedIn]
+User Experience (UX)
+JavaScript
+Web Standards
+Usability Engineering
+Front-End Development
+
+[Description - Copy & Paste below]
+Led UI engineering pods for enterprise web clients, translating concept visualizations into robust technical implementations and governing client-side architecture standards.
+
+• Usability Analysis: Directed comprehensive usability studies, competitive benchmarking, and heuristic/expert UX evaluations to streamline application workflows.
+
+• Engineering Governance: Interacted with key organizational leads to steer collaborative technical discussions, architectural decisions, and delivery outcomes.
+
+
+--------------------------------------------------------------------------------
 PROJECT 3: EdgeNonce (Zero-Latency Dynamic CSP Nonce Streaming Engine)
 --------------------------------------------------------------------------------
 [Project Name]

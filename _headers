@@ -23,6 +23,11 @@
   CDN-Cache-Control: no-cache, must-revalidate
   Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
 
+/cv
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 /tools
   Cache-Control: public, max-age=0, must-revalidate, no-cache
   CDN-Cache-Control: no-cache, must-revalidate
