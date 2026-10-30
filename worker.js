@@ -68,7 +68,7 @@ const KNOWLEDGE_FALLBACKS = [
    - **Impact**: Slashed enterprise CMS replatforming cycle times by **>60%**, eliminating context drift and reducing developer manual translation defects to near zero.
 
 2. **Citi InView Institutional Digital Banking Platform & Micro-Frontends** (Citicorp, 2018–2022):
-   - **Role**: Applications Development Manager & Lead Architect
+   - **Role**: Senior Lead Engineer — Frontend Architecture (Corporate: Applications Development Manager)
    - **Stack**: React, Next.js, TypeScript, Micro-Frontends (Module Federation), Webpack, Server-Side Rendering (SSR/SSG), TeamCity, IBM UrbanDeploy.
    - **Impact**: Delivered up to **50% application load-time improvements**, preserved 100% platform availability (zero downtime) during phased multi-year migration, and cut accessibility remediation spend by 60%.
 
@@ -78,7 +78,7 @@ const KNOWLEDGE_FALLBACKS = [
    - **Impact**: Built high-frequency institutional alerts engine; established iframe integration and postMessage standards across 6+ squads, cutting cross-app integration complexity by **40%**.
 
 4. **Enterprise CMS Modernization & Cloud Intranet** (Citicorp, 2022–Present):
-   - **Role**: Applications Development Sr Programmer Analyst
+   - **Role**: Senior Principal Architect & AI Platform Lead (Corporate: Applications Development Sr Programmer Analyst)
    - **Stack**: Adobe AEM 6.5 / Cloud Service, OpenText TeamSite, Angular (v10–v21), Spring Boot 4.x, Docker, OpenShift, GitHub Enterprise, Renovate.
    - **Impact**: Retired legacy TeamSite with zero downtime, upgraded Angular microservices with SSR routing, and migrated to GitHub Enterprise with automated Renovate patching.
 
@@ -237,13 +237,13 @@ const KNOWLEDGE_FALLBACKS = [
     triggers: ['experience', 'citi', 'citicorp', 'career', 'background', 'tenure', 'timeline', 'current role', 'history', 'impetus', 'gatesix', 'pinnacle', 'cognizant'],
     answer: `**Professional Experience & Career Milestones:**
 
-- **Applications Development Sr Programmer Analyst** — Citicorp Services India Pvt. Ltd. (2022 – Present):
+- **Senior Principal Architect & AI Platform Lead** (Corporate: Applications Development Sr Programmer Analyst) — Citicorp Services India Pvt. Ltd. (2022 – Present):
   - Leads enterprise CMS modernisation, orchestrating full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM).
   - Architected Citibank's unified Non-AEM to AEM Migration AI Agent and VS Code Extension (60%+ faster delivery).
   - Pioneered enterprise GenAI adoption (Devin AI, enterprise Gemini LLMs, developer productivity tools), saving ~35% developer effort.
   - Modernized Angular (v10–v21) with SSR routing, Spring Boot 3.x to 4.x, and led GitHub Enterprise migration with Renovate.
-  - Leads cross-functional engineering squads (~12 engineers) maintaining under 8% attrition.
-- **Applications Development Manager** — Citicorp Services India Pvt. Ltd. (2018 – 2022):
+  - Leads cross-functional engineering squads (~12 engineers) with under 8% attrition, influencing 150+ developers across 6+ business lines.
+- **Senior Lead Engineer — Frontend Architecture** (Corporate: Applications Development Manager) — Citicorp Services India Pvt. Ltd. (2018 – 2022):
   - Led InView core framework development and platform performance (team of 6, up to 50% load-time gains).
   - Owned end-to-end project delivery from kickoff to production with business stakeholders.
   - Engineered CI/CD pipelines with TeamCity and IBM UrbanDeploy; contributed full-stack Java solutions.

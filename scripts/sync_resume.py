@@ -166,7 +166,7 @@ def generate_workday_docx():
 
     # Citicorp — Role 1: Senior Principal Architect
     add_job(
-        title="Applications Development Sr Programmer Analyst",
+        title="Senior Principal Architect & AI Platform Lead (Corporate: Applications Development Sr Programmer Analyst)",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="2022 – Present",
@@ -174,7 +174,7 @@ def generate_workday_docx():
             ("Led enterprise CMS modernisation", "Orchestrated the full migration of Citi's OpenText TeamSite to Adobe Experience Manager (AEM), standardising content authoring workflows, component governance, and multi-brand publishing pipelines across institutional platforms."),
             ("Architected Autonomous Non-AEM to AEM Migration AI Agent & Integrated VS Code Extension", "Engineered a unified developer productivity platform where an autonomous AI migration agent operates directly within a custom VS Code extension — combining Retrieval-Augmented Generation (RAG), automated prompt engineering templates, and custom AST parsing scripts to migrate legacy non-AEM component trees into idiomatic Adobe Experience Manager (AEM) Core Components, HTL templates, and Sling models, slashing migration cycle times by over 60% with automated validation."),
             ("Championed and scaled enterprise-wide adoption of Devin AI and GitHub Copilot", "across squads, saving ~35% developer effort on boilerplate, test scaffolding, and migrations while boosting PR review velocity by 40%."),
-            ("Led cross-functional frontend engineering squads (~12 engineers)", "with sustained under 8% attrition through structured 1-on-1s, technical skill ladders, and internal Communities of Practice."),
+            ("Organizational leadership & cross-functional scale", "Directly led cross-functional frontend engineering squads (~12 engineers) with sustained under 8% attrition; formulated enterprise UI architectures, design tokens, and AI tooling adopted by 150+ engineers across 6+ business lines."),
             ("Executive reporting & governance", "Translated multi-quarter engineering roadmaps into C-suite narratives; managed programme risk, release calendar, vendor relationships, and End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption."),
             ("Enterprise GenAI Architecture & Local Vector RAG", "Architected enterprise Gemini LLM integrations with offline local vector store RAG for secure contextual retrieval within banking network boundaries. Engineered developer acceleration tools including an automated AEM layout analyzer (screenshot-to-component mapping), Adobe Experience Cloud release tracking across Launch, Analytics, and Target, and automated release validation workflows."),
             ("Autonomous Code Remediation & AI Pipelines", "Orchestrated autonomous AI agents (Devin) with scheduled automation pipelines to detect End-of-Vendor-Support (EOVS) components, synthesize automated pull requests, apply framework upgrades, and manage tracking workflows autonomously across institutional banking and CMS applications post-migration."),
@@ -188,7 +188,7 @@ def generate_workday_docx():
 
     # Citicorp — Role 2: Senior Lead
     add_job(
-        title="Applications Development Manager",
+        title="Senior Lead Engineer — Frontend Architecture (Corporate: Applications Development Manager)",
         company="Citicorp Services India Pvt. Ltd.",
         location="Pune, India",
         dates="2018 – 2022",
