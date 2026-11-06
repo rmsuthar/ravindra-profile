@@ -315,11 +315,15 @@ function handleDeepLink() {
         skillsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     }
-  } else if (hash && hash !== '#cv' && hash !== '#portfolio') {
+  } else if (hash && hash.length > 1 && hash !== '#cv' && hash !== '#portfolio') {
     // Standard section anchor jump
-    const targetElement = document.querySelector(hash);
-    if (targetElement) {
-      targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    try {
+      const targetElement = document.querySelector(hash);
+      if (targetElement) {
+        targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    } catch (e) {
+      // Ignore invalid or empty selector hashes like '#'
     }
   }
 }
