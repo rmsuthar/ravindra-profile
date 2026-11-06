@@ -202,6 +202,22 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide](https://ravindra.lets.gen.in/blog#chapter-02)`
   },
   {
+    triggers: ['secure coding', 'security', 'privacy', 'dependency', 'supply chain', 'devsecops', 'trusted types', 'edgenonce', 'stateguard', 'eovs', 'sbom', 'pci-dss', 'gdpr', 'dpdp'],
+    answer: `**Enterprise Secure SDLC: Secure Coding, Privacy & Dependency Governance:**
+
+- **Executive Architecture Overview**: Ravindra governs end-to-end application security, privacy-by-design, and software supply chain governance across enterprise BFSI platforms.
+- **Core Pillars of Secure SDLC**:
+  1. **Client-Side State Integrity (StateGuard.js)**: Enforces runtime property descriptor sealing (\`Object.freeze\`, \`Object.defineProperty\`) and MutationObserver rollback to prevent DevTools tampering with form attributes, transfer amounts, or disabled buttons in banking workflows.
+  2. **Zero-Latency Dynamic CSP Nonces (EdgeNonce)**: Streams cryptographically unique 128-bit nonces at Cloudflare edge via V8 \`HTMLRewriter\` in <1.5ms, maintaining 100% origin CDN/Dispatcher caching while satisfying **PCI-DSS v4.0 Requirement 6.4.3**.
+  3. **Injection Defense & Trusted Types**: W3C Trusted Types policy (\`window.trustedTypes.createPolicy\`) and DOMPurify disallow raw string assignment to \`innerHTML\`, neutralizing DOM-based XSS at the browser engine level.
+  4. **Privacy-by-Design (GDPR & DPDP)**: Automated PII redaction in APM telemetry (Sentry/Datadog) and zero-storage client-side processing using WebAssembly / Web Workers (a11ysis, castserv).
+  5. **Software Supply Chain Governance**: Deterministic lockfiles (\`npm ci --ignore-scripts\`), internal scoped namespace mapping (\`@bank/*\`) against Nexus proxies, and automated CycloneDX SBOM generation.
+  6. **Autonomous AI Migrations for EOVS**: Autonomous coding agents (Devin AI) paired with AST codemods automate framework upgrades for End-of-Vendor-Support dependencies with 60%+ effort reduction.
+- **Read the Comprehensive Whitepaper**:
+  - [Secure Coding, Privacy & Software Supply Chain Governance Whitepaper](https://ravindra.lets.gen.in/secure-development-practices)
+  - [Engineering Journal & Architecture Guide Chapter 10](https://ravindra.lets.gen.in/blog#chapter-10)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -876,6 +892,10 @@ Guidelines:
         url.pathname = '/cv.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/secure-development-practices' || url.pathname === '/secure-coding') {
+        url.pathname = '/secure-development-practices.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -889,6 +909,8 @@ Guidelines:
         url.pathname === '/tools' ||
         url.pathname === '/blog' ||
         url.pathname === '/mfe-architecture' ||
+        url.pathname === '/secure-development-practices' ||
+        url.pathname === '/secure-coding' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')

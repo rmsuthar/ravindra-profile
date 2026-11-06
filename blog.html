@@ -405,6 +405,7 @@
         <li><a href="#chapter-07">07. Zero-Trust Payment UI: Why Global Processors Use Cross-Origin iFrames</a></li>
         <li><a href="#chapter-08">08. Identity Architecture: Why Banks Split Username and Password Screens</a></li>
         <li><a href="#chapter-09">09. The Post-JavaScript Engine Room: Why Frontend Toolchains Migrated to Rust &amp; Go</a></li>
+        <li><a href="#chapter-10">10. Enterprise Secure SDLC: Secure Coding, Privacy &amp; Dependency Governance</a></li>
       </ul>
     </div>
 
@@ -1162,6 +1163,52 @@ export default {
         <span class="badge">V8 Internals &amp; JIT</span>
         <span class="badge">Multi-Core Parallelism</span>
         <span class="badge">Developer Productivity</span>
+      </div>
+    </article>
+
+    <!-- Chapter 10: Enterprise Secure SDLC & Dependency Governance -->
+    <article class="journal-section">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+        <h2 id="chapter-10" style="margin-bottom: 0;">10. Enterprise Secure SDLC: Secure Coding, Privacy &amp; Dependency Governance</h2>
+        <span class="badge badge-security">AppSec &bull; Supply Chain &bull; DevSecOps</span>
+      </div>
+      <p style="font-size: 1.02rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 1.25rem; font-style: italic;">
+        A Principal Architect's field guide to zero-trust client runtimes, privacy-by-design (GDPR/DPDP/PCI-DSS v4.0), dynamic CSP nonces, and automated supply-chain governance.
+      </p>
+
+      <p>
+        In modern web platforms where up to 80% of business logic executes inside client browsers and 90% of deployed dependencies originate from open-source registries, the traditional perimeter defense model has collapsed. Attackers target client-side execution (Magecart, DevTools state tampering, prototype pollution) and software supply-chain poisoning (malicious transitive npm packages, dependency confusion).
+      </p>
+
+      <div class="callout-card">
+        <strong>Comprehensive Deep-Dive Whitepaper:</strong> A dedicated, full-length architectural guide is published at <a href="/secure-development-practices" style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">/secure-development-practices</a>. Below is an executive architectural summary of the core pillars.
+      </div>
+
+      <h3>Core Architectural Pillars</h3>
+      <ul>
+        <li><strong>Trusted Types &amp; Injection Defense:</strong> Eliminating DOM-based XSS via W3C <code>trustedTypes.createPolicy</code> and DOMPurify, completely disallowing raw string assignment to <code>innerHTML</code>.</li>
+        <li><strong>Client State Integrity (The StateGuard Pattern):</strong> Intercepting unauthorized DevTools attribute tampering (e.g. modifying transfer limits or un-disabling action buttons) using property descriptor sealing (<code>Object.freeze</code>) and runtime <code>MutationObserver</code> rollback.</li>
+        <li><strong>Zero-Latency Dynamic CSP Nonces (The EdgeNonce Pattern):</strong> Streaming cryptographically unique 128-bit nonces at Cloudflare edge via V8 <code>HTMLRewriter</code> in under 1.5ms, maintaining 100% origin CDN/Dispatcher caching while satisfying <strong>PCI-DSS v4.0 Requirement 6.4.3</strong>.</li>
+        <li><strong>In-Memory Token Hygiene:</strong> Banning sensitive JWTs from un-sandboxed <code>localStorage</code>; enforcing <code>HttpOnly, Secure, SameSite=Strict</code> partitioned cookies paired with ephemeral in-memory access tokens and Refresh Token Rotation (RTR).</li>
+        <li><strong>Privacy-by-Design &amp; Zero-Storage Architecture:</strong> Automatic PII masking across APM telemetry (Sentry, Datadog), and executing sensitive computations locally via client-side WebAssembly/Web Workers with zero cloud persistence (the a11ysis &amp; castserv paradigm).</li>
+        <li><strong>Software Supply Chain Governance:</strong> Deterministic lockfile verification (<code>npm ci --ignore-scripts</code>), internal scoped namespace mapping (<code>@bank/*</code>) against Nexus proxies, and automated CycloneDX SBOM generation in CI/CD.</li>
+        <li><strong>Autonomous AI Remediations for EOVS:</strong> Leveraging autonomous agents (Devin AI) with custom AST codemods to detect End-of-Vendor-Support dependencies and generate validated framework upgrade PRs, slashing migration effort by over 60%.</li>
+      </ul>
+
+      <p style="margin-top: 1.25rem;">
+        <a href="/secure-development-practices" class="btn btn-sm btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <span>Read Full Secure SDLC Architectural Whitepaper &rarr;</span>
+        </a>
+      </p>
+
+      <div class="tag-strip" style="margin-top: 1.5rem;">
+        <span class="badge badge-security">Secure Coding</span>
+        <span class="badge badge-security">Privacy-by-Design</span>
+        <span class="badge badge-security">PCI-DSS v4.0</span>
+        <span class="badge badge-security">Dynamic CSP Nonces</span>
+        <span class="badge">StateGuard.js</span>
+        <span class="badge">CycloneDX SBOM</span>
+        <span class="badge badge-ai">Autonomous AI Remediation</span>
       </div>
     </article>
 
