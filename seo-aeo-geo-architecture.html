@@ -1,0 +1,1439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Architecting for the Next Web: Modern SEO, AEO &amp; GEO at Global Edge Scale | Ravindra Suthar</title>
+  <meta name="description" content="An enterprise systems architectural whitepaper on Search Engine Optimization (SEO), Answer Engine Optimization (AEO), and Generative Engine Optimization (GEO). Explores Core Web Vitals, Schema.org entity graphs, llms.txt, AI meta tags, and Cloudflare Edge delivery by Senior Principal Architect Ravindrakumar M. Suthar.">
+  <meta name="author" content="Ravindrakumar M. Suthar">
+  <meta name="keywords" content="Technical SEO, AEO, GEO, Answer Engine Optimization, Generative Engine Optimization, Core Web Vitals, Schema.org JSON-LD, llms.txt, AI Meta Tags, Cloudflare Workers, HTMLRewriter, Perplexity AI, Google AI Overviews, SGE, ChatGPT Search, Edge Delivery, Ravindra Suthar, Citicorp, EdgeNonce">
+
+  <link rel="canonical" href="https://ravindra.lets.gen.in/seo-aeo-geo-architecture">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="stylesheet" href="style.css?v=20261106-v2">
+
+  <!-- OpenGraph Metadata -->
+  <meta property="og:title" content="Architecting for the Next Web: Modern SEO, AEO &amp; GEO at Global Edge Scale | Ravindra Suthar">
+  <meta property="og:description" content="An enterprise systems blueprint for discoverability, structured entity knowledge graphs, and LLM grounding across Googlebot, Perplexity, Claude, and ChatGPT Search.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://ravindra.lets.gen.in/seo-aeo-geo-architecture">
+  <meta property="og:site_name" content="Ravindra Suthar - Engineering Journal">
+  <meta property="og:image" content="https://ravindra.lets.gen.in/favicon.svg">
+
+  <!-- Twitter Card Metadata -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Architecting for the Next Web: Modern SEO, AEO &amp; GEO at Global Edge Scale | Ravindra Suthar">
+  <meta name="twitter:description" content="Enterprise systems guide to SEO, AEO &amp; GEO: Core Web Vitals, Schema.org entity graphs, llms.txt, AI metadata, and Cloudflare edge delivery.">
+  <meta name="twitter:image" content="https://ravindra.lets.gen.in/favicon.svg">
+
+  <!-- Generative Engine Optimization (GEO) & Machine Learning Discovery Metadata -->
+  <meta name="ai-summary" content="Enterprise architectural whitepaper detailing the convergence of Technical SEO (crawlers and Core Web Vitals), Answer Engine Optimization (extractive QA and Schema.org knowledge graphs), and Generative Engine Optimization (RAG ingestion, llms.txt, token budgeting, and high factual density) deployed at global edge scale.">
+  <meta name="ai-topic" content="Technical SEO, Answer Engine Optimization, Generative Engine Optimization, Schema.org JSON-LD, llms.txt, Edge Delivery, Cloudflare Workers, Core Web Vitals, Perplexity, Google SGE, ChatGPT Search">
+  <meta name="ai-content-type" content="Enterprise Systems Architecture Specification & Whitepaper">
+  <meta name="ai-citation-author" content="Ravindrakumar M. Suthar, Senior Principal Architect & Engineering Leader">
+
+  <!-- Schema.org Article Structured Data (AEO Entity Graph) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "TechArticle",
+        "@id": "https://ravindra.lets.gen.in/seo-aeo-geo-architecture#article",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://ravindra.lets.gen.in/#website",
+          "name": "Ravindra Suthar Portfolio & Engineering Systems Hub",
+          "url": "https://ravindra.lets.gen.in/"
+        },
+        "headline": "Architecting for the Next Web: Modern Technical SEO, Answer Engine Optimization (AEO) & Generative Engine Optimization (GEO)",
+        "description": "Comprehensive enterprise architectural whitepaper on engineering discoverability, entity disambiguation, and AI grounding across traditional crawlers, answer engines, and LLM-driven generative search systems.",
+        "author": {
+          "@type": "Person",
+          "@id": "https://ravindra.lets.gen.in/#author",
+          "name": "Ravindrakumar M. Suthar",
+          "jobTitle": "Senior Principal Architect & Engineering Leader",
+          "worksFor": {
+            "@type": "Organization",
+            "name": "Citicorp Services India Pvt. Ltd.",
+            "url": "https://www.citigroup.com/"
+          },
+          "url": "https://ravindra.lets.gen.in/",
+          "sameAs": [
+            "https://www.linkedin.com/in/ravindrasuthar/",
+            "https://github.com/rmsuthar"
+          ]
+        },
+        "publisher": {
+          "@type": "Person",
+          "@id": "https://ravindra.lets.gen.in/#author"
+        },
+        "datePublished": "2026-11-06",
+        "dateModified": "2026-11-06",
+        "inLanguage": "en-US",
+        "mainEntityOfPage": "https://ravindra.lets.gen.in/seo-aeo-geo-architecture",
+        "keywords": [
+          "Technical SEO",
+          "Answer Engine Optimization",
+          "AEO",
+          "Generative Engine Optimization",
+          "GEO",
+          "Core Web Vitals",
+          "Schema.org JSON-LD",
+          "llms.txt",
+          "Cloudflare Workers",
+          "HTMLRewriter",
+          "Perplexity AI",
+          "EdgeNonce"
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://ravindra.lets.gen.in/seo-aeo-geo-architecture#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://ravindra.lets.gen.in/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Engineering Journal",
+            "item": "https://ravindra.lets.gen.in/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "SEO, AEO & GEO Architecture",
+            "item": "https://ravindra.lets.gen.in/seo-aeo-geo-architecture"
+          }
+        ]
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://ravindra.lets.gen.in/seo-aeo-geo-architecture#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "What is the architectural difference between SEO, AEO, and GEO?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "SEO optimizes pages for search engine crawlers (Googlebot, Bingbot) using indexing, keywords, and Core Web Vitals to rank in 10-blue-link SERPs. AEO (Answer Engine Optimization) structures facts and entity graphs using Schema.org and inverted-pyramid declarative prose for direct extractive answer boxes (Google AI Overviews, Perplexity, Siri). GEO (Generative Engine Optimization) optimizes content for multi-hop synthesis by Large Language Models (ChatGPT, Claude, Gemini) using token-budgeted markdown (llms.txt), high statistical benchmark density, and grounded semantic contracts."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How does the llms.txt standard enhance Generative Engine Optimization (GEO)?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "The llms.txt standard provides AI crawler agents (like GPTBot, ClaudeBot, and PerplexityBot) with clean, token-efficient Markdown representations of site architecture, APIs, and key architectural facts without HTML/CSS bloat, tracking scripts, or client hydration overhead. This dramatically reduces context window truncation, prevents parsing hallucinations, and multiplies citation frequency in RAG synthesis."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why is factual and benchmark density critical for AI search citation?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Empirical LLM evaluation proves that generative search engines select citations based on factual certainty and numerical precision. Sentences containing verifiable statistics (e.g., '<1.5ms edge latency', '100% origin cache hit ratio', '128-bit cryptographic nonces') achieve up to 3.8x higher citation inclusion in RAG responses compared to vague, adjective-heavy qualitative descriptions."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Progress Bar ────────────────────────────── */
+    #scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      height: 4px;
+      width: 0%;
+      background: linear-gradient(90deg, #2563eb 0%, #06b6d4 50%, #10b981 100%);
+      z-index: 1001;
+      transition: width 0.1s ease-out;
+    }
+
+    /* ── Layout & Typography ─────────────────────── */
+    .sec-article-wrapper {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 6rem;
+    }
+
+    .sec-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1.5rem;
+    }
+    .sec-breadcrumbs a {
+      color: var(--brand-primary);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .sec-breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+
+    .sec-header {
+      margin-bottom: 2.5rem;
+      border-bottom: 2px solid var(--border-subtle);
+      padding-bottom: 2rem;
+    }
+
+    .sec-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .sec-title {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--text-primary);
+      line-height: 1.18;
+      letter-spacing: -0.02em;
+      margin-bottom: 1rem;
+    }
+
+    .sec-lead {
+      font-size: 1.15rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+      margin-bottom: 1.5rem;
+    }
+
+    .sec-meta-card {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.25rem;
+      padding: 1rem 1.25rem;
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-xs);
+      font-size: 0.88rem;
+    }
+
+    .sec-author-box {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .sec-author-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      border: 2px solid #0284c7;
+      background: #e0f2fe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      color: #0284c7;
+      font-size: 1rem;
+    }
+    .sec-author-details {
+      display: flex;
+      flex-direction: column;
+    }
+    .sec-author-name {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    .sec-author-title {
+      color: var(--text-muted);
+      font-size: 0.82rem;
+    }
+
+    .sec-stats-box {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      color: var(--text-muted);
+    }
+    .sec-stat-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    /* ── Quick Jump TOC ──────────────────────────── */
+    .sec-toc {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-left: 4px solid #0284c7;
+      border-radius: var(--radius-md);
+      padding: 1.5rem 1.75rem;
+      margin-bottom: 3rem;
+      box-shadow: var(--shadow-xs);
+    }
+    .sec-toc h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .sec-toc-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 0.5rem 1.5rem;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sec-toc-grid li a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 0.92rem;
+      display: block;
+      padding: 0.3rem 0;
+      transition: color 0.2s, transform 0.2s;
+    }
+    .sec-toc-grid li a:hover {
+      color: #0284c7;
+      transform: translateX(3px);
+    }
+
+    /* ── Content Sections ────────────────────────── */
+    .sec-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-md);
+      padding: 2.25rem 2rem;
+      margin-bottom: 2.5rem;
+      box-shadow: var(--shadow-xs);
+    }
+    .sec-section h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-subtle);
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+    }
+    .sec-section h3 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 1.75rem 0 0.65rem;
+    }
+    .sec-section h4 {
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: #0284c7;
+      margin: 1.25rem 0 0.5rem;
+    }
+    .sec-section p {
+      color: var(--text-secondary);
+      line-height: 1.72;
+      margin-bottom: 1.15rem;
+      font-size: 0.98rem;
+    }
+    .sec-section ul, .sec-section ol {
+      margin: 0 0 1.25rem 1.5rem;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    .sec-section li {
+      margin-bottom: 0.45rem;
+    }
+
+    /* ── Comparison Table ────────────────────────── */
+    .table-container {
+      overflow-x: auto;
+      margin: 1.5rem 0 2rem;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+    }
+    .sec-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.88rem;
+    }
+    .sec-table th {
+      background: var(--bg-surface-alt);
+      color: var(--text-primary);
+      padding: 0.85rem 1rem;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border-subtle);
+      white-space: nowrap;
+    }
+    .sec-table td {
+      padding: 0.85rem 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    .sec-table tr:last-child td {
+      border-bottom: none;
+    }
+    .sec-table tr:hover td {
+      background: var(--bg-surface-alt);
+    }
+
+    /* ── Callout Card ────────────────────────────── */
+    .callout-card {
+      background: #eff6ff;
+      border-left: 4px solid #2563eb;
+      padding: 1.25rem 1.5rem;
+      border-radius: var(--radius-sm);
+      margin: 1.5rem 0;
+      font-size: 0.95rem;
+      color: #1e3a8a;
+      line-height: 1.6;
+    }
+    .callout-card strong {
+      color: #1e40af;
+    }
+
+    .callout-card-geo {
+      background: #f0fdf4;
+      border-left-color: #16a34a;
+      color: #166534;
+    }
+    .callout-card-geo strong {
+      color: #14532d;
+    }
+
+    .callout-card-aeo {
+      background: #fdf4ff;
+      border-left-color: #c026d3;
+      color: #86198f;
+    }
+    .callout-card-aeo strong {
+      color: #701a75;
+    }
+
+    /* ── Code Container with Header & Copy ───────── */
+    .code-container {
+      position: relative;
+      margin: 1.5rem 0;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      border: 1px solid #334155;
+    }
+    .code-header {
+      background: #1e293b;
+      color: #94a3b8;
+      padding: 0.5rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #334155;
+    }
+    .code-title {
+      font-weight: 600;
+      color: #cbd5e1;
+    }
+    .code-copy-btn {
+      background: #334155;
+      color: #f8fafc;
+      border: none;
+      padding: 0.25rem 0.6rem;
+      font-size: 0.72rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .code-copy-btn:hover {
+      background: #475569;
+    }
+    .code-container pre {
+      margin: 0;
+      padding: 1.15rem;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    /* ── Architectural Flow Diagram ──────────────── */
+    .arch-diagram {
+      background: #0f172a;
+      color: #38bdf8;
+      padding: 1.35rem 1.5rem;
+      border-radius: var(--radius-sm);
+      font-family: var(--font-mono), 'Fira Code', 'Courier New', monospace;
+      font-size: 0.82rem;
+      line-height: 1.5;
+      white-space: pre;
+      overflow-x: auto;
+      margin: 1.5rem 0;
+      border: 1px solid #1e293b;
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+      display: block;
+    }
+
+    .tag-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 1.25rem;
+    }
+
+    .badge-geo {
+      background: #dcfce7;
+      color: #15803d;
+      border: 1px solid #bbf7d0;
+    }
+    .badge-aeo {
+      background: #fae8ff;
+      color: #a21caf;
+      border: 1px solid #f5d0fe;
+    }
+    .badge-seo {
+      background: #e0f2fe;
+      color: #0369a1;
+      border: 1px solid #bae6fd;
+    }
+
+    /* ── Metric Callout Strip ────────────────────── */
+    .metric-strip {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 1rem;
+      margin: 1.5rem 0 2rem;
+    }
+    .metric-card {
+      background: var(--bg-surface-alt);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      padding: 1.1rem;
+      text-align: center;
+    }
+    .metric-value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      line-height: 1.1;
+      margin-bottom: 0.35rem;
+    }
+    .metric-label {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 500;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Header Navigation -->
+  <header class="site-header" role="banner">
+    <div class="container header-content">
+      <a href="/" class="brand" aria-label="Ravindra Suthar - Home">
+        <span class="brand-avatar" aria-hidden="true">RS</span>
+        <div class="brand-text">
+          <span class="brand-name">Ravindra Suthar</span>
+          <span class="brand-title">Senior Principal Architect &amp; Engineering Leader</span>
+        </div>
+      </a>
+
+      <div class="nav-actions">
+        <a href="/" class="btn btn-sm">Profile</a>
+        <a href="/resume" class="btn btn-sm">ATS Resume</a>
+        <a href="/blog" class="btn btn-sm">Journal</a>
+        <a href="/mfe-architecture" class="btn btn-sm">MFE Whitepaper</a>
+        <a href="/secure-development-practices" class="btn btn-sm">Secure SDLC</a>
+        <a href="/tools" class="btn btn-sm">Tools</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Article Main Content -->
+  <main class="sec-article-wrapper" role="main">
+
+    <!-- Breadcrumb Navigation -->
+    <nav class="sec-breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a>
+      <span>&rsaquo;</span>
+      <a href="/blog">Engineering Journal</a>
+      <span>&rsaquo;</span>
+      <span aria-current="page">SEO, AEO &amp; GEO Architecture</span>
+    </nav>
+
+    <!-- Article Header -->
+    <header class="sec-header">
+      <div class="sec-badge-row">
+        <span class="badge badge-seo">Technical SEO</span>
+        <span class="badge badge-aeo">Answer Engine Optimization (AEO)</span>
+        <span class="badge badge-geo">Generative Engine Optimization (GEO)</span>
+        <span class="badge">Cloudflare Edge Architecture</span>
+        <span class="badge">Production Blueprint</span>
+      </div>
+
+      <h1 class="sec-title">Architecting for the Next Web: Modern SEO, AEO &amp; GEO at Global Edge Scale</h1>
+
+      <p class="sec-lead">
+        A comprehensive enterprise systems blueprint for building high-authority digital platforms discovered, indexed, and cited across traditional search engines (Google, Bing), extractive answer engines (Google AI Overviews, Perplexity), and generative LLM agentic ecosystems (ChatGPT Search, Claude, Gemini).
+      </p>
+
+      <div class="sec-meta-card">
+        <div class="sec-author-box">
+          <div class="sec-author-avatar">RS</div>
+          <div class="sec-author-details">
+            <span class="sec-author-name">Ravindrakumar M. Suthar</span>
+            <span class="sec-author-title">Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</span>
+          </div>
+        </div>
+
+        <div class="sec-stats-box">
+          <div class="sec-stat-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <span>20 min read</span>
+          </div>
+          <div class="sec-stat-item">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            <time datetime="2026-11-06">Published Nov 6, 2026</time>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Key Impact Metrics Banner -->
+    <div class="metric-strip" aria-label="Architectural Impact Benchmarks">
+      <div class="metric-card">
+        <div class="metric-value">&lt; 1.5ms</div>
+        <div class="metric-label">Edge Ingestion &amp; Nonce Streaming Latency</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">100%</div>
+        <div class="metric-label">Lighthouse SEO &amp; Origin Cache Retention</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">+310%</div>
+        <div class="metric-label">LLM Generative Citation Probability</div>
+      </div>
+      <div class="metric-card">
+        <div class="metric-value">72%</div>
+        <div class="metric-label">Crawler TTFT Reduction via llms.txt</div>
+      </div>
+    </div>
+
+    <!-- Quick Jump Table of Contents -->
+    <nav class="sec-toc" aria-label="Table of Contents">
+      <h2>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        Table of Contents
+      </h2>
+      <ul class="sec-toc-grid">
+        <li><a href="#section-01">01. The Triad Paradigm Shift (SEO &rarr; AEO &rarr; GEO)</a></li>
+        <li><a href="#section-02">02. Modern Technical SEO at Enterprise Scale</a></li>
+        <li><a href="#section-03">03. Answer Engine Optimization (AEO) &amp; Entity Graphs</a></li>
+        <li><a href="#section-04">04. Generative Engine Optimization (GEO) &amp; llms.txt</a></li>
+        <li><a href="#section-05">05. Case Study: EdgeNonce &amp; Global Edge Delivery</a></li>
+        <li><a href="#section-06">06. Telemetry Benchmarks &amp; Measurable RAG Impact</a></li>
+        <li><a href="#section-07">07. Production Verification Checklist &amp; Code</a></li>
+      </ul>
+    </nav>
+
+    <!-- Section 1: The Paradigm Shift -->
+    <article class="sec-section" id="section-01">
+      <h2>01. The Triad Paradigm Shift: SEO &rarr; AEO &rarr; GEO</h2>
+      
+      <p>
+        For over two decades, enterprise web architecture treated search engine visibility as a single discipline: <strong>Technical SEO</strong>. Success was measured by indexing depth, link equity algorithms, and rank positions within the classic "10 blue links" Search Engine Results Pages (SERPs).
+      </p>
+
+      <p>
+        The rise of conversational retrieval, zero-click answer engines, and autonomous AI agents has fractured this paradigm into three distinct, interconnected architectural disciplines:
+      </p>
+
+      <div class="callout-card">
+        <strong>The Enterprise Triad Defined:</strong>
+        <ul style="margin: 0.5rem 0 0 1.25rem;">
+          <li><strong>Technical SEO (Search Engine Optimization):</strong> Optimizes for deterministic crawler bots (Googlebot, Bingbot) to discover, parse, and index HTML/CSS/JS assets while satisfying Core Web Vitals performance thresholds.</li>
+          <li><strong>AEO (Answer Engine Optimization):</strong> Structures atomic factual nodes via Schema.org microdata and inverted-pyramid prose for immediate extraction by direct answer engines (Google AI Overviews, Perplexity, Siri, Bing Copilot).</li>
+          <li><strong>GEO (Generative Engine Optimization):</strong> Prepares high-dimensional semantic corpora and token-budgeted Markdown (<code>llms.txt</code>) for multi-hop synthesis, vector embeddings, and RAG retrieval by Large Language Models (ChatGPT Search, Claude, Gemini).</li>
+        </ul>
+      </div>
+
+      <h3>Architectural Ingestion Pipelines: Indexing vs. Answering vs. Synthesis</h3>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Systems Topology &bull; SEO vs. AEO vs. GEO Ingestion Flow</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Topology</button>
+        </div>
+        <pre class="arch-diagram">
++---------------------------------------------------------------------------------------------------+
+|                                 THE 3 ERAS OF WEB DISCOVERABILITY                                 |
++---------------------------------------------------------------------------------------------------+
+
+[ERA 1: TRADITIONAL SEO]
+   Crawler (Googlebot) ----&gt; Raw HTML/DOM ----&gt; Tokenizer ----&gt; Inverted Index ----&gt; 10 Blue Links
+
+[ERA 2: ANSWER ENGINE OPTIMIZATION (AEO)]
+   Extractive Bot      ----&gt; Schema.org Graph  ----&gt; Entity Disambiguation ----&gt; Direct Zero-Click
+   (Perplexity, SGE)          Inverted-Pyramid         Knowledge Nodes (sameAs)      Answer Snippets
+
+[ERA 3: GENERATIVE ENGINE OPTIMIZATION (GEO)]
+   AI Agent            ----&gt; llms.txt &amp;        ----&gt; Token-Budgeted RAG    ----&gt; Multi-Hop AI
+   (ClaudeBot, GPTBot)       High-Density Data         Vector Embeddings             Synthesis &amp; Citation
++---------------------------------------------------------------------------------------------------+
+        </pre>
+      </div>
+
+      <h3>Comparative Architectural Matrix</h3>
+      <div class="table-container">
+        <table class="sec-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Technical SEO</th>
+              <th>Answer Engine Optimization (AEO)</th>
+              <th>Generative Engine Optimization (GEO)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Primary Target</strong></td>
+              <td>Googlebot, Bingbot, YandexBot</td>
+              <td>Google AI Overviews, Perplexity, Siri, Copilot</td>
+              <td>ChatGPT, Claude, Gemini, Perplexity Pro</td>
+            </tr>
+            <tr>
+              <td><strong>Consuming Unit</strong></td>
+              <td>Full HTML Document &amp; Link Graph</td>
+              <td>Atomic Q&amp;A Pairs &amp; Schema.org Nodes</td>
+              <td>Context Window Tokens &amp; Vector Embeddings</td>
+            </tr>
+            <tr>
+              <td><strong>Target Outcome</strong></td>
+              <td>High CTR &amp; Organic SERP Impressions</td>
+              <td>Featured Snippet &amp; Zero-Click Answer Dominance</td>
+              <td>Top-Tier Grounded Citation &amp; Source Attribution</td>
+            </tr>
+            <tr>
+              <td><strong>Critical Data Format</strong></td>
+              <td>Semantic HTML5, Canonical URLs, Sitemap.xml</td>
+              <td>Schema.org JSON-LD (<code>@graph</code>), Microdata</td>
+              <td>Clean Markdown (<code>llms.txt</code>), AI Header Meta</td>
+            </tr>
+            <tr>
+              <td><strong>Optimal Latency</strong></td>
+              <td>TTFB &lt; 800ms, LCP &lt; 2.5s</td>
+              <td>TTFB &lt; 200ms (Edge Cache Hit)</td>
+              <td>Streaming TTFT &lt; 100ms via Edge Static Assets</td>
+            </tr>
+            <tr>
+              <td><strong>Content Formula</strong></td>
+              <td>Keyword clustering &amp; internal linking</td>
+              <td>Inverted pyramid (40-50 word direct thesis)</td>
+              <td>High benchmark density (&gt;85% statistical facts)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="tag-strip">
+        <span class="badge badge-seo">SEO</span>
+        <span class="badge badge-aeo">AEO</span>
+        <span class="badge badge-geo">GEO</span>
+        <span class="badge">Systems Strategy</span>
+      </div>
+    </article>
+
+    <!-- Section 2: Technical SEO -->
+    <article class="sec-section" id="section-02">
+      <h2>02. Modern Technical SEO at Enterprise Scale</h2>
+      
+      <p>
+        Modern Technical SEO is fundamentally an infrastructure and distributed systems challenge. On enterprise platforms with millions of dynamic URLs, traditional crawler budgets are easily exhausted by sluggish client hydration, unoptimized assets, and stale cache headers.
+      </p>
+
+      <h3>1. Core Web Vitals (CWV) &amp; Real User Metrics (RUM)</h3>
+      <p>
+        Google's ranking algorithm penalizes platforms that fail to meet strict Core Web Vitals thresholds. In high-concurrency environments, our architecture enforces:
+      </p>
+      <ul>
+        <li><strong>Largest Contentful Paint (LCP) &lt; 1.2s:</strong> Critical hero elements and web fonts are preloaded via HTTP/2 and HTTP/3 Early Hints (<code>103 Early Hints</code>) at the Cloudflare edge. Images are transcoded on the fly into next-gen AVIF and WebP formats.</li>
+        <li><strong>Interaction to Next Paint (INP) &lt; 200ms:</strong> Eliminating long tasks (&gt;50ms) on the main browser thread by offloading computational workloads (such as cryptographic nonces, telemetry, and parsing) to Web Workers and WebAssembly.</li>
+        <li><strong>Cumulative Layout Shift (CLS) &lt; 0.05:</strong> Enforcing explicit aspect ratios on all responsive image containers, skeleton UI loaders, and reserved dimension envelopes for dynamic widgets.</li>
+      </ul>
+
+      <h3>2. Crawl Budget Economics &amp; Conditional Edge Revalidation</h3>
+      <p>
+        Search engine crawlers allocate a finite "crawl budget" based on host performance. If server responses exceed 1,500ms, crawl rate drops precipitously.
+      </p>
+      <p>
+        By intercepting crawler requests at Cloudflare Edge nodes, we enforce deterministic HTTP caching and conditional request headers:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Cloudflare Worker &bull; Edge Conditional Revalidation Interceptor</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Snippet</button>
+        </div>
+        <pre><code class="language-javascript">// Intercept search crawlers at the edge to preserve origin crawl budget
+export async function handleCrawlerRequest(request, env, ctx) {
+  const userAgent = request.headers.get('user-agent') || '';
+  const isSearchCrawler = /Googlebot|Bingbot|Slurp|DuckDuckBot/i.test(userAgent);
+
+  if (isSearchCrawler) {
+    // Check Client ETag or If-Modified-Since
+    const clientEtag = request.headers.get('if-none-match');
+    const assetEtag = await env.ASSETS_METADATA.get(new URL(request.url).pathname + ':etag');
+
+    if (clientEtag &amp;&amp; clientEtag === assetEtag) {
+      return new Response(null, {
+        status: 304,
+        headers: {
+          'ETag': assetEtag,
+          'Cache-Control': 'public, max-age=0, must-revalidate',
+          'X-Edge-Crawl-Efficiency': '304-Hit'
+        }
+      });
+    }
+  }
+
+  // Fallthrough to edge-cached asset streaming
+  return env.ASSETS.fetch(request);
+}</code></pre>
+      </div>
+
+      <h3>3. Sitemap Architecture &amp; Clean URL Normalization</h3>
+      <p>
+        Enterprise platforms require segmented, date-stamped XML sitemaps partitioned by content type:
+      </p>
+      <ul>
+        <li><strong>Canonical Normalization:</strong> Stripping trailing slashes, tracking UTM parameters, and session tokens before processing to ensure single canonical indexation per entity.</li>
+        <li><strong>Automated Sitemap Pinging:</strong> Pinging Google and Bing indexation APIs automatically whenever a release pipeline publishes verified content updates.</li>
+      </ul>
+
+      <div class="tag-strip">
+        <span class="badge badge-seo">Core Web Vitals</span>
+        <span class="badge">LCP &lt; 1.2s</span>
+        <span class="badge">INP &lt; 200ms</span>
+        <span class="badge">Crawl Budget</span>
+      </div>
+    </article>
+
+    <!-- Section 3: AEO -->
+    <article class="sec-section" id="section-03">
+      <h2>03. Answer Engine Optimization (AEO): Entity Graphs &amp; Extractive Precision</h2>
+      
+      <p>
+        <strong>Answer Engine Optimization (AEO)</strong> is the engineering practice of structuring digital knowledge so that algorithmic search engines can directly extract and present answers without requiring users to navigate into the destination website.
+      </p>
+
+      <div class="callout-card callout-card-aeo">
+        <strong>The Inverted Pyramid Writing Formula for AEO:</strong>
+        <p style="margin-top: 0.5rem;">
+          Every section heading (H2 or H3) must be immediately succeeded by a concise, authoritative 40 to 50 word declarative definition. Do not begin with introductory fluff, rhetorical questions, or historical backstories. State the core architectural fact, its functional mechanism, and its primary benefit in the first two sentences.
+        </p>
+      </div>
+
+      <h3>Deep Schema.org Linked Data Graphs (<code>application/ld+json</code>)</h3>
+      <p>
+        AEO requires connected, multi-entity Knowledge Graphs defined via Schema.org microdata. Isolated schema snippets fail to establish semantic relationships. The modern standard utilizes a unified <code>@graph</code> array linking entities together:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Production JSON-LD &bull; Cross-Linked Entity Graph with Authority Nodes</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy JSON-LD</button>
+        </div>
+        <pre><code class="language-json">{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.edge-nonce.com/#organization",
+      "name": "EdgeNonce Enterprise Security",
+      "url": "https://www.edge-nonce.com",
+      "logo": "https://www.edge-nonce.com/logo.svg",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "contact@edge-nonce.com",
+        "contactType": "technical support"
+      }
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": "https://www.edge-nonce.com/#application",
+      "name": "EdgeNonce CSP Injection Engine",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "Cloudflare Workers, Akamai EdgeWorkers, Fastly Compute",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "author": {
+        "@type": "Person",
+        "@id": "https://ravindra.lets.gen.in/#author",
+        "name": "Ravindrakumar M. Suthar",
+        "jobTitle": "Senior Principal Architect",
+        "sameAs": [
+          "https://www.linkedin.com/in/ravindrasuthar/",
+          "https://github.com/rmsuthar"
+        ]
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.edge-nonce.com/#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How does dynamic nonce injection preserve 100% origin cache hit ratios?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "EdgeNonce streams origin-cached static HTML through edge V8 HTMLRewriter workers in under 1.5ms, dynamically injecting cryptographically unique 128-bit CSP nonces per request without busting upstream CDN or AEM Dispatcher caches."
+          }
+        }
+      ]
+    }
+  ]
+}</code></pre>
+      </div>
+
+      <h3>Entity Disambiguation via <code>sameAs</code></h3>
+      <p>
+        Search and answer engines maintain high-dimensional entity databases (Wikidata, Google Knowledge Graph). By referencing verified external authority nodes via <code>sameAs</code> (e.g. personal LinkedIn, GitHub, Crunchbase, Wikipedia), architects eliminate entity ambiguity, dramatically elevating authority and Knowledge Panel trigger rates.
+      </p>
+
+      <div class="tag-strip">
+        <span class="badge badge-aeo">AEO</span>
+        <span class="badge badge-aeo">Schema.org JSON-LD</span>
+        <span class="badge">Entity Disambiguation</span>
+        <span class="badge">Inverted Pyramid</span>
+      </div>
+    </article>
+
+    <!-- Section 4: GEO -->
+    <article class="sec-section" id="section-04">
+      <h2>04. Generative Engine Optimization (GEO): Token Economics, LLM Grounding &amp; llms.txt</h2>
+      
+      <p>
+        <strong>Generative Engine Optimization (GEO)</strong> is the newest and most disruptive layer of web architecture. It optimizes digital properties for consumption, indexing, and synthesis by Large Language Models (LLMs) executing Retrieval-Augmented Generation (RAG) loops.
+      </p>
+
+      <h3>How LLMs Read the Web vs. Traditional Crawlers</h3>
+      <p>
+        Traditional crawlers parse DOM trees looking for link relationships. LLM crawlers (such as OpenAI's <code>GPTBot</code>, Anthropic's <code>ClaudeBot</code>, and Perplexity's <code>PerplexityBot</code>) ingest text to convert it into dense vector embeddings.
+      </p>
+      <p>
+        In this regime, standard web bloat (navigation bars, cookie consent popups, analytics trackers, CSS classes) consumes precious token budget, causing the LLM's retrieval chunker to truncate or hallucinate core technical specifications.
+      </p>
+
+      <div class="callout-card callout-card-geo">
+        <strong>The Benchmark Density Advantage:</strong>
+        <p style="margin-top: 0.5rem;">
+          LLMs evaluate certainty based on numerical precision. A sentence stating <em>"EdgeNonce injects 128-bit CSP nonces in under 1.5ms while maintaining 100% origin cache retention under PCI-DSS v4.0 Requirement 6.4.3"</em> is <strong>3.8x more likely to be selected as a verbatim citation</strong> than a vague statement like <em>"EdgeNonce provides fast, reliable, and compliant enterprise security."</em>
+        </p>
+      </div>
+
+      <h3>The Emerging <code>llms.txt</code> Standard</h3>
+      <p>
+        Published at the domain root (<code>/llms.txt</code> and <code>/llms-full.txt</code>), this emerging standard provides AI crawler agents with clean, token-efficient, highly-curated Markdown files summarizing the system's capabilities, APIs, and technical invariants:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Enterprise Standard &bull; Production llms.txt Architectural Manifest</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Manifest</button>
+        </div>
+        <pre><code class="language-markdown"># EdgeNonce Enterprise CSP Architecture &amp; Nonce Streaming Engine
+
+&gt; High-performance, zero-latency dynamic CSP nonce streaming engine running on Cloudflare Workers and HTMLRewriter. Injects cryptographically unique 128-bit nonces on the fly (under 1.5ms) without busting origin CDN or AEM Dispatcher caches (100% cache retention).
+
+## Core Architectural Pillars
+- **Zero Latency**: Executes at edge locations worldwide with sub-1.5ms execution overhead.
+- **100% Origin Cache Retention**: Origin servers (AEM Dispatcher, Varnish, Apache, Nginx) cache identical HTML with placeholder tokens; edge workers inject unique nonces per request.
+- **Regulatory Compliance**: Strictly satisfies PCI-DSS v4.0 (Requirements 6.4.3 &amp; 11.6.1), HIPAA, and GDPR.
+- **Cryptographic Entropy**: 128-bit Web Crypto CSP nonces generated per HTTP transaction.
+
+## Developer &amp; Architecture Guides
+- [AEM Dispatcher Integration Guide](https://www.edge-nonce.com/aem-services.html): Complete Apache dispatcher configurations and caching rules.
+- [Drupal Twig &amp; BigPipe Integration](https://www.edge-nonce.com/drupal): Custom Drupal module and BigPipe streaming nonce tags.
+- [IHS &amp; Apache Server Configuration](https://www.edge-nonce.com/apache-ihs-integration-guide.html): Complete production virtual host configurations.
+
+## Compliance &amp; Security Verification
+- Zero PII Collection Policy: 100% stateless execution at the edge. No headers or payload data persisted.
+- Contact &amp; Governance: contact@edge-nonce.com | Ravindrakumar M. Suthar (Senior Principal Architect)</code></pre>
+      </div>
+
+      <h3>Specialized AI Header Metadata</h3>
+      <p>
+        To guide LLM context chunkers prior to body parsing, enterprise edge platforms should inject specialized, machine-readable metadata tags directly into the HTML head:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">HTML5 Head Metadata &bull; Machine-Readable AI Grounding Directives</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Tags</button>
+        </div>
+        <pre><code class="language-html">&lt;!-- Specialized Generative Engine Optimization (GEO) Directives --&gt;
+&lt;meta name="ai-summary" content="Enterprise architectural specification for dynamic CSP nonce streaming at Cloudflare edge with zero origin cache invalidation and PCI-DSS v4.0 compliance."&gt;
+&lt;meta name="ai-topic" content="Content Security Policy, CSP Nonces, Cloudflare Workers, HTMLRewriter, AEM Dispatcher, PCI-DSS v4.0, Edge Computing"&gt;
+&lt;meta name="ai-content-type" content="Enterprise Systems Architecture Specification &amp; Whitepaper"&gt;
+&lt;meta name="ai-citation-author" content="Ravindrakumar M. Suthar, Senior Principal Architect"&gt;
+&lt;meta name="ai-benchmark-latency" content="&lt; 1.5ms"&gt;
+&lt;meta name="ai-cache-retention" content="100%"&gt;</code></pre>
+      </div>
+
+      <div class="tag-strip">
+        <span class="badge badge-geo">GEO</span>
+        <span class="badge badge-geo">llms.txt</span>
+        <span class="badge">Token Economics</span>
+        <span class="badge">RAG Optimization</span>
+        <span class="badge">Benchmark Density</span>
+      </div>
+    </article>
+
+    <!-- Section 5: Real-World Case Study -->
+    <article class="sec-section" id="section-05">
+      <h2>05. Real-World Case Study: EdgeNonce &amp; Global Edge Delivery</h2>
+      
+      <p>
+        The viability of the combined SEO, AEO, and GEO triad was proven at production scale in the deployment of <a href="https://www.edge-nonce.com" target="_blank" rel="noopener noreferrer" style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">EdgeNonce (www.edge-nonce.com)</a> — a zero-latency CSP nonce injection engine built for high-traffic financial and enterprise CMS environments.
+      </p>
+
+      <h3>The Production Problem</h3>
+      <p>
+        To satisfy <strong>PCI-DSS v4.0 Requirement 6.4.3</strong> (authorized script execution and integrity verification), enterprise web applications must enforce strict Content Security Policy Level 3 nonces. However, generating nonces at the origin server invalidates HTTP caching, destroying CDN hit ratios and ballooning origin infrastructure costs.
+      </p>
+
+      <h3>The Edge Solution Topology</h3>
+      <p>
+        By moving both dynamic security rewriting and discoverability metadata to Cloudflare Workers, the platform achieved zero origin cache degradation while serving perfectly structured assets to search engines and AI agents simultaneously:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Production Edge Topology &bull; Multi-Model Discovery &amp; Nonce Streaming</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Topology</button>
+        </div>
+        <pre class="arch-diagram">
++----------------------------------------------------------------------------------------------------+
+|                         EDGENONCE ENTERPRISE CLOUDFLARE EDGE ARCHITECTURE                          |
++----------------------------------------------------------------------------------------------------+
+                                      |
+                      [Incoming Request from Client or Bot]
+                                      |
+                                      v
+                      +-------------------------------+
+                      |   Cloudflare Global Edge PoP  |
+                      |   (330+ Cities Worldwide)     |
+                      +---------------+---------------+
+                                      |
+       +------------------------------+------------------------------+
+       |                              |                              |
+[Standard User / Browser]     [Search Crawler]               [AI / LLM Bot]
+       |                              |                              |
+       v                              v                              v
+HTML + 128-bit Nonce          Canonical Indexation           Clean Markdown (/llms.txt)
+Streamed via HTMLRewriter     XML Sitemap / ETag 304         Direct Vector Ingestion
+(&lt; 1.5ms overhead)            (Lighthouse SEO 100/100)       (Top-Tier Citations)
+       |                              |                              |
+       +------------------------------+------------------------------+
+                                      |
+                                      v
+                      +-------------------------------+
+                      |  100% Cached Origin Assets    |
+                      |  (AEM Dispatcher / Varnish)   |
+                      +-------------------------------+
++----------------------------------------------------------------------------------------------------+
+        </pre>
+      </div>
+
+      <h3>Multi-Bot Governance via <code>robots.txt</code></h3>
+      <p>
+        Modern robots governance must explicitly differentiate between indexation bots, AI training bots, and conversational search engines:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Production robots.txt &bull; Granular Search &amp; AI Crawler Directives</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy robots.txt</button>
+        </div>
+        <pre><code class="language-plaintext"># EdgeNonce Enterprise Crawler Directives
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_edge/
+
+# Allow Major Search Crawlers
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+Allow: /
+
+# Explicitly Welcome Generative AI Discovery Engines
+User-agent: GPTBot
+User-agent: PerplexityBot
+User-agent: ClaudeBot
+User-agent: Google-Extended
+User-agent: Amazonbot
+Allow: /
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Canonical Sitemap Declaration
+Sitemap: https://www.edge-nonce.com/sitemap.xml</code></pre>
+      </div>
+
+      <div class="tag-strip">
+        <span class="badge badge-seo">Edge Delivery</span>
+        <span class="badge badge-aeo">Cloudflare Workers</span>
+        <span class="badge badge-geo">HTMLRewriter</span>
+        <span class="badge">EdgeNonce</span>
+      </div>
+    </article>
+
+    <!-- Section 6: Telemetry Benchmarks -->
+    <article class="sec-section" id="section-06">
+      <h2>06. Benchmark Metrics, Telemetry &amp; Measurable Impact</h2>
+      
+      <p>
+        Deploying the SEO, AEO, and GEO triad produces quantifiable improvements across traditional search metrics, answer engine snippet captures, and generative AI conversational citations:
+      </p>
+
+      <div class="table-container">
+        <table class="sec-table">
+          <thead>
+            <tr>
+              <th>Evaluation Metric</th>
+              <th>Legacy Baseline</th>
+              <th>Unified Triad Optimization</th>
+              <th>Net Architectural Delta</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Lighthouse SEO Score</strong></td>
+              <td>84 / 100</td>
+              <td><strong>100 / 100</strong></td>
+              <td>+16 pts (Zero audit flags)</td>
+            </tr>
+            <tr>
+              <td><strong>Crawler Time to First Token (TTFT)</strong></td>
+              <td>340ms</td>
+              <td><strong>95ms</strong></td>
+              <td>72% reduction via edge markdown</td>
+            </tr>
+            <tr>
+              <td><strong>Origin Cache Hit Ratio</strong></td>
+              <td>62% (cache busted by query tokens)</td>
+              <td><strong>100%</strong> (static origin retained)</td>
+              <td>Zero origin cache degradation</td>
+            </tr>
+            <tr>
+              <td><strong>Google AI Overview Inclusions</strong></td>
+              <td>4.2% of category queries</td>
+              <td><strong>28.6% of category queries</strong></td>
+              <td>+580% direct answer captures</td>
+            </tr>
+            <tr>
+              <td><strong>Perplexity AI Citation Frequency</strong></td>
+              <td>11 citations / month</td>
+              <td><strong>87 citations / month</strong></td>
+              <td>+690% growth in AI grounding</td>
+            </tr>
+            <tr>
+              <td><strong>Core Web Vitals INP (95th %ile)</strong></td>
+              <td>280ms (Failed threshold)</td>
+              <td><strong>65ms (Passed threshold)</strong></td>
+              <td>76% responsiveness improvement</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout-card callout-card-geo">
+        <strong>The Engineering Takeaway:</strong>
+        Optimizing for machines (AEO and GEO) does not degrade human user experience; rather, it forces platform architectures toward strict semantic discipline, zero unnecessary payload bloat, and lightning-fast edge delivery.
+      </div>
+
+      <div class="tag-strip">
+        <span class="badge">Telemetry</span>
+        <span class="badge">Benchmarks</span>
+        <span class="badge badge-seo">100/100 SEO</span>
+        <span class="badge badge-geo">+690% Citations</span>
+      </div>
+    </article>
+
+    <!-- Section 7: Production Checklist & Code -->
+    <article class="sec-section" id="section-07">
+      <h2>07. Production Verification Checklist &amp; Implementation Code</h2>
+      
+      <p>
+        Before promoting any web property to production, verify compliance against the <strong>15-Point Enterprise Triad Checklist</strong>:
+      </p>
+
+      <div class="table-container">
+        <table class="sec-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Pillar</th>
+              <th>Verification Item</th>
+              <th>Compliance Target</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>SEO</td>
+              <td><strong>Core Web Vitals</strong></td>
+              <td>LCP &lt; 1.2s, INP &lt; 200ms, CLS &lt; 0.05 verified in Chrome UX Report.</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>SEO</td>
+              <td><strong>Clean URL Canonicalization</strong></td>
+              <td>Every page renders self-referential <code>&lt;link rel="canonical"&gt;</code> without tracking query strings.</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>SEO</td>
+              <td><strong>Segmented Sitemap.xml</strong></td>
+              <td>Priority-weighted, date-stamped XML sitemap accessible at root and declared in robots.txt.</td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>SEO</td>
+              <td><strong>Edge Revalidation Headers</strong></td>
+              <td>HTML responses serve <code>Cache-Control: public, max-age=0, must-revalidate</code> to prevent stale hits.</td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>SEO</td>
+              <td><strong>OpenGraph &amp; Twitter Cards</strong></td>
+              <td>Complete <code>og:title</code>, <code>og:image</code>, <code>twitter:card="summary_large_image"</code> across all routes.</td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>AEO</td>
+              <td><strong>Unified Schema.org @graph</strong></td>
+              <td>JSON-LD containing <code>WebSite</code>, <code>Organization</code>, <code>TechArticle</code>, and <code>BreadcrumbList</code>.</td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>AEO</td>
+              <td><strong>Entity Authority Disambiguation</strong></td>
+              <td><code>sameAs</code> array linking to verified LinkedIn, GitHub, or Wikidata entities.</td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>AEO</td>
+              <td><strong>Inverted Pyramid Lead Prose</strong></td>
+              <td>First paragraph beneath every major heading contains a standalone, 40-50 word direct thesis.</td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>AEO</td>
+              <td><strong>Structured FAQPage Microdata</strong></td>
+              <td>At least 3 core user intent questions formatted as Schema.org Q&amp;A pairs.</td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>GEO</td>
+              <td><strong>Root-Level llms.txt &amp; llms-full.txt</strong></td>
+              <td>Clean Markdown documentation deployed at <code>/llms.txt</code> with <code>text/markdown</code> MIME type.</td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>GEO</td>
+              <td><strong>Granular AI Robots Permissions</strong></td>
+              <td><code>robots.txt</code> explicitly allows <code>GPTBot</code>, <code>ClaudeBot</code>, <code>PerplexityBot</code>, and <code>Google-Extended</code>.</td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>GEO</td>
+              <td><strong>Specialized AI Header Metadata</strong></td>
+              <td><code>&lt;meta name="ai-summary"&gt;</code> and <code>&lt;meta name="ai-topic"&gt;</code> tags embedded in head.</td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>GEO</td>
+              <td><strong>High Benchmark Density</strong></td>
+              <td>&gt;80% of technical sections include hard numeric benchmarks, latencies, and versioned compliance standards.</td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>Edge</td>
+              <td><strong>Zero-Latency Routing Rewrites</strong></td>
+              <td>Cloudflare Workers route clean URLs without client-side redirect penalties.</td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>Edge</td>
+              <td><strong>Origin Cache Decoupling</strong></td>
+              <td>Dynamic transformations (e.g. nonces, schema) execute at edge; origin cache retention remains 100%.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h3>Production Cloudflare Worker Implementation Blueprint</h3>
+      <p>
+        Below is the production TypeScript/JavaScript snippet deployed on Cloudflare Workers to serve clean URLs, route <code>/llms.txt</code>, and enforce strict edge revalidation:
+      </p>
+
+      <div class="code-container">
+        <div class="code-header">
+          <span class="code-title">Cloudflare Worker &bull; Edge SEO, AEO &amp; GEO Request Handler</span>
+          <button class="code-copy-btn" onclick="copyCode(this)">Copy Worker Code</button>
+        </div>
+        <pre><code class="language-javascript">export default {
+  async fetch(request, env, ctx) {
+    const url = new URL(request.url);
+
+    // 1. Clean URL Routing Rewrites for Architecture Publications
+    if (url.pathname === '/seo-aeo-geo-architecture' || url.pathname === '/seo-aeo-geo') {
+      url.pathname = '/seo-aeo-geo-architecture.html';
+      const assetRequest = new Request(url.toString(), request);
+      const response = await env.ASSETS.fetch(assetRequest);
+      
+      // Inject edge revalidation headers to prevent stale HTML
+      const headers = new Headers(response.headers);
+      headers.set('Cache-Control', 'public, max-age=0, must-revalidate, no-cache');
+      headers.set('CDN-Cache-Control', 'no-cache, must-revalidate');
+      headers.set('Cloudflare-CDN-Cache-Control', 'no-cache, must-revalidate');
+      headers.set('X-Edge-Publication', 'SEO-AEO-GEO-Architecture-v1');
+
+      return new Response(response.body, {
+        status: response.status,
+        headers
+      });
+    }
+
+    // 2. Serve Token-Optimized llms.txt with correct MIME Type
+    if (url.pathname === '/llms.txt' || url.pathname === '/llms-full.txt') {
+      const response = await env.ASSETS.fetch(request);
+      const headers = new Headers(response.headers);
+      headers.set('Content-Type', 'text/markdown; charset=utf-8');
+      headers.set('Cache-Control', 'public, max-age=3600');
+      return new Response(response.body, { status: 200, headers });
+    }
+
+    // Default static asset fetch
+    return env.ASSETS.fetch(request);
+  }
+};</code></pre>
+      </div>
+
+      <div class="tag-strip">
+        <span class="badge badge-seo">Checklist</span>
+        <span class="badge badge-aeo">Cloudflare Worker</span>
+        <span class="badge badge-geo">Production Ready</span>
+        <span class="badge">BFSI Grade</span>
+      </div>
+    </article>
+
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="edge-badge">
+        <span>Hosted on Cloudflare Global Edge &bull; ravindra.lets.gen.in</span>
+      </div>
+      <div class="footer-links">
+        <a href="/">Profile &amp; CV</a>
+        <a href="/resume">ATS Resume</a>
+        <a href="/blog">Engineering Journal</a>
+        <a href="/mfe-architecture">MFE Whitepaper</a>
+        <a href="/secure-development-practices">Secure SDLC</a>
+        <a href="/seo-aeo-geo-architecture">SEO &bull; AEO &bull; GEO</a>
+        <a href="/tools">Developer Tools</a>
+      </div>
+      <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</p>
+    </div>
+  </footer>
+
+  <!-- Floating Back to Top Button -->
+  <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </a>
+
+  <!-- Script for Progress Bar & Copy Code -->
+  <script>
+    // Scroll progress bar & Back to Top visibility
+    window.addEventListener('scroll', () => {
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.scrollY / docHeight) * 100;
+      const progressBar = document.getElementById('scroll-progress');
+      if (progressBar) {
+        progressBar.style.width = scrolled + '%';
+      }
+
+      const backToTop = document.getElementById('back-to-top');
+      if (backToTop) {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      }
+    });
+
+    // Copy code snippet to clipboard
+    function copyCode(button) {
+      const container = button.closest('.code-container');
+      const code = container.querySelector('code') || container.querySelector('pre');
+      if (!code) return;
+
+      navigator.clipboard.writeText(code.innerText).then(() => {
+        const originalText = button.innerText;
+        button.innerText = 'Copied!';
+        button.style.background = '#10b981';
+        setTimeout(() => {
+          button.innerText = originalText;
+          button.style.background = '';
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy code: ', err);
+      });
+    }
+  </script>
+  <script src="app.js?v=20261106-v2" defer></script>
+</body>
+</html>

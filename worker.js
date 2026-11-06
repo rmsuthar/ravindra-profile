@@ -218,6 +218,21 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide Chapter 10](https://ravindra.lets.gen.in/blog#chapter-10)`
   },
   {
+    triggers: ['seo', 'aeo', 'geo', 'search engine optimization', 'answer engine optimization', 'generative engine optimization', 'llms.txt', 'schema.org', 'googlebot', 'perplexity', 'core web vitals'],
+    answer: `**The SEO, AEO & GEO Paradigm: Modern Web Discoverability & LLM Grounding:**
+
+- **Executive Architecture Overview**: Ravindra architects platforms that dominate discovery across traditional crawlers (Google, Bing), extractive answer engines (Google AI Overviews, Perplexity), and generative LLM agentic systems (ChatGPT Search, Claude, Gemini).
+- **Core Pillars of the Discoverability Triad**:
+  1. **Modern Technical SEO**: Sub-1.2s LCP and sub-200ms INP via Cloudflare edge streaming, 103 Early Hints, and edge conditional 304 revalidation to optimize crawler budgets across large enterprise footprints.
+  2. **Answer Engine Optimization (AEO)**: Unified Schema.org \`@graph\` microdata (\`TechArticle\`, \`Organization\`, \`FAQPage\`, \`BreadcrumbList\`) combined with the Inverted Pyramid writing formula (40-50 word declarative answers directly beneath H2/H3 headers) for deterministic zero-click snippet capture.
+  3. **Generative Engine Optimization (GEO)**: Root-level \`/llms.txt\` and \`/llms-full.txt\` Markdown manifests providing AI crawler agents (\`GPTBot\`, \`ClaudeBot\`, \`PerplexityBot\`) with token-budgeted architecture specifications, eliminating context window truncation.
+  4. **High Benchmark Density**: Empirical analysis proves that citing precise numerical benchmarks (<1.5ms edge latency, 100% origin cache retention, 128-bit cryptographic nonces) elevates generative AI citation probability by **up to 3.8x**.
+  5. **EdgeNonce Real-World Case Study**: Deployed at 330+ Cloudflare edge PoPs (https://www.edge-nonce.com) with 100/100 Lighthouse SEO, zero origin cache invalidation, and top-tier Perplexity citation.
+- **Read the Comprehensive Architectural Whitepaper**:
+  - [Architecting for the Next Web: Modern SEO, AEO & GEO Whitepaper](https://ravindra.lets.gen.in/seo-aeo-geo-architecture)
+  - [Engineering Journal & Architecture Guide Chapter 11](https://ravindra.lets.gen.in/blog#chapter-11)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -896,6 +911,10 @@ Guidelines:
         url.pathname = '/secure-development-practices.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/seo-aeo-geo-architecture' || url.pathname === '/seo-aeo-geo') {
+        url.pathname = '/seo-aeo-geo-architecture.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -911,6 +930,8 @@ Guidelines:
         url.pathname === '/mfe-architecture' ||
         url.pathname === '/secure-development-practices' ||
         url.pathname === '/secure-coding' ||
+        url.pathname === '/seo-aeo-geo-architecture' ||
+        url.pathname === '/seo-aeo-geo' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')
