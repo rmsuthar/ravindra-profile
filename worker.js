@@ -335,9 +335,10 @@ const KNOWLEDGE_FALLBACKS = [
 - **ROI & Impact**: Slashed post-deployment accessibility remediation overhead by **60%**, ensuring inclusive banking experiences for millions of global users.`
   },
   {
-    triggers: ['genai', 'copilot', 'devin', 'llm', 'artificial intelligence', 'agentic'],
-    answer: `**Generative AI & Agentic Engineering Leadership:**
+    triggers: ['genai', 'copilot', 'devin', 'llm', 'artificial intelligence', 'agentic', 'ai-first', 'chapter 00', 'chapter-00', 'ai sdlc'],
+    answer: `**Generative AI & Agentic Engineering Leadership (Chapter 00 Enterprise Model):**
 
+- **AI-First Frontend Operating Model**: Directs enterprise-wide AI-first Angular/TypeScript development embedding context-engineered RAG scaffolding, dual-engine migrations with deterministic AST codemods (ts-morph), automated WCAG 2.2 AAA / OWASP CI/CD review bots, and conversational APM telemetry ([Chapter 00](https://ravindra.lets.gen.in/blog#chapter-00)).
 - **Citicorp Migration AI Agent**: Architected autonomous RAG migration agent paired with a custom VS Code extension, slashing Non-AEM to AEM migration times by 60%+.
 - **Devin AI Coding Agents**: Pioneered autonomous coding workflows with Devin AI at enterprise scale, yielding ~35% effort savings across repetitive migrations.
 - **GitHub Copilot Integration**: Standardized GitHub Copilot across global squads, driving 40% faster pull request reviews and standardizing clean code patterns.`
