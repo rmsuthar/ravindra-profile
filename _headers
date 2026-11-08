@@ -68,6 +68,21 @@
   CDN-Cache-Control: no-cache, must-revalidate
   Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
 
+/ai-enabled-ui-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/ai-enabled-ui
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/scalable-ai-ui
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 # Cache static assets
 /style.css
   Cache-Control: public, max-age=0, must-revalidate

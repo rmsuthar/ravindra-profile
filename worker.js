@@ -233,6 +233,21 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide Chapter 11](https://ravindra.lets.gen.in/blog#chapter-11)`
   },
   {
+    triggers: ['ai-enabled ui', 'scalable ai ui', 'generative ui', 'ai ui', 'ai developer productivity', 'ai design system', 'debounced live region', 'ast codemods', 'signals architecture'],
+    answer: `**Building Scalable AI-Enabled UI: Performance, Accessibility & Consistency:**
+
+- **Executive Architecture Overview**: Ravindra architects high-performance, accessible, and consistent AI-enabled web applications while establishing responsible, practical AI-assisted engineering standards across enterprise product lines.
+- **Core Pillars of Scalable AI-Enabled UI**:
+  1. **Fine-Grained Reactivity (Signals vs. Virtual DOM)**: Bypasses heavy component re-render trees during 60+ tokens/sec streaming using Angular 19+ Signals / Solid primitives, maintaining sub-200ms INP and 60fps rendering.
+  2. **Non-Negotiable Accessibility (WCAG 2.2 AAA)**: Implements the *Debounced Buffered Live Region Pattern* (batching announcements at sentence boundaries via \`aria-live="polite"\`) to prevent speech synthesizer stutter, paired with strict focus trapping in conversational drawers.
+  3. **Preventing AI Slop via Schema-Constrained Generative UI**: Restricts LLMs to emitting typed JSON component schemas, which are safely mapped on the client to pre-compiled, tested, accessible design system primitives.
+  4. **Responsible & Practical AI-Assisted Engineering**: Enforces zero IP leakage, private LLM proxies, and deterministic AST codemods (\`ts-morph\` / Babel) for structural framework migrations, with mandatory senior peer review.
+  5. **Citicorp Proven Production Scale**: Validated with Citicorp's autonomous Non-AEM to AEM Migration AI Agent & integrated VS Code extension (60% cycle time reduction) and Cloudflare Workers AI edge copilot.
+- **Read the Comprehensive Architectural Whitepaper**:
+  - [Building Scalable AI-Enabled UI Architectural Whitepaper](https://ravindra.lets.gen.in/ai-enabled-ui-architecture)
+  - [Engineering Journal & Architecture Guide Chapter 12](https://ravindra.lets.gen.in/blog#chapter-12)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -915,6 +930,10 @@ Guidelines:
         url.pathname = '/seo-aeo-geo-architecture.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/ai-enabled-ui-architecture' || url.pathname === '/ai-enabled-ui' || url.pathname === '/scalable-ai-ui') {
+        url.pathname = '/ai-enabled-ui-architecture.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -932,6 +951,9 @@ Guidelines:
         url.pathname === '/secure-coding' ||
         url.pathname === '/seo-aeo-geo-architecture' ||
         url.pathname === '/seo-aeo-geo' ||
+        url.pathname === '/ai-enabled-ui-architecture' ||
+        url.pathname === '/ai-enabled-ui' ||
+        url.pathname === '/scalable-ai-ui' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')
