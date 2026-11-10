@@ -15,7 +15,7 @@
   <link rel="canonical" href="https://ravindra.lets.gen.in/agentic-ui-workflows">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css?v=20261110-v1">
+  <link rel="stylesheet" href="style.css?v=20261110-v2">
 
   <!-- OpenGraph Metadata -->
   <meta property="og:title"
@@ -339,13 +339,24 @@
 
     .code-container pre {
       margin: 0;
-      padding: 1.15rem;
+      padding: 1.25rem 1.5rem;
       background: #0f172a;
-      color: #e2e8f0;
+      color: #f1f5f9;
       font-family: var(--font-mono);
       font-size: 0.86rem;
       line-height: 1.62;
       overflow-x: auto;
+    }
+
+    .code-container pre code {
+      color: #f1f5f9;
+      background: transparent;
+      padding: 0;
+      border: none;
+      font-family: inherit;
+      font-size: inherit;
+      white-space: pre;
+      display: block;
     }
 
     .arch-diagram {
@@ -1077,57 +1088,57 @@ export interface TaskDiff {
 
 export interface UseAgenticStreamOptions {
   taskId: string;
-  onCommitSuccess?: (diff: TaskDiff) => void;
+  onCommitSuccess?: (diff: TaskDiff) =&gt; void;
 }
 
 export function useAgenticReviewStream({ taskId, onCommitSuccess }: UseAgenticStreamOptions) {
-  const [diffs, setDiffs] = useState<TaskDiff[]>([]);
-  const [activeDiffIndex, setActiveDiffIndex] = useState<number>(0);
-  const [isStreaming, setIsStreaming] = useState<boolean>(false);
-  const [announcement, setAnnouncement] = useState<string>('');
+  const [diffs, setDiffs] = useState&lt;TaskDiff[]&gt;([]);
+  const [activeDiffIndex, setActiveDiffIndex] = useState&lt;number&gt;(0);
+  const [isStreaming, setIsStreaming] = useState&lt;boolean&gt;(false);
+  const [announcement, setAnnouncement] = useState&lt;string&gt;('');
   const [isPending, startTransition] = useTransition();
 
   // React 19 useOptimistic for instant zero-latency approval feedback
   const [optimisticDiffs, setOptimisticDiffs] = useOptimistic(
     diffs,
-    (current, update: { id: string; status: 'approved' | 'rejected' }) =>
-      current.map(d => d.id === update.id ? { ...d, status: update.status } : d)
+    (current, update: { id: string; status: 'approved' | 'rejected' }) =&gt;
+      current.map(d =&gt; d.id === update.id ? { ...d, status: update.status } : d)
   );
 
-  const debounceTimerRef = useRef<NodeJS.Timeout | null>(null);
+  const debounceTimerRef = useRef&lt;NodeJS.Timeout | null&gt;(null);
 
   // Debounced accessible announcement helper (WCAG 2.2 AAA compliant)
-  const announceAccessible = useCallback((message: string) => {
+  const announceAccessible = useCallback((message: string) =&gt; {
     if (debounceTimerRef.current) clearTimeout(debounceTimerRef.current);
-    debounceTimerRef.current = setTimeout(() => {
+    debounceTimerRef.current = setTimeout(() =&gt; {
       setAnnouncement(message);
     }, 250);
   }, []);
 
   // Connect to SSE agent execution stream
-  const startAgentStream = useCallback(() => {
+  const startAgentStream = useCallback(() =&gt; {
     setIsStreaming(true);
     announceAccessible('Autonomous agent started task planning.');
 
     const eventSource = new EventSource(`/api/agent/stream?taskId=${encodeURIComponent(taskId)}`);
 
-    eventSource.addEventListener('diff_proposed', (event: MessageEvent) => {
+    eventSource.addEventListener('diff_proposed', (event: MessageEvent) =&gt; {
       try {
         const payload: TaskDiff = JSON.parse(event.data);
-        setDiffs(prev => [...prev, payload]);
+        setDiffs(prev =&gt; [...prev, payload]);
         announceAccessible(`Agent proposed changes in ${payload.filePath}: ${payload.summary}`);
       } catch (err) {
         console.error('Failed to parse agent diff payload:', err);
       }
     });
 
-    eventSource.addEventListener('complete', () => {
+    eventSource.addEventListener('complete', () =&gt; {
       setIsStreaming(false);
       announceAccessible('Agent task generation complete. 1 or more diffs awaiting your review.');
       eventSource.close();
     });
 
-    eventSource.onerror = () => {
+    eventSource.onerror = () =&gt; {
       setIsStreaming(false);
       announceAccessible('Agent stream encountered a network error.');
       eventSource.close();
@@ -1135,8 +1146,8 @@ export function useAgenticReviewStream({ taskId, onCommitSuccess }: UseAgenticSt
   }, [taskId, announceAccessible]);
 
   // Handle human review actions (Approve / Reject)
-  const submitReview = useCallback((diffId: string, status: 'approved' | 'rejected') => {
-    startTransition(async () => {
+  const submitReview = useCallback((diffId: string, status: 'approved' | 'rejected') =&gt; {
+    startTransition(async () =&gt; {
       // 1. Instant optimistic update
       setOptimisticDiffs({ id: diffId, status });
 
@@ -1150,11 +1161,11 @@ export function useAgenticReviewStream({ taskId, onCommitSuccess }: UseAgenticSt
         if (!res.ok) throw new Error('Review submission failed');
 
         // 2. Commit authoritative state
-        setDiffs(prev => prev.map(d => d.id === diffId ? { ...d, status } : d));
+        setDiffs(prev =&gt; prev.map(d =&gt; d.id === diffId ? { ...d, status } : d));
         announceAccessible(`Change in ${diffId} successfully ${status}.`);
 
-        const resolvedDiff = diffs.find(d => d.id === diffId);
-        if (resolvedDiff && onCommitSuccess) onCommitSuccess({ ...resolvedDiff, status });
+        const resolvedDiff = diffs.find(d =&gt; d.id === diffId);
+        if (resolvedDiff &amp;&amp; onCommitSuccess) onCommitSuccess({ ...resolvedDiff, status });
 
       } catch (error) {
         console.error('Review sync failed, rolling back optimistic update:', error);
@@ -1190,7 +1201,7 @@ export interface AgenticTaskEditorProps {
   initialTitle: string;
 }
 
-export const AgenticTaskEditor: React.FC<AgenticTaskEditorProps> = ({ taskId, initialTitle }) => {
+export const AgenticTaskEditor: React.FC&lt;AgenticTaskEditorProps&gt; = ({ taskId, initialTitle }) =&gt; {
   const {
     diffs,
     activeDiff,
@@ -1203,133 +1214,138 @@ export const AgenticTaskEditor: React.FC<AgenticTaskEditorProps> = ({ taskId, in
     submitReview,
   } = useAgenticReviewStream({ taskId });
 
-  const approveBtnRef = useRef<HTMLButtonElement | null>(null);
+  const approveBtnRef = useRef&lt;HTMLButtonElement | null&gt;(null);
 
   // Keyboard-first review flow: Cmd+Enter to approve, Cmd+Backspace to reject
-  useEffect(() => {
-    const handleKeyDown = (e: KeyboardEvent) => {
+  useEffect(() =&gt; {
+    const handleKeyDown = (e: KeyboardEvent) =&gt; {
       if (!activeDiff || activeDiff.status !== 'pending') return;
 
-      if ((e.metaKey || e.ctrlKey) && e.key === 'Enter') {
+      if ((e.metaKey || e.ctrlKey) &amp;&amp; e.key === 'Enter') {
         e.preventDefault();
         submitReview(activeDiff.id, 'approved');
-      } else if ((e.metaKey || e.ctrlKey) && e.key === 'Backspace') {
+      } else if ((e.metaKey || e.ctrlKey) &amp;&amp; e.key === 'Backspace') {
         e.preventDefault();
         submitReview(activeDiff.id, 'rejected');
       }
     };
 
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
+    return () =&gt; window.removeEventListener('keydown', handleKeyDown);
   }, [activeDiff, submitReview]);
 
   return (
-    <div className="agentic-workspace-container" role="region" aria-label="Agentic Task Workspace">
+    &lt;div className="agentic-workspace-container" role="region" aria-label="Agentic Task Workspace"&gt;
       {/* 1. Accessible Live Region for Screen Readers (WCAG 2.2 AAA) */}
-      <div 
+      &lt;div 
         className="visually-hidden" 
         role="status" 
         aria-live="polite" 
         aria-atomic="true"
-      >
+      &gt;
         {announcement}
-      </div>
+      &lt;/div&gt;
 
-      {/* 2. Top Header & Control Toolbar */}
-      <header className="workspace-header">
-        <div>
-          <h2>{initialTitle}</h2>
-          <span className="task-id">Task Ref: {taskId}</span>
-        </div>
-        <div className="toolbar-actions">
-          <button 
+      {/* 2. Top Header &amp; Control Toolbar */}
+      &lt;header className="workspace-header"&gt;
+        &lt;div&gt;
+          &lt;h2&gt;{initialTitle}&lt;/h2&gt;
+          &lt;span className="task-id"&gt;Task Ref: {taskId}&lt;/span&gt;
+        &lt;/div&gt;
+        &lt;div className="toolbar-actions"&gt;
+          &lt;button 
             type="button" 
             className="btn btn-primary"
             onClick={startAgentStream}
             disabled={isStreaming}
             aria-busy={isStreaming}
-          >
+          &gt;
             {isStreaming ? 'Agent Executing...' : 'Trigger Autonomous Plan'}
-          </button>
-        </div>
-      </header>
+          &lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/header&gt;
 
       {/* 3. Multi-Pane Workspace */}
-      <div className="workspace-panes">
-        {/* Left Pane: Subtask & Diff Navigation List */}
-        <nav className="diff-nav-pane" aria-label="Proposed File Changes">
-          <h3>Proposed Changes ({diffs.length})</h3>
-          <ul className="diff-list">
-            {diffs.map((diff, idx) => (
-              <li key={diff.id}>
-                <button
+      &lt;div className="workspace-panes"&gt;
+        {/* Left Pane: Subtask &amp; Diff Navigation List */}
+        &lt;nav className="diff-nav-pane" aria-label="Proposed File Changes"&gt;
+          &lt;h3&gt;Proposed Changes ({diffs.length})&lt;/h3&gt;
+          &lt;ul className="diff-list"&gt;
+            {diffs.map((diff, idx) =&gt; (
+              &lt;li key={diff.id}&gt;
+                &lt;button
                   type="button"
                   className={`diff-item-btn ${idx === activeDiffIndex ? 'active' : ''}`}
-                  onClick={() => setActiveDiffIndex(idx)}
+                  onClick={() =&gt; setActiveDiffIndex(idx)}
                   aria-current={idx === activeDiffIndex ? 'true' : undefined}
-                >
-                  <span className="file-path">{diff.filePath}</span>
-                  <span className={`status-badge status-${diff.status}`}>
+                &gt;
+                  &lt;span className="file-path"&gt;{diff.filePath}&lt;/span&gt;
+                  &lt;span className={`status-badge status-${diff.status}`}&gt;
                     {diff.status}
-                  </span>
-                </button>
-              </li>
+                  &lt;/span&gt;
+                &lt;/button&gt;
+              &lt;/li&gt;
             ))}
-          </ul>
-        </nav>
+          &lt;/ul&gt;
+        &lt;/nav&gt;
 
-        {/* Center/Right Pane: Real-Time Diff Viewer & Review Actions */}
-        <main className="diff-review-pane" id="task-canvas">
+        {/* Center/Right Pane: Real-Time Diff Viewer &amp; Review Actions */}
+        &lt;main className="diff-review-pane" id="task-canvas"&gt;
           {activeDiff ? (
-            <div className="active-diff-card">
-              <div className="diff-card-header">
-                <h3>{activeDiff.filePath}</h3>
-                <p className="diff-summary">{activeDiff.summary}</p>
-              </div>
+            &lt;div className="active-diff-card"&gt;
+              &lt;div className="diff-card-header"&gt;
+                &lt;h3&gt;{activeDiff.filePath}&lt;/h3&gt;
+                &lt;p className="diff-summary"&gt;{activeDiff.summary}&lt;/p&gt;
+              &lt;/div&gt;
 
               {/* Visual Split Diff Representation */}
-              <div className="diff-view-canvas">
-                <div className="diff-col diff-old">
-                  <h4>Original Code</h4>
-                  <pre><code>{activeDiff.oldContent}</code></pre>
-        </div>
-        <div className="diff-col diff-new">
-          <h4>Proposed Agent Refactor</h4>
-          <pre><code>{activeDiff.newContent}</code></pre>
-        </div>
-    </div>
+              &lt;div className="diff-view-canvas"&gt;
+                &lt;div className="diff-col diff-old"&gt;
+                  &lt;h4&gt;Original Code&lt;/h4&gt;
+                  &lt;pre&gt;&lt;code&gt;{activeDiff.oldContent}&lt;/code&gt;&lt;/pre&gt;
+                &lt;/div&gt;
+                &lt;div className="diff-col diff-new"&gt;
+                  &lt;h4&gt;Proposed Agent Refactor&lt;/h4&gt;
+                  &lt;pre&gt;&lt;code&gt;{activeDiff.newContent}&lt;/code&gt;&lt;/pre&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
 
-    {/* Review Actions Footer */}
-    <footer className="review-action-footer">
-      <div className="keyboard-hint">
-        <span>Hotkeys: <kbd>Cmd</kbd>+<kbd>Enter</kbd> to Approve &bull; <kbd>Cmd</kbd>+<kbd>Backspace</kbd> to
-          Reject</span>
-      </div>
-      <div className="review-buttons">
-        <button type="button" className="btn btn-secondary" onClick={()=> submitReview(activeDiff.id, 'rejected')}
-          disabled={isPending || activeDiff.status !== 'pending'}
-          >
-          Reject Modification
-        </button>
-        <button ref={approveBtnRef} type="button" className="btn btn-primary" onClick={()=> submitReview(activeDiff.id,
-          'approved')}
-          disabled={isPending || activeDiff.status !== 'pending'}
-          >
-          {activeDiff.status === 'approved' ? '✓ Approved' : 'Approve & Merge'}
-        </button>
-      </div>
-    </footer>
-    </div>
-    ) : (
-    <div className="empty-workspace-state">
-      <p>No active proposals. Click &ldquo;Trigger Autonomous Plan&rdquo; to initiate the agent.</p>
-    </div>
-    )}
-  </main>
-  </div>
-  </div>
+              {/* Review Actions Footer */}
+              &lt;footer className="review-action-footer"&gt;
+                &lt;div className="keyboard-hint"&gt;
+                  &lt;span&gt;Hotkeys: &lt;kbd&gt;Cmd&lt;/kbd&gt;+&lt;kbd&gt;Enter&lt;/kbd&gt; to Approve &amp;bull; &lt;kbd&gt;Cmd&lt;/kbd&gt;+&lt;kbd&gt;Backspace&lt;/kbd&gt; to Reject&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;div className="review-buttons"&gt;
+                  &lt;button
+                    type="button"
+                    className="btn btn-secondary"
+                    onClick={() =&gt; submitReview(activeDiff.id, 'rejected')}
+                    disabled={isPending || activeDiff.status !== 'pending'}
+                  &gt;
+                    Reject Modification
+                  &lt;/button&gt;
+                  &lt;button
+                    ref={approveBtnRef}
+                    type="button"
+                    className="btn btn-primary"
+                    onClick={() =&gt; submitReview(activeDiff.id, 'approved')}
+                    disabled={isPending || activeDiff.status !== 'pending'}
+                  &gt;
+                    {activeDiff.status === 'approved' ? '✓ Approved' : 'Approve &amp; Merge'}
+                  &lt;/button&gt;
+                &lt;/div&gt;
+              &lt;/footer&gt;
+            &lt;/div&gt;
+          ) : (
+            &lt;div className="empty-workspace-state"&gt;
+              &lt;p&gt;No active proposals. Click &amp;ldquo;Trigger Autonomous Plan&amp;rdquo; to initiate the agent.&lt;/p&gt;
+            &lt;/div&gt;
+          )}
+        &lt;/main&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
   );
-  };</code></pre>
+};</code></pre>
   </div>
   </section>
 
@@ -1552,7 +1568,7 @@ export const AgenticTaskEditor: React.FC<AgenticTaskEditorProps> = ({ taskId, in
       });
     }
   </script>
-  <script src="app.js?v=20261110-v1" defer></script>
+  <script src="app.js?v=20261110-v2" defer></script>
 </body>
 
 </html>
