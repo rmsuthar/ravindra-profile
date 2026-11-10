@@ -199,8 +199,17 @@
     }
 
     @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.4; transform: scale(0.85); }
+
+      0%,
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      50% {
+        opacity: 0.4;
+        transform: scale(0.85);
+      }
     }
 
     .page-subtitle {
@@ -488,7 +497,9 @@
     }
 
     @keyframes spin {
-      to { transform: rotate(360deg); }
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     /* --- Right Preview Column --- */
@@ -900,7 +911,8 @@
   <!-- Top Navigation Bar -->
   <nav class="nav-bar">
     <a href="/" class="nav-brand">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+        stroke-linecap="round" stroke-linejoin="round">
         <line x1="19" y1="12" x2="5" y2="12"></line>
         <polyline points="12 19 5 12 12 5"></polyline>
       </svg>
@@ -934,8 +946,10 @@
         </div>
       </div>
       <p class="page-subtitle">
-        Paste any target Job Description (JD) below to dynamically synthesize an articulate, ATS-tailored executive cover letter matching 
-        <strong>Ravindrakumar M. Suthar's</strong> verified 17+ years enterprise engineering credentials, Banking, Financial Services, and Insurance (BFSI) modernization leadership, and AI agent innovations.
+        Paste any target Job Description (JD) below to dynamically synthesize an articulate, ATS-tailored executive
+        cover letter matching
+        <strong>Ravindrakumar M. Suthar's</strong> verified 17+ years enterprise engineering credentials, Banking,
+        Financial Services, and Insurance (BFSI) modernization leadership, and AI agent innovations.
       </p>
     </header>
 
@@ -944,7 +958,7 @@
 
       <!-- LEFT: Control & Input Panel -->
       <section class="control-panel" aria-label="Cover Letter Configuration">
-        
+
         <!-- Preset Chips -->
         <div class="preset-chips-wrap">
           <span class="preset-label">⚡ Fast-Load Target JD Presets:</span>
@@ -970,15 +984,18 @@
             <label for="jobDescription" class="form-label">Job Description (JD) *</label>
             <span class="char-count" id="charCount">0 chars</span>
           </div>
-          <textarea id="jobDescription" class="form-textarea" placeholder="Paste full or excerpted job description here... (e.g. Responsibilities, Required Skills, Qualifications)"></textarea>
-          <span class="helper-text">Supports up to 5,000 characters. Our edge model analyzes key competencies automatically.</span>
+          <textarea id="jobDescription" class="form-textarea"
+            placeholder="Paste full or excerpted job description here... (e.g. Responsibilities, Required Skills, Qualifications)"></textarea>
+          <span class="helper-text">Supports up to 5,000 characters. Our edge model analyzes key competencies
+            automatically.</span>
         </div>
 
         <!-- Target Company & Role Overrides -->
         <div class="form-row">
           <div class="form-group">
             <label for="targetCompany" class="form-label">Target Company</label>
-            <input type="text" id="targetCompany" class="form-input" placeholder="e.g. Mastercard (Auto-detected if blank)">
+            <input type="text" id="targetCompany" class="form-input"
+              placeholder="e.g. Mastercard (Auto-detected if blank)">
           </div>
           <div class="form-group">
             <label for="roleTitle" class="form-label">Target Role Title</label>
@@ -989,7 +1006,8 @@
         <!-- Addressee -->
         <div class="form-group">
           <label for="addressee" class="form-label">Addressed To</label>
-          <input type="text" id="addressee" class="form-input" value="Hiring Team" placeholder="e.g. Hiring Committee, VP of Engineering">
+          <input type="text" id="addressee" class="form-input" value="Hiring Team"
+            placeholder="e.g. Hiring Committee, VP of Engineering">
         </div>
 
         <!-- Executive Tone Focus -->
@@ -1051,14 +1069,16 @@
           </div>
           <div class="toolbar-actions">
             <button type="button" id="btnCopy" class="action-btn" title="Copy clean letter text to clipboard">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
               <span>Copy Text</span>
             </button>
             <button type="button" id="btnDownload" class="action-btn" title="Download as text file">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
                 <polyline points="7 10 12 15 17 10"></polyline>
                 <line x1="12" y1="15" x2="12" y2="3"></line>
@@ -1066,7 +1086,8 @@
               <span>Download (.txt)</span>
             </button>
             <button type="button" id="btnPrint" class="action-btn btn-primary" title="Print or save as high-res PDF">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="6 9 6 2 18 2 18 9"></polyline>
                 <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
                 <rect x="6" y="14" width="12" height="8"></rect>
@@ -1078,7 +1099,7 @@
 
         <!-- The Physical Document Canvas -->
         <article class="document-paper" id="documentPaper">
-          
+
           <!-- Official Letterhead -->
           <header class="letterhead">
             <div class="letterhead-title">
@@ -1089,7 +1110,9 @@
             <div class="letterhead-contact">
               <div>Pune, Maharashtra, India</div>
               <div>+91 83800 99988 &bull; <a href="mailto:ravindra.suthar@me.com">ravindra.suthar@me.com</a></div>
-              <div><a href="https://ravindra.lets.gen.in/" target="_blank">ravindra.lets.gen.in</a> &bull; <a href="https://linkedin.com/in/ravindrasuthar" target="_blank">linkedin.com/in/ravindrasuthar</a> &bull; <a href="https://github.com/rmsuthar" target="_blank">github.com/rmsuthar</a></div>
+              <div><a href="https://ravindra.lets.gen.in/" target="_blank">ravindra.lets.gen.in</a> &bull; <a
+                  href="https://linkedin.com/in/ravindrasuthar" target="_blank">linkedin.com/in/ravindrasuthar</a>
+                &bull; <a href="https://github.com/rmsuthar" target="_blank">github.com/rmsuthar</a></div>
             </div>
           </header>
 
@@ -1098,21 +1121,45 @@
             <div class="letter-date" id="letterDate">September 26, 2026</div>
             <div class="addressee-block" id="letterAddresseeBlock">
               <div id="addresseeTo">Dear Hiring Team,</div>
-              <div id="addresseeOrg" style="font-weight: 500; color: var(--text-secondary); margin-top: 4px;">RE: Executive Application &bull; Vice President, Software Engineering</div>
+              <div id="addresseeOrg" style="font-weight: 500; color: var(--text-secondary); margin-top: 4px;">RE:
+                Executive Application &bull; Vice President, Software Engineering</div>
             </div>
           </div>
 
           <!-- Dynamic Letter Body (Contenteditable) -->
-          <div class="letter-content" id="letterBody" contenteditable="true" spellcheck="true" aria-label="Cover Letter Text Body (Editable)">
-I am writing to express my strong interest in the Vice President, Software Engineering role at Mastercard. With over 17 years of enterprise software engineering leadership—including more than 12 years as Senior Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.—I have dedicated my career to spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and delivering resilient, high-performance web platforms for Tier-1 Banking, Financial Services, and Insurance (BFSI) scale.
+          <div class="letter-content" id="letterBody" contenteditable="true" spellcheck="true"
+            aria-label="Cover Letter Text Body (Editable)">
+            I am writing to express my strong interest in the Vice President, Software Engineering role at Mastercard.
+            With over 17 years of enterprise software engineering leadership—including more than 12 years as Senior
+            Principal Architect & Engineering Leader at Citicorp Services India Pvt. Ltd.—I have dedicated my career to
+            spearheading mission-critical digital modernization, cultivating high-retention engineering cultures, and
+            delivering resilient, high-performance web platforms for Tier-1 Banking, Financial Services, and Insurance
+            (BFSI) scale.
 
-Throughout my tenure at Citicorp, I have successfully governed the end-to-end modernization of complex monolithic Banking, Financial Services, and Insurance (BFSI) platforms into modular, zero-downtime micro-frontend architectures. By establishing reference design systems, enforcing strict UI/API boundary contracts, and implementing route-based code splitting with Core Web Vitals telemetry, our engineering squads delivered up to a 50% improvement in application load times while ensuring uninterrupted 100% business continuity across multi-phase rollouts.
+            Throughout my tenure at Citicorp, I have successfully governed the end-to-end modernization of complex
+            monolithic Banking, Financial Services, and Insurance (BFSI) platforms into modular, zero-downtime
+            micro-frontend architectures. By establishing reference design systems, enforcing strict UI/API boundary
+            contracts, and implementing route-based code splitting with Core Web Vitals telemetry, our engineering
+            squads delivered up to a 50% improvement in application load times while ensuring uninterrupted 100%
+            business continuity across multi-phase rollouts.
 
-A cornerstone of my recent leadership is pioneering autonomous developer productivity platforms. At Citicorp, I architected an enterprise Non-AEM to AEM Migration AI Agent operating in tandem with a custom Visual Studio Code extension—leveraging Retrieval-Augmented Generation (RAG) and automated AST transformation scripts directly within developer workflows to accelerate component replatforming cycle times by over 60%. Furthermore, standardizing GitHub Copilot and Devin AI coding agents enabled our teams to capture ~35% effort savings across repetitive migrations.
+            A cornerstone of my recent leadership is pioneering autonomous developer productivity platforms. At
+            Citicorp, I architected an enterprise Non-AEM to AEM Migration AI Agent operating in tandem with a custom
+            Visual Studio Code extension—leveraging Retrieval-Augmented Generation (RAG) and automated AST
+            transformation scripts directly within developer workflows to accelerate component replatforming cycle times
+            by over 60%. Furthermore, standardizing GitHub Copilot and Devin AI coding agents enabled our teams to
+            capture ~35% effort savings across repetitive migrations.
 
-Engineering excellence is fundamentally driven by high-trust teams. Across 12+ years of squad leadership, I have maintained an industry-leading attrition rate below 8% by establishing structured one-on-one coaching, transparent technical skill ladders, and internal engineering guilds. I partner closely with executive stakeholders, product owners, and cross-functional partners to translate complex technical imperatives into predictable, high-ROI business outcomes.
+            Engineering excellence is fundamentally driven by high-trust teams. Across 12+ years of squad leadership, I
+            have maintained an industry-leading attrition rate below 8% by establishing structured one-on-one coaching,
+            transparent technical skill ladders, and internal engineering guilds. I partner closely with executive
+            stakeholders, product owners, and cross-functional partners to translate complex technical imperatives into
+            predictable, high-ROI business outcomes.
 
-I welcome the opportunity to discuss how my 17+ years of architectural rigor, hands-on AI toolchain innovation, and executive leadership experience can accelerate Mastercard's strategic digital initiatives. You can explore my verified portfolio and open-source systems at https://ravindra.lets.gen.in/ and GitHub at https://github.com/rmsuthar. Thank you for your consideration, and I look forward to connecting.
+            I welcome the opportunity to discuss how my 17+ years of architectural rigor, hands-on AI toolchain
+            innovation, and executive leadership experience can accelerate Mastercard's strategic digital initiatives.
+            You can explore my verified portfolio and open-source systems at https://ravindra.lets.gen.in/ and GitHub at
+            https://github.com/rmsuthar. Thank you for your consideration, and I look forward to connecting.
           </div>
 
           <!-- Sign-Off -->
@@ -1129,7 +1176,8 @@ I welcome the opportunity to discuss how my 17+ years of architectural rigor, ha
         <aside class="alignment-card" aria-label="ATS Alignment Matrix">
           <div class="alignment-header">
             <span class="alignment-title">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                stroke-linecap="round" stroke-linejoin="round">
                 <polyline points="20 6 9 17 4 12"></polyline>
               </svg>
               ATS Verified Core Competency Alignment
@@ -1160,7 +1208,8 @@ I welcome the opportunity to discuss how my 17+ years of architectural rigor, ha
 
   <!-- Footer -->
   <footer class="footer">
-    <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Executive Engineering &amp; Architecture Leadership &bull; <a href="https://ravindra.lets.gen.in/">ravindra.lets.gen.in</a></p>
+    <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Executive Engineering &amp; Architecture Leadership &bull; <a
+        href="https://ravindra.lets.gen.in/">ravindra.lets.gen.in</a></p>
   </footer>
 
   <script>

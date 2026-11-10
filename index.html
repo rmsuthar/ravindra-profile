@@ -86,6 +86,7 @@
   </script>
 
   <!-- Preload Stylesheet -->
+  <link rel="stylesheet" href="style.css?v=20261110-v1">
   <link rel="stylesheet" href="style.css?v=20261110-v2">
 </head>
 
@@ -104,57 +105,59 @@
   <!-- ── Top Sticky Navigation Bar ── -->
   <header class="top-nav" role="banner">
     <div class="container top-nav-inner">
-      <a href="#top" class="brand-badge" aria-label="Ravindrakumar Suthar Profile Home">
-        <img src="favicon.svg" alt="RS Logo" class="brand-logo" width="36" height="36">
-        <div class="brand-info">
-          <span class="brand-name">Ravindrakumar Suthar</span>
-          <span class="brand-title">Senior Principal Architect &amp; Engineering Leader</span>
-        </div>
-      </a>
-
-      <div class="nav-actions">
-        <!-- Dual View Mode Switcher -->
-        <div class="view-mode-toggle" role="group" aria-label="View Mode Toggle">
-          <button id="view-portfolio" class="view-btn active" type="button" aria-pressed="true">Portfolio</button>
-          <button id="view-cv" class="view-btn" type="button" aria-pressed="false">CV / Resume</button>
-        </div>
-
-        <a href="/tools" class="btn btn-sm" title="Browse Developer Tools &amp; Utilities">Tools</a>
-
-        <a href="https://github.com/rmsuthar" target="_blank" rel="noopener noreferrer" class="btn btn-sm"
-          title="View GitHub Repositories (@rmsuthar)">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path
-              d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-            </path>
-          </svg>
-          <span>GitHub</span>
+      <a href="#top" class="brand-badge" aria-label="Ravindra Suthar Profile Home">
+        <a href="#top" class="brand-badge" aria-label="Ravindrakumar Suthar Profile Home">
+          <img src="favicon.svg" alt="RS Logo" class="brand-logo" width="36" height="36">
+          <div class="brand-info">
+            <span class="brand-name">Ravindra Suthar</span>
+            <span class="brand-name">Ravindrakumar Suthar</span>
+            <span class="brand-title">Senior Principal Architect &amp; Engineering Leader</span>
+          </div>
         </a>
 
-        <a href="/blog" class="btn btn-sm" title="Read Architecture &amp; Engineering Journal">Journal</a>
+        <div class="nav-actions">
+          <!-- Dual View Mode Switcher -->
+          <div class="view-mode-toggle" role="group" aria-label="View Mode Toggle">
+            <button id="view-portfolio" class="view-btn active" type="button" aria-pressed="true">Portfolio</button>
+            <button id="view-cv" class="view-btn" type="button" aria-pressed="false">CV / Resume</button>
+          </div>
 
-        <!-- Workday & ATS Resume Download -->
-        <a href="Ravindrakumar_Suthar_Resume.pdf" download="Ravindrakumar_Suthar_Resume.pdf" class="btn btn-sm"
-          title="Download ATS & Workday Compatible Resume (PDF)" aria-label="Download ATS Resume PDF">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
-          </svg>
-          <span>ATS Resume</span>
-        </a>
+          <a href="/tools" class="btn btn-sm" title="Browse Developer Tools &amp; Utilities">Tools</a>
 
-        <!-- Print / PDF Button -->
-        <button onclick="window.print()" class="btn btn-sm" title="Print or Save as PDF (Cmd/Ctrl+P)"
-          aria-label="Print or Save PDF">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 6 2 18 2 18 9"></polyline>
-            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
-            <rect x="6" y="14" width="12" height="8"></rect>
-          </svg>
-          <span>PDF / Print</span>
-        </button>
-      </div>
+          <a href="https://github.com/rmsuthar" target="_blank" rel="noopener noreferrer" class="btn btn-sm"
+            title="View GitHub Repositories (@rmsuthar)">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+            <span>GitHub</span>
+          </a>
+
+          <a href="/blog" class="btn btn-sm" title="Read Architecture &amp; Engineering Journal">Journal</a>
+
+          <!-- Workday & ATS Resume Download -->
+          <a href="Ravindrakumar_Suthar_Resume.pdf" download="Ravindrakumar_Suthar_Resume.pdf" class="btn btn-sm"
+            title="Download ATS & Workday Compatible Resume (PDF)" aria-label="Download ATS Resume PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="7 10 12 15 17 10"></polyline>
+              <line x1="12" y1="15" x2="12" y2="3"></line>
+            </svg>
+            <span>ATS Resume</span>
+          </a>
+
+          <!-- Print / PDF Button -->
+          <button onclick="window.print()" class="btn btn-sm" title="Print or Save as PDF (Cmd/Ctrl+P)"
+            aria-label="Print or Save PDF">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="6 9 6 2 18 2 18 9"></polyline>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+              <rect x="6" y="14" width="12" height="8"></rect>
+            </svg>
+            <span>PDF / Print</span>
+          </button>
+        </div>
     </div>
   </header>
 
@@ -174,10 +177,14 @@
 
       <a href="/blog" class="nav-chip">📖 Architecture Journal</a>
       <a href="/mfe-architecture" class="nav-chip" title="Micro Frontend Architecture Whitepaper">🏛 MFE Whitepaper</a>
-      <a href="/secure-development-practices" class="nav-chip" title="Secure Coding, Privacy &amp; Dependency Governance Whitepaper">🛡️ Secure SDLC</a>
-      <a href="/seo-aeo-geo-architecture" class="nav-chip" title="SEO, AEO &amp; GEO Architecture Whitepaper">🌐 SEO &bull; AEO &bull; GEO</a>
-      <a href="/ai-enabled-ui-architecture" class="nav-chip" title="Scalable AI-Enabled UI Whitepaper">🤖 Scalable AI UI</a>
-      <a href="/agentic-ui-workflows" class="nav-chip" title="Agentic UI Workflows Whitepaper">⚡ Agentic UI Workflows</a>
+      <a href="/secure-development-practices" class="nav-chip"
+        title="Secure Coding, Privacy &amp; Dependency Governance Whitepaper">🛡️ Secure SDLC</a>
+      <a href="/seo-aeo-geo-architecture" class="nav-chip" title="SEO, AEO &amp; GEO Architecture Whitepaper">🌐 SEO
+        &bull; AEO &bull; GEO</a>
+      <a href="/ai-enabled-ui-architecture" class="nav-chip" title="Scalable AI-Enabled UI Whitepaper">🤖 Scalable AI
+        UI</a>
+      <a href="/agentic-ui-workflows" class="nav-chip" title="Agentic UI Workflows Whitepaper">⚡ Agentic UI
+        Workflows</a>
       <a href="/resume" class="nav-chip nav-chip-highlight">📄 Workday ATS Resume</a>
     </div>
   </nav>
@@ -539,7 +546,9 @@
         <div class="fast-track-header">
           <div class="fast-track-title">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              <polygon
+                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2">
+              </polygon>
             </svg>
             <span>Executive Recruiter &amp; Hiring Manager Fast-Track</span>
           </div>
@@ -564,7 +573,8 @@
           <div class="fast-track-item">
             <span class="fast-track-label">Core Architecture &amp; Tech Stack</span>
             <span class="fast-track-value">
-              <strong>Micro-Frontends (Module Federation)</strong>, React, Next.js, Angular (v10&ndash;v21), TypeScript, Adobe AEM, OpenText TeamSite, Offline RAG, Custom VS Code Extension &amp; AST Compilers, Spring Boot.
+              <strong>Micro-Frontends (Module Federation)</strong>, React, Next.js, Angular (v10&ndash;v21), TypeScript,
+              Adobe AEM, OpenText TeamSite, Offline RAG, Custom VS Code Extension &amp; AST Compilers, Spring Boot.
             </span>
           </div>
 
@@ -572,14 +582,16 @@
             <span class="fast-track-label">Leadership &amp; Multiplier Footprint</span>
             <span class="fast-track-value">
               <strong>Direct Leadership:</strong> ~12 frontend engineers (&lt;8% sustained attrition)<br>
-              <strong>Org Multiplier:</strong> Core UI frameworks &amp; AI agents adopted by <strong>150+ engineers across 6+ business lines</strong>
+              <strong>Org Multiplier:</strong> Core UI frameworks &amp; AI agents adopted by <strong>150+ engineers
+                across 6+ business lines</strong>
             </span>
           </div>
 
           <div class="fast-track-item">
             <span class="fast-track-label">Experience &amp; Domain</span>
             <span class="fast-track-value">
-              <strong>20+ Years Total Engineering</strong> (including <strong>13+ Years Tier-1 BFSI at Citicorp</strong>)<br>
+              <strong>20+ Years Total Engineering</strong> (including <strong>13+ Years Tier-1 BFSI at
+                Citicorp</strong>)<br>
               Zero security escapes &bull; Bank-wide WCAG 2.2 AAA accessibility
             </span>
           </div>
@@ -595,15 +607,18 @@
           <div class="fast-track-item">
             <span class="fast-track-label">Confidential Search &amp; Contact</span>
             <span class="fast-track-value">
-              Mobile: <a href="tel:+918380099988" style="color: var(--brand-primary); font-weight: 600;">+91 83800 99988</a><br>
-              Email: <a href="mailto:ravindra.suthar@me.com" style="color: var(--brand-primary); font-weight: 600;">ravindra.suthar@me.com</a><br>
+              Mobile: <a href="tel:+918380099988" style="color: var(--brand-primary); font-weight: 600;">+91 83800
+                99988</a><br>
+              Email: <a href="mailto:ravindra.suthar@me.com"
+                style="color: var(--brand-primary); font-weight: 600;">ravindra.suthar@me.com</a><br>
               Standard banking notice / Confidentially Available
             </span>
           </div>
         </div>
 
         <div class="fast-track-actions">
-          <a href="Ravindrakumar_Suthar_Resume.pdf" download="Ravindrakumar_Suthar_Resume.pdf" class="btn btn-primary btn-sm">
+          <a href="Ravindrakumar_Suthar_Resume.pdf" download="Ravindrakumar_Suthar_Resume.pdf"
+            class="btn btn-primary btn-sm">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
               <polyline points="7 10 12 15 17 10"></polyline>
@@ -645,9 +660,13 @@
       <div class="featured-publications-section" role="region" aria-label="Featured Engineering Whitepapers">
         <div class="publications-grid">
           <a href="/agentic-ui-workflows" class="publication-card" title="Read Agentic UI Workflows Whitepaper">
-            <span class="publication-badge" style="color: #059669; background: #ecfdf5;">Agentic UI &bull; React 19 &bull; Web Standards</span>
-            <h3 class="publication-title">Building High-Quality Agentic Web Interfaces: Task Editors &amp; Real-Time Review Flows</h3>
-            <p class="publication-desc">Architecting mission-critical human-in-the-loop agentic experiences: React 19 optimistic UI, multi-actor CRDT state sync, WCAG 2.2 AAA live regions, and collaborative squad standards.</p>
+            <span class="publication-badge" style="color: #059669; background: #ecfdf5;">Agentic UI &bull; React 19
+              &bull; Web Standards</span>
+            <h3 class="publication-title">Building High-Quality Agentic Web Interfaces: Task Editors &amp; Real-Time
+              Review Flows</h3>
+            <p class="publication-desc">Architecting mission-critical human-in-the-loop agentic experiences: React 19
+              optimistic UI, multi-actor CRDT state sync, WCAG 2.2 AAA live regions, and collaborative squad standards.
+            </p>
             <div class="publication-footer">
               <span>Read Agentic UI Blueprint &rarr;</span>
               <span>26 min read &bull; Citicorp Proven</span>
@@ -655,9 +674,12 @@
           </a>
 
           <a href="/ai-enabled-ui-architecture" class="publication-card" title="Read Scalable AI-Enabled UI Whitepaper">
-            <span class="publication-badge" style="color: #7c3aed; background: #f5f3ff;">Generative UI &bull; Systems Architecture</span>
-            <h3 class="publication-title">Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency</h3>
-            <p class="publication-desc">An executive blueprint balancing sub-1.2s performance, WCAG 2.2 AAA accessibility, design system consistency, and responsible AI-assisted engineering at Citicorp scale.</p>
+            <span class="publication-badge" style="color: #7c3aed; background: #f5f3ff;">Generative UI &bull; Systems
+              Architecture</span>
+            <h3 class="publication-title">Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency
+            </h3>
+            <p class="publication-desc">An executive blueprint balancing sub-1.2s performance, WCAG 2.2 AAA
+              accessibility, design system consistency, and responsible AI-assisted engineering at Citicorp scale.</p>
             <div class="publication-footer">
               <span>Read Scalable AI UI Blueprint &rarr;</span>
               <span>22 min read &bull; Citicorp Proven</span>
@@ -667,27 +689,36 @@
           <a href="/mfe-architecture" class="publication-card" title="Read Micro Frontend Architectures Complete Guide">
             <span class="publication-badge">Architecture Whitepaper</span>
             <h3 class="publication-title">Micro Frontend (MFE) Architectures: Fundamentals to Enterprise BFSI Scale</h3>
-            <p class="publication-desc">A deep architectural blueprint covering Module Federation, Web Components, runtime dependency deduplication, typed event buses, and zero-downtime banking platform rollouts.</p>
+            <p class="publication-desc">A deep architectural blueprint covering Module Federation, Web Components,
+              runtime dependency deduplication, typed event buses, and zero-downtime banking platform rollouts.</p>
             <div class="publication-footer">
               <span>Read Architectural Whitepaper &rarr;</span>
               <span>15 min read &bull; Citicorp Proven</span>
             </div>
           </a>
 
-          <a href="/secure-development-practices" class="publication-card" title="Read Secure Coding, Privacy & Dependency Governance Whitepaper">
+          <a href="/secure-development-practices" class="publication-card"
+            title="Read Secure Coding, Privacy & Dependency Governance Whitepaper">
             <span class="publication-badge" style="color: #059669; background: #ecfdf5;">AppSec &bull; DevSecOps</span>
-            <h3 class="publication-title">Secure Coding, Privacy &amp; Software Supply Chain Governance Throughout the SDLC</h3>
-            <p class="publication-desc">A Principal Architect's field guide to zero-trust client runtimes, StateGuard DOM integrity, dynamic CSP edge nonces, GDPR/DPDP privacy-by-design, and automated SBOM dependency governance.</p>
+            <h3 class="publication-title">Secure Coding, Privacy &amp; Software Supply Chain Governance Throughout the
+              SDLC</h3>
+            <p class="publication-desc">A Principal Architect's field guide to zero-trust client runtimes, StateGuard
+              DOM integrity, dynamic CSP edge nonces, GDPR/DPDP privacy-by-design, and automated SBOM dependency
+              governance.</p>
             <div class="publication-footer">
               <span>Read Secure SDLC Whitepaper &rarr;</span>
               <span>22 min read &bull; Citicorp Proven</span>
             </div>
           </a>
 
-          <a href="/seo-aeo-geo-architecture" class="publication-card" title="Read SEO, AEO & GEO Architecture Whitepaper">
-            <span class="publication-badge" style="color: #0284c7; background: #e0f2fe;">Edge &bull; Search &bull; AI Grounding</span>
-            <h3 class="publication-title">Modern SEO, Answer Engine (AEO) &amp; Generative Engine Optimization (GEO)</h3>
-            <p class="publication-desc">An enterprise systems blueprint for discoverability, Schema.org entity graphs, llms.txt standard, and sub-1.5ms Cloudflare edge delivery modeled after the live EdgeNonce case study.</p>
+          <a href="/seo-aeo-geo-architecture" class="publication-card"
+            title="Read SEO, AEO & GEO Architecture Whitepaper">
+            <span class="publication-badge" style="color: #0284c7; background: #e0f2fe;">Edge &bull; Search &bull; AI
+              Grounding</span>
+            <h3 class="publication-title">Modern SEO, Answer Engine (AEO) &amp; Generative Engine Optimization (GEO)
+            </h3>
+            <p class="publication-desc">An enterprise systems blueprint for discoverability, Schema.org entity graphs,
+              llms.txt standard, and sub-1.5ms Cloudflare edge delivery modeled after the live EdgeNonce case study.</p>
             <div class="publication-footer">
               <span>Read SEO &bull; AEO &bull; GEO Blueprint &rarr;</span>
               <span>20 min read &bull; Production Ready</span>
@@ -696,8 +727,11 @@
 
           <a href="/blog#chapter-09" class="publication-card" title="Read Engineering Journal & Systems Guide">
             <span class="publication-badge">Systems Engineering Journal</span>
-            <h3 class="publication-title">Frontend Infrastructure Migration: Rust, Go, AST Compilers &amp; Resiliency</h3>
-            <p class="publication-desc">An executive guide to frontend infrastructure modernisation: migrating to Rust/Go native toolchains (Rolldown, Turbopack), V8 bytecode pipelines, and zero-trust PCI-DSS iFrames.</p>
+            <h3 class="publication-title">Frontend Infrastructure Migration: Rust, Go, AST Compilers &amp; Resiliency
+            </h3>
+            <p class="publication-desc">An executive guide to frontend infrastructure modernisation: migrating to
+              Rust/Go native toolchains (Rolldown, Turbopack), V8 bytecode pipelines, and zero-trust PCI-DSS iFrames.
+            </p>
             <div class="publication-footer">
               <span>Explore Systems Journal &rarr;</span>
               <span>20+ yrs insights &bull; Deep Dive</span>
@@ -903,7 +937,9 @@
           </div>
           <h3 class="leadership-card-title">People &amp; Talent Multiplier</h3>
           <p class="leadership-card-desc">
-            Directly led squads of ~12 engineers with sustained <strong>&lt;8% attrition</strong>. Established structured 1-on-1s, engineering skill ladders, and Communities of Practice that amplified capability for <strong>150+ engineers across 6+ business lines</strong>.
+            Directly led squads of ~12 engineers with sustained <strong>&lt;8% attrition</strong>. Established
+            structured 1-on-1s, engineering skill ladders, and Communities of Practice that amplified capability for
+            <strong>150+ engineers across 6+ business lines</strong>.
           </p>
           <div class="leadership-tags">
             <span class="badge">&lt;8% Attrition</span>
@@ -922,7 +958,8 @@
           </div>
           <h3 class="leadership-card-title">Technical Governance &amp; ADRs</h3>
           <p class="leadership-card-desc">
-            Formulated Architecture Decision Records (ADRs), RFC design processes, and zero-downtime micro-frontend rollouts. Standardized postMessage security contracts, design tokens, and AST transformation pipelines.
+            Formulated Architecture Decision Records (ADRs), RFC design processes, and zero-downtime micro-frontend
+            rollouts. Standardized postMessage security contracts, design tokens, and AST transformation pipelines.
           </p>
           <div class="leadership-tags">
             <span class="badge">ADR Governance</span>
@@ -939,7 +976,9 @@
           </div>
           <h3 class="leadership-card-title">Enterprise Risk &amp; Compliance</h3>
           <p class="leadership-card-desc">
-            Operationalized bank-wide <strong>WCAG 2.2 AAA accessibility</strong> into CI/CD pipelines (axe-core, NVDA audits). Governed PCI-DSS v4.0 dynamic nonce streaming (EdgeNonce) and runtime DOM tamper defense (StateGuard.js) with <strong>zero security escapes</strong>.
+            Operationalized bank-wide <strong>WCAG 2.2 AAA accessibility</strong> into CI/CD pipelines (axe-core, NVDA
+            audits). Governed PCI-DSS v4.0 dynamic nonce streaming (EdgeNonce) and runtime DOM tamper defense
+            (StateGuard.js) with <strong>zero security escapes</strong>.
           </p>
           <div class="leadership-tags">
             <span class="badge badge-security">WCAG 2.2 AAA</span>
@@ -957,7 +996,8 @@
           </div>
           <h3 class="leadership-card-title">Budget, SDLC &amp; Vendor Oversight</h3>
           <p class="leadership-card-desc">
-            Directed multi-year release calendars, ServiceNow change management, and IBM UrbanDeploy/TeamCity CI/CD. Governed vendor RFP transitions, End-of-Vendor-Support (EOVS) lifecycles, and cloud efficiency budgets.
+            Directed multi-year release calendars, ServiceNow change management, and IBM UrbanDeploy/TeamCity CI/CD.
+            Governed vendor RFP transitions, End-of-Vendor-Support (EOVS) lifecycles, and cloud efficiency budgets.
           </p>
           <div class="leadership-tags">
             <span class="badge">CSM Agile / Scrum</span>
@@ -1024,7 +1064,11 @@
                   across squads,
                   saving <strong>~35% developer effort</strong> on boilerplate, test scaffolding, and migrations while
                   boosting PR review velocity by <strong>40%</strong>.</li>
-                <li><strong>Organizational leadership &amp; cross-functional scale:</strong> Directly led cross-functional frontend engineering squads (~12 engineers) with sustained <strong>under 8% attrition</strong> through structured 1-on-1s and technical skill ladders; formulated enterprise UI architectures, design tokens, and AI tooling adopted by <strong>150+ engineers across 6+ business lines</strong>.</li>
+                <li><strong>Organizational leadership &amp; cross-functional scale:</strong> Directly led
+                  cross-functional frontend engineering squads (~12 engineers) with sustained <strong>under 8%
+                    attrition</strong> through structured 1-on-1s and technical skill ladders; formulated enterprise UI
+                  architectures, design tokens, and AI tooling adopted by <strong>150+ engineers across 6+ business
+                    lines</strong>.</li>
                 <li><strong>Executive reporting &amp; governance:</strong> Translated multi-quarter engineering roadmaps
                   into C-suite narratives; managed programme risk, release calendar, vendor relationships, and
                   End-of-Vendor-Support (EOVS/EOL) transitions with zero business disruption.</li>
@@ -1299,18 +1343,31 @@
         <article class="project-card">
           <header class="project-header">
             <div>
-              <h3 class="project-title">Autonomous Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension</h3>
-              <div class="project-category-role">Citicorp Services India Pvt. Ltd. &bull; Enterprise Generative AI &bull; AST Toolchains &bull; VS Code Extension API</div>
+              <h3 class="project-title">Autonomous Non-AEM to AEM Migration AI Agent &amp; Integrated VS Code Extension
+              </h3>
+              <div class="project-category-role">Citicorp Services India Pvt. Ltd. &bull; Enterprise Generative AI
+                &bull; AST Toolchains &bull; VS Code Extension API</div>
             </div>
             <div class="project-header-actions">
               <span class="project-badge">Citicorp Enterprise Initiative</span>
             </div>
           </header>
           <ul class="project-bullets">
-            <li><strong>The Enterprise Challenge:</strong> Migrating vast legacy enterprise CMS component ecosystems (OpenText TeamSite and legacy templates) into modern Adobe Experience Manager (AEM) Core Components is traditionally a high-friction, manual process requiring hundreds of engineering hours per brand and prone to human translation defects.</li>
-            <li><strong>Unified AI Migration Platform:</strong> Architected an enterprise-grade developer productivity platform pairing an autonomous migration AI agent with a custom Visual Studio Code IDE extension, eliminating context drift and standardizing prompt engineering directly within developer workflows.</li>
-            <li><strong>Contextual RAG &amp; AST Pipelines:</strong> Ingests legacy component markup, client scripts, styles, and data structures; cross-references them against enterprise AEM design systems using Retrieval-Augmented Generation (RAG). Custom Abstract Syntax Tree (AST) scripts parse markup and programmatically generate production-ready AEM HTL templates, Sling Models, Touch UI authoring dialogs, and clientlibs with automated syntax validation.</li>
-            <li><strong>Measurable Business Impact:</strong> Slashed enterprise CMS replatforming timelines by over <strong>60%</strong>, reduced developer manual translation errors to near zero, and established reusable agentic engineering standards across squads.</li>
+            <li><strong>The Enterprise Challenge:</strong> Migrating vast legacy enterprise CMS component ecosystems
+              (OpenText TeamSite and legacy templates) into modern Adobe Experience Manager (AEM) Core Components is
+              traditionally a high-friction, manual process requiring hundreds of engineering hours per brand and prone
+              to human translation defects.</li>
+            <li><strong>Unified AI Migration Platform:</strong> Architected an enterprise-grade developer productivity
+              platform pairing an autonomous migration AI agent with a custom Visual Studio Code IDE extension,
+              eliminating context drift and standardizing prompt engineering directly within developer workflows.</li>
+            <li><strong>Contextual RAG &amp; AST Pipelines:</strong> Ingests legacy component markup, client scripts,
+              styles, and data structures; cross-references them against enterprise AEM design systems using
+              Retrieval-Augmented Generation (RAG). Custom Abstract Syntax Tree (AST) scripts parse markup and
+              programmatically generate production-ready AEM HTL templates, Sling Models, Touch UI authoring dialogs,
+              and clientlibs with automated syntax validation.</li>
+            <li><strong>Measurable Business Impact:</strong> Slashed enterprise CMS replatforming timelines by over
+              <strong>60%</strong>, reduced developer manual translation errors to near zero, and established reusable
+              agentic engineering standards across squads.</li>
           </ul>
 
           <!-- Visual System Architecture Topology -->
@@ -1369,18 +1426,29 @@
         <article class="project-card">
           <header class="project-header">
             <div>
-              <h3 class="project-title">Citi InView Institutional Digital Banking Platform &amp; Micro-Frontend Modernization</h3>
-              <div class="project-category-role">Citicorp Services India Pvt. Ltd. &bull; Institutional Wealth Management &bull; React &bull; Module Federation &bull; Core Web Vitals</div>
+              <h3 class="project-title">Citi InView Institutional Digital Banking Platform &amp; Micro-Frontend
+                Modernization</h3>
+              <div class="project-category-role">Citicorp Services India Pvt. Ltd. &bull; Institutional Wealth
+                Management &bull; React &bull; Module Federation &bull; Core Web Vitals</div>
             </div>
             <div class="project-header-actions">
               <span class="project-badge">Citicorp Enterprise Initiative</span>
             </div>
           </header>
           <ul class="project-bullets">
-            <li><strong>Institutional Digital Banking at Scale:</strong> Led frontend architecture and modernization of Citi InView &mdash; a mission-critical platform serving global institutional wealth and trading clients &mdash; migrating complex monolithic legacy codebases into modular, independently deployable Micro-frontends using Module Federation.</li>
-            <li><strong>Zero-Downtime Delivery:</strong> Preserved 100% platform availability (zero downtime) throughout multi-year phased migrations across concurrent module delivery streams.</li>
-            <li><strong>Performance Engineering &amp; Telemetry:</strong> Engineered route-based code-splitting, tree-shaking, server-side caching, and automated Core Web Vitals telemetry pipelines, cutting page load latency by up to <strong>50%</strong>.</li>
-            <li><strong>Enterprise Alerts &amp; Cross-Domain Governance:</strong> Built the high-frequency Alerts &amp; Notifications engine handling real-time account triggers and threshold alerts; formulated secure iframe integration and postMessage protocol governance adopted across 6+ product squads, reducing cross-app integration complexity by <strong>40%</strong>.</li>
+            <li><strong>Institutional Digital Banking at Scale:</strong> Led frontend architecture and modernization of
+              Citi InView &mdash; a mission-critical platform serving global institutional wealth and trading clients
+              &mdash; migrating complex monolithic legacy codebases into modular, independently deployable
+              Micro-frontends using Module Federation.</li>
+            <li><strong>Zero-Downtime Delivery:</strong> Preserved 100% platform availability (zero downtime) throughout
+              multi-year phased migrations across concurrent module delivery streams.</li>
+            <li><strong>Performance Engineering &amp; Telemetry:</strong> Engineered route-based code-splitting,
+              tree-shaking, server-side caching, and automated Core Web Vitals telemetry pipelines, cutting page load
+              latency by up to <strong>50%</strong>.</li>
+            <li><strong>Enterprise Alerts &amp; Cross-Domain Governance:</strong> Built the high-frequency Alerts &amp;
+              Notifications engine handling real-time account triggers and threshold alerts; formulated secure iframe
+              integration and postMessage protocol governance adopted across 6+ product squads, reducing cross-app
+              integration complexity by <strong>40%</strong>.</li>
           </ul>
 
           <!-- Visual System Architecture Topology -->
@@ -1463,13 +1531,15 @@
         <article class="project-card">
           <header class="project-header">
             <div>
-              <h3 class="project-title">a11ysis <span class="project-subtitle">&bull; In-Page Live Accessibility Inspector &amp; Continuous Scanner</span></h3>
-              <div class="project-category-role">Triple-Engine Consensus &bull; IBM Equal Access 4.0 &bull; Deque Axe-core 4.10 &bull; HTML_CodeSniffer 2.5 &bull; Shadow DOM HUD</div>
+              <h3 class="project-title">a11ysis <span class="project-subtitle">&bull; In-Page Live Accessibility
+                  Inspector &amp; Continuous Scanner</span></h3>
+              <div class="project-category-role">Triple-Engine Consensus &bull; IBM Equal Access 4.0 &bull; Deque
+                Axe-core 4.10 &bull; HTML_CodeSniffer 2.5 &bull; Shadow DOM HUD</div>
             </div>
             <div class="project-header-actions">
               <span class="project-badge">Live Platform</span>
-              <a href="https://a11ysis.lets.gen.in/" target="_blank"
-                rel="noopener noreferrer" class="btn btn-sm btn-primary">
+              <a href="https://a11ysis.lets.gen.in/" target="_blank" rel="noopener noreferrer"
+                class="btn btn-sm btn-primary">
                 <span>Launch a11ysis</span>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -1480,11 +1550,27 @@
             </div>
           </header>
           <ul class="project-bullets">
-            <li><strong>The Enterprise Challenge:</strong> Automated digital accessibility audits in CI/CD are notoriously noisy, fragmented, and prone to compliance blind spots. Most engineering teams rely on a single scanner (either axe-core or IBM Equal Access), leading to severe tool discrepancies (what one flags as Critical, another ignores), clunky context switching between browser DevTools and static PDF spreadsheets, and compliance escapes straight into production.</li>
-            <li><strong>Triple-Engine Consensus Architecture:</strong> Instead of relying on a single engine's heuristics, a11ysis executes, aggregates, and cross-validates rules simultaneously across <strong>IBM Equal Access 4.0</strong>, <strong>Deque Axe-core 4.10</strong>, and <strong>HTML_CodeSniffer 2.5</strong>. Tri-engine consensus delivers mathematically verifiable proof of non-compliance, eliminating false positives and rule ambiguity.</li>
-            <li><strong>Zero Context Switching (In-Page Live HUD):</strong> With a single script tag or bookmarklet, an interactive, collision-free Shadow DOM HUD mounts directly onto any live web application or staging environment. Engineers and QA can hover-highlight DOM elements, inspect real-time contrast ratios, and view immediate remediation code snippets without leaving the UI flow.</li>
-            <li><strong>Zero Data Retention by Design:</strong> Scans, DOM nodes, specimen tests, and AST checks run 100% client-side in the browser. Zero customer HTML, proprietary markup, or user data is ever transmitted to or stored on external servers.</li>
-            <li><strong>Comprehensive Standards Alignment:</strong> Out-of-the-box compliance validation for <strong>WCAG 2.1 &amp; WCAG 2.2 across Levels A, AA, and AAA</strong>, Section 508, and European standard EN 301 549 (<a href="https://a11ysis.lets.gen.in/" target="_blank" rel="noopener noreferrer" class="project-doc-link">Launch Live a11ysis Platform &amp; Inspect Specimens &rarr;</a>).</li>
+            <li><strong>The Enterprise Challenge:</strong> Automated digital accessibility audits in CI/CD are
+              notoriously noisy, fragmented, and prone to compliance blind spots. Most engineering teams rely on a
+              single scanner (either axe-core or IBM Equal Access), leading to severe tool discrepancies (what one flags
+              as Critical, another ignores), clunky context switching between browser DevTools and static PDF
+              spreadsheets, and compliance escapes straight into production.</li>
+            <li><strong>Triple-Engine Consensus Architecture:</strong> Instead of relying on a single engine's
+              heuristics, a11ysis executes, aggregates, and cross-validates rules simultaneously across <strong>IBM
+                Equal Access 4.0</strong>, <strong>Deque Axe-core 4.10</strong>, and <strong>HTML_CodeSniffer
+                2.5</strong>. Tri-engine consensus delivers mathematically verifiable proof of non-compliance,
+              eliminating false positives and rule ambiguity.</li>
+            <li><strong>Zero Context Switching (In-Page Live HUD):</strong> With a single script tag or bookmarklet, an
+              interactive, collision-free Shadow DOM HUD mounts directly onto any live web application or staging
+              environment. Engineers and QA can hover-highlight DOM elements, inspect real-time contrast ratios, and
+              view immediate remediation code snippets without leaving the UI flow.</li>
+            <li><strong>Zero Data Retention by Design:</strong> Scans, DOM nodes, specimen tests, and AST checks run
+              100% client-side in the browser. Zero customer HTML, proprietary markup, or user data is ever transmitted
+              to or stored on external servers.</li>
+            <li><strong>Comprehensive Standards Alignment:</strong> Out-of-the-box compliance validation for
+              <strong>WCAG 2.1 &amp; WCAG 2.2 across Levels A, AA, and AAA</strong>, Section 508, and European standard
+              EN 301 549 (<a href="https://a11ysis.lets.gen.in/" target="_blank" rel="noopener noreferrer"
+                class="project-doc-link">Launch Live a11ysis Platform &amp; Inspect Specimens &rarr;</a>).</li>
           </ul>
           <footer class="project-footer">
             <div class="project-tags">
@@ -1753,8 +1839,9 @@
           <div class="qr-pass-badge">Executive Profile Pass</div>
           <div class="qr-pass-body">
             <div class="qr-pass-visual">
-              <img src="qrcode.svg" alt="Scan QR Code to visit Ravindrakumar Suthar Executive Profile" class="qr-pass-img"
-                width="140" height="140" loading="lazy">
+              <img src="qrcode.svg" alt="Scan QR Code to visit Ravindra Suthar Executive Profile" class="qr-pass-img"
+                <img src="qrcode.svg" alt="Scan QR Code to visit Ravindrakumar Suthar Executive Profile"
+                class="qr-pass-img" width="140" height="140" loading="lazy">
               <span class="qr-pass-scan-hint">Point smartphone camera to launch</span>
             </div>
             <div class="qr-pass-details">
@@ -1801,7 +1888,8 @@
           <div class="qr-pass-badge qr-pass-badge-contact">Instant Contact Pass</div>
           <div class="qr-pass-body">
             <div class="qr-pass-visual">
-              <img src="contact-qr.svg" alt="Scan QR Code to save Ravindrakumar Suthar to Contacts" class="qr-pass-img"
+              <img src="contact-qr.svg" alt="Scan QR Code to save Ravindra Suthar to Contacts" class="qr-pass-img" <img
+                src="contact-qr.svg" alt="Scan QR Code to save Ravindrakumar Suthar to Contacts" class="qr-pass-img"
                 width="140" height="140" loading="lazy">
               <span class="qr-pass-scan-hint">Scan with iOS / Android Camera to Save</span>
             </div>
@@ -1938,7 +2026,9 @@
             <p><strong>Hello! I am Ravindra's Executive AI Copilot.</strong></p>
             <p>I can answer inquiries regarding Ravindra's 20+ years of engineering leadership (including 13+ years in
               enterprise BFSI at Citicorp),
-              his flagship enterprise company projects (such as the Non-AEM to AEM migration AI agent &amp; integrated VS Code extension, Citi InView Micro-Frontends, and Alerts engine), EdgeNonce CSP streaming, StateGuard.js DOM security, or evaluate alignment
+              his flagship enterprise company projects (such as the Non-AEM to AEM migration AI agent &amp; integrated
+              VS Code extension, Citi InView Micro-Frontends, and Alerts engine), EdgeNonce CSP streaming, StateGuard.js
+              DOM security, or evaluate alignment
               with your open requisition.</p>
           </div>
           <div class="ai-message-meta">
@@ -1951,9 +2041,11 @@
         <button type="button" class="ai-drawer-chip"
           data-prompt="Why hire Ravindra as VP / Principal Frontend Architect?">🌟 Why Hire?</button>
         <button type="button" class="ai-drawer-chip"
-          data-prompt="What are his key enterprise company projects and platform replatforming initiatives at Citicorp?">🏢 Enterprise Projects</button>
+          data-prompt="What are his key enterprise company projects and platform replatforming initiatives at Citicorp?">🏢
+          Enterprise Projects</button>
         <button type="button" class="ai-drawer-chip"
-          data-prompt="What is a11ysis and how does its triple-engine consensus architecture solve accessibility audit discrepancies?">🎯 a11ysis Scanner</button>
+          data-prompt="What is a11ysis and how does its triple-engine consensus architecture solve accessibility audit discrepancies?">🎯
+          a11ysis Scanner</button>
         <button type="button" class="ai-drawer-chip"
           data-prompt="Explain his unified Non-AEM to AEM migration AI agent working with a custom VS Code extension.">🤖
           AEM Agent &amp; VS Code</button>
@@ -2013,6 +2105,7 @@
   </section>
 
   <!-- App Script -->
+  <script src="app.js?v=20261110-v1" defer></script>
   <script src="app.js?v=20261110-v2" defer></script>
 </body>
 
