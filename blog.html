@@ -13,7 +13,7 @@
   <link rel="alternate" hreflang="x-default" href="https://ravindra.lets.gen.in/blog">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css?v=20261108-v2">
+  <link rel="stylesheet" href="style.css?v=20261110-v1">
 
   <!-- OpenGraph Metadata -->
   <meta property="og:title" content="Engineering Journal &amp; Architecture Guide | Ravindrakumar M. Suthar">
@@ -408,6 +408,7 @@
         <li><a href="#chapter-10">10. Enterprise Secure SDLC: Secure Coding, Privacy &amp; Dependency Governance</a></li>
         <li><a href="#chapter-11">11. The SEO, AEO &amp; GEO Paradigm: Architecting for Search, Answer &amp; Generative Engines</a></li>
         <li><a href="#chapter-12">12. Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency</a></li>
+        <li><a href="#chapter-13">13. Building High-Quality Agentic Interfaces: Task Editors &amp; Real-Time Review Flows</a></li>
       </ul>
     </div>
 
@@ -1573,6 +1574,53 @@ export default {
       </div>
     </article>
 
+    <!-- Chapter 13: Building High-Quality Agentic Interfaces -->
+    <article class="journal-section">
+      <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+        <h2 id="chapter-13" style="margin-bottom: 0;">13. Building High-Quality Agentic Interfaces: Task Editors &amp; Real-Time Review Flows</h2>
+        <a href="/agentic-ui-workflows" class="btn btn-sm" style="background: var(--brand-primary); color: #ffffff; text-decoration: none; padding: 0.35rem 0.85rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem;">
+          Read Full Agentic UI Whitepaper &rarr;
+        </a>
+      </div>
+      <p style="font-size: 1.02rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 1.25rem; font-style: italic;">
+        Architecting mission-critical human-in-the-loop agentic experiences using modern React (React 19+, Actions, Optimistic UI), Web Standards, CRDT multi-actor concurrency, and accessible review flows.
+      </p>
+
+      <p>
+        The next frontier of frontend engineering is the transition from passive input forms to <strong>stateful, collaborative Agentic Interfaces</strong>. In an agentic interface, autonomous agents and human developers co-edit the same task workspace simultaneously. Building these experiences requires a fundamental shift in state architecture, streaming performance, and accessibility.
+      </p>
+
+      <div class="callout-card">
+        <strong>Comprehensive Deep-Dive Whitepaper:</strong> A dedicated, production-grade architectural guide is published at <a href="/agentic-ui-workflows" style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">/agentic-ui-workflows</a>. Below is an executive summary of the architectural standards.
+      </div>
+
+      <h3>Core Architectural Pillars</h3>
+      <ul>
+        <li><strong>Dual-State Architecture (Provisional vs. Committed):</strong> Isolating unverified speculative agent actions (streaming AST diffs, predicted intent trees) from authoritative canonical records. State transitions occur strictly upon passing automated schema invariants (Zod) and explicit human review approval.</li>
+        <li><strong>React 19+ Optimistic Streaming:</strong> Leveraging <code>useOptimistic</code> for zero-latency merge feedback upon review actions and <code>useActionState</code> for transition lifecycle management. Server-Sent Events (SSE) backpressure handling preserves sub-150ms Interaction to Next Paint (INP).</li>
+        <li><strong>Real-Time Review Flow &amp; CRDT Concurrency:</strong> Enabling human developers and AI agents to edit the same task specification concurrently. Conflict-Free Replicated Data Types (CRDTs via Yjs / Automerge) over WebSockets guarantee mathematical convergence without central lock bottlenecks.</li>
+        <li><strong>Accessible Live Regions (WCAG 2.2 AAA):</strong> Eliminating speech synthesizer buffer stutter by implementing debounced polite live announcements for agent phases while keeping high-speed character streaming silent to screen readers. Programmatic focus moves cleanly to review actions and restores to source lines upon commit.</li>
+        <li><strong>Collaborative Squad Practices:</strong> Structuring composable Compound Components (<code>&lt;TaskWorkspace.Root&gt;</code>, <code>&lt;TaskWorkspace.ReviewDrawer&gt;</code>) and integrating frontend circuit breakers (<code>CircuitBreaker.js</code>) to isolate flaky LLM providers without disrupting user workflows.</li>
+      </ul>
+
+      <p style="margin-top: 1.25rem;">
+        <a href="/agentic-ui-workflows" class="btn btn-sm btn-primary" style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <span>Read Full Agentic UI Workflows Whitepaper &rarr;</span>
+        </a>
+      </p>
+
+      <div class="tag-strip" style="margin-top: 1.5rem;">
+        <span class="badge badge-ai">Agentic UI</span>
+        <span class="badge badge-ai">Task Editors</span>
+        <span class="badge badge-ai">Real-Time Review Flow</span>
+        <span class="badge">React 19</span>
+        <span class="badge">useOptimistic</span>
+        <span class="badge">CRDTs (Yjs)</span>
+        <span class="badge badge-security">WCAG 2.2 AAA</span>
+        <span class="badge">Collaborative Architecture</span>
+      </div>
+    </article>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -1588,6 +1636,7 @@ export default {
         <a href="/secure-development-practices">Secure SDLC</a>
         <a href="/seo-aeo-geo-architecture">SEO &bull; AEO &bull; GEO</a>
         <a href="/ai-enabled-ui-architecture">Scalable AI UI</a>
+        <a href="/agentic-ui-workflows">Agentic UI Workflows</a>
         <a href="/tools">Developer Tools</a>
       </div>
       <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</p>
@@ -1641,6 +1690,6 @@ export default {
       });
     }
   </script>
-  <script src="app.js?v=20261108-v2" defer></script>
+  <script src="app.js?v=20261110-v1" defer></script>
 </body>
 </html>

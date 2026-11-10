@@ -83,6 +83,26 @@
   CDN-Cache-Control: no-cache, must-revalidate
   Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
 
+/agentic-ui-workflows
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/agentic-ui
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/task-editor-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/realtime-review-flow
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 # Cache static assets
 /style.css
   Cache-Control: public, max-age=0, must-revalidate

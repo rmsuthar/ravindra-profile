@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency | Ravindra Suthar</title>
-  <meta name="description" content="An enterprise architectural guide to building scalable AI-enabled web interfaces. Balancing web performance, WCAG 2.2 AAA accessibility, design system consistency, and responsible AI-assisted engineering by Senior Principal Architect Ravindrakumar M. Suthar.">
+  <meta name="description"
+    content="An enterprise architectural guide to building scalable AI-enabled web interfaces. Balancing web performance, WCAG 2.2 AAA accessibility, design system consistency, and responsible AI-assisted engineering by Senior Principal Architect Ravindrakumar M. Suthar.">
   <meta name="author" content="Ravindrakumar M. Suthar">
-  <meta name="keywords" content="AI-Enabled UI, Scalable Frontend, Generative UI, Enterprise Architecture, Web Performance, Core Web Vitals, WCAG 2.2, Web Accessibility, Design Systems, Design Tokens, AST Codemods, Devin AI, GitHub Copilot, Cloudflare Workers AI, Citicorp, Ravindra Suthar">
+  <meta name="keywords"
+    content="AI-Enabled UI, Scalable Frontend, Generative UI, Enterprise Architecture, Web Performance, Core Web Vitals, WCAG 2.2, Web Accessibility, Design Systems, Design Tokens, AST Codemods, Devin AI, GitHub Copilot, Cloudflare Workers AI, Citicorp, Ravindra Suthar">
 
   <link rel="canonical" href="https://ravindra.lets.gen.in/ai-enabled-ui-architecture">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css?v=20261108-v2">
+  <link rel="stylesheet" href="style.css?v=20261110-v1">
 
   <!-- OpenGraph Metadata -->
-  <meta property="og:title" content="Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency | Ravindra Suthar">
-  <meta property="og:description" content="An enterprise architectural blueprint for harmonizing sub-1.2s web performance, WCAG 2.2 AAA accessibility, cross-product design consistency, and responsible AI-assisted developer workflows.">
+  <meta property="og:title"
+    content="Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency | Ravindra Suthar">
+  <meta property="og:description"
+    content="An enterprise architectural blueprint for harmonizing sub-1.2s web performance, WCAG 2.2 AAA accessibility, cross-product design consistency, and responsible AI-assisted developer workflows.">
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://ravindra.lets.gen.in/ai-enabled-ui-architecture">
   <meta property="og:site_name" content="Ravindra Suthar - Engineering Journal">
@@ -23,13 +28,17 @@
 
   <!-- Twitter Card Metadata -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency | Ravindra Suthar">
-  <meta name="twitter:description" content="Enterprise blueprint: web performance, WCAG 2.2 AAA accessibility, design system consistency, and responsible AI-assisted engineering at scale.">
+  <meta name="twitter:title"
+    content="Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency | Ravindra Suthar">
+  <meta name="twitter:description"
+    content="Enterprise blueprint: web performance, WCAG 2.2 AAA accessibility, design system consistency, and responsible AI-assisted engineering at scale.">
   <meta name="twitter:image" content="https://ravindra.lets.gen.in/favicon.svg">
 
   <!-- AI Discovery & GEO Metadata -->
-  <meta name="ai-summary" content="Enterprise architectural whitepaper detailing how to build scalable AI-enabled user interfaces across two complementary dimensions: runtime generative interfaces (SSE streaming, Signals, WebAssembly, WCAG 2.2 AAA accessible live regions) and day-to-day AI-assisted engineering workflows (AST codemods, RAG-grounded design systems, and CI/CD quality gates).">
-  <meta name="ai-topic" content="AI-Enabled UI, Generative UI, Web Performance, Core Web Vitals, WCAG 2.2 AAA, Enterprise Design Systems, AST Codemods, Cloudflare Workers AI, Agentic Engineering">
+  <meta name="ai-summary"
+    content="Enterprise architectural whitepaper detailing how to build scalable AI-enabled user interfaces across two complementary dimensions: runtime generative interfaces (SSE streaming, Signals, WebAssembly, WCAG 2.2 AAA accessible live regions) and day-to-day AI-assisted engineering workflows (AST codemods, RAG-grounded design systems, and CI/CD quality gates).">
+  <meta name="ai-topic"
+    content="AI-Enabled UI, Generative UI, Web Performance, Core Web Vitals, WCAG 2.2 AAA, Enterprise Design Systems, AST Codemods, Cloudflare Workers AI, Agentic Engineering">
   <meta name="ai-content-type" content="Enterprise Systems Architecture Specification & Whitepaper">
   <meta name="ai-citation-author" content="Ravindrakumar M. Suthar, Senior Principal Architect & Engineering Leader">
 
@@ -174,11 +183,13 @@
       color: var(--text-muted);
       margin-bottom: 1.5rem;
     }
+
     .sec-breadcrumbs a {
       color: var(--brand-primary);
       text-decoration: none;
       font-weight: 500;
     }
+
     .sec-breadcrumbs a:hover {
       text-decoration: underline;
     }
@@ -232,6 +243,7 @@
       align-items: center;
       gap: 0.75rem;
     }
+
     .sec-author-avatar {
       width: 44px;
       height: 44px;
@@ -245,14 +257,17 @@
       color: var(--brand-primary);
       font-size: 1rem;
     }
+
     .sec-author-details {
       display: flex;
       flex-direction: column;
     }
+
     .sec-author-name {
       font-weight: 700;
       color: var(--text-primary);
     }
+
     .sec-author-title {
       color: var(--text-muted);
       font-size: 0.82rem;
@@ -264,6 +279,7 @@
       gap: 1.25rem;
       color: var(--text-muted);
     }
+
     .sec-stat-item {
       display: flex;
       align-items: center;
@@ -280,6 +296,7 @@
       margin-bottom: 3rem;
       box-shadow: var(--shadow-xs);
     }
+
     .sec-toc h2 {
       font-size: 1.15rem;
       font-weight: 700;
@@ -289,6 +306,7 @@
       align-items: center;
       gap: 0.5rem;
     }
+
     .sec-toc-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -297,6 +315,7 @@
       padding: 0;
       margin: 0;
     }
+
     .sec-toc-grid li a {
       color: var(--text-secondary);
       text-decoration: none;
@@ -305,6 +324,7 @@
       padding: 0.3rem 0;
       transition: color 0.2s, transform 0.2s;
     }
+
     .sec-toc-grid li a:hover {
       color: var(--brand-primary);
       transform: translateX(3px);
@@ -319,6 +339,7 @@
       margin-bottom: 2.5rem;
       box-shadow: var(--shadow-xs);
     }
+
     .sec-section h2 {
       font-size: 1.55rem;
       font-weight: 800;
@@ -330,29 +351,35 @@
       align-items: center;
       gap: 0.65rem;
     }
+
     .sec-section h3 {
       font-size: 1.2rem;
       font-weight: 700;
       color: var(--text-primary);
       margin: 1.75rem 0 0.65rem;
     }
+
     .sec-section h4 {
       font-size: 1.02rem;
       font-weight: 600;
       color: var(--brand-primary);
       margin: 1.25rem 0 0.5rem;
     }
+
     .sec-section p {
       color: var(--text-secondary);
       line-height: 1.72;
       margin-bottom: 1.15rem;
       font-size: 0.98rem;
     }
-    .sec-section ul, .sec-section ol {
+
+    .sec-section ul,
+    .sec-section ol {
       margin: 0 0 1.25rem 1.5rem;
       color: var(--text-secondary);
       line-height: 1.7;
     }
+
     .sec-section li {
       margin-bottom: 0.45rem;
     }
@@ -364,12 +391,14 @@
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-sm);
     }
+
     .sec-table {
       width: 100%;
       border-collapse: collapse;
       text-align: left;
       font-size: 0.88rem;
     }
+
     .sec-table th {
       background: var(--bg-surface-alt);
       color: var(--text-primary);
@@ -378,15 +407,18 @@
       border-bottom: 2px solid var(--border-subtle);
       white-space: nowrap;
     }
+
     .sec-table td {
       padding: 0.85rem 1rem;
       border-bottom: 1px solid var(--border-subtle);
       color: var(--text-secondary);
       line-height: 1.5;
     }
+
     .sec-table tr:last-child td {
       border-bottom: none;
     }
+
     .sec-table tr:hover td {
       background: var(--bg-surface-alt);
     }
@@ -402,6 +434,7 @@
       color: #1e3a8a;
       line-height: 1.6;
     }
+
     .callout-card strong {
       color: #1e40af;
     }
@@ -411,6 +444,7 @@
       border-left-color: #7c3aed;
       color: #5b21b6;
     }
+
     .callout-card-ai strong {
       color: #4c1d95;
     }
@@ -420,6 +454,7 @@
       border-left-color: #059669;
       color: #065f46;
     }
+
     .callout-card-a11y strong {
       color: #047857;
     }
@@ -432,6 +467,7 @@
       overflow: hidden;
       border: 1px solid #334155;
     }
+
     .code-header {
       background: #1e293b;
       color: #94a3b8;
@@ -443,10 +479,12 @@
       align-items: center;
       border-bottom: 1px solid #334155;
     }
+
     .code-title {
       font-weight: 600;
       color: #cbd5e1;
     }
+
     .code-copy-btn {
       background: #334155;
       color: #f8fafc;
@@ -458,9 +496,11 @@
       font-weight: 600;
       transition: background 0.2s;
     }
+
     .code-copy-btn:hover {
       background: #475569;
     }
+
     .code-container pre {
       margin: 0;
       padding: 1.15rem;
@@ -496,6 +536,7 @@
       gap: 1rem;
       margin: 1.5rem 0 2rem;
     }
+
     .metric-card {
       background: var(--bg-surface-alt);
       border: 1px solid var(--border-subtle);
@@ -503,6 +544,7 @@
       padding: 1.1rem;
       text-align: center;
     }
+
     .metric-value {
       font-size: 1.8rem;
       font-weight: 800;
@@ -510,6 +552,7 @@
       line-height: 1.1;
       margin-bottom: 0.35rem;
     }
+
     .metric-label {
       font-size: 0.82rem;
       color: var(--text-muted);
@@ -544,15 +587,18 @@
       z-index: 1000;
       text-decoration: none;
     }
+
     .back-to-top.visible {
       opacity: 0.85;
       pointer-events: auto;
     }
+
     .back-to-top:hover {
       opacity: 1;
       transform: translateY(-3px);
       color: white;
     }
+
     .back-to-top svg {
       width: 1.5rem;
       height: 1.5rem;
@@ -562,16 +608,19 @@
       .sec-section {
         padding: 1.5rem 1.25rem;
       }
+
       .sec-meta-card {
         flex-direction: column;
         align-items: flex-start;
       }
+
       .metric-strip {
         grid-template-columns: 1fr 1fr;
       }
     }
   </style>
 </head>
+
 <body>
   <!-- Scroll Progress Indicator -->
   <div id="scroll-progress" aria-hidden="true"></div>
@@ -622,7 +671,9 @@
       <h1 class="sec-title">Building Scalable AI-Enabled UI: Performance, Accessibility &amp; Consistency</h1>
 
       <p class="sec-lead">
-        An executive systems blueprint for shaping user experiences at scale: harmonizing sub-1.2s web performance, non-negotiable WCAG 2.2 AAA accessibility, cross-product design consistency, and pragmatic, responsible AI-assisted developer workflows across global enterprise product lines.
+        An executive systems blueprint for shaping user experiences at scale: harmonizing sub-1.2s web performance,
+        non-negotiable WCAG 2.2 AAA accessibility, cross-product design consistency, and pragmatic, responsible
+        AI-assisted developer workflows across global enterprise product lines.
       </p>
 
       <div class="sec-meta-card">
@@ -630,7 +681,8 @@
           <div class="sec-author-avatar">RS</div>
           <div class="sec-author-details">
             <span class="sec-author-name">Ravindrakumar M. Suthar</span>
-            <span class="sec-author-title">Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</span>
+            <span class="sec-author-title">Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services
+              India</span>
           </div>
         </div>
 
@@ -682,22 +734,30 @@
     <!-- Section 1: The Dual Mandate -->
     <article class="sec-section" id="sec-01">
       <h2>01. The Dual Mandate: Runtime AI vs. Engineering Lifecycle</h2>
-      
+
       <p>
-        Building scalable AI-enabled UI is not merely about dropping a chat bubble widget onto an existing legacy application. In regulated, high-volume enterprise environments, "AI-enabled UI" represents a dual mandate that bridges two distinct operational planes:
+        Building scalable AI-enabled UI is not merely about dropping a chat bubble widget onto an existing legacy
+        application. In regulated, high-volume enterprise environments, "AI-enabled UI" represents a dual mandate that
+        bridges two distinct operational planes:
       </p>
 
       <div class="callout-card callout-card-ai">
         <strong>The Dual Vectors of Enterprise AI UI Architecture:</strong>
         <ul style="margin: 0.5rem 0 0 1.25rem;">
-          <li><strong>Vector 1: AI in the Runtime UI Layer:</strong> How client-side applications stream generative UI, orchestrate on-device WebAssembly intelligence, handle non-deterministic outputs, and deliver sub-1.2s Largest Contentful Paint (LCP) while remaining 100% accessible to screen readers and keyboard navigators.</li>
-          <li><strong>Vector 2: AI-Assisted Engineering Lifecycle:</strong> How multi-team engineering organizations integrate AI coding agents, AST-driven migration codemods, RAG-grounded design tokens, and automated quality gates into day-to-day sprints responsibly and deterministically.</li>
+          <li><strong>Vector 1: AI in the Runtime UI Layer:</strong> How client-side applications stream generative UI,
+            orchestrate on-device WebAssembly intelligence, handle non-deterministic outputs, and deliver sub-1.2s
+            Largest Contentful Paint (LCP) while remaining 100% accessible to screen readers and keyboard navigators.
+          </li>
+          <li><strong>Vector 2: AI-Assisted Engineering Lifecycle:</strong> How multi-team engineering organizations
+            integrate AI coding agents, AST-driven migration codemods, RAG-grounded design tokens, and automated quality
+            gates into day-to-day sprints responsibly and deterministically.</li>
         </ul>
       </div>
 
       <h3>The Enterprise Systems Topology</h3>
       <p>
-        To prevent UI drift, security breaches, and performance degradation, the AI engineering pipeline must be tightly coupled to edge delivery and runtime telemetry:
+        To prevent UI drift, security breaches, and performance degradation, the AI engineering pipeline must be tightly
+        coupled to edge delivery and runtime telemetry:
       </p>
 
       <div class="code-container">
@@ -783,24 +843,36 @@
     <!-- Section 2: Scalability Dilemma -->
     <article class="sec-section" id="sec-02">
       <h2>02. The Scalability Dilemma: High-Performance AI Runtimes at Scale</h2>
-      
+
       <p>
-        Introducing AI capabilities into web runtimes frequently introduces a severe performance penalty. Web clients burdened with multi-megabyte machine learning weights (e.g. client-side ONNX models or Transformers.js bundles) suffer bloated JavaScript footprints, unmanageable memory allocations, and unresponsive main threads.
+        Introducing AI capabilities into web runtimes frequently introduces a severe performance penalty. Web clients
+        burdened with multi-megabyte machine learning weights (e.g. client-side ONNX models or Transformers.js bundles)
+        suffer bloated JavaScript footprints, unmanageable memory allocations, and unresponsive main threads.
       </p>
 
       <h3>1. The Performance Tax of Generative UI</h3>
       <p>
-        When streaming LLM responses at 60+ tokens per second over Server-Sent Events (SSE) or WebSockets, standard Virtual DOM reconciliation pipelines collapse under CPU pressure:
+        When streaming LLM responses at 60+ tokens per second over Server-Sent Events (SSE) or WebSockets, standard
+        Virtual DOM reconciliation pipelines collapse under CPU pressure:
       </p>
       <ul>
-        <li><strong>Interaction to Next Paint (INP) Degradation:</strong> Continuous re-rendering of large parent component subtrees blocks the main browser thread for 150ms–300ms, immediately failing Google's Core Web Vitals threshold (target: &lt; 200ms).</li>
-        <li><strong>Cumulative Layout Shift (CLS):</strong> Text streams that expand containers dynamically cause surrounding UI elements to bounce uncontrollably unless explicit height envelopes or skeleton containers are reserved.</li>
-        <li><strong>Garbage Collection Thrashing:</strong> Parsing unbounded JSON schemas and allocating transient strings on every token stream event triggers aggressive V8 minor/major GC cycles, producing noticeable micro-stutter during scrolling.</li>
+        <li><strong>Interaction to Next Paint (INP) Degradation:</strong> Continuous re-rendering of large parent
+          component subtrees blocks the main browser thread for 150ms–300ms, immediately failing Google's Core Web
+          Vitals threshold (target: &lt; 200ms).</li>
+        <li><strong>Cumulative Layout Shift (CLS):</strong> Text streams that expand containers dynamically cause
+          surrounding UI elements to bounce uncontrollably unless explicit height envelopes or skeleton containers are
+          reserved.</li>
+        <li><strong>Garbage Collection Thrashing:</strong> Parsing unbounded JSON schemas and allocating transient
+          strings on every token stream event triggers aggressive V8 minor/major GC cycles, producing noticeable
+          micro-stutter during scrolling.</li>
       </ul>
 
       <h3>2. The Solution: Fine-Grained Reactivity (Signals vs. Virtual DOM)</h3>
       <p>
-        To achieve smooth 60fps generative streaming at enterprise scale, architecture must decouple text stream updates from component tree lifecycle renders. In modern frameworks like <strong>Angular 19+ Signals</strong> and <strong>Solid.js</strong>, streaming tokens mutate only the exact leaf text node directly in the DOM graph without recalculating the parent component or sibling nodes:
+        To achieve smooth 60fps generative streaming at enterprise scale, architecture must decouple text stream updates
+        from component tree lifecycle renders. In modern frameworks like <strong>Angular 19+ Signals</strong> and
+        <strong>Solid.js</strong>, streaming tokens mutate only the exact leaf text node directly in the DOM graph
+        without recalculating the parent component or sibling nodes:
       </p>
 
       <div class="code-container">
@@ -852,12 +924,18 @@ export class StreamingCopilotComponent {
 
       <h3>3. The Hybrid Edge + Client Inference Tier</h3>
       <p>
-        Enterprise platforms should neither force every computation to origin cloud servers nor download heavy LLMs onto user devices. Instead, they enforce a three-tier execution hierarchy:
+        Enterprise platforms should neither force every computation to origin cloud servers nor download heavy LLMs onto
+        user devices. Instead, they enforce a three-tier execution hierarchy:
       </p>
       <ul>
-        <li><strong>Tier 1: Client On-Device WebAssembly:</strong> Lightweight, deterministic calculations (such as AST parsing, regex validation, onomastic probability distributions, or offline a11y DOM audits) execute locally in Web Workers via WebAssembly with sub-1ms response times and zero cloud data retention.</li>
-        <li><strong>Tier 2: Global Edge Mesh (Cloudflare Workers AI):</strong> Conversational inference, RAG embeddings, and dynamic HTML schema transformations execute within 50ms at edge points-of-presence (PoPs) closest to the user.</li>
-        <li><strong>Tier 3: Origin Core Services:</strong> Core ledger operations, relational databases, and compliance logging remain protected behind zero-trust edge gateways.</li>
+        <li><strong>Tier 1: Client On-Device WebAssembly:</strong> Lightweight, deterministic calculations (such as AST
+          parsing, regex validation, onomastic probability distributions, or offline a11y DOM audits) execute locally in
+          Web Workers via WebAssembly with sub-1ms response times and zero cloud data retention.</li>
+        <li><strong>Tier 2: Global Edge Mesh (Cloudflare Workers AI):</strong> Conversational inference, RAG embeddings,
+          and dynamic HTML schema transformations execute within 50ms at edge points-of-presence (PoPs) closest to the
+          user.</li>
+        <li><strong>Tier 3: Origin Core Services:</strong> Core ledger operations, relational databases, and compliance
+          logging remain protected behind zero-trust edge gateways.</li>
       </ul>
 
       <div class="tag-strip">
@@ -871,21 +949,28 @@ export class StreamingCopilotComponent {
     <!-- Section 3: Accessibility -->
     <article class="sec-section" id="sec-03">
       <h2>03. Non-Negotiable Accessibility (WCAG 2.2 AAA) in Dynamic AI Interfaces</h2>
-      
+
       <p>
-        In enterprise Banking, Financial Services, and Insurance (BFSI) applications, digital accessibility is not a cosmetic feature; it is a strict legal and architectural mandate under the Americans with Disabilities Act (ADA), Section 508, the European Accessibility Act (EN 301 549), and global banking guidelines.
+        In enterprise Banking, Financial Services, and Insurance (BFSI) applications, digital accessibility is not a
+        cosmetic feature; it is a strict legal and architectural mandate under the Americans with Disabilities Act
+        (ADA), Section 508, the European Accessibility Act (EN 301 549), and global banking guidelines.
       </p>
 
       <div class="callout-card callout-card-a11y">
         <strong>The Generative Accessibility Paradox:</strong>
         <p style="margin-top: 0.5rem;">
-          Traditional web accessibility relies on predictable DOM structures, established focus hierarchies, and deterministic content. Generative AI outputs non-deterministic tokens at high velocity. If an architect simply places <code>aria-live="assertive"</code> on a streaming container, screen readers (JAWS, NVDA, VoiceOver) attempt to pronounce every partial token syllable, crashing the browser speech synthesizer and rendering the application completely unusable.
+          Traditional web accessibility relies on predictable DOM structures, established focus hierarchies, and
+          deterministic content. Generative AI outputs non-deterministic tokens at high velocity. If an architect simply
+          places <code>aria-live="assertive"</code> on a streaming container, screen readers (JAWS, NVDA, VoiceOver)
+          attempt to pronounce every partial token syllable, crashing the browser speech synthesizer and rendering the
+          application completely unusable.
         </p>
       </div>
 
       <h3>1. The Debounced Buffered Live Region Pattern</h3>
       <p>
-        To solve this, our architectural standard separates the <strong>visual stream</strong> from the <strong>assistive technology notification stream</strong>:
+        To solve this, our architectural standard separates the <strong>visual stream</strong> from the
+        <strong>assistive technology notification stream</strong>:
       </p>
 
       <div class="code-container">
@@ -944,10 +1029,15 @@ export class AccessibleStreamAnnouncer {
         AI assistant drawers (such as our Copilot interface) must behave as native accessible dialogs:
       </p>
       <ul>
-        <li><strong>Role &amp; ARIA Semantics:</strong> Declaring <code>role="dialog"</code> and <code>aria-modal="true"</code> with an explicit <code>aria-labelledby="ai-copilot-title"</code>.</li>
-        <li><strong>Focus Restoration:</strong> Capturing the active element prior to opening and deterministically returning focus to that exact element when the drawer closes.</li>
-        <li><strong>Keyboard Navigation:</strong> Enforcing Tab/Shift+Tab cycle trapping inside the drawer and listening for the Escape key to close the drawer instantly.</li>
-        <li><strong>Mobile Viewport Scroll Lock:</strong> On mobile screens (&lt; 768px), applying high-blur frosted glass, full-width bottom sheet positioning, top grabber handle, and setting <code>body.ai-drawer-open</code> to prevent background touch-scrolling.</li>
+        <li><strong>Role &amp; ARIA Semantics:</strong> Declaring <code>role="dialog"</code> and
+          <code>aria-modal="true"</code> with an explicit <code>aria-labelledby="ai-copilot-title"</code>.</li>
+        <li><strong>Focus Restoration:</strong> Capturing the active element prior to opening and deterministically
+          returning focus to that exact element when the drawer closes.</li>
+        <li><strong>Keyboard Navigation:</strong> Enforcing Tab/Shift+Tab cycle trapping inside the drawer and listening
+          for the Escape key to close the drawer instantly.</li>
+        <li><strong>Mobile Viewport Scroll Lock:</strong> On mobile screens (&lt; 768px), applying high-blur frosted
+          glass, full-width bottom sheet positioning, top grabber handle, and setting <code>body.ai-drawer-open</code>
+          to prevent background touch-scrolling.</li>
       </ul>
 
       <div class="tag-strip">
@@ -961,17 +1051,20 @@ export class AccessibleStreamAnnouncer {
     <!-- Section 4: Cross-Product Consistency -->
     <article class="sec-section" id="sec-04">
       <h2>04. Cross-Product Consistency: Enterprise Design Systems as the AI Source of Truth</h2>
-      
+
       <p>
-        When hundreds of engineers across distributed business units employ AI coding assistants without architectural constraints, an existential risk emerges: <strong>"AI Slop" and Component Drift</strong>.
+        When hundreds of engineers across distributed business units employ AI coding assistants without architectural
+        constraints, an existential risk emerges: <strong>"AI Slop" and Component Drift</strong>.
       </p>
       <p>
-        Unconstrained LLMs frequently generate arbitrary CSS classes, slightly different shades of brand blue, random border radii, and idiosyncratic button behaviors, degrading user trust and shattering cross-product consistency.
+        Unconstrained LLMs frequently generate arbitrary CSS classes, slightly different shades of brand blue, random
+        border radii, and idiosyncratic button behaviors, degrading user trust and shattering cross-product consistency.
       </p>
 
       <h3>1. The RAG-Grounded Design Token Contract</h3>
       <p>
-        To set the enterprise standard, organizations must transform their Design System from a static Figma library into a machine-readable vector contract:
+        To set the enterprise standard, organizations must transform their Design System from a static Figma library
+        into a machine-readable vector contract:
       </p>
 
       <div class="code-container">
@@ -1003,10 +1096,13 @@ export class AccessibleStreamAnnouncer {
 
       <h3>2. Schema-Constrained Generative UI</h3>
       <p>
-        Never allow an AI model to stream raw HTML or arbitrary JSX directly into production screens. Doing so creates cross-site scripting (XSS) vulnerabilities and destroys visual consistency.
+        Never allow an AI model to stream raw HTML or arbitrary JSX directly into production screens. Doing so creates
+        cross-site scripting (XSS) vulnerabilities and destroys visual consistency.
       </p>
       <p>
-        Instead, the AI model is constrained via <strong>JSON Schema validation</strong> to emit abstract semantic component trees. The frontend UI layer maps these validated descriptors directly to pre-audited, accessible enterprise design system components:
+        Instead, the AI model is constrained via <strong>JSON Schema validation</strong> to emit abstract semantic
+        component trees. The frontend UI layer maps these validated descriptors directly to pre-audited, accessible
+        enterprise design system components:
       </p>
 
       <div class="code-container">
@@ -1056,19 +1152,29 @@ export function SafeGenerativeRenderer({ payload }: { payload: GenerativeUIPaylo
     <!-- Section 5: Responsible Engineering -->
     <article class="sec-section" id="sec-05">
       <h2>05. Responsible &amp; Practical AI-Assisted Engineering: Day-to-Day Workflows</h2>
-      
+
       <p>
-        Bringing AI into day-to-day engineering is not an ideological exercise; it requires pragmatic systems engineering. Organizations that mandate "use AI for everything" suffer code review fatigue, subtle logic regressions, and security exposure.
+        Bringing AI into day-to-day engineering is not an ideological exercise; it requires pragmatic systems
+        engineering. Organizations that mandate "use AI for everything" suffer code review fatigue, subtle logic
+        regressions, and security exposure.
       </p>
       <p>
-        Conversely, organizations that establish structured, responsible operating guidelines achieve a sustained <strong>35% reduction in developer effort</strong> while accelerating time-to-market.
+        Conversely, organizations that establish structured, responsible operating guidelines achieve a sustained
+        <strong>35% reduction in developer effort</strong> while accelerating time-to-market.
       </p>
 
       <h3>1. The 3 Invariant Rules of Enterprise AI Development</h3>
       <ol>
-        <li><strong>Zero IP Leakage &amp; Private Gateways:</strong> Developers must never transmit proprietary banking logic, customer PII, or internal tokens to public LLM endpoints. All Copilot and IDE agents must route through enterprise-managed proxies featuring strict zero-retention agreements.</li>
-        <li><strong>Deterministic AST Codemods for Syntax, LLMs for Semantics:</strong> When upgrading frameworks (e.g. migrating Angular legacy control flow to <code>@if/@for</code>, or modernizing React class lifecycles), never rely on LLMs to rewrite entire files from scratch. Use Abstract Syntax Tree (AST) tools like <code>ts-morph</code> or Babel for 100% deterministic refactoring, reserving LLMs strictly for synthesizing unit test cases or explaining complex business rules.</li>
-        <li><strong>Mandatory Human Architectural Review:</strong> No code generated by an AI assistant may be merged into production without an explicit review and approval by an authorized senior engineer.</li>
+        <li><strong>Zero IP Leakage &amp; Private Gateways:</strong> Developers must never transmit proprietary banking
+          logic, customer PII, or internal tokens to public LLM endpoints. All Copilot and IDE agents must route through
+          enterprise-managed proxies featuring strict zero-retention agreements.</li>
+        <li><strong>Deterministic AST Codemods for Syntax, LLMs for Semantics:</strong> When upgrading frameworks (e.g.
+          migrating Angular legacy control flow to <code>@if/@for</code>, or modernizing React class lifecycles), never
+          rely on LLMs to rewrite entire files from scratch. Use Abstract Syntax Tree (AST) tools like
+          <code>ts-morph</code> or Babel for 100% deterministic refactoring, reserving LLMs strictly for synthesizing
+          unit test cases or explaining complex business rules.</li>
+        <li><strong>Mandatory Human Architectural Review:</strong> No code generated by an AI assistant may be merged
+          into production without an explicit review and approval by an authorized senior engineer.</li>
       </ol>
 
       <h3>2. Measurable Multiplier Footprint</h3>
@@ -1122,29 +1228,42 @@ export function SafeGenerativeRenderer({ payload }: { payload: GenerativeUIPaylo
     <!-- Section 6: Real-World Case Studies -->
     <article class="sec-section" id="sec-06">
       <h2>06. Real-World Case Studies: Citicorp AI &amp; Cloudflare Edge</h2>
-      
+
       <p>
-        The viability of this architecture has been proven in enterprise-scale production environments across global banking platforms and edge computing infrastructure:
+        The viability of this architecture has been proven in enterprise-scale production environments across global
+        banking platforms and edge computing infrastructure:
       </p>
 
       <h3>Case Study 1: Citicorp Autonomous Non-AEM to AEM Migration AI Agent</h3>
       <p>
-        At Citicorp Services India, over 100 enterprise websites and thousands of fragmented UI components were slated for migration onto modern Adobe Experience Manager (AEM) responsive components. Manual rewrites were projected to take years of dedicated engineering effort.
+        At Citicorp Services India, over 100 enterprise websites and thousands of fragmented UI components were slated
+        for migration onto modern Adobe Experience Manager (AEM) responsive components. Manual rewrites were projected
+        to take years of dedicated engineering effort.
       </p>
       <ul>
-        <li><strong>Architectural Innovation:</strong> Designed an autonomous AI migration agent and companion VS Code IDE extension that operates directly inside the developer's local workspace.</li>
-        <li><strong>Mechanism:</strong> The agent parses legacy HTML/JSP templates into Abstract Syntax Trees (ASTs), matches DOM patterns against pre-approved AEM core component schemas, and synthesizes clean, WCAG AA compliant HTL and TypeScript components with complete test coverage.</li>
-        <li><strong>Quantifiable Impact:</strong> Achieved a <strong>60% reduction in migration cycle times</strong>, eliminated manual translation errors, and unified the digital banking visual layer across global jurisdictions.</li>
+        <li><strong>Architectural Innovation:</strong> Designed an autonomous AI migration agent and companion VS Code
+          IDE extension that operates directly inside the developer's local workspace.</li>
+        <li><strong>Mechanism:</strong> The agent parses legacy HTML/JSP templates into Abstract Syntax Trees (ASTs),
+          matches DOM patterns against pre-approved AEM core component schemas, and synthesizes clean, WCAG AA compliant
+          HTL and TypeScript components with complete test coverage.</li>
+        <li><strong>Quantifiable Impact:</strong> Achieved a <strong>60% reduction in migration cycle times</strong>,
+          eliminated manual translation errors, and unified the digital banking visual layer across global
+          jurisdictions.</li>
       </ul>
 
       <h3>Case Study 2: Cloudflare Workers AI Executive Copilot</h3>
       <p>
-        Deployed on this very platform (<a href="https://ravindra.lets.gen.in/" style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">ravindra.lets.gen.in</a>), our serverless edge copilot serves real-time architectural insights:
+        Deployed on this very platform (<a href="https://ravindra.lets.gen.in/"
+          style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">ravindra.lets.gen.in</a>),
+        our serverless edge copilot serves real-time architectural insights:
       </p>
       <ul>
-        <li><strong>Sub-50ms Edge Execution:</strong> Running on Cloudflare Workers AI and HTMLRewriter, streaming structured answers directly to client devices without origin server load.</li>
-        <li><strong>Mobile-First iOS Drawer UX:</strong> Delivers high-blur frosted glass, focus traps, scroll locks, and instantaneous response streaming with zero client hydration weight.</li>
-        <li><strong>Deterministic Knowledge Fallback:</strong> If an edge AI worker experiences intermittent network latency, client-side fallback knowledge rules intercept the request locally, guaranteeing 100% uptime.</li>
+        <li><strong>Sub-50ms Edge Execution:</strong> Running on Cloudflare Workers AI and HTMLRewriter, streaming
+          structured answers directly to client devices without origin server load.</li>
+        <li><strong>Mobile-First iOS Drawer UX:</strong> Delivers high-blur frosted glass, focus traps, scroll locks,
+          and instantaneous response streaming with zero client hydration weight.</li>
+        <li><strong>Deterministic Knowledge Fallback:</strong> If an edge AI worker experiences intermittent network
+          latency, client-side fallback knowledge rules intercept the request locally, guaranteeing 100% uptime.</li>
       </ul>
 
       <!-- Key Impact Metrics Strip -->
@@ -1178,9 +1297,10 @@ export function SafeGenerativeRenderer({ payload }: { payload: GenerativeUIPaylo
     <!-- Section 7: Production Operating Standard & Code -->
     <article class="sec-section" id="sec-07">
       <h2>07. Production Operating Standard &amp; Verification Code</h2>
-      
+
       <p>
-        To set the standard for how an enterprise builds and evolves its UI layer, teams must audit every AI-enabled interface against the <strong>15-Point Production Operating Standard</strong>:
+        To set the standard for how an enterprise builds and evolves its UI layer, teams must audit every AI-enabled
+        interface against the <strong>15-Point Production Operating Standard</strong>:
       </p>
 
       <div class="table-container">
@@ -1290,7 +1410,8 @@ export function SafeGenerativeRenderer({ payload }: { payload: GenerativeUIPaylo
 
       <h3>Production TypeScript Hook: Resilient Accessible SSE Stream</h3>
       <p>
-        Below is a production-grade custom React hook demonstrating resilient SSE token streaming with debounced live announcements, abort controllers, and error recovery:
+        Below is a production-grade custom React hook demonstrating resilient SSE token streaming with debounced live
+        announcements, abort controllers, and error recovery:
       </p>
 
       <div class="code-container">
@@ -1406,15 +1527,18 @@ export function useAccessibleAIStream(endpoint: string) {
         <a href="/secure-development-practices">Secure SDLC</a>
         <a href="/seo-aeo-geo-architecture">SEO &bull; AEO &bull; GEO</a>
         <a href="/ai-enabled-ui-architecture">Scalable AI UI</a>
+        <a href="/agentic-ui-workflows">Agentic UI Workflows</a>
         <a href="/tools">Developer Tools</a>
       </div>
-      <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &amp; Engineering Leader &bull; Citicorp Services India</p>
+      <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &amp; Engineering Leader &bull; Citicorp
+        Services India</p>
     </div>
   </footer>
 
   <!-- Floating Back to Top Button -->
   <a href="#" class="back-to-top" id="back-to-top" aria-label="Back to top">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round">
       <polyline points="18 15 12 9 6 15"></polyline>
     </svg>
   </a>
@@ -1459,6 +1583,7 @@ export function useAccessibleAIStream(endpoint: string) {
       });
     }
   </script>
-  <script src="app.js?v=20261108-v2" defer></script>
+  <script src="app.js?v=20261110-v1" defer></script>
 </body>
+
 </html>

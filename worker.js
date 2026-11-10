@@ -248,6 +248,19 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide Chapter 12](https://ravindra.lets.gen.in/blog#chapter-12)`
   },
   {
+    triggers: ['agentic ui', 'task editor', 'review flow', 'real-time review', 'agentic workflow', 'crdt', 'react 19 agentic'],
+    answer: `**Building High-Quality Agentic Web Interfaces (Task Editors & Real-Time Review Flows):**
+
+- **The Agentic Paradigm**: Moving beyond chatbots and direct manipulation to stateful human-agent task editors co-editing application state.
+- **Dual-State Model**: Separates speculative agent proposals (streaming AST diffs) from canonical committed state via React 19 Actions and \`useOptimistic\` rollbacks.
+- **Multi-Actor CRDT Concurrency**: Conflict-Free Replicated Data Types (Yjs/Automerge) guarantee mathematical state convergence between human engineers and autonomous agents over WebSockets.
+- **WCAG 2.2 AAA Live Announcements**: Implements debounced sentence-level \`aria-live="polite"\` regions, preventing screen reader speech queue flooding during 80+ token/sec streams.
+- **Citicorp Enterprise Proven**: Modeled after Citicorp's Non-AEM to AEM Migration AI Agent & integrated VS Code extension (60% cycle time reduction).
+- **Read the Comprehensive Architectural Whitepaper**:
+  - [Agentic UI Workflows & Real-Time Review Architecture](https://ravindra.lets.gen.in/agentic-ui-workflows)
+  - [Engineering Journal & Architecture Guide Chapter 13](https://ravindra.lets.gen.in/blog#chapter-13)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -935,6 +948,10 @@ Guidelines:
         url.pathname = '/ai-enabled-ui-architecture.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/agentic-ui-workflows' || url.pathname === '/agentic-ui' || url.pathname === '/task-editor-architecture' || url.pathname === '/realtime-review-flow') {
+        url.pathname = '/agentic-ui-workflows.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -955,6 +972,10 @@ Guidelines:
         url.pathname === '/ai-enabled-ui-architecture' ||
         url.pathname === '/ai-enabled-ui' ||
         url.pathname === '/scalable-ai-ui' ||
+        url.pathname === '/agentic-ui-workflows' ||
+        url.pathname === '/agentic-ui' ||
+        url.pathname === '/task-editor-architecture' ||
+        url.pathname === '/realtime-review-flow' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')
