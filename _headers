@@ -103,6 +103,21 @@
   CDN-Cache-Control: no-cache, must-revalidate
   Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
 
+/high-performance-web-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/responsive-web-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/react-angular-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 # Cache static assets
 /style.css
   Cache-Control: public, max-age=0, must-revalidate

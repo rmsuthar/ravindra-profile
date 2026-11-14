@@ -261,6 +261,21 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide Chapter 13](https://ravindra.lets.gen.in/blog#chapter-13)`
   },
   {
+    triggers: ['high performance', 'responsive', 'core web vitals', 'react 19', 'angular 20', 'signals', 'container queries', 'scheduler.yield', 'inp', 'lcp', 'cls', 'high-performance-web-architecture', 'performance engineering'],
+    answer: `**Architecting Responsive, High-Performance Web Applications (React 19, Angular 20 & AI):**
+
+- **The Performance Imperative**: Sub-1.2s LCP, sub-150ms INP, and 0.00 CLS governed at Citicorp scale. Preload scanner discovery in raw HTML with \`fetchpriority="high"\`, and cooperative main-thread task slicing using \`scheduler.yield()\` (<50ms sync, 50-250ms yield, >250ms Web Worker).
+- **Responsive Architecture Beyond Breakpoints**: Moving from viewport media queries to component-encapsulated **Container Queries (\`@container\`)**, fluid typography with \`clamp()\` preserving WCAG 1.4.4 200% zoom, dynamic viewport units (\`100dvh\`/\`100dvw\`), and CSS Subgrid.
+- **Framework Architectural Symphony**:
+  - **React 19**: Asynchronous Actions, \`useOptimistic\` zero-latency rollbacks, Server Components, and React Compiler fine-grained memoization.
+  - **Angular 20**: Zoneless change detection (dropping \`zone.js\`), push-based native **Signals**, and declarative \`@defer (on viewport; prefetch on idle)\` template chunking.
+- **Clean Architecture & Memory Hygiene**: Decoupling pure TypeScript domain calculations from UI wrappers using Hexagonal Ports & Adapters. Eliminating SPA memory leaks via universal \`AbortController\` signals and RxJS \`takeUntilDestroyed()\`.
+- **The AI Force-Multiplier**: Harnessing AI across 5 strategic tiers: contract-first OpenAPI/Zod schema synthesis, Markov-based predictive asset prefetching, AST codemods (\`ts-morph\`) for automated migrations (60%+ cycle time reduction at Citicorp), and triple-engine consensus accessibility scanning (a11ysis).
+- **Read the Comprehensive Architectural Whitepaper**:
+  - [Architecting Responsive, High-Performance Web Applications](https://ravindra.lets.gen.in/high-performance-web-architecture)
+  - [Engineering Journal & Architecture Guide Chapter 14](https://ravindra.lets.gen.in/blog#chapter-14)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -952,6 +967,10 @@ Guidelines:
         url.pathname = '/agentic-ui-workflows.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/high-performance-web-architecture' || url.pathname === '/responsive-web-architecture' || url.pathname === '/react-angular-architecture') {
+        url.pathname = '/high-performance-web-architecture.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -976,6 +995,9 @@ Guidelines:
         url.pathname === '/agentic-ui' ||
         url.pathname === '/task-editor-architecture' ||
         url.pathname === '/realtime-review-flow' ||
+        url.pathname === '/high-performance-web-architecture' ||
+        url.pathname === '/responsive-web-architecture' ||
+        url.pathname === '/react-angular-architecture' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')
