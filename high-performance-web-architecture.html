@@ -14,7 +14,7 @@
   <link rel="canonical" href="https://ravindra.lets.gen.in/high-performance-web-architecture">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css?v=20261114-v1">
+  <link rel="stylesheet" href="style.css?v=20261114-v2">
 
   <!-- OpenGraph Metadata -->
   <meta property="og:title"
@@ -419,34 +419,322 @@
       font-size: inherit;
     }
 
-    /* Diagram Wrappers */
-    .diagram-card {
+    /* ── Executive Architecture Visual Diagrams ───────────── */
+    .visual-diagram-card {
       background: #ffffff;
       border: 1px solid var(--border-subtle);
       border-radius: var(--radius-md);
-      padding: 1.5rem;
-      margin: 1.75rem 0;
-      box-shadow: var(--shadow-xs);
+      padding: 1.75rem;
+      margin: 2.25rem 0;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+    }
+
+    .visual-diagram-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid var(--border-subtle);
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .visual-diagram-title-group h4 {
+      font-size: 1.25rem;
+      color: var(--text-primary);
+      margin: 0 0 0.25rem;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .visual-diagram-subtitle {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .visual-diagram-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 0.75rem;
+      border-radius: 999px;
+      background: rgba(14, 165, 233, 0.1);
+      color: #0284c7;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* 5 Strategic Pillars Grid */
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.15rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .pillar-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-top: 4px solid var(--pillar-color, #0284c7);
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+      background: #ffffff;
+      border-color: #cbd5e1;
+      border-top-color: var(--pillar-color, #0284c7);
+    }
+
+    .pillar-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .pillar-number {
+      font-family: var(--font-mono, monospace);
+      font-size: 0.72rem;
+      font-weight: 700;
+      color: var(--pillar-color, #0284c7);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .pillar-icon-box {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--pillar-color, #0284c7);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+
+    .pillar-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.35rem;
+      line-height: 1.3;
+    }
+
+    .pillar-domain {
+      font-size: 0.76rem;
+      font-weight: 600;
+      color: var(--pillar-color, #0284c7);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.65rem;
+      display: block;
+    }
+
+    .pillar-desc {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin: 0 0 1rem;
+      flex-grow: 1;
+    }
+
+    .pillar-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .pillar-tag {
+      font-size: 0.7rem;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      padding: 0.15rem 0.45rem;
+      border-radius: 4px;
+      font-family: var(--font-mono, monospace);
+    }
+
+    .pillar-metric {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--pillar-color, #0284c7);
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+    }
+
+    .diagram-metrics-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      padding-top: 1rem;
+      border-top: 1px dashed var(--border-subtle);
+    }
+
+    .summary-metric-chip {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      background: #f1f5f9;
+      padding: 0.35rem 0.75rem;
+      border-radius: 6px;
+    }
+
+    /* INP Task Slicing Pipeline */
+    .inp-pipeline-container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 1.25rem 0;
+    }
+
+    .inp-trigger-node {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 0.75rem 1.25rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .inp-trigger-label {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .inp-trigger-sub {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-family: var(--font-mono, monospace);
+    }
+
+    .inp-lanes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1rem;
+    }
+
+    .inp-lane-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .inp-lane-card.green {
+      border-top: 4px solid #10b981;
+    }
+
+    .inp-lane-card.blue {
+      border-top: 4px solid #0284c7;
+    }
+
+    .inp-lane-card.purple {
+      border-top: 4px solid #8b5cf6;
+    }
+
+    .inp-lane-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.65rem;
+    }
+
+    .inp-lane-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 0.2rem 0.55rem;
+      border-radius: 4px;
+      font-family: var(--font-mono, monospace);
+    }
+
+    .inp-lane-card.green .inp-lane-badge {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+
+    .inp-lane-card.blue .inp-lane-badge {
+      background: #f0f9ff;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }
+
+    .inp-lane-card.purple .inp-lane-badge {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+    }
+
+    .inp-lane-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin: 0 0 0.4rem;
+    }
+
+    .inp-lane-desc {
+      font-size: 0.85rem;
+      line-height: 1.55;
+      color: var(--text-secondary);
+      margin: 0 0 1rem;
+    }
+
+    .inp-lane-outcome {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.35rem 0.65rem;
+      border-radius: 6px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: var(--text-primary);
     }
 
     .diagram-caption {
       font-size: 0.84rem;
       color: var(--text-muted);
       text-align: center;
-      margin-top: 0.75rem;
+      margin-top: 1rem;
       font-style: italic;
-    }
-
-    .diagram-ascii {
-      font-family: var(--font-mono, monospace);
-      font-size: 0.82rem;
-      line-height: 1.35;
-      color: var(--text-primary);
-      overflow-x: auto;
-      background: var(--bg-surface-alt, #f8fafc);
-      padding: 1.25rem;
-      border-radius: var(--radius-sm);
-      border: 1px solid var(--border-subtle);
     }
   </style>
 </head>
@@ -570,22 +858,89 @@
         INP replaced First Input Delay (FID) to assess the responsiveness of every interaction across the full session lifecycle. In single-page architectures (SPAs), poor INP is almost universally driven by long-running JavaScript execution (&gt; 50ms) blocking the browser's unified event loop from drawing the next frame.
       </p>
 
-      <div class="diagram-card">
-        <div class="diagram-ascii">
-[User Interaction: Click / Keypress / Tap]
-   │
-   ▼
-┌────────────────────────────────────────────────────────────────────────┐
-│ Main Thread Task Execution Queue                                       │
-├────────────────────────────────────────────────────────────────────────┤
-│ &lt; 50ms: Synchronous Execution ──► Immediate Paint Frame (INP &lt; 50ms)    │
-│                                                                        │
-│ 50ms - 250ms: scheduler.yield() ──► Yields to OS Input/Render Pipeline │
-│                                      Next continuation resumes at HEAD │
-│                                                                        │
-│ &gt; 250ms: Offload to Web Worker ──► Zero Main-Thread Blocking           │
-│                                      PostMessage Transferable Objects  │
-└────────────────────────────────────────────────────────────────────────┘
+      <div class="visual-diagram-card" role="region" aria-label="Enterprise Main-Thread Task Slicing Decision Tree">
+        <div class="visual-diagram-header">
+          <div class="visual-diagram-title-group">
+            <h4>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"></circle>
+                <polyline points="12 6 12 12 16 14"></polyline>
+              </svg>
+              INP Frame Budget &amp; Task Slicing Architecture
+            </h4>
+            <p class="visual-diagram-subtitle">Sub-150ms Interaction to Next Paint (INP) execution routing</p>
+          </div>
+          <span class="visual-diagram-badge">Main-Thread Scheduler</span>
+        </div>
+
+        <div class="inp-pipeline-container">
+          <div class="inp-trigger-node">
+            <span class="inp-trigger-label">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0284c7" stroke-width="2">
+                <path d="M15 3h6v6"></path>
+                <path d="M10 14L21 3"></path>
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              </svg>
+              User Interaction (Click / Tap / Keypress)
+            </span>
+            <span class="inp-trigger-sub">Browser Event Loop &bull; 16.6ms Target Window</span>
+          </div>
+
+          <div class="inp-lanes-grid">
+            <!-- Lane 1 -->
+            <div class="inp-lane-card green">
+              <div>
+                <div class="inp-lane-header">
+                  <span class="inp-lane-badge">&lt; 50ms Task</span>
+                  <span style="font-size: 0.72rem; color: #059669; font-weight: 600;">Fast Microtask</span>
+                </div>
+                <h5 class="inp-lane-title">Synchronous Execution</h5>
+                <p class="inp-lane-desc">Direct in-frame JavaScript processing. Execution completes within the active frame, rendering state updates immediately.</p>
+              </div>
+              <div class="inp-lane-outcome">
+                <span style="color: #10b981; font-weight: bold;">&bull;</span>
+                <span>Immediate Paint &bull; INP &lt; 50ms</span>
+              </div>
+            </div>
+
+            <!-- Lane 2 -->
+            <div class="inp-lane-card blue">
+              <div>
+                <div class="inp-lane-header">
+                  <span class="inp-lane-badge">50ms &ndash; 250ms</span>
+                  <span style="font-size: 0.72rem; color: #0284c7; font-weight: 600;">Cooperative Slice</span>
+                </div>
+                <h5 class="inp-lane-title">scheduler.yield()</h5>
+                <p class="inp-lane-desc">Slices heavy iterations into chunks. Yields control back to the browser compositor to draw frames and process user inputs before resuming.</p>
+              </div>
+              <div class="inp-lane-outcome">
+                <span style="color: #0284c7; font-weight: bold;">&bull;</span>
+                <span>Interleaved Frames &bull; INP &le; 150ms</span>
+              </div>
+            </div>
+
+            <!-- Lane 3 -->
+            <div class="inp-lane-card purple">
+              <div>
+                <div class="inp-lane-header">
+                  <span class="inp-lane-badge">&gt; 250ms Task</span>
+                  <span style="font-size: 0.72rem; color: #7c3aed; font-weight: 600;">Thread Isolation</span>
+                </div>
+                <h5 class="inp-lane-title">Web Worker Offloading</h5>
+                <p class="inp-lane-desc">Dispatches heavy computations (parsing, encryption, AST sorting) to background worker threads via postMessage and Transferable buffers.</p>
+              </div>
+              <div class="inp-lane-outcome">
+                <span style="color: #8b5cf6; font-weight: bold;">&bull;</span>
+                <span>Zero Main Thread Jank &bull; 60fps</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="diagram-metrics-summary">
+          <span class="summary-metric-chip">⚡ Sub-50ms Synchronous Budget</span>
+          <span class="summary-metric-chip">🔄 Front-of-Queue Continuation (scheduler.yield)</span>
+          <span class="summary-metric-chip">🧵 Zero-Block Worker Isolation</span>
         </div>
         <div class="diagram-caption">Figure 1.1: The Enterprise Main-Thread Task Slicing Decision Tree for Sub-150ms INP.</div>
       </div>
@@ -782,26 +1137,163 @@
         Artificial intelligence is not just a conversational chatbot widget; in a modern engineering organization, <strong>AI is the principal architect's primary force-multiplier</strong> across the entire software development lifecycle (SDLC). When applied responsibly, AI eliminates mundane technical debt, automates migration toil, and elevates performance engineering to predictive heights.
       </p>
 
-      <div class="diagram-card">
-        <div class="diagram-ascii">
-┌────────────────────────────────────────────────────────────────────────┐
-│             THE ARCHITECT'S 5-TIER AI FORCE-MULTIPLIER                 │
-├────────────────────────────────────────────────────────────────────────┤
-│ 1. Architecture &amp; System Design                                        │
-│    Contract-first OpenAPI/Zod schema synthesis; ADR generation.        │
-│                                                                        │
-│ 2. Predictive Performance &amp; Asset Prefetching                          │
-│    Client-side Markov navigation models; intelligent bundle budgeting. │
-│                                                                        │
-│ 3. Automated Cross-Framework AST Modernization                         │
-│    ts-morph &amp; RAG migration agents (Citicorp Non-AEM to AEM paradigm).  │
-│                                                                        │
-│ 4. Autonomous Accessibility (a11y) &amp; Testing Quality Gates              │
-│    Triple-engine consensus scanning (a11ysis); synthetic user journeys.│
-│                                                                        │
-│ 5. Runtime AI Edge Copilots &amp; Schema-Constrained Generative UI         │
-│    Cloudflare Workers AI streaming via SSE; zero hallucination risk.   │
-└────────────────────────────────────────────────────────────────────────┘
+      <div class="visual-diagram-card" role="region" aria-label="The 5 Strategic Pillars of Enterprise AI Frontend Engineering">
+        <div class="visual-diagram-header">
+          <div class="visual-diagram-title-group">
+            <h4>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                <polyline points="2 17 12 22 22 17"></polyline>
+                <polyline points="2 12 12 17 22 12"></polyline>
+              </svg>
+              The Architect's 5-Tier AI Force-Multiplier
+            </h4>
+            <p class="visual-diagram-subtitle">Strategic Operating Framework for Enterprise Frontend Engineering</p>
+          </div>
+          <span class="visual-diagram-badge">Citicorp Proven Model</span>
+        </div>
+
+        <div class="pillars-grid">
+          <!-- Pillar 1 -->
+          <div class="pillar-card" style="--pillar-color: #0284c7;">
+            <div>
+              <div class="pillar-meta">
+                <span class="pillar-number">PILLAR 01</span>
+                <div class="pillar-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="pillar-domain">Architecture &amp; Design</span>
+              <h5 class="pillar-title">Contract-First Schema Synthesis</h5>
+              <p class="pillar-desc">Automated synthesis of OpenAPI 3.1 and Zod type contracts. Generates Architectural Decision Records (ADRs) with automated drift detection across squad boundaries.</p>
+              <div class="pillar-tags">
+                <span class="pillar-tag">OpenAPI 3.1</span>
+                <span class="pillar-tag">Zod Schemas</span>
+                <span class="pillar-tag">ADR Governance</span>
+              </div>
+            </div>
+            <div class="pillar-metric">
+              <span>🎯</span>
+              <span>100% Contract Integrity</span>
+            </div>
+          </div>
+
+          <!-- Pillar 2 -->
+          <div class="pillar-card" style="--pillar-color: #10b981;">
+            <div>
+              <div class="pillar-meta">
+                <span class="pillar-number">PILLAR 02</span>
+                <div class="pillar-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+                  </svg>
+                </div>
+              </div>
+              <span class="pillar-domain">Runtime Scheduling</span>
+              <h5 class="pillar-title">Predictive Asset Prefetching</h5>
+              <p class="pillar-desc">Client-side Markov transition models observe user navigation probability to warm next-route chunks over idle threads with zero mobile bandwidth waste.</p>
+              <div class="pillar-tags">
+                <span class="pillar-tag">Markov Chains</span>
+                <span class="pillar-tag">Prefetch</span>
+                <span class="pillar-tag">CrUX Telemetry</span>
+              </div>
+            </div>
+            <div class="pillar-metric">
+              <span>⚡</span>
+              <span>0ms Perceived Navigation</span>
+            </div>
+          </div>
+
+          <!-- Pillar 3 -->
+          <div class="pillar-card" style="--pillar-color: #6366f1;">
+            <div>
+              <div class="pillar-meta">
+                <span class="pillar-number">PILLAR 03</span>
+                <div class="pillar-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="16 18 22 12 16 6"></polyline>
+                    <polyline points="8 6 2 12 8 18"></polyline>
+                  </svg>
+                </div>
+              </div>
+              <span class="pillar-domain">Replatforming &amp; Modernization</span>
+              <h5 class="pillar-title">Automated AST Codemods</h5>
+              <p class="pillar-desc">Autonomous migration agents paired with custom IDE extensions (ts-morph / Babel) parsing legacy components and generating modern production-grade targets.</p>
+              <div class="pillar-tags">
+                <span class="pillar-tag">ts-morph</span>
+                <span class="pillar-tag">Local RAG</span>
+                <span class="pillar-tag">VS Code Extension</span>
+              </div>
+            </div>
+            <div class="pillar-metric">
+              <span>🚀</span>
+              <span>&gt;60% Cycle Time Reduction</span>
+            </div>
+          </div>
+
+          <!-- Pillar 4 -->
+          <div class="pillar-card" style="--pillar-color: #f59e0b;">
+            <div>
+              <div class="pillar-meta">
+                <span class="pillar-number">PILLAR 04</span>
+                <div class="pillar-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                  </svg>
+                </div>
+              </div>
+              <span class="pillar-domain">Compliance &amp; Quality</span>
+              <h5 class="pillar-title">Triple-Engine a11y Gates</h5>
+              <p class="pillar-desc">In-pipeline consensus scanning (IBM Equal Access, Axe-core, HTML_CodeSniffer via a11ysis) with automated ARIA and focus-trap remediation before merge.</p>
+              <div class="pillar-tags">
+                <span class="pillar-tag">a11ysis</span>
+                <span class="pillar-tag">WCAG 2.2 AAA</span>
+                <span class="pillar-tag">CI/CD Gates</span>
+              </div>
+            </div>
+            <div class="pillar-metric">
+              <span>🛡️</span>
+              <span>60% Remediation Savings</span>
+            </div>
+          </div>
+
+          <!-- Pillar 5 -->
+          <div class="pillar-card" style="--pillar-color: #ec4899;">
+            <div>
+              <div class="pillar-meta">
+                <span class="pillar-number">PILLAR 05</span>
+                <div class="pillar-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                    <line x1="8" y1="21" x2="16" y2="21"></line>
+                    <line x1="12" y1="17" x2="12" y2="21"></line>
+                  </svg>
+                </div>
+              </div>
+              <span class="pillar-domain">Edge Runtimes &amp; Copilots</span>
+              <h5 class="pillar-title">Schema-Constrained Generative UI</h5>
+              <p class="pillar-desc">Sub-1.5ms edge inferencing streaming typed JSON component schemas to pre-compiled design tokens, eliminating AI hallucinations and UI drift.</p>
+              <div class="pillar-tags">
+                <span class="pillar-tag">Workers AI</span>
+                <span class="pillar-tag">SSE Streaming</span>
+                <span class="pillar-tag">Design Tokens</span>
+              </div>
+            </div>
+            <div class="pillar-metric">
+              <span>🌐</span>
+              <span>&lt;1.5ms Edge Execution</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="diagram-metrics-summary">
+          <span class="summary-metric-chip">⚡ &gt;60% Delivery Acceleration</span>
+          <span class="summary-metric-chip">🔒 100% Contract Integrity (Zero Drift)</span>
+          <span class="summary-metric-chip">🛡️ Non-Negotiable WCAG 2.2 AAA Compliance</span>
+          <span class="summary-metric-chip">🌐 Zero-Downtime Global Edge Execution</span>
         </div>
         <div class="diagram-caption">Figure 5.1: The 5 Strategic Pillars of Enterprise AI Frontend Engineering.</div>
       </div>
@@ -1324,7 +1816,7 @@ export function migrateToSignals(sourceFilePath: string): string {
       });
     }
   </script>
-  <script src="app.js?v=20261114-v1" defer></script>
+  <script src="app.js?v=20261114-v2" defer></script>
 </body>
 
 </html>
