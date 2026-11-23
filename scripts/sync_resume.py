@@ -363,6 +363,11 @@ def generate_workday_docx():
     # 6. Personal & Open-Source Projects
     paragraphs.append(make_heading("Personal & Open-Source Projects"))
     paragraphs.append(make_p([
+        make_run("PixiFormUI (Secure Canvas-Rendered Form Library): ", bold=True, size=19, color="1A202C"),
+        make_run("Creator of an open-source (MIT) JavaScript form library that renders every input field directly on an HTML5 Canvas, ensuring sensitive typed credentials never touch the DOM where malicious browser extensions, session-replay tools, or injected scripts can intercept keystrokes. Features a dependency-free Canvas 2D engine with 12+ enterprise controls (password, OTP, date/time, international phone) in a ~57 KB gzipped bundle under strict CSP. Implemented hardware-grade end-to-end encryption via Web Crypto API (ECDH P-256, AES-256-GCM, single-use challenges) with server decryptors in 7 languages (Node.js, Python, Go, C#, Ruby, PHP, Java), a hidden semantic accessibility outline for screen readers (WCAG compliant), isomorphic validation, React/Angular/Web Component wrappers, and an AI-agent Model Context Protocol (MCP) server for secure form prefilling (pixiformui.lets.gen.in | npm: pixiformui | github.com/rmsuthar/pixiformui).", size=19, color="2D3748")
+    ], space_before=25, space_after=25))
+
+    paragraphs.append(make_p([
         make_run("a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner): ", bold=True, size=19, color="1A202C"),
         make_run("Continuous digital accessibility platform engineered to eliminate audit fragmentation and noise. Combines a concurrent triple-engine consensus architecture (IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5) with an interactive, collision-free Shadow DOM HUD that mounts directly onto live web applications via script tag or bookmarklet. Provides on-hover element highlighting, real-time contrast inspection, and actionable code remediation snippets with zero data retention (100% client-side DOM evaluation) across WCAG 2.1/2.2 Levels A/AA/AAA, Section 508, and EN 301 549 (a11ysis.lets.gen.in).", size=19, color="2D3748")
     ], space_before=25, space_after=25))

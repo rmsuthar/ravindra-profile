@@ -20,8 +20,8 @@ Verified Profile & Career Background:
   - Enterprise GenAI & Tooling: Integrated enterprise Gemini LLMs with offline local vector store RAG; created developer acceleration tooling including automated AEM layout analysis and Adobe Experience Cloud release governance pipelines; automated code remediation with scheduled AI agent pipelines.
   - Platform Modernization: Upgraded Angular from 10.x to 21.x across cloud-native microservices with SSR routing; upgraded core microservices from Spring Boot 3.x to 4.x; led GitHub Enterprise (GHE) migration with Renovate.
   - Accessibility & Integrations: WCAG 2.2 AA compliance with bespoke multimedia vendor fixes; enterprise Salesforce integration with strict security headers; organization-wide innovation and hackathon mentorship.
-- Personal & Open-Source Projects: a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner powered by Triple-Engine Consensus across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with Shadow DOM HUD at https://a11ysis.lets.gen.in/), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), StateGuard.js (DOM tamper protection for transactional state integrity at https://rmsuthar.github.io/StateGuard/), and Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations (https://gateway.lets.gen.in/).
-- Developer Tools Hub (https://ravindra.lets.gen.in/tools): FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan), castserv (Stateless onomastic intelligence & cultural lineage engine at https://castserv.lets.gen.in), Gujarat Panchang & Broadcast System (https://tithi.lets.gen.in/), Digital Table Clock PWA (https://clock.lets.gen.in/), and Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/cover-letter).
+- Personal & Open-Source Projects: PixiFormUI (Secure Canvas-Rendered Form Library preventing DOM keystroke scraping with Web Crypto E2E encryption and MCP AI server at https://pixiformui.lets.gen.in/ and npm: pixiformui), a11ysis (In-Page Live Accessibility Inspector & Continuous Scanner powered by Triple-Engine Consensus across IBM Equal Access 4.0, Deque Axe-core 4.10, and HTML_CodeSniffer 2.5 with Shadow DOM HUD at https://a11ysis.lets.gen.in/), EdgeNonce (Zero-Latency CSP Nonce Streaming Engine on Cloudflare Workers at https://www.edge-nonce.com), StateGuard.js (DOM tamper protection for transactional state integrity at https://rmsuthar.github.io/StateGuard/), and Global Edge Sandbox & LB Inspector on Cloudflare Workers across 12 global PoP locations (https://gateway.lets.gen.in/).
+- Developer Tools Hub (https://ravindra.lets.gen.in/tools): PixiFormUI (https://pixiformui.lets.gen.in/), FoodScan AI (Mobile AI dietary scanner & foreign food label analyzer on Google Play at https://play.google.com/store/apps/details?id=in.gen.lets.foodscan), castserv (Stateless onomastic intelligence & cultural lineage engine at https://castserv.lets.gen.in), Gujarat Panchang & Broadcast System (https://tithi.lets.gen.in/), Digital Table Clock PWA (https://clock.lets.gen.in/), and Dynamic AI Cover Letter Generator (https://ravindra.lets.gen.in/cover-letter).
 - Performance: Delivered up to 50% load-time improvements across enterprise web applications using React, Next.js, TypeScript, route-based code splitting, and automated Core Web Vitals telemetry.
 - Accessibility & Security: Spearheaded WCAG 2.1 & 2.2 (Level AA/AAA), Section 508, and ADA compliance programme operationalizing axe-core and Lighthouse CI regression gates with NVDA audits, reducing post-deployment remediation costs by 60%. Focus Appearance, Focus Not Obscured, and Target Size compliance.
 - GenAI Leadership: Pioneered Devin AI autonomous coding agents (~35% effort saved) and standardized GitHub Copilot (40% faster PR reviews).
@@ -123,6 +123,19 @@ const KNOWLEDGE_FALLBACKS = [
 - **Official Resources**:
   - [Download on Google Play Store](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan)
   - [Global Packaging Marks Guide](https://foodscan.lets.gen.in/packaging-marks)`
+  },
+  {
+    triggers: ['pixiformui', 'pixiform', 'canvas form', 'secure form', 'keystroke', 'ecdh', 'form library'],
+    answer: `**PixiFormUI — Secure Canvas-Rendered JavaScript Form Library (Creator · 2026 Open Source MIT):**
+
+- **Overview**: An open-source, high-security JavaScript form library that renders every input field directly on an HTML5 Canvas, ensuring sensitive typed credentials never touch the DOM where rogue browser extensions, session-replay tools (LogRocket, FullStory), or injected XSS scripts can scrape keystrokes ([Documentation & Live Demo](https://pixiformui.lets.gen.in/) | [npm Package](https://www.npmjs.com/package/pixiformui) | [GitHub Repository](https://github.com/rmsuthar/pixiformui)).
+- **Key Architectural Features**:
+  1. **Zero-DOM Keystroke Protection**: Renders inputs directly on HTML5 Canvas—typed data bypasses the page DOM entirely, completely defeating browser extension snooping and malicious DOM scrapers.
+  2. **Dependency-Free Canvas 2D Engine**: 12+ enterprise controls (password, OTP one-time code, date/time picker, international phone input) in a compact ~57 KB gzipped bundle engineered for strict CSP environments (zero \`'unsafe-eval'\`).
+  3. **Hardware-Grade E2E Encryption**: Implements Web Crypto API (ECDH P-256 key agreement, AES-256-GCM authenticated encryption, single-use server challenges) with server decryptors in 7 languages: Node.js, Python, Go, C#, Ruby, PHP, and Java.
+  4. **Accessible Semantic Outline**: Off-screen semantic DOM tree ensures full screen reader compatibility (NVDA, JAWS, VoiceOver) with linked ARIA error states, high contrast, and dynamic browser zoom.
+  5. **Universal Integrations**: Isomorphic client/server validation, privacy-safe analytics bridges (GA, GTM, Segment, PostHog), and native wrappers for React, Angular, and Web Components.
+  6. **Model Context Protocol (MCP) AI Integration**: Includes a dedicated MCP server allowing AI agents to safely prefill forms while keeping passwords cryptographically isolated from LLM context windows.`
   },
   {
     triggers: ['a11ysis', 'triple-engine', 'triple engine', 'accessibility inspector', 'equal access', 'html_codesniffer', 'consensus'],
@@ -392,17 +405,18 @@ const KNOWLEDGE_FALLBACKS = [
 - **Digital Passes & QR Codes**: [Profile QR Code](https://ravindra.lets.gen.in/qrcode.svg) | [Contact Card vCard QR](https://ravindra.lets.gen.in/contact-qr.svg)`
   },
   {
-    triggers: ['project', 'tools', 'sandbox', 'edge', 'portfolio', 'inspector'],
+    triggers: ['project', 'tools', 'sandbox', 'edge', 'portfolio', 'inspector', 'pixiformui', 'pixiform'],
     answer: `**Featured Innovations & Open-Source Projects:**
 
-1. **a11ysis**: In-Page Live Accessibility Inspector and Continuous Scanner powered by a Triple-Engine Consensus architecture (IBM Equal Access 4.0, Deque Axe-core 4.10, HTML_CodeSniffer 2.5) with Shadow DOM HUD and zero data retention ([Live Platform](https://a11ysis.lets.gen.in/)).
-2. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
-3. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
-4. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (under 1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
-5. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
-6. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
-7. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
-8. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
+1. **PixiFormUI**: Secure Canvas-Rendered JavaScript Form Library with zero-DOM keystroke leakage, Web Crypto E2E encryption (ECDH P-256 + AES-256-GCM), 12+ controls, and Model Context Protocol (MCP) AI server ([Demo & Docs](https://pixiformui.lets.gen.in/) | [npm](https://www.npmjs.com/package/pixiformui) | [GitHub](https://github.com/rmsuthar/pixiformui)).
+2. **a11ysis**: In-Page Live Accessibility Inspector and Continuous Scanner powered by a Triple-Engine Consensus architecture (IBM Equal Access 4.0, Deque Axe-core 4.10, HTML_CodeSniffer 2.5) with Shadow DOM HUD and zero data retention ([Live Platform](https://a11ysis.lets.gen.in/)).
+3. **Citibank Non-AEM to AEM Migration AI Agent**: Enterprise RAG + AST toolchain slashing component replatforming time by 60%+.
+4. **FoodScan AI**: Mobile AI dietary scanner and foreign food label analyzer on Google Play with multilingual OCR, dual barcode engine, and deterministic safeguards for Jain, Vegan, and Celiac travelers ([Google Play](https://play.google.com/store/apps/details?id=in.gen.lets.foodscan) | [Guide](https://foodscan.lets.gen.in/packaging-marks)).
+5. **EdgeNonce**: Zero-latency CSP nonce streaming engine running on Cloudflare Workers & HTMLRewriter (under 1.5ms latency, 100% origin cache retention, PCI-DSS v4.0 compliant) ([Live Engine](https://www.edge-nonce.com)).
+6. **Gujarat Panchang & Automated Broadcast System**: Precision astronomical calculation (Python/PyEphem), zero-framework edge web app, live Choghadiya/lunar engine, and automated WhatsApp broadcasts ([Live Platform](https://tithi.lets.gen.in/)).
+7. **StateGuard.js**: Runtime DOM tamper protection preventing client-side attribute tampering in financial forms ([Live Demo](https://rmsuthar.github.io/StateGuard/)).
+8. **Global Edge Sandbox & LB Inspector**: Cloudflare Workers multi-PoP routing and telemetry sandbox across 12 global regions ([Launch](https://gateway.lets.gen.in/)).
+9. **Enterprise Developer Tools Suite**: Suite of client-side dev utilities at [ravindra.lets.gen.in/tools](https://ravindra.lets.gen.in/tools).`
   }
 ];
 
@@ -836,7 +850,7 @@ Ravindra's Core Verified Credentials (MUST weave into the narrative):
 - Established institutional WCAG 2.1 & 2.2 AA/AAA accessibility compliance programs with axe-core and NVDA audits (60% remediation cost reduction).
 - Governed OpenShift DevOps pipelines, Jira, ServiceNow, Clarity, MS Project, and Workday HRIS platform uploads.
 - Sustained under 8% team attrition across engineering squads through structured mentorship and internal guilds.
-- Live personal innovations: a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner at https://a11ysis.lets.gen.in/), FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
+- Live personal innovations: PixiFormUI (Secure Canvas-Rendered Form Library with E2E Web Crypto at https://pixiformui.lets.gen.in/), a11ysis (In-Page Live Accessibility Inspector & Triple-Engine Scanner at https://a11ysis.lets.gen.in/), FoodScan AI (Google Play Store), EdgeNonce (Zero-latency dynamic edge CSP streaming engine), StateGuard.js (DOM tamper protection).
 
 Guidelines:
 - Tone must be executive, strategic, confident, and professional.
