@@ -289,6 +289,22 @@ const KNOWLEDGE_FALLBACKS = [
   - [Engineering Journal & Architecture Guide Chapter 14](https://ravindra.lets.gen.in/blog#chapter-14)`
   },
   {
+    triggers: ['siem', 'soc', 'soar', 'xdr', 'edr', 'iam', 'ids', 'ips', 'detection engineering', 'splunk', 'sentinel', 'crowdstrike', 'secops', 'secops-architecture'],
+    answer: `**Enterprise SecOps, Detection Engineering & IAM Architecture:**
+
+- **The Architecture & SecOps Convergence**: In Tier-1 BFSI systems, software architecture is inextricably linked to Security Operations. Applications must be active, self-defending telemetry producers that integrate seamlessly with central SIEM, SOC escalation models, SOAR automated edge quarantines, XDR/EDR host monitors, and Zero-Trust IAM.
+- **Core Architectural Pillars**:
+  1. **SIEM & Telemetry Normalization**: Ingests and normalizes client-side security signals (Reporting API CSP violations, StateGuard.js DOM tampering, and TLS JA4 client fingerprints) using OCSF and ECS standards into Splunk / Microsoft Sentinel.
+  2. **SOC Triage & MITRE ATT&CK Mapping**: Tiers 1-3 detection engineering mapped against ATT&CK techniques (T1190 public exploits, T1110 credential stuffing, T1059.007 XSS, T1056.001 input capture, and T1556 auth tamper).
+  3. **SOAR Automated Edge Playbooks**: Sub-500ms automated response via Cloudflare Workers and SOAR webhooks (Cortex XSOAR / Splunk SOAR)—quarantining malicious ASNs/IPs and revoking compromised OAuth tokens in Redis/KV.
+  4. **EDR & XDR Telemetry Correlation**: Correlating host-level process injections (CrowdStrike Falcon, Microsoft Defender, Linux eBPF probes) with edge access policies and hardware-verified device posture.
+  5. **IDS/IPS & Edge Deep Packet Inspection**: Cloudflare Magic Transit & Layer 7 Advanced WAF inspecting HTTP/2 protocol frames and injecting 128-bit dynamic nonces (EdgeNonce) in <1.5ms.
+  6. **Zero-Trust IAM & Split-Screen Architecture**: OIDC/OAuth 2.1 with PKCE, WebAuthn FIDO2 passkeys, fine-grained ABAC, and two-step split-screen login architectures to defeat user enumeration.
+- **Read the Comprehensive Architectural Whitepaper**:
+  - [Enterprise SecOps, Detection Engineering & IAM Architecture](https://ravindra.lets.gen.in/secops-siem-soar-iam-architecture)
+  - [Engineering Journal & Architecture Guide Chapter 15](https://ravindra.lets.gen.in/blog#chapter-15)`
+  },
+  {
     triggers: ['castserv', 'onomastic', 'lineage', 'heritage', 'caste', 'patronymic', 'cultural identity'],
     answer: `**castserv 🇮🇳 — Stateless Onomastic Intelligence & Cultural Lineage Engine:**
 
@@ -985,6 +1001,10 @@ Guidelines:
         url.pathname = '/high-performance-web-architecture.html';
         assetRequest = new Request(url.toString(), request);
       }
+      if (url.pathname === '/secops-siem-soar-iam-architecture' || url.pathname === '/secops-architecture' || url.pathname === '/siem-soc-soar' || url.pathname === '/iam-architecture') {
+        url.pathname = '/secops-siem-soar-iam-architecture.html';
+        assetRequest = new Request(url.toString(), request);
+      }
 
       const response = await env.ASSETS.fetch(assetRequest);
       const contentType = response.headers.get('content-type') || '';
@@ -1012,6 +1032,10 @@ Guidelines:
         url.pathname === '/high-performance-web-architecture' ||
         url.pathname === '/responsive-web-architecture' ||
         url.pathname === '/react-angular-architecture' ||
+        url.pathname === '/secops-siem-soar-iam-architecture' ||
+        url.pathname === '/secops-architecture' ||
+        url.pathname === '/siem-soc-soar' ||
+        url.pathname === '/iam-architecture' ||
         url.pathname.endsWith('.html') ||
         url.pathname.endsWith('.pdf') ||
         url.pathname.endsWith('.docx')

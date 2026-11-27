@@ -118,6 +118,26 @@
   CDN-Cache-Control: no-cache, must-revalidate
   Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
 
+/secops-siem-soar-iam-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/secops-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/siem-soc-soar
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
+/iam-architecture
+  Cache-Control: public, max-age=0, must-revalidate, no-cache
+  CDN-Cache-Control: no-cache, must-revalidate
+  Cloudflare-CDN-Cache-Control: no-cache, must-revalidate
+
 # Cache static assets
 /style.css
   Cache-Control: public, max-age=0, must-revalidate

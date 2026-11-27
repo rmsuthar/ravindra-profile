@@ -16,7 +16,7 @@
   <link rel="alternate" hreflang="x-default" href="https://ravindra.lets.gen.in/blog">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="alternate icon" href="favicon.ico">
-  <link rel="stylesheet" href="style.css?v=20261114-v1">
+  <link rel="stylesheet" href="style.css?v=20261127-v1">
 
   <!-- OpenGraph Metadata -->
   <meta property="og:title" content="Engineering Journal &amp; Architecture Guide | Ravindrakumar M. Suthar">
@@ -519,6 +519,7 @@
         <li><a href="#chapter-13">13. Building High-Quality Agentic Interfaces: Task Editors &amp; Real-Time Review
             Flows</a></li>
         <li><a href="#chapter-14">14. Architecting Responsive, High-Performance Web Applications: React, Angular, TypeScript &amp; The AI Multiplier</a></li>
+        <li><a href="#chapter-15">15. Enterprise SecOps, Detection Engineering &amp; IAM Architecture: SIEM, SOC, SOAR, XDR &amp; Zero-Trust Defense</a></li>
       </ul>
     </div>
 
@@ -2158,6 +2159,82 @@ export default {
       </div>
     </article>
 
+    <!-- Chapter 15: Enterprise SecOps, Detection Engineering & IAM Architecture -->
+    <article class="journal-section">
+      <div
+        style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 0.75rem; margin-bottom: 0.5rem;">
+        <h2 id="chapter-15" style="margin-bottom: 0;">15. Enterprise SecOps, Detection Engineering &amp; IAM Architecture:
+          SIEM, SOC, SOAR, XDR &amp; Zero-Trust Defense</h2>
+        <a href="/secops-siem-soar-iam-architecture" class="btn btn-sm"
+          style="background: var(--brand-primary); color: #ffffff; text-decoration: none; padding: 0.35rem 0.85rem; border-radius: 4px; font-weight: 600; font-size: 0.82rem;">
+          Read Full Architecture Whitepaper &rarr;
+        </a>
+      </div>
+      <p
+        style="font-size: 1.02rem; color: var(--text-muted); margin-top: 0.25rem; margin-bottom: 1.25rem; font-style: italic;">
+        Converging distributed web applications, Cloudflare edge computing, and BFSI defense operations with SIEM log
+        correlation, SOC triage workflows, automated SOAR playbooks, XDR/EDR host telemetry, real-time IDS/IPS inspection,
+        and Zero-Trust IAM.
+      </p>
+
+      <p>
+        The traditional boundary between "Application Architecture" and "Security Operations" has completely collapsed.
+        In modern enterprise engineering—especially across high-stakes Banking, Financial Services, and Insurance (BFSI)
+        platforms—software systems cannot simply be fast, responsive, and functional. <strong>They must be active,
+        self-defending telemetry producers.</strong> An architectural flaw in event logging, a missing correlation ID, or an
+        un-quarantined edge token leaves the entire enterprise exposed to credential stuffing, account takeover, and lateral
+        compromise.
+      </p>
+
+      <div class="callout-card">
+        <strong>Comprehensive Deep-Dive Whitepaper:</strong> A dedicated, production-grade architectural guide is
+        published at <a href="/secops-siem-soar-iam-architecture"
+          style="color: var(--brand-primary); font-weight: 700; text-decoration: underline;">/secops-siem-soar-iam-architecture</a>.
+        Below is an executive summary of the architectural standards.
+      </div>
+
+      <h3>Core Architectural Pillars</h3>
+      <ul>
+        <li><strong>SIEM Architecture &amp; Telemetry Normalization (Splunk / Sentinel):</strong> Normalizing edge,
+          browser, and microservice logs to Open Cybersecurity Schema Framework (OCSF) and Elastic Common Schema (ECS).
+          Emitting structured client-side signals via <code>navigator.sendBeacon</code> for real-time CSP violations,
+          DOM property tampering (StateGuard.js), and TLS JA4 client fingerprints.</li>
+        <li><strong>SOC Triage &amp; MITRE ATT&amp;CK Alignment:</strong> Operational alignment across Tier-1 (alert
+          triage), Tier-2 (forensics), and Tier-3 (threat hunting) mapped to MITRE ATT&amp;CK techniques (T1190 public
+          exploit defense, T1110 brute force, T1059.007 XSS, T1056.001 input capture, and T1556 authentication tamper).</li>
+        <li><strong>SOAR Automated Edge Playbooks:</strong> Converting 30-minute human response times into sub-500ms
+          automated deterministic actions via Cloudflare Workers and SOAR webhooks (Cortex XSOAR / Splunk SOAR)—instantly
+          blacklisting malicious ASNs/IPs and revoking compromised OAuth/JWT sessions in Redis/KV.</li>
+        <li><strong>EDR &amp; XDR Telemetry Correlation:</strong> Correlating endpoint process injections (CrowdStrike
+          Falcon, Microsoft Defender, Linux eBPF probes) with network ingress and application identity claims. Enforcing
+          hardware-attested device posture checks (disk encryption, OS patch level, EDR status) before granting IAM access tokens.</li>
+        <li><strong>IDS/IPS &amp; Edge Deep Packet Inspection:</strong> Replacing high-latency backhauled on-premise
+          hardware appliances with global anycast edge inspection (Cloudflare Magic Transit, Layer 7 WAF, Snort/Suricata rules),
+          blocking HTTP/2 rapid reset attacks and injecting 128-bit dynamic nonces (EdgeNonce) in under 1.5ms.</li>
+        <li><strong>Zero-Trust IAM &amp; Split-Screen Architecture:</strong> Mandating OIDC/OAuth 2.1 with PKCE,
+          phishing-resistant FIDO2 / WebAuthn passkeys, fine-grained Attribute-Based Access Control (ABAC), and two-step
+          split-screen login architectures that neutralize user enumeration and credential harvesting.</li>
+      </ul>
+
+      <p style="margin-top: 1.25rem;">
+        <a href="/secops-siem-soar-iam-architecture" class="btn btn-sm btn-primary"
+          style="display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none;">
+          <span>Read Full Enterprise SecOps, Detection Engineering &amp; IAM Whitepaper &rarr;</span>
+        </a>
+      </p>
+
+      <div class="tag-strip" style="margin-top: 1.5rem;">
+        <span class="badge badge-security">SIEM (Splunk / Sentinel)</span>
+        <span class="badge badge-security">SOC &amp; SOAR Automation</span>
+        <span class="badge badge-security">XDR / EDR Telemetry</span>
+        <span class="badge badge-security">IDS / IPS Deep Packet Inspection</span>
+        <span class="badge badge-ai">Zero-Trust IAM</span>
+        <span class="badge">MITRE ATT&amp;CK</span>
+        <span class="badge">PCI-DSS v4.0</span>
+        <span class="badge">Cloudflare Edge Defense</span>
+      </div>
+    </article>
+
   </main>
 
   <footer class="site-footer" role="contentinfo">
@@ -2175,6 +2252,7 @@ export default {
         <a href="/ai-enabled-ui-architecture">Scalable AI UI</a>
         <a href="/agentic-ui-workflows">Agentic UI Workflows</a>
         <a href="/high-performance-web-architecture">High-Performance &amp; Responsive Web</a>
+        <a href="/secops-siem-soar-iam-architecture">SecOps &amp; IAM</a>
         <a href="/tools">Developer Tools</a>
       </div>
       <p>&copy; 2026 Ravindrakumar M. Suthar &bull; Senior Principal Architect &amp; Engineering Leader &bull; Citicorp
@@ -2230,7 +2308,7 @@ export default {
       });
     }
   </script>
-  <script src="app.js?v=20261114-v1" defer></script>
+  <script src="app.js?v=20261127-v1" defer></script>
 </body>
 
 </html>
